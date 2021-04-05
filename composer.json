@@ -1,0 +1,13 @@
+{
+    "name": "laurent/myfirstblogphp",
+    "description": "\"my_first_blog_php\"",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laurent Lesage",
+            "email": "laurent.lesage51@gmail.com"
+        }
+    ],
+    "require": {}
+}
