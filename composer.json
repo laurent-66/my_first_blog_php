@@ -9,5 +9,13 @@
             "email": "laurent.lesage51@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "psr/http-message": "^1.0",
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "src"
+        }
+    }
 }
