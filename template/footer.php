@@ -1,3 +1,9 @@
+<?php 
+
+    namespace template\footer;
+
+?>
+
 <footer>
     <div class="container-fluid bg-dark m-0 p-0">
         <div id="row_footer" class="row m-0 px-0 py-3">
@@ -12,6 +18,7 @@
             </div>
             <div id="block_linkedin" class="col-12 col-sm-12 col-md-4 m-0 p-0">
                 <div id="logo_linkedin"><a href="https://fr.linkedin.com/in/laurent-lesage-795599113" target="_blank"><img src="../src/images/LinkedIn_Logo.png"/></a></div>
+                <div id="logo_linkedin"><a href="https://github.com/laurent-66/my_first_blog_php" target="_blank"><img src="../src/images/GitHub-Mark-Light-64px.png"/></a></div>
             </div>
         </div>
         <div class="row m-0 px-0 py-3" id="connexionAdmin">

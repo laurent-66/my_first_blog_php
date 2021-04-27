@@ -1,3 +1,9 @@
+<?php
+
+namespace template\header;
+
+?>
+
 <header class="sticky-top">
     <nav class="navbar navbar-dark navbar-expand-md bg-dark m-0 p-0">
         <div class=" menunavigation container-fluid m-0 p-0">
@@ -10,17 +16,17 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="menu">
                     <li class="menu-item">
-                        <a class="item nav-link" href="#">Accueil</a>
+                        <a class="item nav-link" href="home.php">Accueil</a>
                     </li>
                     <li class="menu-item">
-                        <a class="item nav-link" href="#">Blogs</a>
+                        <a class="item nav-link" href="blogs-list.php">Blogs</a>
                     </li>
 
                     <li class="menu-item">
-                        <a class="item nav-link" href="#">Inscription</a>
+                        <a class="item nav-link" href="register.php">Inscription</a>
                     </li>
                     <li class="menu-item">
-                        <a class="item nav-link" href="#">Connexion</a>
+                        <a class="item nav-link" href="login.php">Connexion</a>
                     </li>
                 </ul>
             </div>

@@ -1,10 +1,10 @@
 <?php
 ob_start();
-$title = 'Accueil';
+$title = 'Ajout blog';
 ?>
 <section id="home" class="hautsection">
     <div class="container-fluid">
-        <p style="color: white; font-weight: bold; font-size: 3rem; text-align: center;"> corps de page</p>
+        <p style="color: white; font-weight: bold; font-size: 3rem; text-align: center;">contenu ajout blog</p>
     </div>
 </section>
 <?php
