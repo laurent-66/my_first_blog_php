@@ -1,9 +1,3 @@
-<?php
-
-namespace template\header;
-
-?>
-
 <header class="sticky-top">
     <nav class="navbar navbar-dark navbar-expand-md bg-dark m-0 p-0">
         <div class=" menunavigation container-fluid m-0 p-0">
