@@ -1,0 +1,9 @@
+[
+    {
+        "name": "connexion",
+        "path": "/se-connecter",
+        "_controller":"Application\\Controllers\\SecurityController",
+        "_method": "login",
+        "_methods": ["GET", "POST"]
+    }
+]
