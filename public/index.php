@@ -10,27 +10,8 @@ use Application\Application;
 session_start();
 
 $request = ServerRequest::fromGlobals();
-
-
 $application = new Application();
-
-$application->run($request);
-
-
+$test = $application->run($request);
+var_dump($test);
 
 
-
-
-
-//$request = Request::createCustomGlobal();
-//utilisation de la class Request extension de ServerRequest
-//$request = Request::fromGlobals();
-//if($request->isMethod('POST')){
-
-//}
-
-
-//redirection
-//$response = new RedirectResponseHttp('/home.php');
-
-//$response->send();
