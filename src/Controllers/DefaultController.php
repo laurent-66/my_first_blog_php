@@ -10,7 +10,8 @@ class DefaultController
     use TwigTrait;
 
     public function getHomePage (ServerRequestInterface $request){
-
+        return $this->renderHtml('home.html.twig');
+        //dump($request);
     }
     
 }

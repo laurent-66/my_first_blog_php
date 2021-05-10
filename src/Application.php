@@ -54,7 +54,8 @@ class Application
                 echo "MethodNotAllowedException";
             } catch (Exception $e){
                 //TODO Create exception controller to return internal servor error
-                echo "Exception";
+                echo $e->getMessage();
+
             }
     }
 
