@@ -1,0 +1,81 @@
+[
+
+    {
+        "name": "accueil",
+        "path": "/",
+        "_controller":"Application\\Controllers\\DefaultController",
+        "_method": "getHomePage",
+        "_methods": ["GET"]
+    },
+    {
+        "name": "inscription",
+        "path": "/inscription",
+        "_controller":"Application\\Controllers\\SecurityController",
+        "_method": "register",
+        "_methods": ["GET", "POST"]
+    },
+    {
+        "name": "connexion",
+        "path": "/se-connecter",
+        "_controller":"Application\\Controllers\\SecurityController",
+        "_method": "login",
+        "_methods": ["GET", "POST"]
+    },
+    {
+        "name": "blogs",
+        "path": "/blogs",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "getAllBlogs",
+        "_methods": ["GET"]
+    },
+    {
+        "name": "blog",
+        "path": "/blogs/{id}",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "getBlog",
+        "_methods": ["GET"]
+    },
+    {
+        "name": "newBlog",
+        "path": "/blogs/new",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "createBlog",
+        "_methods": ["GET", "POST"]
+    },
+    {
+        "name": "updateBlog",
+        "path": "/blogs/{id}/edit",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "createBlog",
+        "_methods": ["GET", "POST"]
+    },
+    {
+        "name": "comments",
+        "path": "/blog",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "getAllComments",
+        "_methods": ["GET"]
+    },
+    {
+        "name": "comment",
+        "path": "/blog",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "getComment",
+        "_methods": ["GET"]
+    },
+    {
+        "name": "newComment",
+        "path": "/blog",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "createComment",
+        "_methods": ["GET", "POST"]
+    },
+    {
+        "name": "updateComment",
+        "path": "/blog",
+        "_controller":"Application\\Controllers\\BlogPostController",
+        "_method": "updateComment",
+        "_methods": ["GET", "POST"]
+    }
+
+]

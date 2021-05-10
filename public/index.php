@@ -1,19 +1,18 @@
 <?php
 
-use GuzzleHttp\Psr7\ServerRequest;
+require_once '../vendor/autoload.php';
 
-require_once '/../vendor/autoload.php';
+use GuzzleHttp\Psr7\ServerRequest;
+use Application\App\Http\Request;
+use Application\App\Http\RedirectResponseHttp;
+use Application\Application;
 
 session_start();
 
-//utilisation de la class ServerRequest
-$request = ServerRequest::fromGlobals();
-
-//on peut personnalisé également par une classe fille de ServerRequest
-
-
+//$request = ServerRequest::fromGlobals();
+$request = Request::fromGlobals();
+$application = new Application();
+echo $application->run($request);
 
 
-echo("je suis la page d'accueil de php") ;
-echo("test !");
-?>
+
