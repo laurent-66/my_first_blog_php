@@ -4,18 +4,18 @@ namespace Application\Controllers;
 use Application\App\Http\ParametersBag;
 use Psr\Http\Message\ServerRequestInterface;
 use Application\App\Http\ResponseHttp;
+use Application\Application\Templating\TwigTrait;
 
 class SecurityController
 {
+    use TwigTrait;
+    
     public function login (ServerRequestInterface $request, ParametersBag $bag){
-        var_dump($request);
-        var_dump($bag);
-        $response = new ResponseHttp("test");
-        return $response->send();
+        dump($request);
     }
 
     public function register (ServerRequestInterface $request){
-        var_dump($request);
+        dump($request);
     }
 
 

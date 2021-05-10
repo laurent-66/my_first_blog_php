@@ -16,7 +16,7 @@ class RedirectResponseHttp implements ResponseHttpInterface
         $this->uriToRedirect = $uriToRedirect;
     }
 
-    public function send(): PumpStream|Stream|StreamInterface|null
+    public function send()
     {
         header( 'location: '.$this->uriToRedirect);
     }

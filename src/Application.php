@@ -26,14 +26,11 @@ class Application
     {
         try{
             $context = new RequestContext();
-            $url = $context->setPathInfo($request->getUri()->getPath());
+            $context->setPathInfo($request->getUri()->getPath());
             $matcher = new UrlMatcher($this->routeCollection, $context);
             $parameters = $matcher->match($context->getPathInfo());
-            var_dump($parameters);
             $controller = $parameters['_controller'];
-            var_dump($controller);
             $method = $parameters['_method'];
-
             unset($parameters['_controller']);
             unset($parameters['_method']);
             unset($parameters['_route']);

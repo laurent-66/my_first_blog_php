@@ -4,31 +4,59 @@ namespace Application\Controllers;
 use Psr\Http\Message\ServerRequestInterface;
 use Application\App\Http\RedirectResponseHttp;
 use Application\App\Http\ResponseHttp;
+use Application\Application\Templating\TwigTrait;
 
 class BlogPostController
 {
+    use TwigTrait;
+    
     public function getAllBlogs (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp('/blogs');
-        $response->send();
+        dump($request);
     }
 
     public function getBlog (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp("/blogs/{id}");
-        $response->send();
+
     }
 
     public function createBlog (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp('/blogs/new');
-        $response->send();
+
     }
 
     public function updateBlog (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp('/blogs/{id}/edit');
-        $response->send();
+
     }
 
     public function deleteBlog (ServerRequestInterface $request){
-        var_dump($request);
+
     }
+
+    public function getAllComments (ServerRequestInterface $request){
+
+    }
+
+    public function getComment (ServerRequestInterface $request){
+
+    }
+
+    public function createComment (ServerRequestInterface $request){
+
+    }
+
+    public function updateComment (ServerRequestInterface $request){
+
+    }
+
+    public function deleteComment (ServerRequestInterface $request){
+
+    }
+
+
+
+
+
+
+
+
+
 
 }

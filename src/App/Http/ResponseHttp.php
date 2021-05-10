@@ -20,7 +20,7 @@ class ResponseHttp implements ResponseHttpInterface
         $this->additionnalHeaders = $additionnalHeaders;
     }
 
-    public function send(): PumpStream|Stream|StreamInterface|null {
+    public function send() {
         $response = new Response(
             $this->statusCode,
             array_merge(

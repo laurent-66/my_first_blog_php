@@ -2,7 +2,7 @@
 
     {
         "name": "accueil",
-        "path": "/accueil",
+        "path": "/",
         "_controller":"Application\\Controllers\\DefaultController",
         "_method": "getHomePage",
         "_methods": ["GET"]
@@ -52,28 +52,28 @@
     {
         "name": "comments",
         "path": "/blog",
-        "_controller":"Application\\Controllers\\CommentController",
+        "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "getAllComments",
         "_methods": ["GET"]
     },
     {
         "name": "comment",
         "path": "/blog",
-        "_controller":"Application\\Controllers\\CommentController",
+        "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "getComment",
         "_methods": ["GET"]
     },
     {
         "name": "newComment",
         "path": "/blog",
-        "_controller":"Application\\Controllers\\CommentController",
+        "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "createComment",
         "_methods": ["GET", "POST"]
     },
     {
         "name": "updateComment",
         "path": "/blog",
-        "_controller":"Application\\Controllers\\CommentController",
+        "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "updateComment",
         "_methods": ["GET", "POST"]
     }

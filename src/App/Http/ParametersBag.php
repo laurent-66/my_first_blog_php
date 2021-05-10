@@ -4,7 +4,7 @@ namespace Application\App\Http;
 
 class ParametersBag
 {
-    protected array $parameters = [];
+    protected $parameters = [];
 
     public function getParameters(): array
     {
