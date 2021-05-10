@@ -1,8 +1,4 @@
-<?php 
 
-    namespace template\footer;
-
-?>
 
 <footer>
     <div class="container-fluid bg-dark m-0 p-0">
