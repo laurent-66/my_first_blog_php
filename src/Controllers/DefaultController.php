@@ -8,8 +8,19 @@ class DefaultController
 {
     public function getHomePage (ServerRequestInterface $request){
 
-        $response = new RedirectResponseHttp('/se-connecter');
+        $response = new RedirectResponseHttp('/accueil');
         $response->send();
 
     }
+
+
+
+
+
+
+
+
+
+
+    
 }

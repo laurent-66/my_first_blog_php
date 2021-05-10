@@ -9,9 +9,10 @@ use Application\Application;
 
 session_start();
 
-$request = ServerRequest::fromGlobals();
+//$request = ServerRequest::fromGlobals();
+$request = Request::fromGlobals();
 $application = new Application();
-$test = $application->run($request);
-var_dump($test);
+echo $application->run($request);
+
 
 

@@ -24,13 +24,14 @@ class Application
 
     public function run(ServerRequestInterface $request)
     {
-
         try{
             $context = new RequestContext();
-            $context->setPathInfo($request->getUri()->getPath());
+            $url = $context->setPathInfo($request->getUri()->getPath());
             $matcher = new UrlMatcher($this->routeCollection, $context);
             $parameters = $matcher->match($context->getPathInfo());
+            var_dump($parameters);
             $controller = $parameters['_controller'];
+            var_dump($controller);
             $method = $parameters['_method'];
 
             unset($parameters['_controller']);
@@ -39,24 +40,25 @@ class Application
 
             $callable = [new $controller(), $method];
             $bagParams = new ParametersBag();
+
             foreach ($parameters as $key => $value){
                 $param = new Parameter($key,$value);
                 $bagParams->addParameter($param);
-
             }
 
-            return call_user_func_array($callable, [$request, bagParams]);
+            return call_user_func_array($callable, [$request, $bagParams]);
+        
 
-        } catch (ResourceNotFoundException $e) {
-            //TODO Create exception controller to return not found page
-            echo "ResourceNotFoundException";
-        } catch (MethodNotAllowedException $e){
-            //TODO Create exception controller to return not allowed method http
-            echo "MethodNotAllowedException";
-        } catch (Exception $e){
-            //TODO Create exception controller to return internal servor error
-            echo "Exception";
-        }
+            } catch (ResourceNotFoundException $e) {
+                //TODO Create exception controller to return not found page
+                echo "ResourceNotFoundException";
+            } catch (MethodNotAllowedException $e){
+                //TODO Create exception controller to return not allowed method http
+                echo "MethodNotAllowedException";
+            } catch (Exception $e){
+                //TODO Create exception controller to return internal servor error
+                echo "Exception";
+            }
     }
 
     private function init()

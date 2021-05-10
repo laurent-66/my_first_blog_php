@@ -30,7 +30,7 @@
     },
     {
         "name": "blog",
-        "path": "/blogs/:id",
+        "path": "/blogs/{id}",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "getBlog",
         "_methods": ["GET"]
