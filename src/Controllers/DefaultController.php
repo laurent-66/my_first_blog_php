@@ -12,7 +12,6 @@ class DefaultController
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
         return $this->renderHtml('hometest.html.twig');
-
     }
     
 }

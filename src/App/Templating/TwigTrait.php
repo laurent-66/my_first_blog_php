@@ -8,12 +8,12 @@ use Application\App\Http\ResponseHttp;
 
 trait TwigTrait
 {
-    protected Environment $templating;
+    protected $templating;
 
     public function renderHtml(string $template,array $parameters= [])
     {
         $response = new ResponseHttp(
-            $this->templating-> render($template, $parameters)
+            $this->templating->render($template, $parameters)
         );
 
         return $response->send();

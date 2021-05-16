@@ -13,6 +13,4 @@ session_start();
 $request = Request::fromGlobals();
 $application = new Application();
 
-$response = $application->run($request);
-
-dump($response->__toString());
+echo $application->run($request);
