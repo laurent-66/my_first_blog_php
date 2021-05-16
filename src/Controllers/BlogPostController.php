@@ -36,6 +36,7 @@ class BlogPostController
 
     public function deleteComment (ServerRequestInterface $request){
         dump($request);
+
     }
 
 
