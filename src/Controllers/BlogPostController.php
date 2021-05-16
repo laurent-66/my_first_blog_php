@@ -15,39 +15,27 @@ class BlogPostController
     }
 
     public function getBlog (ServerRequestInterface $request){
-
-    }
-
-    public function createBlog (ServerRequestInterface $request){
-
-    }
-
-    public function updateBlog (ServerRequestInterface $request){
-
-    }
-
-    public function deleteBlog (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function getAllComments (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function getComment (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function createComment (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function updateComment (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function deleteComment (ServerRequestInterface $request){
-
+        dump($request);
     }
 
 
