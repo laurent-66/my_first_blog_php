@@ -43,7 +43,9 @@ class Application
                 $bagParams->addParameter($param);
             }
 
-            return call_user_func_array($callable, [$request, $bagParams]);
+            $response = call_user_func_array($callable, [$request, $bagParams]);
+
+            return $response;
         
 
             } catch (ResourceNotFoundException $e) {
@@ -55,8 +57,8 @@ class Application
             } catch (Exception $e){
                 //TODO Create exception controller to return internal servor error
                 echo $e->getMessage();
-
             }
+
     }
 
     private function init()

@@ -12,14 +12,12 @@ class SecurityController
     
     public function login (ServerRequestInterface $request, ParametersBag $bag){
         dump($request);
-        echo "login";
+        return $this->renderHtml('login.html.twig');
     }
 
-    public function register (ServerRequestInterface $request){
+    public function register (ServerRequestInterface $request, ParametersBag $bag){
         dump($request);
-        echo "register";
+        return $this->renderHtml('register.html.twig');
     }
-
-
 
 }
