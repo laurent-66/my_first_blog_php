@@ -391,7 +391,6 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
-
             "name": "symfony/deprecation-contracts",
             "version": "v2.4.0",
             "source": {
@@ -618,7 +617,6 @@
             "time": "2021-01-22T09:19:47+00:00"
         },
         {
-
             "name": "symfony/polyfill-php80",
             "version": "v1.22.1",
             "source": {
@@ -647,7 +645,6 @@
             },
             "autoload": {
                 "psr-4": {
-
                     "Symfony\\Polyfill\\Php80\\": ""
                 },
                 "files": [
@@ -756,7 +753,6 @@
             ],
             "authors": [
                 {
-
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
                 },

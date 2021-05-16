@@ -12,42 +12,30 @@ class BlogPostController
     
     public function getAllBlogs (ServerRequestInterface $request){
         dump($request);
-        echo "Liste des blogs";
     }
 
     public function getBlog (ServerRequestInterface $request){
-        echo "un Blog";
-    }
-
-    public function createBlog (ServerRequestInterface $request){
-        echo "new Blog";
-    }
-
-    public function updateBlog (ServerRequestInterface $request){
-        echo "udapte Blog";
-    }
-
-    public function deleteBlog (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function getAllComments (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function getComment (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function createComment (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function updateComment (ServerRequestInterface $request){
-
+        dump($request);
     }
 
     public function deleteComment (ServerRequestInterface $request){
+        dump($request);
 
     }
 

@@ -13,6 +13,7 @@ class SecurityController
     public function login (ServerRequestInterface $request, ParametersBag $bag){
         dump($request);
         echo "login";
+
     }
 
     public function register (ServerRequestInterface $request){
