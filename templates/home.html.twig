@@ -1,7 +1,6 @@
-<?php
-ob_start();
-$title = 'Accueil';
-?>
+{% extends "template.html.twig" %}
+{% block title %}"Accueil"{% endblock %}
+{% block body %} 
 <div class="container-fluid" id="home">
     <div class="row">
         <div class="heading col-sm-12 col-md-6 col-lg-6">
@@ -67,8 +66,4 @@ $title = 'Accueil';
         </div>
     </div>
 </div>
-<?php
-
-$content = ob_get_clean();
-
-require('./template.php');
+{% endblock %}

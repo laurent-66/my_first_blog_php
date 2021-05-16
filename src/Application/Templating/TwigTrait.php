@@ -4,15 +4,17 @@ namespace Application\Application\Templating;
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Application\App\Http\ResponseHttp;
 
 trait TwigTrait
 {
-    protected Environment $templating;
+    protected $templating;
 
     public function renderHtml(string $template,array $parameters= [])
     {
+        $this->configureTwig();
         $response = new ResponseHttp(
-            $this->templating-> render($template, $parameters)
+            $this->templating->render($template, $parameters)
         );
 
         return $response->send();
@@ -28,7 +30,6 @@ trait TwigTrait
                 'debug' => true,
             ]
 
-
-        )
+        );
     }
 }

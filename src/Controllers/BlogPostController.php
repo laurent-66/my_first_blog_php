@@ -12,18 +12,19 @@ class BlogPostController
     
     public function getAllBlogs (ServerRequestInterface $request){
         dump($request);
+        echo "Liste des blogs";
     }
 
     public function getBlog (ServerRequestInterface $request){
-
+        echo "un Blog";
     }
 
     public function createBlog (ServerRequestInterface $request){
-
+        echo "new Blog";
     }
 
     public function updateBlog (ServerRequestInterface $request){
-
+        echo "udapte Blog";
     }
 
     public function deleteBlog (ServerRequestInterface $request){
