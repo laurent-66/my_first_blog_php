@@ -1,15 +1,35 @@
 {% extends "template.html.twig" %}
 {% block title %}Blog{% endblock %}
 {% block body %} 
-<div class="container-fluid">
-    <h3>{{title-blog}}</h3>
-    <div class="row mx-0 my-0 p-3">
-        <div class="col-12 mx-auto my-0">
-            <img  src="./images/laurent.jpg" alt="">
-        </div>
-        <div class="col-12 mx-0 my-0">
-            <p>{{content-text-blog}}</p>
-        </div>
-    </div>
-</div>    
+<div class="container">
+    <section>
+        <h3>{{title-blog}}</h3><br />
+            <div class="row">
+                <div class="col-12 ml-50px my-0">
+                    <div><img  src="./images/me2.jpg" alt=""></div>
+                </div>
+            </div>
+            <div class="row my-5" id="objectif">
+                <div class="col-12 mx-auto my-0">
+                    <p>{{content-blog}}</p>
+                    <p><bold>Dernière mise à jour: </bold><span><i>{{date-blog}}</i></span></p>
+                </div>
+            </div>
+
+            <h4><bold>Commentaires</bold></h4><br/>
+            <div class="commentaire shadow" style="border: 1px solid grey;">
+                <p class="mx-3 my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.In dignissim mollis lorem at viverra</p>
+            </div>
+            <div class="btn btn-success my-5">Ajouter un commentaire</div>
+            <div class="nouveau commentaire">
+                <form>
+                    <div class="form-group">
+                        <label for="comment">Nouveau commentaire :</label>
+                        <textarea class="form-control rounded-0" id="comment" rows="3"placeholder="Veuillez écrire votre texte ici."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyez</button>
+                </form>
+            </div>
+    </section>
+</div>   
 {% endblock %}

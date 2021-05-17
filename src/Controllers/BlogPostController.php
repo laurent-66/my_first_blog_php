@@ -12,20 +12,19 @@ class BlogPostController
     use TwigTrait;
     
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
-        dump($request);
-        echo "Liste des blogs";
+        return $this->renderHtml('blogs-list.html.twig');
     }
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
-        echo "un Blog";
+        return $this->renderHtml('blog.html.twig');
     }
 
     public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
-        echo "new Blog";
+        return $this->renderHtml('newBlog.html.twig');
     }
 
     public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
-        echo "udapte Blog";
+        return $this->renderHtml('updateBlog.html.twig');
     }
 
     public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){

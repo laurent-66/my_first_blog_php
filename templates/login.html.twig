@@ -9,9 +9,9 @@
     <div class="container">
         <div class="row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto">
             <div id="box_connexion" class="col-12 col-sm-12 col-md-12 text-center rounded">
-                <form class="form-signin">
+                <form class="form-signin" action="connexionController.php" method="post">
                     <label for="identifiant" class="sr-only">Identifiant</label>
-                    <input type="text" id="identifiant" class="form-control" placeholder="Identifiant" required autofocus>
+                    <input type="text" id="identifiant" class="form-control mt-3" placeholder="Identifiant" required autofocus>
                     <label for="inputPassword" class="sr-only">Mot de passe</label>
                     <input type="password" id="inputPassword" class="form-control my-3" placeholder="Mot de passe" required>
                     <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Se connecter</button>

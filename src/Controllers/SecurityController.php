@@ -11,12 +11,10 @@ class SecurityController
     use TwigTrait;
     
     public function login (ServerRequestInterface $request, ParametersBag $bag){
-        dump($request);
         return $this->renderHtml('login.html.twig');
     }
 
     public function register (ServerRequestInterface $request, ParametersBag $bag){
-        dump($request);
         return $this->renderHtml('register.html.twig');
     }
 
