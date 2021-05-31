@@ -21,9 +21,6 @@ class SecurityController
     }
 
 
-
-
-
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
         //création d'un password provisoire
@@ -58,7 +55,6 @@ class SecurityController
     }
 
 
-
     public function register (ServerRequestInterface $request, ParametersBag $bag)
     {
         $error = ''; 
@@ -86,5 +82,6 @@ class SecurityController
         return $this->renderHtml('register.html.twig',['error' => $error]);
 
     }
+
 
 }

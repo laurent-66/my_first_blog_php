@@ -12,5 +12,5 @@ session_start();
 //$request = ServerRequest::fromGlobals();
 $request = Request::fromGlobals();
 $application = new Application();
-
 echo $application->run($request);
+

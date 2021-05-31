@@ -38,6 +38,7 @@
         "name": "newBlog",
         "path": "/blogs/admin/new",
         "_controller":"Application\\Controllers\\AdminController",
+
         "_method": "createBlog",
         "_methods": ["GET", "POST"]
     },
