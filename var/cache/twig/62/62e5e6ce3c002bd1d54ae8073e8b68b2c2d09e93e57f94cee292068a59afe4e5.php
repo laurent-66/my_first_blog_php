@@ -77,8 +77,8 @@ class __TwigTemplate_218c82a680538d3dfa087b6eb04925cc00d0c21ca0d97a5206f540a2fe7
         <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
             <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
                 <form class=\"form-signin\" method=\"POST\">
-                    <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\">
+                    <label for=\"email\" class=\"sr-only\">Identifiant</label>
+                    <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"email\">
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
                     <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Se connecter</button>
@@ -124,8 +124,8 @@ class __TwigTemplate_218c82a680538d3dfa087b6eb04925cc00d0c21ca0d97a5206f540a2fe7
         <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
             <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
                 <form class=\"form-signin\" method=\"POST\">
-                    <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\">
+                    <label for=\"email\" class=\"sr-only\">Identifiant</label>
+                    <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"email\">
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
                     <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Se connecter</button>

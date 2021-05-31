@@ -12,9 +12,9 @@ class AbstractRepository
     {
         try {
             $this->database = new PDODatabase(
-                'mysql:host=127.0.0.1;dbname=myblogphp;charset=utf8',
+                'mysql:host=localhost:3306;dbname=myblogphp;charset=utf8',
                 'root',
-                '',
+                ''
             );
         } catch (\Exception $e) {
             dump($e);

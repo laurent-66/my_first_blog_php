@@ -43,14 +43,14 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
         echo "Accueil";
     }
 
-    // line 3
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -135,13 +135,15 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
 
     public function getDebugInfo()
     {
-        return array (  54 => 3,  47 => 2,  36 => 1,);
+        return array (  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"template.html.twig\" %}
+
 {% block title %}Accueil{% endblock %}
+
 {% block body %} 
 <div class=\"container-fluid\" id=\"home\">
     <div class=\"row\">
