@@ -78,8 +78,8 @@ class __TwigTemplate_c6ea609e751a03eae939cc69d62f1b8a418a6e9403cfc26d7c72341847b
         // line 17
         echo "
                 <form class=\"form-signin\" method=\"post\">
-                    <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" autofocus>
+                    <label for=\"email\" class=\"sr-only\">Identifiant</label>
+                    <input type=\"email\" id=\"identifiant\" name=\"email\" class=\"form-control mt-3\" placeholder=\"Votre email\" autofocus>
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
                     <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <label for=\"confirmPassword\" class=\"sr-only\">Confirmation</label>
@@ -128,8 +128,8 @@ class __TwigTemplate_c6ea609e751a03eae939cc69d62f1b8a418a6e9403cfc26d7c72341847b
                 {% endif %}
 
                 <form class=\"form-signin\" method=\"post\">
-                    <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" autofocus>
+                    <label for=\"email\" class=\"sr-only\">Identifiant</label>
+                    <input type=\"email\" id=\"identifiant\" name=\"email\" class=\"form-control mt-3\" placeholder=\"Votre email\" autofocus>
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
                     <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <label for=\"confirmPassword\" class=\"sr-only\">Confirmation</label>
