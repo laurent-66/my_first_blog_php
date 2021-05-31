@@ -4,7 +4,9 @@ namespace Application\Application\Templating;
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-use Application\App\Http\ResponseHttp;
+
+use Application\Application\Http\ResponseHttp;
+
 
 trait TwigTrait
 {
@@ -22,11 +24,11 @@ trait TwigTrait
 
     private function configureTwig()
     {
-        $loader = new FilesystemLoader('/../../../templates');
+        $loader = new FilesystemLoader(__DIR__.'/../../../templates');
         $this->templating = new Environment(
             $loader,
             [
-                'cache' => '/../../../var/cache/twig',
+                'cache' => __DIR__.'/../../../var/cache/twig',
                 'debug' => true,
             ]
 

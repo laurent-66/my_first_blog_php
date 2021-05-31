@@ -9,8 +9,8 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
-use Application\App\Http\Parameter;
-use Application\App\Http\ParametersBag;
+use Application\Application\Http\Parameter;
+use Application\Application\Http\ParametersBag;
 
 
 class Application
@@ -43,7 +43,9 @@ class Application
                 $bagParams->addParameter($param);
             }
 
-            return call_user_func_array($callable, [$request, $bagParams]);
+            $response = call_user_func_array($callable, [$request, $bagParams]);
+
+            return $response;
         
 
             } catch (ResourceNotFoundException $e) {
@@ -58,6 +60,7 @@ class Application
                 echo $e->getMessage();
 
             }
+
     }
 
     private function init()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\App\Http;
+namespace Application\Application\Http;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7\PumpStream;

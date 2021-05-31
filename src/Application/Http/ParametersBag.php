@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\App\Http;
+namespace Application\Application\Http;
 
 class ParametersBag
 {
