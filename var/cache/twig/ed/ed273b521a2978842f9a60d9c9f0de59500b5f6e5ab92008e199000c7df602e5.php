@@ -88,7 +88,7 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
                         avec Openclassrooms\"</p>
         </div>
         <div class=\"col-sm-12 col-md-6 col-lg-6 profile-picture\">
-            <img src=\"../public/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
+            <img src=\"public/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
         </div>
     </div>    
     <div class=\"row\">
@@ -188,7 +188,7 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
                         avec Openclassrooms\"</p>
         </div>
         <div class=\"col-sm-12 col-md-6 col-lg-6 profile-picture\">
-            <img src=\"../public/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
+            <img src=\"public/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
         </div>
     </div>    
     <div class=\"row\">
