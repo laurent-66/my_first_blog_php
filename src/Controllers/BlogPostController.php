@@ -15,6 +15,7 @@ class BlogPostController
         return $this->renderHtml('blogs-list.html.twig');
     }
 
+
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
         return $this->renderHtml('blog.html.twig');
     }
@@ -48,6 +49,7 @@ class BlogPostController
     }
 
     public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
+
 
     }
 

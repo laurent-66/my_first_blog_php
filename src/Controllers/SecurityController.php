@@ -11,6 +11,7 @@ use Application\Repository\UserRepository;
 class SecurityController
 {
     use TwigTrait;
+
     protected $userRepository;
 
     public function __construct()
@@ -52,6 +53,7 @@ class SecurityController
 
         }
         return $this->renderHtml('login.html.twig', ['error' => $error]);
+
     }
 
 
