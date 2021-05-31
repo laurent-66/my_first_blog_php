@@ -1,5 +1,5 @@
 <?php
-namespace Application\App\Http;
+namespace Application\Application\Http;
 
 use GuzzleHttp\Psr7\ServerRequest;
 
