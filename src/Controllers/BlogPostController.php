@@ -11,6 +11,7 @@ class BlogPostController
 {
     use TwigTrait;
     
+
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
         return $this->renderHtml('blogs-list.html.twig');
     }
@@ -45,6 +46,7 @@ class BlogPostController
     }
 
     public function updateComment (ServerRequestInterface $request, ParametersBag $bag){
+
 
     }
 

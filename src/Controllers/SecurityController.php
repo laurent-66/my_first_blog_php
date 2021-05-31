@@ -17,6 +17,7 @@ class SecurityController
     public function __construct()
     {
         $this->userRepository = new UserRepository;
+
     }
 
 
