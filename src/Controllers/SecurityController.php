@@ -19,26 +19,19 @@ class SecurityController
         $this->userRepository = new UserRepository;
     }
 
-
-
-
-
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
         //création d'un password provisoire
-
-        dump(password_hash('123456', PASSWORD_DEFAULT));
-
         $error = ''; 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
-            if (  (strlen( trim($dataSubmitted['identifiant']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
+            if (  (strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
                 //TODO Create error
                 $error = "L'identifiant et le mot de passe sont requis.";
             } else {
 
                 $user = $this->userRepository->findByEmail($dataSubmitted['email']);
-                if(!$user || !password_verify($dataSubmitted['password'], $user['password'])) {
+                if(!$user || !password_verify($dataSubmitted['inputPassword'], $user['password'])) {
                     $error = "Identifiants invalides";
                 } else { 
                     $_SESSION['user'] = $user;
@@ -57,16 +50,14 @@ class SecurityController
     }
 
 
-
     public function register (ServerRequestInterface $request, ParametersBag $bag)
     {
         $error = ''; 
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
-            if ((strlen( trim($dataSubmitted['identifiant']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 || strlen(trim($dataSubmitted['confirmPassword'])) === 0 ) {
+            if ((strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 || strlen(trim($dataSubmitted['confirmPassword'])) === 0 ) {
 
-                //TODO Create error
                 $error = "L'identifiant, le mot de passe et la confirmation sont requis.";
 
 
