@@ -4,11 +4,14 @@ namespace Application\Controllers;
 use Application\Application\Http\ParametersBag;
 use Application\Application\Http\RedirectResponseHttp;
 use Psr\Http\Message\ServerRequestInterface;
-use Application\App\Http\ResponseHttp;
+use Application\Application\Http\ResponseHttp;
 use Application\Application\Templating\TwigTrait;
 use Application\Repository\UserRepository;
+use Application\Repository\AbstractRepository;
+use Application\Controllers\AbstractController;
 
-class SecurityController
+
+class SecurityController extends AbstractController
 {
     use TwigTrait;
 
@@ -25,26 +28,27 @@ class SecurityController
     {   
         //création d'un password provisoire
 
-        dump(password_hash('123456', PASSWORD_DEFAULT));
+ 
 
         $error = ''; 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
-            if (  (strlen( trim($dataSubmitted['identifiant']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
+            if (  (strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
                 //TODO Create error
                 $error = "L'identifiant et le mot de passe sont requis.";
             } else {
 
                 $user = $this->userRepository->findByEmail($dataSubmitted['email']);
-                if(!$user || !password_verify($dataSubmitted['password'], $user['password'])) {
+                if(!$user || !password_verify($dataSubmitted['inputPassword'], $user['password'])) {
+                    var_dump('toto');
+                    var_dump($user);
+                    exit;
                     $error = "Identifiants invalides";
                 } else { 
                     $_SESSION['user'] = $user;
                     $response = new RedirectResponseHttp('/');
-                    $response->send();
+                    return $response->send();
                 }
-
-
 
                 dump($user);
             }
@@ -61,9 +65,8 @@ class SecurityController
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
-            if ((strlen( trim($dataSubmitted['identifiant']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 || strlen(trim($dataSubmitted['confirmPassword'])) === 0 ) {
+            if ((strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 || strlen(trim($dataSubmitted['confirmPassword'])) === 0 ) {
 
-                //TODO Create error
                 $error = "L'identifiant, le mot de passe et la confirmation sont requis.";
 
 

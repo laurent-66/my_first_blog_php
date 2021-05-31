@@ -1,12 +1,16 @@
 <?php 
 namespace Application\Controllers;
 
+use Application\Controllers\AbstractController;
 use Psr\Http\Message\ServerRequestInterface;
-use Application\App\Http\RedirectResponseHttp;
-use Application\App\Http\ResponseHttp;
+use Application\Application\Http\RedirectResponseHttp;
+use Application\Application\Http\ResponseHttp;
+use Application\Application\Templating\TwigTrait;
 
-class CommentController
+class CommentController extends AbstractController
 {
+    use TwigTrait;
+
     public function getAllComments (ServerRequestInterface $request){
         $response = new RedirectResponseHttp("/blogs/{id}");
         $response->send();
