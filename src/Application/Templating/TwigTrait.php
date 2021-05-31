@@ -4,7 +4,7 @@ namespace Application\Application\Templating;
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-use Application\App\Http\ResponseHttp;
+use Application\Application\Http\ResponseHttp;
 
 trait TwigTrait
 {

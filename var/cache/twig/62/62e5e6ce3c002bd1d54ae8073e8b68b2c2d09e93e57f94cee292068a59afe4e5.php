@@ -60,14 +60,27 @@ class __TwigTemplate_218c82a680538d3dfa087b6eb04925cc00d0c21ca0d97a5206f540a2fe7
         <h2>Connexion</h2>
     </div>
     <div class=\"blue-divider\"></div>
-    <div class=\"container\">
+    ";
+        // line 9
+        if (($context["error"] ?? null)) {
+            // line 10
+            echo "        <div class=\"alert alert-danger\" role=\"alert\">
+            ";
+            // line 11
+            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+            echo "
+        </div>
+    ";
+        }
+        // line 14
+        echo "    <div class=\"container\">
         <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
             <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-                <form class=\"form-signin\" action=\"connexionController.php\" method=\"post\">
+                <form class=\"form-signin\" method=\"POST\">
                     <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" required autofocus>
+                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\">
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
-                    <input type=\"password\" id=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required>
+                    <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Se connecter</button>
                 </form>
             </div>
@@ -89,7 +102,7 @@ class __TwigTemplate_218c82a680538d3dfa087b6eb04925cc00d0c21ca0d97a5206f540a2fe7
 
     public function getDebugInfo()
     {
-        return array (  54 => 3,  47 => 2,  36 => 1,);
+        return array (  76 => 14,  70 => 11,  67 => 10,  65 => 9,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -102,14 +115,19 @@ class __TwigTemplate_218c82a680538d3dfa087b6eb04925cc00d0c21ca0d97a5206f540a2fe7
         <h2>Connexion</h2>
     </div>
     <div class=\"blue-divider\"></div>
+    {% if error %}
+        <div class=\"alert alert-danger\" role=\"alert\">
+            {{ error }}
+        </div>
+    {% endif %}
     <div class=\"container\">
         <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
             <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-                <form class=\"form-signin\" action=\"connexionController.php\" method=\"post\">
+                <form class=\"form-signin\" method=\"POST\">
                     <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" required autofocus>
+                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\">
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
-                    <input type=\"password\" id=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required>
+                    <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Se connecter</button>
                 </form>
             </div>

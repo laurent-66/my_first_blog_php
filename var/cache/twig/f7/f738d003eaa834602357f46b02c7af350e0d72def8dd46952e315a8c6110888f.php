@@ -63,13 +63,27 @@ class __TwigTemplate_c6ea609e751a03eae939cc69d62f1b8a418a6e9403cfc26d7c72341847b
     <div class=\"container\">
         <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
             <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-                <form class=\"form-signin\" action=\"connexionController.php\" method=\"post\">
+                ";
+        // line 12
+        if (($context["error"] ?? null)) {
+            // line 13
+            echo "                    <div class=\"alert alert-danger\" role=\"alert\">
+                        ";
+            // line 14
+            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+            echo "
+                    </div>
+                ";
+        }
+        // line 17
+        echo "
+                <form class=\"form-signin\" method=\"post\">
                     <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" required autofocus>
+                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" autofocus>
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
-                    <input type=\"password\" id=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required>
+                    <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <label for=\"confirmPassword\" class=\"sr-only\">Confirmation</label>
-                    <input type=\"password\" id=\"confirmPassword\" class=\"form-control my-3\" placeholder=\"Confirmer votre mot de passe\" required>
+                    <input type=\"password\" id=\"confirmPassword\" name=\"confirmPassword\" class=\"form-control my-3\" placeholder=\"Confirmer votre mot de passe\">
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Valider</button>
                 </form>
             </div>
@@ -91,7 +105,7 @@ class __TwigTemplate_c6ea609e751a03eae939cc69d62f1b8a418a6e9403cfc26d7c72341847b
 
     public function getDebugInfo()
     {
-        return array (  54 => 3,  47 => 2,  36 => 1,);
+        return array (  79 => 17,  73 => 14,  70 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -107,13 +121,19 @@ class __TwigTemplate_c6ea609e751a03eae939cc69d62f1b8a418a6e9403cfc26d7c72341847b
     <div class=\"container\">
         <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
             <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-                <form class=\"form-signin\" action=\"connexionController.php\" method=\"post\">
+                {% if error %}
+                    <div class=\"alert alert-danger\" role=\"alert\">
+                        {{ error }}
+                    </div>
+                {% endif %}
+
+                <form class=\"form-signin\" method=\"post\">
                     <label for=\"identifiant\" class=\"sr-only\">Identifiant</label>
-                    <input type=\"text\" id=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" required autofocus>
+                    <input type=\"text\" id=\"identifiant\" name=\"identifiant\" class=\"form-control mt-3\" placeholder=\"Identifiant\" autofocus>
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
-                    <input type=\"password\" id=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required>
+                    <input type=\"password\" id=\"inputPassword\" name=\"inputPassword\" class=\"form-control my-3\" placeholder=\"Mot de passe\">
                     <label for=\"confirmPassword\" class=\"sr-only\">Confirmation</label>
-                    <input type=\"password\" id=\"confirmPassword\" class=\"form-control my-3\" placeholder=\"Confirmer votre mot de passe\" required>
+                    <input type=\"password\" id=\"confirmPassword\" name=\"confirmPassword\" class=\"form-control my-3\" placeholder=\"Confirmer votre mot de passe\">
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Valider</button>
                 </form>
             </div>
