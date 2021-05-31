@@ -17,4 +17,19 @@ class UserRepository extends AbstractRepository
         $statement = $this->database->request($query, [':email' => $email]);
         return $statement->fetch();
     }
+
+
+    public function disconnect(string $email)
+    {
+        $query = "SELECT * FROM {$this->getTableName()} WHERE email = :email";
+        $statement = $this->database->request($query, [':email' => $email]);
+        return $statement->fetch();
+    }
+
+
+
+
+
+
+
 }

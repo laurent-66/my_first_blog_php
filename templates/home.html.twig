@@ -4,6 +4,16 @@
 
 {% block body %} 
 <div class="container-fluid" id="home">
+{% if validate %}
+    <div class="alert alert-success" role="alert">
+        {{ validate }}
+    </div>
+{% endif %}
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+{% endif %}
     <div class="row">
         <div class="heading col-sm-12 col-md-6 col-lg-6">
             <h1>Laurent LESAGE</h1></br>
@@ -12,7 +22,7 @@
                         avec Openclassrooms"</p>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 profile-picture">
-            <img src="../src/images/laurent.jpg" alt="photo laurent" class="rounded-circle w-50">
+            <img src="../public/images/laurent.jpg" alt="photo laurent" class="rounded-circle w-50">
         </div>
     </div>    
     <div class="row">
@@ -25,7 +35,7 @@
                     </p>
                 </div>
             </div>
-            <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
+            <a href='../../public/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6">
             <form id="contact-form border border-white rounded" method="post" action="" role="form">
