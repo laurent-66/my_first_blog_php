@@ -1,16 +1,15 @@
 <?php 
 namespace Application\Controllers;
 
+use Application\Controllers\AbstractController;
 use Psr\Http\Message\ServerRequestInterface;
-use Application\App\Http\RedirectResponseHttp;
-use Application\App\Http\ResponseHttp;
-use Application\App\Http\ParametersBag;
+use Application\Application\Http\RedirectResponseHttp;
+use Application\Application\Http\ResponseHttp;
+use Application\Application\Http\ParametersBag;
 use Application\Application\Templating\TwigTrait;
 
-class BlogPostController
+class BlogPostController extends AbstractController
 {
-    use TwigTrait;
-    
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
         return $this->renderHtml('blogs-list.html.twig');
     }

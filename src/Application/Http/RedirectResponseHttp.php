@@ -18,7 +18,6 @@ class RedirectResponseHttp implements ResponseHttpInterface
 
     public function send()
     {
-        header( 'location: '.$this->uriToRedirect);
+        header( 'Location: '.$this->uriToRedirect);
     }
-
 }

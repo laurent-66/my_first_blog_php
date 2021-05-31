@@ -2,8 +2,8 @@
 namespace Application\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface;
-use Application\App\Http\RedirectResponseHttp;
-use Application\App\Http\ResponseHttp;
+use Application\Application\Http\RedirectResponseHttp;
+use Application\Application\Http\ResponseHttp;
 use Application\Application\Templating\TwigTrait;
 
 class AdminController

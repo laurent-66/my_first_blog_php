@@ -4,11 +4,14 @@ namespace Application\Controllers;
 use Application\Application\Http\ParametersBag;
 use Application\Application\Http\RedirectResponseHttp;
 use Psr\Http\Message\ServerRequestInterface;
-use Application\App\Http\ResponseHttp;
+use Application\Application\Http\ResponseHttp;
 use Application\Application\Templating\TwigTrait;
 use Application\Repository\UserRepository;
+use Application\Repository\AbstractRepository;
+use Application\Controllers\AbstractController;
 
-class SecurityController
+
+class SecurityController extends AbstractController
 {
     use TwigTrait;
 
@@ -22,6 +25,9 @@ class SecurityController
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
         //création d'un password provisoire
+
+ 
+
         $error = ''; 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
@@ -36,10 +42,8 @@ class SecurityController
                 } else { 
                     $_SESSION['user'] = $user;
                     $response = new RedirectResponseHttp('/');
-                    $response->send();
+                    return $response->send();
                 }
-
-
 
                 dump($user);
             }
