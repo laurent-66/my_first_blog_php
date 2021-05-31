@@ -4,7 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+
     "content-hash": "fa679412d8a10a88e62d1e8871b8f2bd",
+
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -759,6 +761,7 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
+
             "description": "Maps an HTTP request to a set of configuration variables",
             "homepage": "https://symfony.com",
             "keywords": [
@@ -784,7 +787,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-11T22:55:21+00:00"
+
         },
         {
             "name": "twig/twig",

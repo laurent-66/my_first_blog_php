@@ -4,31 +4,55 @@ namespace Application\Controllers;
 use Psr\Http\Message\ServerRequestInterface;
 use Application\App\Http\RedirectResponseHttp;
 use Application\App\Http\ResponseHttp;
+use Application\App\Http\ParametersBag;
+use Application\Application\Templating\TwigTrait;
 
 class BlogPostController
 {
-    public function getAllBlogs (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp('/blogs');
-        $response->send();
+    use TwigTrait;
+    
+
+    public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
+        return $this->renderHtml('blogs-list.html.twig');
     }
 
-    public function getBlog (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp("/blogs/{id}");
-        $response->send();
+
+    public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+        return $this->renderHtml('blog.html.twig');
     }
 
-    public function createBlog (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp('/blogs/new');
-        $response->send();
+    public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
+        return $this->renderHtml('newBlog.html.twig');
     }
 
-    public function updateBlog (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp('/blogs/{id}/edit');
-        $response->send();
+    public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
+        return $this->renderHtml('updateBlog.html.twig');
     }
 
-    public function deleteBlog (ServerRequestInterface $request){
-        var_dump($request);
+    public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
+
+    }
+
+    public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
+
+    }
+
+    public function getComment (ServerRequestInterface $request, ParametersBag $bag){
+
+    }
+
+    public function createComment (ServerRequestInterface $request, ParametersBag $bag){
+
+    }
+
+    public function updateComment (ServerRequestInterface $request, ParametersBag $bag){
+
+
+    }
+
+    public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
+
+
     }
 
 }

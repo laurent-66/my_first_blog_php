@@ -9,8 +9,8 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
-use Application\App\Http\Parameter;
-use Application\App\Http\ParametersBag;
+use Application\Application\Http\Parameter;
+use Application\Application\Http\ParametersBag;
 
 
 class Application
@@ -26,14 +26,11 @@ class Application
     {
         try{
             $context = new RequestContext();
-            $url = $context->setPathInfo($request->getUri()->getPath());
-            var_dump($url);
+            $context->setPathInfo($request->getUri()->getPath());
             $matcher = new UrlMatcher($this->routeCollection, $context);
             $parameters = $matcher->match($context->getPathInfo());
-            var_dump($parameters);
             $controller = $parameters['_controller'];
             $method = $parameters['_method'];
-
             unset($parameters['_controller']);
             unset($parameters['_method']);
             unset($parameters['_route']);
@@ -46,7 +43,10 @@ class Application
                 $bagParams->addParameter($param);
             }
 
-            return call_user_func_array($callable, [$request, $bagParams]);
+            $response = call_user_func_array($callable, [$request, $bagParams]);
+
+            return $response;
+
         
 
             } catch (ResourceNotFoundException $e) {
@@ -57,8 +57,11 @@ class Application
                 echo "MethodNotAllowedException";
             } catch (Exception $e){
                 //TODO Create exception controller to return internal servor error
-                echo "Exception";
+
+                echo $e->getMessage();
+
             }
+
     }
 
     private function init()

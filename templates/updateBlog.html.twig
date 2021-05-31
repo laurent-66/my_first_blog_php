@@ -1,0 +1,26 @@
+{% extends "template.html.twig" %}
+{% block title %}Blog{% endblock %}
+{% block body %} 
+<div class="container">
+    <div class="row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto">
+        <div id="box_connexion" class="col-12 col-sm-12 col-md-12 text-center rounded">
+            <form class="form-signin">
+                <label for="title-blog" class="sr-only">Titre du blog</label>
+                <input type="text" name="title-blog" class="form-control" placeholder="Entrer le titre" required autofocus>
+
+                <label for="inputChapo" class="sr-only">Chapo</label>
+                <input type="password" name="inputChapo" class="form-control my-3" placeholder="Entrer le chapo 255 caratère max" required autofocus>
+
+                <label for="passwordConfirm" class="sr-only">Confirmation</label>
+                <input type="password" id="passwordConfirm" class="form-control my-3" placeholder="Mot de passe" required autofocus>
+
+                <div class="form-group">
+                <label for="comment">Contenue du blog :</label>
+                <textarea class="form-control rounded-0" id="comment" rows="3"placeholder="Veuillez écrire votre texte ici."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyez</button>
+            </form>
+        </div>
+    </div>
+</div>  
+{% endblock %}
