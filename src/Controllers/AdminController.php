@@ -5,11 +5,10 @@ use Psr\Http\Message\ServerRequestInterface;
 use Application\Application\Http\RedirectResponseHttp;
 use Application\Application\Http\ResponseHttp;
 use Application\Application\Templating\TwigTrait;
+use Application\Controllers\AbstractController;
 
-class AdminController
+class AdminController extends AbstractController
 {
-    use TwigTrait;
-
     public function createBlog (ServerRequestInterface $request){
         dump($request);
     }

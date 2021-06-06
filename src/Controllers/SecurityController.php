@@ -28,6 +28,9 @@ class SecurityController extends AbstractController
  
 
         $error = ''; 
+        $userConnected = "";
+
+
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
             if (  (strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
@@ -41,6 +44,13 @@ class SecurityController extends AbstractController
                     $_SESSION['user'] = $user;
                     $response = new RedirectResponseHttp('/');
                     return $response->send();
+
+
+                    $userConnected = "
+                    <p>affichage test</p>
+                    
+                    
+                    ";
                 }
 
                 dump($user);
@@ -101,21 +111,6 @@ class SecurityController extends AbstractController
 
         }
         return $this->renderHtml('login.html.twig');
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
