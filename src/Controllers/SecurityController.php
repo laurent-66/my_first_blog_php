@@ -13,16 +13,13 @@ use Application\Controllers\AbstractController;
 
 class SecurityController extends AbstractController
 {
-    use TwigTrait;
 
     protected $userRepository;
 
     public function __construct()
     {
         $this->userRepository = new UserRepository;
-
     }
-
 
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
@@ -34,15 +31,11 @@ class SecurityController extends AbstractController
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
             if (  (strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
-                //TODO Create error
                 $error = "L'identifiant et le mot de passe sont requis.";
             } else {
 
                 $user = $this->userRepository->findByEmail($dataSubmitted['email']);
                 if(!$user || !password_verify($dataSubmitted['inputPassword'], $user['password'])) {
-                    var_dump('toto');
-                    var_dump($user);
-                    exit;
                     $error = "Identifiants invalides";
                 } else { 
                     $_SESSION['user'] = $user;
@@ -85,6 +78,44 @@ class SecurityController extends AbstractController
         return $this->renderHtml('register.html.twig',['error' => $error]);
 
     }
+
+
+
+    public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
+    {   
+        $validate = ''; 
+        if ($request->getMethod() === 'GET'){
+            $dataSubmitted = $request->getParsedBody();
+            if (  (strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
+
+                $this->userRepository->disconnect(
+                    session_destroy()
+                );
+
+                $validate = "Vous êtes maintenant déconnecté.";
+            } else {
+
+                $error = "erreur de déconnexion";
+
+            }
+
+        }
+        return $this->renderHtml('login.html.twig');
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
