@@ -10,7 +10,6 @@ use Application\Application\Templating\TwigTrait;
 
 class BlogPostController extends AbstractController
 {
-
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
         return $this->renderHtml('blogs-list.html.twig');
     }
@@ -45,7 +44,6 @@ class BlogPostController extends AbstractController
     }
 
     public function updateComment (ServerRequestInterface $request, ParametersBag $bag){
-
 
     }
 

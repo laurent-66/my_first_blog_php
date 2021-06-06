@@ -10,7 +10,6 @@ use Application\Application\Templating\TwigTrait;
 
 class DefaultController extends AbstractController
 {
-    use TwigTrait;
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
         dump($_SESSION);
