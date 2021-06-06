@@ -73,7 +73,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
     </div>
     ";
         // line 20
-        echo "
+        echo "    <div class=\"col2\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
     </div>
 </section>
 
@@ -120,7 +120,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         <div class=\"col2\"><a href=\"\"><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
     </div>
     {# {% endfor %} #}
-
+    <div class=\"col2\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
     </div>
 </section>
 

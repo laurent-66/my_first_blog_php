@@ -12,9 +12,7 @@ class DefaultController extends AbstractController
 {
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
-        dump($_SESSION);
         return $this->renderHtml('home.html.twig');
-
 
     }
     
