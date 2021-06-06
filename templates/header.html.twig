@@ -18,13 +18,14 @@
                         <a class="item nav-link" href="blogs-list.html.twig">Blogs</a>
                     </li>
 
-                    {% if ($user == true) %}
+                    {% if ( $user == true) %}
                         <li class="menu-item">
                             <a class="item nav-link" href="/deconnecter" name ="disconnect">déconnexion</a>
                         </li>
                     {% endif %}
 
                     {% if (!$user == true) %}
+                    {{$user}}
                     <li class="menu-item">
                         <a class="item nav-link" href="register.html.twig">Inscription</a>
                     </li>

@@ -25,7 +25,7 @@
         "path": "/deconnecter",
         "_controller":"Application\\Controllers\\SecurityController",
         "_method": "disconnect",
-        "_methods": ["GET", "POST"]
+        "_methods": ["GET"]
     },
     {
         "name": "blogs",

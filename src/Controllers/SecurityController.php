@@ -25,11 +25,7 @@ class SecurityController extends AbstractController
     {   
         //création d'un password provisoire
 
- 
-
         $error = ''; 
-        $userConnected = "";
-
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
@@ -44,16 +40,8 @@ class SecurityController extends AbstractController
                     $_SESSION['user'] = $user;
                     $response = new RedirectResponseHttp('/');
                     return $response->send();
-
-
-                    $userConnected = "
-                    <p>affichage test</p>
-                    
-                    
-                    ";
                 }
 
-                dump($user);
             }
 
         }
@@ -68,6 +56,7 @@ class SecurityController extends AbstractController
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
+
             if ((strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 || strlen(trim($dataSubmitted['confirmPassword'])) === 0 ) {
 
                 $error = "L'identifiant, le mot de passe et la confirmation sont requis.";
@@ -75,13 +64,11 @@ class SecurityController extends AbstractController
 
             } else if (strlen(trim($dataSubmitted['inputPassword'])) !== strlen(trim($dataSubmitted['confirmPassword']))) {
                 
-                    echo "erreur !";
-                    $error = "Le mot de passe et la confirmation sont différents.";
+                $error = "Le mot de passe et la confirmation sont différents.";
 
             } else {
 
-                $user = $this->userRepository->registerUser();
-                dump($user);
+                $this->userRepository->registerUser($dataSubmitted['email'], $dataSubmitted['inputPassword']);
             }
         }
 
