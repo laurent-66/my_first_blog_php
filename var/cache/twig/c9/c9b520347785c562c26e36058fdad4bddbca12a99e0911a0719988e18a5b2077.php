@@ -46,11 +46,12 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"../src/css/style.css\">
+        <link rel=\"stylesheet\" href=\"/css/style.css\">
         <link rel=\"stylesheet\" href=\"../src/fonts\">
 </head>
 
 <body>
+
 
         <header class=\"sticky-top\">
                 <nav class=\"navbar navbar-dark navbar-expand-md bg-dark m-0 p-0\">
@@ -82,11 +83,13 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                 </nav>
             </header>
 
+
 ";
-        // line 44
+        // line 46
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 49
         echo "
+
 <footer>
         <div class=\"container-fluid bg-dark m-0 p-0\">
             <div id=\"row_footer\" class=\"row m-0 px-0 py-3\">
@@ -95,13 +98,13 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                 </div>
                 <div id=\"block_arrow\" class=\"col-12 col-sm-12 col-md-4 m-0 p-0 text-center\">
                     
-                        <div id=\"arrow-top\"class=\"mx-auto my-3\"> <a href=\"#\"><img src=\"../src/images/iconarrow.png\"/></a></div>
+                        <div id=\"arrow-top\"class=\"mx-auto my-3\"> <a href=\"#\"><img src=\"/images/iconarrow.png\"/></a></div>
                    
                     <h5 class=\"my-3\">Cliquez, haut de la page</h5>
                 </div>
                 <div id=\"block_linkedin\" class=\"col-12 col-sm-12 col-md-4 m-0 p-0\">
-                    <div id=\"logo_linkedin\"><a href=\"https://fr.linkedin.com/in/laurent-lesage-795599113\" target=\"_blank\"><img src=\"../src/images/LinkedIn_Logo.png\"/></a></div>
-                    <div id=\"logo_linkedin\"><a href=\"https://github.com/laurent-66/my_first_blog_php\" target=\"_blank\"><img src=\"../src/images/GitHub-Mark-Light-64px.png\"/></a></div>
+                    <div id=\"logo_linkedin\"><a href=\"https://fr.linkedin.com/in/laurent-lesage-795599113\" target=\"_blank\"><img src=\"/images/LinkedIn_Logo.png\"/></a></div>
+                    <div id=\"logo_linkedin\"><a href=\"https://github.com/laurent-66/my_first_blog_php\" target=\"_blank\"><img src=\"/images/GitHub-Mark-Light-64px.png\"/></a></div>
                 </div>
             </div>
             <div class=\"row m-0 px-0 py-3\" id=\"connexionAdmin\">
@@ -109,6 +112,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
             </div>
         </div>
     </footer>
+
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
@@ -126,11 +130,11 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         $macros = $this->macros;
     }
 
-    // line 44
+    // line 46
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 45
+        // line 47
         echo "
 ";
     }
@@ -142,7 +146,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 
     public function getDebugInfo()
     {
-        return array (  134 => 45,  130 => 44,  124 => 6,  89 => 47,  87 => 44,  46 => 6,  39 => 1,);
+        return array (  138 => 47,  134 => 46,  128 => 6,  91 => 49,  89 => 46,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -154,11 +158,12 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <title>{% block title %}{% endblock %}</title>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"../src/css/style.css\">
+        <link rel=\"stylesheet\" href=\"/css/style.css\">
         <link rel=\"stylesheet\" href=\"../src/fonts\">
 </head>
 
 <body>
+
 
         <header class=\"sticky-top\">
                 <nav class=\"navbar navbar-dark navbar-expand-md bg-dark m-0 p-0\">
@@ -190,9 +195,11 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                 </nav>
             </header>
 
+
 {% block body %}
 
 {% endblock %}
+
 
 <footer>
         <div class=\"container-fluid bg-dark m-0 p-0\">
@@ -202,13 +209,13 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                 </div>
                 <div id=\"block_arrow\" class=\"col-12 col-sm-12 col-md-4 m-0 p-0 text-center\">
                     
-                        <div id=\"arrow-top\"class=\"mx-auto my-3\"> <a href=\"#\"><img src=\"../src/images/iconarrow.png\"/></a></div>
+                        <div id=\"arrow-top\"class=\"mx-auto my-3\"> <a href=\"#\"><img src=\"/images/iconarrow.png\"/></a></div>
                    
                     <h5 class=\"my-3\">Cliquez, haut de la page</h5>
                 </div>
                 <div id=\"block_linkedin\" class=\"col-12 col-sm-12 col-md-4 m-0 p-0\">
-                    <div id=\"logo_linkedin\"><a href=\"https://fr.linkedin.com/in/laurent-lesage-795599113\" target=\"_blank\"><img src=\"../src/images/LinkedIn_Logo.png\"/></a></div>
-                    <div id=\"logo_linkedin\"><a href=\"https://github.com/laurent-66/my_first_blog_php\" target=\"_blank\"><img src=\"../src/images/GitHub-Mark-Light-64px.png\"/></a></div>
+                    <div id=\"logo_linkedin\"><a href=\"https://fr.linkedin.com/in/laurent-lesage-795599113\" target=\"_blank\"><img src=\"/images/LinkedIn_Logo.png\"/></a></div>
+                    <div id=\"logo_linkedin\"><a href=\"https://github.com/laurent-66/my_first_blog_php\" target=\"_blank\"><img src=\"/images/GitHub-Mark-Light-64px.png\"/></a></div>
                 </div>
             </div>
             <div class=\"row m-0 px-0 py-3\" id=\"connexionAdmin\">
@@ -216,6 +223,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
             </div>
         </div>
     </footer>
+
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
