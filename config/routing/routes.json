@@ -21,6 +21,13 @@
         "_methods": ["GET", "POST"]
     },
     {
+        "name": "deconnexion",
+        "path": "/deconnecter",
+        "_controller":"Application\\Controllers\\SecurityController",
+        "_method": "disconnect",
+        "_methods": ["GET", "POST"]
+    },
+    {
         "name": "blogs",
         "path": "/blogs",
         "_controller":"Application\\Controllers\\BlogPostController",
