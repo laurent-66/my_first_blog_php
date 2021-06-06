@@ -77,12 +77,12 @@ class SecurityController extends AbstractController
 
             } else {
 
-                    echo "effectue la connexion";
-
+                $user = $this->userRepository->registerUser();
+                dump($user);
             }
         }
 
-        return $this->renderHtml('register.html.twig',['error' => $error]);
+        return $this->renderHtml('register.html.twig');
 
     }
 
