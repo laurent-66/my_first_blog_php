@@ -77,7 +77,7 @@ class __TwigTemplate_c6ea609e751a03eae939cc69d62f1b8a418a6e9403cfc26d7c72341847b
         }
         // line 17
         echo "
-                <form class=\"form-signin\" method=\"post\">
+                <form class=\"form-signin\" action=\"\"  method=\"post\">
                     <label for=\"email\" class=\"sr-only\">Identifiant</label>
                     <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"Votre email\" autofocus>
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
@@ -127,7 +127,7 @@ class __TwigTemplate_c6ea609e751a03eae939cc69d62f1b8a418a6e9403cfc26d7c72341847b
                     </div>
                 {% endif %}
 
-                <form class=\"form-signin\" method=\"post\">
+                <form class=\"form-signin\" action=\"\"  method=\"post\">
                     <label for=\"email\" class=\"sr-only\">Identifiant</label>
                     <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"Votre email\" autofocus>
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>

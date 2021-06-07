@@ -76,6 +76,9 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                 <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/se-connecter\">Connexion</a>
                                 </li>
+                                <li class=\"menu-item\">
+                                    <a class=\"item nav-link\" href=\"/déconnecter\">déconnexion</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -83,9 +86,10 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
             </header>
 
 ";
-        // line 44
+
+        // line 49
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 52
         echo "
 <footer>
         <div class=\"container-fluid bg-dark m-0 p-0\">
@@ -126,11 +130,12 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         $macros = $this->macros;
     }
 
-    // line 44
+
+    // line 49
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 45
+        // line 50
         echo "
 ";
     }
@@ -142,7 +147,8 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 
     public function getDebugInfo()
     {
-        return array (  134 => 45,  130 => 44,  124 => 6,  89 => 47,  87 => 44,  46 => 6,  39 => 1,);
+
+        return array (  141 => 50,  137 => 49,  131 => 6,  94 => 52,  92 => 49,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -183,6 +189,9 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                 </li>
                                 <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/se-connecter\">Connexion</a>
+                                </li>
+                                <li class=\"menu-item\">
+                                    <a class=\"item nav-link\" href=\"/déconnecter\">déconnexion</a>
                                 </li>
                             </ul>
                         </div>
