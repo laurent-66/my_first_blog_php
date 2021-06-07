@@ -47,6 +47,18 @@ class User
     }
 
 
+    // method firstname
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(?string $firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
     // method email
 
     public function getemail(): ?string
@@ -97,46 +109,8 @@ class User
     
     public function setadmin(?bool $admin): void
     {
-        $this->name = $admin;
+        $this->admin = $admin;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    // method firstname
-
-    public function getFirstname(): ?string
-    {
-        return $this->firstname;
-    }
-
-    /**
-     * @param string|null $firstname
-     */
-
-
-    public function setFirstname(?string $firstname): void
-    {
-        $this->firstname = $firstname;
-    }
-
-
-
-
-
-
-
-
-
-
 
 
 }
