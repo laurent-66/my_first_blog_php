@@ -82,33 +82,30 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 15), "html", null, true);
             echo "</p></div>
             </div>
-
-
             <div class=\"col 2 row-align-start-right\">
                 <div class=\"col4\"><a href=";
-            // line 20
-            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id_blog_post", [], "any", false, false, false, 20)), "html", null, true);
+            // line 18
+            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id_blog_post", [], "any", false, false, false, 18)), "html", null, true);
             echo "><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-                <div class=\"col4\"><a href=\"/blogs/admin/1/edit\"><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
-                <div class=\"col4\"><a href=\"\"><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
+                <div class=\"col4\"><a href=";
+            // line 19
+            echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id_blog_post", [], "any", false, false, false, 19)) . "/edit"), "html", null, true);
+            echo "><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
+                <div class=\"col4\"><a href=";
+            // line 20
+            echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id_blog_post", [], "any", false, false, false, 20)) . "/delete"), "html", null, true);
+            echo "><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
             </div>
-
     </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 24
         echo "    <div class=\"col1\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
     </div>
-    
 </section>
-
-
-
-
-
 ";
     }
 
@@ -124,7 +121,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
-        return array (  103 => 27,  90 => 20,  82 => 15,  78 => 14,  74 => 13,  70 => 11,  66 => 10,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  106 => 24,  96 => 20,  92 => 19,  88 => 18,  82 => 15,  78 => 14,  74 => 13,  70 => 11,  66 => 10,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,26 +142,16 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
                 <div class=\"col4 row-item\"><p>{{blog.chapo}}</p></div>
                 <div class=\"col4 row-item\"><p>{{blog.last_update}}</p></div>
             </div>
-
-
             <div class=\"col 2 row-align-start-right\">
                 <div class=\"col4\"><a href={{'/blogs/'~blog.id_blog_post}}><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-                <div class=\"col4\"><a href=\"/blogs/admin/1/edit\"><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
-                <div class=\"col4\"><a href=\"\"><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
+                <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id_blog_post~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
+                <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id_blog_post~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
             </div>
-
     </div>
     {% endfor %}
     <div class=\"col1\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
     </div>
-    
 </section>
-
-
-
-
-
-{% endblock %}
-", "blogs-list.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\blogs-list.html.twig");
+{% endblock %}", "blogs-list.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\blogs-list.html.twig");
     }
 }

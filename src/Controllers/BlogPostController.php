@@ -26,15 +26,11 @@ class BlogPostController extends AbstractController
         return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
     }
 
-    public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+    public function getBlog (ServerRequestInterface $request, ParametersBag $bag, $id){
 
-        if ($request->getMethod() === 'GET'){
-
-            $getBlogs = $this->BlogRepository->findByBlogId();
-            return $getBlogs;
-        }
-
-        return $this->renderHtml('blog.html.twig');
+        $blog = $this->BlogRepository->findByBlogId($id);
+  
+        return $this->renderHtml('blog.html.twig',['blog'=>$blog]);
     }
 
     public function createBlog (ServerRequestInterface $request, ParametersBag $bag){

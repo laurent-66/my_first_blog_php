@@ -58,7 +58,7 @@
     },
     {
         "name": "deleteBlog",
-        "path": "/blogs/admin/{id}",
+        "path": "/blogs/admin/{id}/delete",
         "_controller":"Application\\Controllers\\AdminController",
         "_method": "deleteBlog",
         "_methods": ["GET", "DELETE"]

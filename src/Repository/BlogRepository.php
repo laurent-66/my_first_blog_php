@@ -21,8 +21,8 @@ class BlogRepository extends AbstractRepository
 
     public function findByBlogId(int $id)
     {
-        $query = "SELECT * FROM {$this->getTableName()} WHERE $id";
-        $statement = $this->database->query($query);
+        $query = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
+        $statement = $this->database->request($query, [':id' => $id]);
         return $statement->fetch();
     }
 
@@ -36,10 +36,10 @@ class BlogRepository extends AbstractRepository
 
         $query = "UPDATE {$this->getTableName()}SET
 
-         `title`= :title,
-         `chapo`= :chapo,
-         `content`= :content,
-         `last_update`= :last_update";
+         :title,
+         :chapo,
+         :content,
+         :last_update";
 
         $this->database->request($query,
         [

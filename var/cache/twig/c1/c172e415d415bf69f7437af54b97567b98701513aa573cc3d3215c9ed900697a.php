@@ -65,12 +65,15 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                 <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
                 <input type=\"password\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
 
-                <label for=\"passwordConfirm\" class=\"sr-only\">Confirmation</label>
-                <input type=\"password\" id=\"passwordConfirm\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required autofocus>
-
                 <div class=\"form-group\">
                 <label for=\"comment\">Contenue du blog :</label>
                 <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                </div>
+
+                <div class=\"form-group\">
+                    <label for=\"comment\">dernière mise à jour :</label>
+                    <input class=\"form-control rounded-0\" type=\"date\" rows=\"3\"placeholder=\"Notez la date.\"/>
+                    </div>
                 </div>
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
             </form>
@@ -110,12 +113,15 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                 <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
                 <input type=\"password\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
 
-                <label for=\"passwordConfirm\" class=\"sr-only\">Confirmation</label>
-                <input type=\"password\" id=\"passwordConfirm\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required autofocus>
-
                 <div class=\"form-group\">
                 <label for=\"comment\">Contenue du blog :</label>
                 <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                </div>
+
+                <div class=\"form-group\">
+                    <label for=\"comment\">dernière mise à jour :</label>
+                    <input class=\"form-control rounded-0\" type=\"date\" rows=\"3\"placeholder=\"Notez la date.\"/>
+                    </div>
                 </div>
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
             </form>
