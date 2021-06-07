@@ -67,7 +67,8 @@ class SecurityController extends AbstractController
 
             } else {
 
-                $this->userRepository->registerUser($dataSubmitted['email'], $dataSubmitted['inputPassword']);
+                $passwordHash = password_hash($dataSubmitted['inputPassword'],PASSWORD_DEFAULT);
+                $this->userRepository->registerUser($dataSubmitted['email'], $passwordHash);
             }
         }
 
