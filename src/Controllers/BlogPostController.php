@@ -48,7 +48,7 @@ class BlogPostController extends AbstractController
     }
 
     public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
-
+ 
 
     }
 
