@@ -62,20 +62,6 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
     <div class=\"blue-divider\"></div>
     <div class=\"container\">
     ";
-<<<<<<< HEAD
-        // line 11
-        echo "    <div class=\"row\" style=\"border: 1px solid grey;\">
-        <div class=\"col2\"><p><?= \$blog['title'];?></p></div>
-        <div class=\"col2\"><p><?= \$blog['chapo'];?></p></div>
-        <div class=\"col2\"><p><?= \$blog['last_update'];?></p></div>
-        <div class=\"col2\"><a href=\"/blogs/1\"><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-        <div class=\"col2\"><a href=\"/blogs/admin/1/edit\"><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
-        <div class=\"col2\"><a href=\"\"><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
-    </div>
-    ";
-        // line 20
-        echo "
-=======
         // line 10
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["blogs"] ?? null));
@@ -115,7 +101,6 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 27
         echo "    <div class=\"col1\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
->>>>>>> 2cd1f50c8a633053e82a9da5fa044fdc5f9b4efd
     </div>
     
 </section>
@@ -139,11 +124,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  76 => 20,  66 => 11,  54 => 3,  47 => 2,  36 => 1,);
-=======
         return array (  103 => 27,  90 => 20,  82 => 15,  78 => 14,  74 => 13,  70 => 11,  66 => 10,  54 => 3,  47 => 2,  36 => 1,);
->>>>>>> 2cd1f50c8a633053e82a9da5fa044fdc5f9b4efd
     }
 
     public function getSourceContext()
@@ -157,7 +138,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
     </div>
     <div class=\"blue-divider\"></div>
     <div class=\"container\">
-    {# {% for blog in blogs %} #}
+    {% for blog in blogs %}
     <div class=\"row\" style=\"border: 1px solid grey;\">
             <div class=\"col 10 row-align-start-left\">
                 <div class=\"col4 row-item\"><p>{{blog.title}}</p></div>
@@ -173,13 +154,8 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             </div>
 
     </div>
-<<<<<<< HEAD
-    {# {% endfor %} #}
-
-=======
     {% endfor %}
     <div class=\"col1\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
->>>>>>> 2cd1f50c8a633053e82a9da5fa044fdc5f9b4efd
     </div>
     
 </section>
