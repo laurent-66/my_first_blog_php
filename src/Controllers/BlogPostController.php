@@ -7,15 +7,33 @@ use Application\Application\Http\RedirectResponseHttp;
 use Application\Application\Http\ResponseHttp;
 use Application\Application\Http\ParametersBag;
 use Application\Application\Templating\TwigTrait;
+use Application\Repository\BlogRepository;
 
 class BlogPostController extends AbstractController
 {
-    public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
-        return $this->renderHtml('blogs-list.html.twig');
+
+    protected $blogRepository= '';
+
+    public function __construct()
+    {
+        $this->blogRepository = new BlogRepository;
     }
 
+    public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
+        
+        $blogs = $this->blogRepository->getAllBlog();
+
+        return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
+    }
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+
+        if ($request->getMethod() === 'GET'){
+
+            $getBlogs = $this->BlogRepository->findByBlogId();
+            return $getBlogs;
+        }
+
         return $this->renderHtml('blog.html.twig');
     }
 

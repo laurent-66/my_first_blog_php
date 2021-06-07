@@ -52,7 +52,6 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 
 <body>
 
-
         <header class=\"sticky-top\">
                 <nav class=\"navbar navbar-dark navbar-expand-md bg-dark m-0 p-0\">
                     <div class=\" menunavigation container-fluid m-0 p-0\">
@@ -77,19 +76,21 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                 <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/se-connecter\">Connexion</a>
                                 </li>
+                                <li class=\"menu-item\">
+                                    <a class=\"item nav-link\" href=\"/déconnecter\">déconnexion</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
 
-
 ";
-        // line 46
-        $this->displayBlock('body', $context, $blocks);
-        // line 49
-        echo "
 
+        // line 49
+        $this->displayBlock('body', $context, $blocks);
+        // line 52
+        echo "
 <footer>
         <div class=\"container-fluid bg-dark m-0 p-0\">
             <div id=\"row_footer\" class=\"row m-0 px-0 py-3\">
@@ -112,7 +113,6 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
             </div>
         </div>
     </footer>
-
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
@@ -130,11 +130,12 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         $macros = $this->macros;
     }
 
-    // line 46
+
+    // line 49
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 47
+        // line 50
         echo "
 ";
     }
@@ -146,7 +147,8 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 
     public function getDebugInfo()
     {
-        return array (  138 => 47,  134 => 46,  128 => 6,  91 => 49,  89 => 46,  46 => 6,  39 => 1,);
+
+        return array (  141 => 50,  137 => 49,  131 => 6,  94 => 52,  92 => 49,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -163,7 +165,6 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 </head>
 
 <body>
-
 
         <header class=\"sticky-top\">
                 <nav class=\"navbar navbar-dark navbar-expand-md bg-dark m-0 p-0\">
@@ -189,17 +190,18 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                 <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/se-connecter\">Connexion</a>
                                 </li>
+                                <li class=\"menu-item\">
+                                    <a class=\"item nav-link\" href=\"/déconnecter\">déconnexion</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
 
-
 {% block body %}
 
 {% endblock %}
-
 
 <footer>
         <div class=\"container-fluid bg-dark m-0 p-0\">
@@ -223,7 +225,6 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
             </div>
         </div>
     </footer>
-
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>

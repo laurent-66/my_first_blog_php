@@ -23,7 +23,6 @@ class SecurityController extends AbstractController
 
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
-        //création d'un password provisoire
 
         $error = ''; 
 
@@ -68,7 +67,8 @@ class SecurityController extends AbstractController
 
             } else {
 
-                $this->userRepository->registerUser($dataSubmitted['email'], $dataSubmitted['inputPassword']);
+                $passwordHash = password_hash($dataSubmitted['inputPassword'],PASSWORD_DEFAULT);
+                $this->userRepository->registerUser($dataSubmitted['email'], $passwordHash);
             }
         }
 
@@ -77,12 +77,12 @@ class SecurityController extends AbstractController
     }
 
 
-
     public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
     {   
         $validate = ''; 
         if ($request->getMethod() === 'GET'){
             $dataSubmitted = $request->getParsedBody();
+
             if (  (strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
 
                 $this->userRepository->disconnect(

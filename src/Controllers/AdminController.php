@@ -10,15 +10,17 @@ use Application\Controllers\AbstractController;
 class AdminController extends AbstractController
 {
     public function createBlog (ServerRequestInterface $request){
-        dump($request);
+        return $this->renderHtml('newBlog.html.twig');
     }
 
     public function updateBlog (ServerRequestInterface $request){
-        dump($request);
+        return $this->renderHtml('updateBlog.html.twig');
     }
 
     public function deleteBlog (ServerRequestInterface $request){
-        dump($request);
+
+        $response = new RedirectResponseHttp("/blogs");
+        $response->send();
     }
 
     public function deleteCommentMember (ServerRequestInterface $request){
