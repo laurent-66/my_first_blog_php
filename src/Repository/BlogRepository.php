@@ -76,4 +76,16 @@ class BlogRepository extends AbstractRepository
 
     }
 
+
+    public function deleteBlog(int $id)
+    {
+        $query = "DELETE FROM {$this->getTableName()} WHERE id = :id";
+        $statement = $this->database->request($query, [':id' => $id]);
+
+    }
+
+
+
+
+
 }
