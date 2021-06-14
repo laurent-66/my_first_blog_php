@@ -36,10 +36,6 @@ class BlogPostController extends AbstractController
         return $this->renderHtml('blog.html.twig',['blog'=>$blog]);
     }
 
-
-
-
-
     public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
 
     }

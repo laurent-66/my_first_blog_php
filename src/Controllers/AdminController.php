@@ -29,9 +29,17 @@ class AdminController extends AbstractController
     public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
 
         //Récupération de la valeur de l'id blog $id du $bag
-        // $id = '';
-        $updateBlog = $this->BlogRepository->updateBlog($id);
-        return $this->renderHtml('updateBlog.html.twig',['blog'=>$updateBlog]);
+
+        $id = (int) $bag->getParameter('id')->getValue();
+
+        //récupération du blog présent pour préremplir les champs
+        $blog = $this->blogRepository->findByBlogId($id);
+
+        //rendu de la page préremplie
+        return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);
+        
+        //maj du blog
+        return $this->BlogRepository->updateBlog($id);
     }
 
     public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
@@ -43,9 +51,10 @@ class AdminController extends AbstractController
         return $this->renderHtml('blogs-list.html.twig');
     }
 
-
     public function deleteCommentMember (ServerRequestInterface $request){
-        dump($request);
+
+        $this->blogRepository->deleteBlog($id);
+        return $this->renderHtml('blogs-list.html.twig');
     }
 
 }

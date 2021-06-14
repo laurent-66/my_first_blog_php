@@ -18,6 +18,7 @@ class ParametersBag
             $this-> parameters[] = $parameter;
         }
     }
+    //retourne la valeur d'une clés
     public function getParameter(string $key): ?Parameter
     {
         $paramFiltered = array_filter($this->parameters, function (parameter $param) use ($key) {

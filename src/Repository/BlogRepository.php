@@ -21,7 +21,7 @@ class BlogRepository extends AbstractRepository
 
     public function findByBlogId(int $id)
     {
-        $query = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
+        $query = "SELECT * FROM {$this->getTableName()} WHERE id_blog_post= :id";
         $statement = $this->database->request($query, [':id' => $id]);
         return $statement->fetch();
     }
@@ -50,9 +50,8 @@ class BlogRepository extends AbstractRepository
 
     }
 
-    public function updateBlog()
+    public function updateBlog(int $id)
     {
-
         $title = '';
         $chapo = '';
         $content = '';
@@ -63,20 +62,22 @@ class BlogRepository extends AbstractRepository
          `title`= :title,
          `chapo`= :chapo,
          `content`= :content,
-         `last_update`= :last_update";
+         `last_update`= :last_update 
+         WHERE id_blog_post= :id";
 
         $this->database->request($query,
         [
             ':title' => $title,
             ':chapo' => $chapo,
             ':content' => $content,
-            ':last_update' => $last_update  
+            ':last_update' => $last_update,
+            ':id' => $id
         ]);
     }
 
     public function deleteBlog(int $id)
     {
-        $query = "DELETE FROM {$this->getTableName()} WHERE id = :id";
+        $query = "DELETE FROM {$this->getTableName()} WHERE id_blog_post= :id";
         $this->database->request($query, [':id' => $id]);
 
     }

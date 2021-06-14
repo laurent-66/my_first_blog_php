@@ -42,8 +42,7 @@ class SecurityController extends AbstractController
                     $validation = "vous êtes bien connecté";
 
                 }
-                dump($user);
-                exit;
+
             }
 
         }
@@ -83,7 +82,10 @@ class SecurityController extends AbstractController
     public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
     {   
         session_destroy();
-        return $this->renderHtml('login.html.twig');
+
+        $result = new RedirectResponseHttp('/se-connecter');
+        return $result->send();
+        
     }
 
 }

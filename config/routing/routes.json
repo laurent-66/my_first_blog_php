@@ -72,7 +72,7 @@
     },
     {
         "name": "comment",
-        "path": "/blog/comment",
+        "path": "/blog/comments/{id}",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "getComment",
         "_methods": ["GET"]
@@ -86,7 +86,7 @@
     },
     {
         "name": "updateComment",
-        "path": "/blog/updateComment",
+        "path": "/blog/updateComment/{id}",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "updateComment",
         "_methods": ["GET", "POST"]
@@ -100,7 +100,7 @@
     },
     {
         "name": "deleteCommentMember",
-        "path": "/blog/admin/{id}",
+        "path": "/blog/admin/deleteComment/{id}",
         "_controller":"Application\\Controllers\\AdminController",
         "_method": "deleteCommentMember",
         "_methods": ["GET", "DELETE"]

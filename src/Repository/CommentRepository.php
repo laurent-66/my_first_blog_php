@@ -26,5 +26,31 @@ class BlogRepository extends AbstractRepository
         return $statement->fetch();
     }
 
+    
+    public function updateComment(int $id)
+    {
+        $comment = '';
+
+        $query = "UPDATE {$this->getTableName()}SET
+
+         `comment`= :comment";
+
+        $this->database->request($query,
+        [
+            ':comment' => $comment
+        ]);
+    }
+
+    public function deleteComment(int $id)
+    {
+
+    }
+
+
+
+
+
+
+
 
 }
