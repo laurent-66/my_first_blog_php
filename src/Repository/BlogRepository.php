@@ -34,12 +34,11 @@ class BlogRepository extends AbstractRepository
         $content = '';
         $last_update = '';
 
-        $query = "UPDATE {$this->getTableName()}SET
-
+        $query = "INSERT INTO {$this->getTableName()}VALUES(
          :title,
          :chapo,
          :content,
-         :last_update";
+         :last_update)";
 
         $this->database->request($query,
         [
@@ -73,19 +72,13 @@ class BlogRepository extends AbstractRepository
             ':content' => $content,
             ':last_update' => $last_update  
         ]);
-
     }
-
 
     public function deleteBlog(int $id)
     {
         $query = "DELETE FROM {$this->getTableName()} WHERE id = :id";
-        $statement = $this->database->request($query, [':id' => $id]);
+        $this->database->request($query, [':id' => $id]);
 
     }
-
-
-
-
 
 }

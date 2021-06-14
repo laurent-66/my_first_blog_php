@@ -27,10 +27,8 @@ class BlogPostController extends AbstractController
     }
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+
         dump($bag);
-        exit;
-        $id = $bag[1];
-        dump($id);
         exit;
 
         $blog = $this->BlogRepository->findByBlogId($id);
@@ -38,18 +36,9 @@ class BlogPostController extends AbstractController
         return $this->renderHtml('blog.html.twig',['blog'=>$blog]);
     }
 
-    public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
-        return $this->renderHtml('newBlog.html.twig');
-    }
 
-    public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
-        return $this->renderHtml('updateBlog.html.twig');
-    }
 
-    public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
-        
-        return $this->renderHtml('blogs-list.html.twig');
-    }
+
 
     public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
 

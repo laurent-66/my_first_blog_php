@@ -58,7 +58,7 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
 <div class=\"container\">
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-            <form class=\"form-signin\">
+            <form class=\"form-signin\" method=\"POST\">
                 <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                 <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
 
@@ -106,7 +106,7 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
 <div class=\"container\">
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-            <form class=\"form-signin\">
+            <form class=\"form-signin\" method=\"POST\">
                 <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                 <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
 

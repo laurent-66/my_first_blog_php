@@ -65,35 +65,35 @@
     },
     {
         "name": "comments",
-        "path": "/blog",
+        "path": "/blog/comments",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "getAllComments",
         "_methods": ["GET"]
     },
     {
         "name": "comment",
-        "path": "/blog",
+        "path": "/blog/comment",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "getComment",
         "_methods": ["GET"]
     },
     {
         "name": "newComment",
-        "path": "/blog",
+        "path": "/blog/newComment",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "createComment",
         "_methods": ["GET", "POST"]
     },
     {
         "name": "updateComment",
-        "path": "/blog",
+        "path": "/blog/updateComment",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "updateComment",
         "_methods": ["GET", "POST"]
     },
     {
         "name": "deleteComment",
-        "path": "/blog",
+        "path": "/blog/deleteComment",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "deleteComment",
         "_methods": ["GET","DELETE"]
