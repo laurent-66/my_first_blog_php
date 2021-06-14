@@ -77,27 +77,27 @@ class SecurityController extends AbstractController
     }
 
 
-    public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
-    {   
-        $validate = ''; 
-        if ($request->getMethod() === 'GET'){
-            $dataSubmitted = $request->getParsedBody();
+    // public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
+    // {   
+    //     $validate = ''; 
+    //     if ($request->getMethod() === 'GET'){
+    //         $dataSubmitted = $request->getParsedBody();
 
-            if (  (strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
+    //         if (  (strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
 
-                $this->userRepository->disconnect(
-                    session_destroy()
-                );
+    //             $this->userRepository->disconnect(
+    //                 session_destroy()
+    //             );
 
-                $validate = "Vous êtes maintenant déconnecté.";
-            } else {
+    //             $validate = "Vous êtes maintenant déconnecté.";
+    //         } else {
 
-                $error = "erreur de déconnexion";
+    //             $error = "erreur de déconnexion";
 
-            }
+    //         }
 
-        }
-        return $this->renderHtml('login.html.twig');
-    }
+    //     }
+    //     return $this->renderHtml('login.html.twig');
+    // }
 
 }
