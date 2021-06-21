@@ -59,7 +59,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
     <section>
         <h3>";
         // line 6
-        echo twig_escape_filter($this->env, (($context["title"] ?? null) - ($context["blog"] ?? null)), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h3><br />
             <div class=\"row\">
                 <div class=\"col-12 ml-50px my-0\">
@@ -70,11 +70,11 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
                 <div class=\"col-12 mx-auto my-0\">
                     <p>";
         // line 14
-        echo twig_escape_filter($this->env, (($context["content"] ?? null) - ($context["blog"] ?? null)), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content", [], "any", false, false, false, 14), "html", null, true);
         echo "</p>
                     <p><bold>Dernière mise à jour: </bold><span><i>";
         // line 15
-        echo twig_escape_filter($this->env, (($context["date"] ?? null) - ($context["blog"] ?? null)), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "date", [], "any", false, false, false, 15), "html", null, true);
         echo "</i></span></p>
                 </div>
             </div>
@@ -120,7 +120,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
 {% block body %} 
 <div class=\"container\">
     <section>
-        <h3>{{title-blog}}</h3><br />
+        <h3>{{blog.title}}</h3><br />
             <div class=\"row\">
                 <div class=\"col-12 ml-50px my-0\">
                     <div><img  src=\"./images/me2.jpg\" alt=\"\"></div>
@@ -128,8 +128,8 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
             </div>
             <div class=\"row my-5\" id=\"objectif\">
                 <div class=\"col-12 mx-auto my-0\">
-                    <p>{{content-blog}}</p>
-                    <p><bold>Dernière mise à jour: </bold><span><i>{{date-blog}}</i></span></p>
+                    <p>{{blog.content}}</p>
+                    <p><bold>Dernière mise à jour: </bold><span><i>{{blog.date}}</i></span></p>
                 </div>
             </div>
 

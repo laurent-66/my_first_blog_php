@@ -92,7 +92,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         // line 51
         echo "
 
-<footer>
+<footer class=\"sticky-footer\">
         <div class=\"container-fluid bg-dark m-0 p-0\">
             <div id=\"row_footer\" class=\"row m-0 px-0 py-3\">
                 <div id=\"block_mail\" class=\"col-12 col-sm-12 col-md-4 m-0 p-0 text-white text-center\">
@@ -205,7 +205,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 {% endblock %}
 
 
-<footer>
+<footer class=\"sticky-footer\">
         <div class=\"container-fluid bg-dark m-0 p-0\">
             <div id=\"row_footer\" class=\"row m-0 px-0 py-3\">
                 <div id=\"block_mail\" class=\"col-12 col-sm-12 col-md-4 m-0 p-0 text-white text-center\">

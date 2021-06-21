@@ -4,7 +4,7 @@ namespace Application\Repository;
 
 use Application\Application\Database\PDODatabase;
 
-class AbstractRepository
+abstract class AbstractRepository
 {
     protected $database;
 
@@ -20,4 +20,21 @@ class AbstractRepository
             dump($e);
         }
     }
+
+    abstract protected function getTableName(): string;
+
+    public function findById(int $id)
+    {
+        $query = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
+        $statement = $this->database->request($query, [':id' => $id]);
+        return $statement->fetch();
+    }
+
+
+
+
+
+
+
+
 }

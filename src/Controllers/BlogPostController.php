@@ -28,11 +28,14 @@ class BlogPostController extends AbstractController
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
 
-        dump($bag);
-        exit;
+        $id = (int) $bag->getParameter('id')->getValue();
 
-        $blog = $this->BlogRepository->findByBlogId($id);
-  
+        $blog = $this->blogRepository->findByBlogId($id);
+
+
+        
+
+ 
         return $this->renderHtml('blog.html.twig',['blog'=>$blog]);
     }
 
