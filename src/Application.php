@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Application\Application\Http\Parameter;
 use Application\Application\Http\ParametersBag;
-
+use Application\Exceptions\NotFoundException;
 
 class Application
 {
@@ -54,6 +54,13 @@ class Application
             } catch (MethodNotAllowedException $e){
                 //TODO Create exception controller to return not allowed method http
                 echo "MethodNotAllowedException";
+
+            } catch (NotFoundException $e){
+                //erreur personnalisé
+                // $controller = new ErrorController();
+                // return $controller->notFound();
+                echo "Personnalized error to do";
+
             } catch (Exception $e){
                 //TODO Create exception controller to return internal servor error
 

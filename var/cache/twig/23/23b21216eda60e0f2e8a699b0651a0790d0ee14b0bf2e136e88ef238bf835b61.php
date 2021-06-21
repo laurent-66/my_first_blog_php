@@ -85,15 +85,15 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             <div class=\"col 2 row-align-start-right\">
                 <div class=\"col4\"><a href=";
             // line 18
-            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id_blog_post", [], "any", false, false, false, 18)), "html", null, true);
+            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 18)), "html", null, true);
             echo "><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
                 <div class=\"col4\"><a href=";
             // line 19
-            echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id_blog_post", [], "any", false, false, false, 19)) . "/edit"), "html", null, true);
+            echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 19)) . "/edit"), "html", null, true);
             echo "><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
                 <div class=\"col4\"><a href=";
             // line 20
-            echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id_blog_post", [], "any", false, false, false, 20)) . "/delete"), "html", null, true);
+            echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 20)) . "/delete"), "html", null, true);
             echo "><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
             </div>
     </div>
@@ -143,9 +143,9 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
                 <div class=\"col4 row-item\"><p>{{blog.last_update}}</p></div>
             </div>
             <div class=\"col 2 row-align-start-right\">
-                <div class=\"col4\"><a href={{'/blogs/'~blog.id_blog_post}}><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-                <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id_blog_post~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
-                <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id_blog_post~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
+                <div class=\"col4\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
+                <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
+                <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
             </div>
     </div>
     {% endfor %}

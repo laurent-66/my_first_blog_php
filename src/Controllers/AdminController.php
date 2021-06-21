@@ -8,6 +8,7 @@ use Application\Application\Templating\TwigTrait;
 use Application\Controllers\AbstractController;
 use Application\Application\Http\ParametersBag;
 use Application\Repository\BlogRepository;
+use Application\Exceptions\NotFoundException;
 
 class AdminController extends AbstractController
 {
@@ -21,8 +22,17 @@ class AdminController extends AbstractController
 
     public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
 
-        $this->blogRepository->createBlog();
+        if($request->getMethod() === 'POST') {
+            //récupération de données du post dans un tableau
+            $dataArray = $request->getParsedBody();
+            //création du blog
 
+            $this->blogRepository->createBlog($dataArray);
+            die('test1');
+            //redirection sur la page courante (get)
+            $redirect = new RedirectResponseHttp('/blogs');
+            return $redirect->send();
+        }
         return $this->renderHtml('newBlog.html.twig');
     }
 
@@ -37,12 +47,20 @@ class AdminController extends AbstractController
 
         if(is_null($blog)){
             //TODO Except exeception Not found
+            throw new NotFoundException('le blog n\'existe pas');
         }
+
         if($request->getMethod() === 'POST') {
+            //récupération de données du post dans un tableau
+            $dataArray = $request->getParsedBody();
             //maj du blog
-            $this->BlogRepository->updateBlog($id);
+            $this->blogRepository->updateBlog($dataArray,$id);
+            //redirection sur la page courante (get)
+            $redirect = new RedirectResponseHttp($request->getUri()->getPath());
+            return $redirect->send();
+    
         }
-        //rendu de la page préremplie
+        //page formulaire préremplie (get)
         return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);
 
     }
@@ -53,8 +71,17 @@ class AdminController extends AbstractController
         // $id = '';
         $id = (int) $bag->getParameter('id')->getValue();
         $this->blogRepository->deleteBlog($id);
-        return $this->renderHtml('blogs-list.html.twig');
+        // return $this->renderHtml('blogs-list.html.twig');
+
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs');
+        return $redirect->send();
+
     }
+
+
+
+
 
     public function deleteCommentMember (ServerRequestInterface $request, ParametersBag $bag){
         $id = (int) $bag->getParameter('id')->getValue();

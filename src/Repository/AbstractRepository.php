@@ -23,6 +23,14 @@ abstract class AbstractRepository
 
     abstract protected function getTableName(): string;
 
+    public function getAll()
+    {
+        $query = "SELECT * FROM {$this->getTableName()}";
+        $statement = $this->database->request($query);
+        return $statement->fetchAll();
+    }
+
+
     public function findById(int $id)
     {
         $query = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
@@ -31,10 +39,11 @@ abstract class AbstractRepository
     }
 
 
+    public function delete(int $id)
+    {
+        $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
+        $this->database->request($query, [':id' => $id]);
 
-
-
-
-
+    }
 
 }

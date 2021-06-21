@@ -273,7 +273,7 @@ a.button-download:hover,.button-send
 
 #objectif p{
 
-    color:#FFF;
+    color:rgb(146, 132, 132);
     font-family:lato;
     font-size:2rem;
     font-weight:bold;
@@ -400,4 +400,9 @@ footer h5
     bottom: 0;
     width: 100%;
     text-align: center; 
+}
+
+#objectif
+{
+    color: black;
 }

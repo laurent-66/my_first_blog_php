@@ -32,12 +32,12 @@ class BlogPostController extends AbstractController
 
         $blog = $this->blogRepository->findByBlogId($id);
 
-
-        
-
- 
         return $this->renderHtml('blog.html.twig',['blog'=>$blog]);
     }
+
+
+
+
 
     public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
 
