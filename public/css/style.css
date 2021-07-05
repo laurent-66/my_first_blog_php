@@ -5,7 +5,19 @@ body
     font-family: 'Lato', sans-serif;
     margin:0px;
     padding:0px;
+
 }
+
+
+#page-template
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 1000px;
+}
+
 ul,li
 {
     margin:0px;
@@ -393,14 +405,14 @@ footer h5
 }
 
 
-.sticky-footer
+/*.sticky-footer
 {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center; 
-}
+}*/
 
 #objectif
 {

@@ -78,12 +78,11 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
         echo "</i></span></p>
                 </div>
             </div>
-
-            <h4><bold>Commentaires</bold></h4><br/>
-            <div class=\"commentaire shadow\" style=\"border: 1px solid grey;\">
-                <p class=\"mx-3 my-3\">Lorem ipsum dolor sit amet, consectetur adipiscing elit.In dignissim mollis lorem at viverra</p>
-            </div>
-            <div class=\"btn btn-success my-5\">Ajouter un commentaire</div>
+            <a href=";
+        // line 18
+        echo twig_escape_filter($this->env, (("/blogs/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 18)) . "/comments"), "html", null, true);
+        echo "><button class=\"btn btn-success my-5\">Voir les commentaires du blog</button></a>    
+            <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
                 <form>
                     <div class=\"form-group\">
@@ -110,7 +109,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
 
     public function getDebugInfo()
     {
-        return array (  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  83 => 18,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,12 +131,8 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
                     <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update}}</i></span></p>
                 </div>
             </div>
-
-            <h4><bold>Commentaires</bold></h4><br/>
-            <div class=\"commentaire shadow\" style=\"border: 1px solid grey;\">
-                <p class=\"mx-3 my-3\">Lorem ipsum dolor sit amet, consectetur adipiscing elit.In dignissim mollis lorem at viverra</p>
-            </div>
-            <div class=\"btn btn-success my-5\">Ajouter un commentaire</div>
+            <a href={{'/blogs/'~blog.id~'/comments'}}><button class=\"btn btn-success my-5\">Voir les commentaires du blog</button></a>    
+            <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
                 <form>
                     <div class=\"form-group\">

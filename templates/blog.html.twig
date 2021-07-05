@@ -15,12 +15,8 @@
                     <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update}}</i></span></p>
                 </div>
             </div>
-
-            <h4><bold>Commentaires</bold></h4><br/>
-            <div class="commentaire shadow" style="border: 1px solid grey;">
-                <p class="mx-3 my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.In dignissim mollis lorem at viverra</p>
-            </div>
-            <div class="btn btn-success my-5">Ajouter un commentaire</div>
+            <a href={{'/blogs/'~blog.id~'/comments'}}><button class="btn btn-success my-5">Voir les commentaires du blog</button></a>    
+            <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class="nouveau commentaire">
                 <form>
                     <div class="form-group">
