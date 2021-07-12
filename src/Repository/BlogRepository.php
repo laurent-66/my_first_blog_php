@@ -29,16 +29,16 @@ class BlogRepository extends AbstractRepository
 
     public function createBlog(array $data)
     {
-        dump($data);
 
-        $query = "INSERT INTO {$this->getTableName()} VALUES (
+
+        $query = "INSERT INTO {$this->getTableName()}(title, chapo, content, last_update,user_id_User) VALUES (
          :title,
 
          :chapo,
          :content,
          :last_update,
          :user_id_User)";
-dump($query);
+
 
 
         $statement = $this->database->request($query,    
@@ -49,11 +49,7 @@ dump($query);
             ':content' => $data['content'],
             ':last_update' => new DateTime(),
             ':user_id_User' => 1
-        ]);
- dump($statement);
- exit;
-        $statement->execute();
-        
+        ]);   
     }
 
     public function updateBlog(array $data, int $id)
@@ -73,7 +69,6 @@ dump($query);
             ':content' => $data['content'],
             ':id' => $id
         ]);
-        $statement->execute();
     }
 
     public function deleteBlog(int $id)

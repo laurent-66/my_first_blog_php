@@ -18,24 +18,25 @@ class CommentController extends AbstractController
     }
 
 
-    public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
+    // public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
 
-        $id = (int) $bag->getParameter('id')->getValue();
+    //     $id = (int) $bag->getParameter('id')->getValue();
 
-        $comments = $this->commentRepository->findCommentsByBlogId($id);
-        return $this->renderHtml('comments-list.html.twig',['comments'=>$comments]);
+    //     $comments = $this->commentRepository->findCommentsByBlogId($id);
+    //     return $this->renderHtml('blog.html.twig',['comments'=>$comments]);
 
-    }
+    // }
 
-    public function getComment (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp("/blog/comments/{id}");
-        $response->send();
-    }
+    // public function getComment (ServerRequestInterface $request){
+    //     $response = new RedirectResponseHttp("/blog/comments/{id}");
+    //     $response->send();
+    // }
 
-    public function createComment (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp("/blog/newComment");
-        $response->send();
-    }
+    // public function createComment (ServerRequestInterface $request){
+
+    //     $response = new RedirectResponseHttp("/blog/newComment");
+    //     $response->send();
+    // }
 
     public function updateComment (ServerRequestInterface $request){
         $response = new RedirectResponseHttp("/blog/updateComment/{id}");

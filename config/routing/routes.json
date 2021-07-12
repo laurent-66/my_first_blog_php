@@ -64,13 +64,6 @@
         "_methods": ["GET", "DELETE"]
     },
     {
-        "name": "comments",
-        "path": "/blogs/{id}/comments",
-        "_controller":"Application\\Controllers\\CommentController",
-        "_method": "getAllComments",
-        "_methods": ["GET"]
-    },
-    {
         "name": "updateComment",
         "path": "/blog/updateComment/{id}",
         "_controller":"Application\\Controllers\\CommentController",

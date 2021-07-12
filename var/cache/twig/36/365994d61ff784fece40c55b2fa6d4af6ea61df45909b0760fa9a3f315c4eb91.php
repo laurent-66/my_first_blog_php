@@ -78,16 +78,41 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
         echo "</i></span></p>
                 </div>
             </div>
-            <a href=";
-        // line 18
-        echo twig_escape_filter($this->env, (("/blogs/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 18)) . "/comments"), "html", null, true);
-        echo "><button class=\"btn btn-success my-5\">Voir les commentaires du blog</button></a>    
+
+            <h4><bold>Commentaires du blog</bold></h4><br/>
+            ";
+        // line 20
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["findComments"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+            // line 21
+            echo "                <div class=\"commentaire shadow row\" style=\"border: 1px solid grey;\">
+                    <div class=\"col8\"><p class=\"mx-3 my-3\">";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 22), "html", null, true);
+            echo "</p></div>
+                    <div class=\"col2\"><a href=";
+            // line 23
+            echo twig_escape_filter($this->env, (("/blogs/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 23)) . "/edit"), "html", null, true);
+            echo "><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
+                    <div class=\"col2\"><a href=";
+            // line 24
+            echo twig_escape_filter($this->env, (("/blogs/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 24)) . "/delete"), "html", null, true);
+            echo "><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
+                </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "
             <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
-                <form>
+                <form method=\"POST\">
                     <div class=\"form-group\">
-                        <label for=\"comment\">Nouveau commentaire :</label>
-                        <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                        <label for=\"commentContent\">Nouveau commentaire :</label>
+                        <textarea class=\"form-control rounded-0\" id=\"commentContent\" name=\"commentContent\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                     </div>
                     <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
                 </form>
@@ -109,7 +134,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
 
     public function getDebugInfo()
     {
-        return array (  83 => 18,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  109 => 27,  100 => 24,  96 => 23,  92 => 22,  89 => 21,  85 => 20,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -131,13 +156,22 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
                     <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update}}</i></span></p>
                 </div>
             </div>
-            <a href={{'/blogs/'~blog.id~'/comments'}}><button class=\"btn btn-success my-5\">Voir les commentaires du blog</button></a>    
+
+            <h4><bold>Commentaires du blog</bold></h4><br/>
+            {% for comment in findComments %}
+                <div class=\"commentaire shadow row\" style=\"border: 1px solid grey;\">
+                    <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
+                    <div class=\"col2\"><a href={{'/blogs/'~blog.id~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mb-3\">Modifier</button></a></div>
+                    <div class=\"col2\"><a href={{'/blogs/'~blog.id~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
+                </div>
+            {% endfor %}
+
             <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
-                <form>
+                <form method=\"POST\">
                     <div class=\"form-group\">
-                        <label for=\"comment\">Nouveau commentaire :</label>
-                        <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                        <label for=\"commentContent\">Nouveau commentaire :</label>
+                        <textarea class=\"form-control rounded-0\" id=\"commentContent\" name=\"commentContent\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                     </div>
                     <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
                 </form>

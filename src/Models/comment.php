@@ -2,17 +2,17 @@
 
 namespace Application\Models;
 
-class comment
+class Comment
 {
-    protected $id_comment;
+    protected $id;
 
-    protected $comment_content = '';
+    protected $commentContent = '';
 
-    protected $comment_validate = false;
+    protected $commentValidate = false;
 
-    protected $comment_published = false;
+    protected $commentPublished = false;
 
-    protected $comment_signaled = false;
+    protected $commentSignaled = false;
 
 
  
@@ -34,13 +34,13 @@ class comment
 
     public function getContent(): ?string
     {
-        return $this->comment_content;
+        return $this->commentContent;
     }
 
 
-    public function setContent(?string $comment_content): void
+    public function setContent(?string $commentContent): void
     {
-        $this->title = $comment_content;
+        $this->title = $commentContent;
     }
 
 
@@ -61,12 +61,12 @@ class comment
 
     public function getPublished(): ?bool
     {
-        return $this->comment_published;
+        return $this->commentPublished;
     }
 
-    public function setPublished(?bool $comment_published): void
+    public function setPublished(?bool $commentPublished): void
     {
-        $this->comment_published = $comment_published;
+        $this->commentPublished = $commentPublished;
     }
 
 
@@ -74,13 +74,13 @@ class comment
 
     public function getSignaled(): ?bool
     {
-        return $this->comment_signaled;
+        return $this->commentSignaled;
     }
     
     
-    public function setSignaled(?bool $comment_signaled): void
+    public function setSignaled(?bool $commentSignaled): void
     {
-        $this->comment_signaled = $comment_signaled;
+        $this->commentSignaled = $commentSignaled;
     }
     
 }

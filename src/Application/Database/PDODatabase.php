@@ -46,7 +46,9 @@ class PDODatabase extends \PDO
 
             $statement->bindValue($name, $param, $bindType);
         }
-        $statement->execute();
+
+
+            $statement->execute();
 
         return $statement;
     }

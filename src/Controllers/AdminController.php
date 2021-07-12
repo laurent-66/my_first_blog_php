@@ -28,7 +28,7 @@ class AdminController extends AbstractController
             //création du blog
 
             $this->blogRepository->createBlog($dataArray);
-            die('test1');
+            //die('test1');
             //redirection sur la page courante (get)
             $redirect = new RedirectResponseHttp('/blogs');
             return $redirect->send();

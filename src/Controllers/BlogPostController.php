@@ -8,15 +8,19 @@ use Application\Application\Http\ResponseHttp;
 use Application\Application\Http\ParametersBag;
 use Application\Application\Templating\TwigTrait;
 use Application\Repository\BlogRepository;
+use Application\Repository\CommentRepository;
+
 
 class BlogPostController extends AbstractController
 {
 
-    protected $blogRepository= '';
+    protected $blogRepository;
+    private $commentRepository;
 
     public function __construct()
     {
         $this->blogRepository = new BlogRepository;
+        $this->commentRepository = new CommentRepository();
     }
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
@@ -32,7 +36,20 @@ class BlogPostController extends AbstractController
 
         $blog = $this->blogRepository->findByBlogId($id);
 
-        return $this->renderHtml('blog.html.twig',['blog'=>$blog]);
+        if($request->getMethod() === 'POST') {
+            //récupération de données du post dans un tableau
+            $dataArray = $request->getParsedBody();
+            //création d'un commentaire
+            $this->commentRepository->createComment($dataArray,$id);
+            //redirection sur la page courante (get)
+            $redirect = new RedirectResponseHttp('/blogs/'.$id);
+            return $redirect->send();
+        }
+
+        $findComments = $this->commentRepository->findCommentsByBlogId($id);
+
+        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments]);
+
     }
 
 }
