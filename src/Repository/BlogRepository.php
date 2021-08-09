@@ -29,22 +29,20 @@ class BlogRepository extends AbstractRepository
 
     public function createBlog(array $data)
     {
-
-
-        $query = "INSERT INTO {$this->getTableName()}(title, chapo, content, last_update,user_id_User) VALUES (
+        dump($data);
+        exit;
+        $query = "INSERT INTO {$this->getTableName()}(title, url_image, chapo, content, last_update,user_id_User) VALUES (
          :title,
-
+         :url_image,
          :chapo,
          :content,
          :last_update,
          :user_id_User)";
 
-
-
         $statement = $this->database->request($query,    
         [
             ':title' => $data['title-blog'],
-
+            ':url_image' => $data['url_image'],
             ':chapo' => $data['inputChapo'],
             ':content' => $data['content'],
             ':last_update' => new DateTime(),
@@ -57,6 +55,7 @@ class BlogRepository extends AbstractRepository
         $query = "UPDATE {$this->getTableName()} SET
 
          title = :title,
+         url_image :url_image,
          chapo = :chapo,
          content = :content,
          last_update = NOW() 
@@ -65,6 +64,7 @@ class BlogRepository extends AbstractRepository
         $statement = $this->database->request($query,
         [
             ':title' => $data['title-blog'],
+            ':url_image' => $data['url_image'],
             ':chapo' => $data['inputChapo'],
             ':content' => $data['content'],
             ':id' => $id

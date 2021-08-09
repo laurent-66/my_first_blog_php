@@ -30,8 +30,6 @@ class CommentRepository extends AbstractRepository
 
     public function createComment(array $data, $id){
 
-
-
         $query = "INSERT INTO {$this->getTableName()}(commentContent,user_id_User,blog_post_id_blog_post) VALUES (
          :commentContent,
         --  :comment_validate,
@@ -76,12 +74,5 @@ class CommentRepository extends AbstractRepository
         $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
         $this->database->request($query, [':id' => $id]);
     }
-
-
-
-
-
-
-
 
 }

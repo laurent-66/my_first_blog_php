@@ -72,10 +72,10 @@
     },
     {
         "name": "deleteComment",
-        "path": "/blog/deleteComment",
+        "path": "/blog/deleteComment/{blogId}/{id}",
         "_controller":"Application\\Controllers\\CommentController",
         "_method": "deleteComment",
-        "_methods": ["GET","DELETE"]
+        "_methods": ["GET"]
     },
     {
         "name": "deleteCommentMember",

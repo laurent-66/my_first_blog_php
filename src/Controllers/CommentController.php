@@ -10,11 +10,11 @@ use Application\Repository\CommentRepository;
 
 class CommentController extends AbstractController
 {
-    private $commentRepository;
+    private $CommentRepository;
 
     public function __construct()
     {
-        $this->commentRepository = new CommentRepository();
+        $this->CommentRepository = new CommentRepository();
     }
 
 
@@ -43,9 +43,19 @@ class CommentController extends AbstractController
         $response->send();
     }
 
-    public function deleteComment (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp("/blog/deleteComment/{id}");
-        $response->send();
+
+    public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
+ 
+        //Récupération de la valeur de l'id comment $id du $bag
+        $id = (int) $bag->getParameter('id')->getValue();
+        $this->CommentRepository->deleteComment($id);
+
+        $idblog = (int) $bag->getParameter('blogId')->getValue();
+
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs/'.$idblog);
+        return $redirect->send();
+
     }
 
 }

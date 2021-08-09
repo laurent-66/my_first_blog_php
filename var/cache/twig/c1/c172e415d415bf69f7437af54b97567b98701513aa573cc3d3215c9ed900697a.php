@@ -58,7 +58,7 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
 <div class=\"container\">
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
-            <form class=\"form-signin\" method=\"POST\">
+            <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
                 <div class=\"form-group\">
                     <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                     <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
@@ -112,7 +112,7 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
 <div class=\"container\">
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
-            <form class=\"form-signin\" method=\"POST\">
+            <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
                 <div class=\"form-group\">
                     <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                     <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>

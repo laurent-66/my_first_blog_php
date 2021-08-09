@@ -37,6 +37,7 @@ class BlogPostController extends AbstractController
         $blog = $this->blogRepository->findByBlogId($id);
 
         if($request->getMethod() === 'POST') {
+            
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
             //création d'un commentaire

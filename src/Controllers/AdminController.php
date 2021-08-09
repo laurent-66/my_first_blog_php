@@ -21,8 +21,13 @@ class AdminController extends AbstractController
     }
 
     public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
-
+        
         if($request->getMethod() === 'POST') {
+
+            dump($request);
+            dump($_FILES);
+            exit;
+
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
             //création du blog

@@ -8,6 +8,8 @@ class blog
 
     protected $title = '';
 
+    protected $url_image = '';
+
     protected $chapo = '';
 
     protected $content = '';
@@ -42,6 +44,21 @@ class blog
     {
         $this->title = $title;
     }
+
+
+    // method url_image
+
+    public function getUrlImage(): ?string
+    {
+        return $this->url_image;
+    }
+
+
+    public function setUrlImage(?string $url_image): void
+    {
+        $this->url_image = $url_image;
+    }
+
 
 
     // method chapo
