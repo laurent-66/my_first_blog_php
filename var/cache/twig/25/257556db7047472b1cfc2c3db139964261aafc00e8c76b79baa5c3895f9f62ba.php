@@ -56,6 +56,7 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
         $macros = $this->macros;
         echo " 
 <div class=\"container\">
+
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
             <form class=\"form-signin\" method=\"POST\">
@@ -101,6 +102,7 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
                     <label for=\"last_update\" class=\"sr-only\">Dernière mise à jour</label>
                     <input type=\"datepicker\" name=\"last_update\" class=\"form-control my-3\" placeholder=\"Date de la dernière mise à jour\" value=\"\">
                 </div> -->
+
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
             </form>
         </div>
@@ -121,7 +123,9 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
 
     public function getDebugInfo()
     {
+
         return array (  96 => 34,  88 => 29,  67 => 11,  54 => 3,  47 => 2,  36 => 1,);
+
     }
 
     public function getSourceContext()
@@ -130,6 +134,7 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
 {% block title %}Blog{% endblock %}
 {% block body %} 
 <div class=\"container\">
+
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
             <form class=\"form-signin\" method=\"POST\">
@@ -166,6 +171,7 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
                     <label for=\"last_update\" class=\"sr-only\">Dernière mise à jour</label>
                     <input type=\"datepicker\" name=\"last_update\" class=\"form-control my-3\" placeholder=\"Date de la dernière mise à jour\" value=\"\">
                 </div> -->
+
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
             </form>
         </div>

@@ -67,7 +67,6 @@ class AdminController extends AbstractController
         }
         //page formulaire préremplie (get)
         return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);
-
     }
 
     public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
@@ -83,10 +82,6 @@ class AdminController extends AbstractController
         return $redirect->send();
 
     }
-
-
-
-
 
     public function deleteCommentMember (ServerRequestInterface $request, ParametersBag $bag){
         $id = (int) $bag->getParameter('id')->getValue();

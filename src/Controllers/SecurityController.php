@@ -81,7 +81,20 @@ class SecurityController extends AbstractController
 
     public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
     {   
-        session_destroy();
+        $validate = ''; 
+        if ($request->getMethod() === 'GET'){
+            $dataSubmitted = $request->getParsedBody();
+
+            if (  (strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
+
+                $this->userRepository->disconnect(
+                    session_destroy()
+                );
+
+                $validate = "Vous êtes maintenant déconnecté.";
+            } else {
+
+                $error = "erreur de déconnexion";
 
         $result = new RedirectResponseHttp('/se-connecter');
         return $result->send();

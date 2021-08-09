@@ -3,6 +3,7 @@
 namespace Application\Repository;
 
 use Application\Repository\AbstractRepository;
+
 use DateTime;
 
 class BlogRepository extends AbstractRepository
@@ -11,7 +12,6 @@ class BlogRepository extends AbstractRepository
     {
         return 'blog_post';
     }
-
 
     public function getAllBlog()
     {

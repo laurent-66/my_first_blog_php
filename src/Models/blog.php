@@ -45,7 +45,6 @@ class blog
         $this->title = $title;
     }
 
-
     // method url_image
 
     public function getUrlImage(): ?string
@@ -58,8 +57,6 @@ class blog
     {
         $this->url_image = $url_image;
     }
-
-
 
     // method chapo
 

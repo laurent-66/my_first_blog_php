@@ -14,7 +14,6 @@ class Comment
 
     protected $commentSignaled = false;
 
-
  
     //method id
 
@@ -34,6 +33,7 @@ class Comment
 
     public function getContent(): ?string
     {
+
         return $this->commentContent;
     }
 
@@ -41,6 +41,7 @@ class Comment
     public function setContent(?string $commentContent): void
     {
         $this->title = $commentContent;
+
     }
 
 
@@ -61,12 +62,14 @@ class Comment
 
     public function getPublished(): ?bool
     {
+
         return $this->commentPublished;
     }
 
     public function setPublished(?bool $commentPublished): void
     {
         $this->commentPublished = $commentPublished;
+
     }
 
 
@@ -74,6 +77,7 @@ class Comment
 
     public function getSignaled(): ?bool
     {
+
         return $this->commentSignaled;
     }
     
@@ -81,6 +85,7 @@ class Comment
     public function setSignaled(?bool $commentSignaled): void
     {
         $this->commentSignaled = $commentSignaled;
+
     }
     
 }
