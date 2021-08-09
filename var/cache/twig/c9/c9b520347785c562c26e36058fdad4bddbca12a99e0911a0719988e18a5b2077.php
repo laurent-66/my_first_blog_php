@@ -110,7 +110,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                         </div>
                     </div>
                     <div class=\"row m-0 px-0 py-3\" id=\"connexionAdmin\">
-                        <a href=\"#\">Administration blogs</a>
+                        <a href=\"/blogs/admin/dashboard\">Administration blogs</a>
                     </div>
                 </div>
             </footer>
@@ -223,7 +223,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                         </div>
                     </div>
                     <div class=\"row m-0 px-0 py-3\" id=\"connexionAdmin\">
-                        <a href=\"#\">Administration blogs</a>
+                        <a href=\"/blogs/admin/dashboard\">Administration blogs</a>
                     </div>
                 </div>
             </footer>

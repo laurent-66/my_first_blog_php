@@ -19,17 +19,16 @@
             <h4><bold>Commentaires du blog</bold></h4><br/>
             {% for comment in findComments %}
                 <div class="comment-line row">
-                    <div><p>{{'/blog/deleteComment/'~comment.id}}</p></div>
                     <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
-                    <!-- Button trigger modal -->
+                    {% if ( user != null) %}
                     <div class="col4 mr-3">
                         <div class="row px-0 mx-0">
-                            <div class="col button-comment-line px-0 mx-2"><button type="button" class="btn btn-warning btn-block my auto " data-toggle="modal" data-target={{'#comment_'~comment.id}}>Modifier</button></div>
+                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/approveComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto">Approuver</button></a></div>
                             <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/deleteComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto">Supprimer</button></a></div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>    
-
             {% endfor %}
 
             <h4><bold>Ajouter un commentaire</bold></h4><br/>

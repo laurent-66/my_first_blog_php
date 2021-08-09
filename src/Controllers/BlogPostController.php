@@ -10,7 +10,6 @@ use Application\Application\Templating\TwigTrait;
 use Application\Repository\BlogRepository;
 use Application\Repository\CommentRepository;
 
-
 class BlogPostController extends AbstractController
 {
 
@@ -24,13 +23,18 @@ class BlogPostController extends AbstractController
     }
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
-        
+
+        $user = $_SESSION['user']['admin'];
+
         $blogs = $this->blogRepository->getAllBlog();
 
-        return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
+        return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs,'user'=>$user]);
+
     }
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+
+        $user = $_SESSION['user']['admin'];
 
         $id = (int) $bag->getParameter('id')->getValue();
 
@@ -48,9 +52,7 @@ class BlogPostController extends AbstractController
         }
 
         $findComments = $this->commentRepository->findCommentsByBlogId($id);
-
-        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments]);
-
+        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments, 'user'=>$user]);
     }
 
 }

@@ -40,7 +40,7 @@ class SecurityController extends AbstractController
                     $response = new RedirectResponseHttp('/');
                     return $response->send();
                     $validation = "vous êtes bien connecté";
-
+ 
                 }
 
             }
