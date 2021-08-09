@@ -56,23 +56,34 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
         $macros = $this->macros;
         echo " 
 <div class=\"container\">
-    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-            <form class=\"form-signin\">
-                <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
-                <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
 
-                <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
-                <input type=\"password\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
-
-                <label for=\"passwordConfirm\" class=\"sr-only\">Confirmation</label>
-                <input type=\"password\" id=\"passwordConfirm\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required autofocus>
+    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
+        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
+            <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
+                <div class=\"form-group\">
+                    <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
+                    <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
+                </div>
+                <div class=\"form-group\">
+                    <div class=\"input-group mb-3\">
+                        <div class=\"custom-file\">
+                            <input type=\"file\" class=\"custom-file-input\" id=\"url_image\" name=\"url_image\">
+                            <label class=\"custom-file-label\" for=\"url_image\">Veuillez choisir une image</label>
+                        </div>
+                    </div>
+                </div>
+                <div class=\"form-group\">
+                    <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
+                    <input type=\"text\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
+                </div>
 
                 <div class=\"form-group\">
-                <label for=\"comment\">Contenue du blog :</label>
-                <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                    <label for=\"content\">Contenue du blog :</label>
+                    <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
-                <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
+
+                <button type=\"submit\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>
+
             </form>
         </div>
     </div>
@@ -101,23 +112,34 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
 {% block title %}Blog{% endblock %}
 {% block body %} 
 <div class=\"container\">
-    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-            <form class=\"form-signin\">
-                <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
-                <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
 
-                <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
-                <input type=\"password\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
-
-                <label for=\"passwordConfirm\" class=\"sr-only\">Confirmation</label>
-                <input type=\"password\" id=\"passwordConfirm\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required autofocus>
+    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
+        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
+            <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
+                <div class=\"form-group\">
+                    <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
+                    <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
+                </div>
+                <div class=\"form-group\">
+                    <div class=\"input-group mb-3\">
+                        <div class=\"custom-file\">
+                            <input type=\"file\" class=\"custom-file-input\" id=\"url_image\" name=\"url_image\">
+                            <label class=\"custom-file-label\" for=\"url_image\">Veuillez choisir une image</label>
+                        </div>
+                    </div>
+                </div>
+                <div class=\"form-group\">
+                    <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
+                    <input type=\"text\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
+                </div>
 
                 <div class=\"form-group\">
-                <label for=\"comment\">Contenue du blog :</label>
-                <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                    <label for=\"content\">Contenue du blog :</label>
+                    <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
-                <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
+
+                <button type=\"submit\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>
+
             </form>
         </div>
     </div>

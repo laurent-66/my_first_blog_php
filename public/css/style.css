@@ -1,3 +1,10 @@
+/* @import "template.css"; */
+/* @import "menu.css"; */
+/* @import "accueil.css"; */
+
+@import "comment-line.css";
+
+
 /*GENERAL */
 
 body
@@ -5,7 +12,19 @@ body
     font-family: 'Lato', sans-serif;
     margin:0px;
     padding:0px;
+
 }
+
+
+#page-template
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 1000px;
+}
+
 ul,li
 {
     margin:0px;
@@ -273,7 +292,7 @@ a.button-download:hover,.button-send
 
 #objectif p{
 
-    color:#FFF;
+    color:rgb(146, 132, 132);
     font-family:lato;
     font-size:2rem;
     font-weight:bold;
@@ -283,7 +302,6 @@ a.button-download:hover,.button-send
 #objectif #activite-entreprise{
 
     font-size:1.5rem;
-
 }
 
 
@@ -294,8 +312,6 @@ a.button-download:hover,.button-send
     color: #318ce7;
     font-weight:bold;
 }
-
-
 
 /* FOOTER */
 
@@ -363,7 +379,6 @@ footer h5
 }
 
 
-
 /* list des blogs*/
 
 .row-item
@@ -390,4 +405,19 @@ footer h5
     flex-direction: row;
     justify-content:flex-end;
     align-items: center;
+}
+
+
+/*.sticky-footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center; 
+}*/
+
+#objectif
+{
+    color: black;
 }

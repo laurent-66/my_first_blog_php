@@ -56,31 +56,23 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
         $macros = $this->macros;
         echo " 
 <div class=\"container-fluid\" id=\"home\">
-";
+
+    ";
         // line 7
-        if (($context["validate"] ?? null)) {
+        if (($context["validation"] ?? null)) {
             // line 8
-            echo "    <div class=\"alert alert-success\" role=\"alert\">
+            echo "    <div class=\"alert alert-success\" role=\"success\">
         ";
             // line 9
-            echo twig_escape_filter($this->env, ($context["validate"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, ($context["validation"] ?? null), "html", null, true);
             echo "
     </div>
-";
+    ";
         }
         // line 12
-        if (($context["error"] ?? null)) {
-            // line 13
-            echo "    <div class=\"alert alert-danger\" role=\"alert\">
-        ";
-            // line 14
-            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
-            echo "
-    </div>
-";
-        }
-        // line 17
-        echo "    <div class=\"row\">
+        echo "
+    <div class=\"row\">
+
         <div class=\"heading col-sm-12 col-md-6 col-lg-6\">
             <h1>Laurent LESAGE</h1></br>
             <h3>Développeur web junior fullstack<br /><br /> JavaScript et PHP/Symfony</h3>
@@ -159,7 +151,9 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
 
     public function getDebugInfo()
     {
-        return array (  83 => 17,  77 => 14,  74 => 13,  72 => 12,  66 => 9,  63 => 8,  61 => 7,  54 => 5,  47 => 3,  36 => 1,);
+
+        return array (  72 => 12,  66 => 9,  63 => 8,  61 => 7,  54 => 5,  47 => 3,  36 => 1,);
+
     }
 
     public function getSourceContext()
@@ -170,16 +164,14 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
 
 {% block body %} 
 <div class=\"container-fluid\" id=\"home\">
-{% if validate %}
-    <div class=\"alert alert-success\" role=\"alert\">
-        {{ validate }}
+
+    {% if validation %}
+    <div class=\"alert alert-success\" role=\"success\">
+        {{ validation }}
     </div>
-{% endif %}
-{% if error %}
-    <div class=\"alert alert-danger\" role=\"alert\">
-        {{ error }}
-    </div>
-{% endif %}
+    {% endif %}
+
+
     <div class=\"row\">
         <div class=\"heading col-sm-12 col-md-6 col-lg-6\">
             <h1>Laurent LESAGE</h1></br>

@@ -4,6 +4,8 @@ namespace Application\Repository;
 
 use Application\Repository\AbstractRepository;
 
+use DateTime;
+
 class BlogRepository extends AbstractRepository
 {
     protected function getTableName(): string
@@ -16,63 +18,63 @@ class BlogRepository extends AbstractRepository
         $query = "SELECT * FROM {$this->getTableName()}";
         $statement = $this->database->request($query);
         return $statement->fetchAll();
-
     }
 
     public function findByBlogId(int $id)
     {
-        $query = "SELECT * FROM {$this->getTableName()} WHERE $id";
-        $statement = $this->database->query($query);
+        $query = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
+        $statement = $this->database->request($query, [':id' => $id]);
         return $statement->fetch();
     }
 
-    public function createBlog()
+    public function createBlog(array $data)
     {
+        dump($data);
+        exit;
+        $query = "INSERT INTO {$this->getTableName()}(title, url_image, chapo, content, last_update,user_id_User) VALUES (
+         :title,
+         :url_image,
+         :chapo,
+         :content,
+         :last_update,
+         :user_id_User)";
 
-        $title = '';
-        $chapo = '';
-        $content = '';
-        $last_update = '';
-
-        $query = "UPDATE {$this->getTableName()}SET
-
-         `title`= :title,
-         `chapo`= :chapo,
-         `content`= :content,
-         `last_update`= :last_update";
-
-        $this->database->request($query,
+        $statement = $this->database->request($query,    
         [
-            ':title' => $title,
-            ':chapo' => $chapo,
-            ':content' => $content,
-            ':last_update' => $last_update  
-        ]);
-
+            ':title' => $data['title-blog'],
+            ':url_image' => $data['url_image'],
+            ':chapo' => $data['inputChapo'],
+            ':content' => $data['content'],
+            ':last_update' => new DateTime(),
+            ':user_id_User' => 1
+        ]);   
     }
 
-    public function updateBlog()
+    public function updateBlog(array $data, int $id)
     {
+        $query = "UPDATE {$this->getTableName()} SET
 
-        $title = '';
-        $chapo = '';
-        $content = '';
-        $last_update = '';
+         title = :title,
+         url_image :url_image,
+         chapo = :chapo,
+         content = :content,
+         last_update = NOW() 
+         WHERE id = :id ;";
 
-        $query = "UPDATE {$this->getTableName()}SET
-
-         `title`= :title,
-         `chapo`= :chapo,
-         `content`= :content,
-         `last_update`= :last_update";
-
-        $this->database->request($query,
+        $statement = $this->database->request($query,
         [
-            ':title' => $title,
-            ':chapo' => $chapo,
-            ':content' => $content,
-            ':last_update' => $last_update  
+            ':title' => $data['title-blog'],
+            ':url_image' => $data['url_image'],
+            ':chapo' => $data['inputChapo'],
+            ':content' => $data['content'],
+            ':id' => $id
         ]);
+    }
+
+    public function deleteBlog(int $id)
+    {
+        $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
+        $this->database->request($query, [':id' => $id]);
 
     }
 

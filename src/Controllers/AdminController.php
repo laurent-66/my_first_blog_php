@@ -6,25 +6,87 @@ use Application\Application\Http\RedirectResponseHttp;
 use Application\Application\Http\ResponseHttp;
 use Application\Application\Templating\TwigTrait;
 use Application\Controllers\AbstractController;
+use Application\Application\Http\ParametersBag;
+use Application\Repository\BlogRepository;
+use Application\Exceptions\NotFoundException;
 
 class AdminController extends AbstractController
 {
-    public function createBlog (ServerRequestInterface $request){
+
+    protected $blogRepository= '';
+
+    public function __construct()
+    {
+        $this->blogRepository = new BlogRepository;
+    }
+
+    public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
+        
+        if($request->getMethod() === 'POST') {
+
+            dump($request);
+            dump($_FILES);
+            exit;
+
+            //récupération de données du post dans un tableau
+            $dataArray = $request->getParsedBody();
+            //création du blog
+
+            $this->blogRepository->createBlog($dataArray);
+            //die('test1');
+            //redirection sur la page courante (get)
+            $redirect = new RedirectResponseHttp('/blogs');
+            return $redirect->send();
+        }
         return $this->renderHtml('newBlog.html.twig');
     }
 
-    public function updateBlog (ServerRequestInterface $request){
-        return $this->renderHtml('updateBlog.html.twig');
+    public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
+
+        //Récupération de la valeur de l'id blog $id du $bag
+        $id = (int) $bag->getParameter('id')->getValue();
+        //récupération du blog présent pour préremplir les champs
+        $blog = $this->blogRepository->findByBlogId($id);
+
+        //vérification du type de requête si http null, POST ou GET(par defaut)
+
+        if(is_null($blog)){
+            //TODO Except exeception Not found
+            throw new NotFoundException('le blog n\'existe pas');
+        }
+
+        if($request->getMethod() === 'POST') {
+            //récupération de données du post dans un tableau
+            $dataArray = $request->getParsedBody();
+            //maj du blog
+            $this->blogRepository->updateBlog($dataArray,$id);
+            //redirection sur la page courante (get)
+            $redirect = new RedirectResponseHttp($request->getUri()->getPath());
+            return $redirect->send();
+    
+        }
+        //page formulaire préremplie (get)
+        return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);
     }
 
-    public function deleteBlog (ServerRequestInterface $request){
+    public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
 
-        $response = new RedirectResponseHttp("/blogs");
-        $response->send();
+        //Récupération de la valeur de l'id blog $id du $bag
+        // $id = '';
+        $id = (int) $bag->getParameter('id')->getValue();
+        $this->blogRepository->deleteBlog($id);
+        // return $this->renderHtml('blogs-list.html.twig');
+
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs');
+        return $redirect->send();
+
     }
 
-    public function deleteCommentMember (ServerRequestInterface $request){
-        dump($request);
+    public function deleteCommentMember (ServerRequestInterface $request, ParametersBag $bag){
+        $id = (int) $bag->getParameter('id')->getValue();
+        $this->blogRepository->deleteBlog($id);
+        return $this->renderHtml('blogs-list.html.twig');
     }
 
 }

@@ -41,33 +41,42 @@ class BlogPostController extends AbstractController
         return $this->renderHtml('newBlog.html.twig');
     }
 
-    public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
-        return $this->renderHtml('updateBlog.html.twig');
+    protected $blogRepository;
+    private $commentRepository;
+
+    public function __construct()
+    {
+        $this->blogRepository = new BlogRepository;
+        $this->commentRepository = new CommentRepository();
     }
 
-    public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
+    public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
+        
+        $blogs = $this->blogRepository->getAllBlog();
 
+        return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
     }
 
-    public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
+    public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
 
-    }
+        $id = (int) $bag->getParameter('id')->getValue();
 
-    public function getComment (ServerRequestInterface $request, ParametersBag $bag){
+        $blog = $this->blogRepository->findByBlogId($id);
 
-    }
+        if($request->getMethod() === 'POST') {
+            
+            //récupération de données du post dans un tableau
+            $dataArray = $request->getParsedBody();
+            //création d'un commentaire
+            $this->commentRepository->createComment($dataArray,$id);
+            //redirection sur la page courante (get)
+            $redirect = new RedirectResponseHttp('/blogs/'.$id);
+            return $redirect->send();
+        }
 
-    public function createComment (ServerRequestInterface $request, ParametersBag $bag){
+        $findComments = $this->commentRepository->findCommentsByBlogId($id);
 
-    }
-
-    public function updateComment (ServerRequestInterface $request, ParametersBag $bag){
-
-    }
-
-    public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
- 
-
+        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments]);
     }
 
 }

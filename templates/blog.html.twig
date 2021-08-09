@@ -3,7 +3,7 @@
 {% block body %} 
 <div class="container">
     <section>
-        <h3>{{title-blog}}</h3><br />
+        <h3>{{blog.title}}</h3><br />
             <div class="row">
                 <div class="col-12 ml-50px my-0">
                     <div><img  src="./images/me2.jpg" alt=""></div>
@@ -11,21 +11,33 @@
             </div>
             <div class="row my-5" id="objectif">
                 <div class="col-12 mx-auto my-0">
-                    <p>{{content-blog}}</p>
-                    <p><bold>Dernière mise à jour: </bold><span><i>{{date-blog}}</i></span></p>
+                    <p>{{blog.content}}</p>
+                    <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update}}</i></span></p>
                 </div>
             </div>
 
-            <h4><bold>Commentaires</bold></h4><br/>
-            <div class="commentaire shadow" style="border: 1px solid grey;">
-                <p class="mx-3 my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.In dignissim mollis lorem at viverra</p>
-            </div>
-            <div class="btn btn-success my-5">Ajouter un commentaire</div>
+            <h4><bold>Commentaires du blog</bold></h4><br/>
+            {% for comment in findComments %}
+                <div class="comment-line row">
+                    <div><p>{{'/blog/deleteComment/'~comment.id}}</p></div>
+                    <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
+                    <!-- Button trigger modal -->
+                    <div class="col4 mr-3">
+                        <div class="row px-0 mx-0">
+                            <div class="col button-comment-line px-0 mx-2"><button type="button" class="btn btn-warning btn-block my auto " data-toggle="modal" data-target={{'#comment_'~comment.id}}>Modifier</button></div>
+                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/deleteComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto">Supprimer</button></a></div>
+                        </div>
+                    </div>
+                </div>    
+
+            {% endfor %}
+
+            <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class="nouveau commentaire">
-                <form>
+                <form method="POST">
                     <div class="form-group">
-                        <label for="comment">Nouveau commentaire :</label>
-                        <textarea class="form-control rounded-0" id="comment" rows="3"placeholder="Veuillez écrire votre texte ici."></textarea>
+                        <label for="commentContent">Nouveau commentaire :</label>
+                        <textarea class="form-control rounded-0" id="commentContent" name="commentContent" rows="3"placeholder="Veuillez écrire votre texte ici."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Envoyez</button>
                 </form>

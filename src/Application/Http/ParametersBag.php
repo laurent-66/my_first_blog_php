@@ -2,6 +2,8 @@
 
 namespace Application\Application\Http;
 
+use Exception;
+
 class ParametersBag
 {
     protected $parameters = [];
@@ -18,12 +20,14 @@ class ParametersBag
             $this-> parameters[] = $parameter;
         }
     }
+    //retourne la valeur d'une clés
     public function getParameter(string $key): ?Parameter
     {
-        $paramFiltered = array_filter($this->parameters, function (parameter $param) use ($key) {
+        $paramFiltered = array_filter($this->parameters, function (Parameter $param) use ($key) {
+
             return $param->getKey() === $key;
         });
-        return count($paramFiltered) > 0 ? $paramFiltered[0] : null;
+        return count($paramFiltered) > 0 ? current($paramFiltered) : null;
     }
 
 

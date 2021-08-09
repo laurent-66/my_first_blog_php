@@ -56,22 +56,53 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
         $macros = $this->macros;
         echo " 
 <div class=\"container\">
-    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-            <form class=\"form-signin\">
-                <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
-                <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
 
-                <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
-                <input type=\"password\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
-
-                <label for=\"passwordConfirm\" class=\"sr-only\">Confirmation</label>
-                <input type=\"password\" id=\"passwordConfirm\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required autofocus>
+    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
+        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
+            <form class=\"form-signin\" method=\"POST\">
 
                 <div class=\"form-group\">
-                <label for=\"comment\">Contenue du blog :</label>
-                <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
+                <input type=\"text\" name=\"title-blog\" class=\"form-control\" value=\"";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title", [], "any", false, false, false, 11), "html", null, true);
+        echo "\" placeholder=\"Entrer le titre\" required autofocus>
                 </div>
+
+                <!-- <div class=\"form-group\">
+                <div class=\"input-group mb-3\">
+                    <div class=\"custom-file\">
+                      <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile02\">
+                      <label class=\"custom-file-label\" for=\"inputGroupFile02\">Choose file</label>
+                    </div>
+                    <div class=\"input-group-append\">
+                      <span class=\"input-group-text\" id=\"\">Upload</span>
+                    </div>
+                  </div>
+                </div> -->
+
+
+                <div class=\"form-group\">
+                <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
+                <input type=\"text\" name=\"inputChapo\" class=\"form-control my-3\" value=\"";
+        // line 29
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "chapo", [], "any", false, false, false, 29), "html", null, true);
+        echo "\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
+                </div>
+
+                <div class=\"form-group\">
+                <label for=\"content\">Contenue du blog :</label>
+                <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  value=\"";
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content", [], "any", false, false, false, 34), "html", null, true);
+        echo "\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                </div>
+                
+                <!-- <div class=\"form-group\">
+                    <label for=\"last_update\" class=\"sr-only\">Dernière mise à jour</label>
+                    <input type=\"datepicker\" name=\"last_update\" class=\"form-control my-3\" placeholder=\"Date de la dernière mise à jour\" value=\"\">
+                </div> -->
+
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
             </form>
         </div>
@@ -92,7 +123,9 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
 
     public function getDebugInfo()
     {
-        return array (  54 => 3,  47 => 2,  36 => 1,);
+
+        return array (  96 => 34,  88 => 29,  67 => 11,  54 => 3,  47 => 2,  36 => 1,);
+
     }
 
     public function getSourceContext()
@@ -101,22 +134,44 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
 {% block title %}Blog{% endblock %}
 {% block body %} 
 <div class=\"container\">
-    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
-            <form class=\"form-signin\">
-                <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
-                <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
 
-                <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
-                <input type=\"password\" name=\"inputChapo\" class=\"form-control my-3\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
-
-                <label for=\"passwordConfirm\" class=\"sr-only\">Confirmation</label>
-                <input type=\"password\" id=\"passwordConfirm\" class=\"form-control my-3\" placeholder=\"Mot de passe\" required autofocus>
+    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
+        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
+            <form class=\"form-signin\" method=\"POST\">
 
                 <div class=\"form-group\">
-                <label for=\"comment\">Contenue du blog :</label>
-                <textarea class=\"form-control rounded-0\" id=\"comment\" rows=\"3\"placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
+                <input type=\"text\" name=\"title-blog\" class=\"form-control\" value=\"{{blog.title}}\" placeholder=\"Entrer le titre\" required autofocus>
                 </div>
+
+                <!-- <div class=\"form-group\">
+                <div class=\"input-group mb-3\">
+                    <div class=\"custom-file\">
+                      <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile02\">
+                      <label class=\"custom-file-label\" for=\"inputGroupFile02\">Choose file</label>
+                    </div>
+                    <div class=\"input-group-append\">
+                      <span class=\"input-group-text\" id=\"\">Upload</span>
+                    </div>
+                  </div>
+                </div> -->
+
+
+                <div class=\"form-group\">
+                <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
+                <input type=\"text\" name=\"inputChapo\" class=\"form-control my-3\" value=\"{{blog.chapo}}\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
+                </div>
+
+                <div class=\"form-group\">
+                <label for=\"content\">Contenue du blog :</label>
+                <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  value=\"{{blog.content}}\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                </div>
+                
+                <!-- <div class=\"form-group\">
+                    <label for=\"last_update\" class=\"sr-only\">Dernière mise à jour</label>
+                    <input type=\"datepicker\" name=\"last_update\" class=\"form-control my-3\" placeholder=\"Date de la dernière mise à jour\" value=\"\">
+                </div> -->
+
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
             </form>
         </div>

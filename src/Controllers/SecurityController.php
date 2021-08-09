@@ -39,6 +39,8 @@ class SecurityController extends AbstractController
                     $_SESSION['user'] = $user;
                     $response = new RedirectResponseHttp('/');
                     return $response->send();
+                    $validation = "vous êtes bien connecté";
+
                 }
 
             }
@@ -94,10 +96,9 @@ class SecurityController extends AbstractController
 
                 $error = "erreur de déconnexion";
 
-            }
-
-        }
-        return $this->renderHtml('login.html.twig');
+        $result = new RedirectResponseHttp('/se-connecter');
+        return $result->send();
+        
     }
 
 }

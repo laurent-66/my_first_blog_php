@@ -58,49 +58,28 @@
     },
     {
         "name": "deleteBlog",
-        "path": "/blogs/admin/{id}",
+        "path": "/blogs/admin/{id}/delete",
         "_controller":"Application\\Controllers\\AdminController",
         "_method": "deleteBlog",
         "_methods": ["GET", "DELETE"]
     },
     {
-        "name": "comments",
-        "path": "/blog",
-        "_controller":"Application\\Controllers\\BlogPostController",
-        "_method": "getAllComments",
-        "_methods": ["GET"]
-    },
-    {
-        "name": "comment",
-        "path": "/blog",
-        "_controller":"Application\\Controllers\\BlogPostController",
-        "_method": "getComment",
-        "_methods": ["GET"]
-    },
-    {
-        "name": "newComment",
-        "path": "/blog",
-        "_controller":"Application\\Controllers\\BlogPostController",
-        "_method": "createComment",
-        "_methods": ["GET", "POST"]
-    },
-    {
         "name": "updateComment",
-        "path": "/blog",
-        "_controller":"Application\\Controllers\\BlogPostController",
+        "path": "/blog/updateComment/{id}",
+        "_controller":"Application\\Controllers\\CommentController",
         "_method": "updateComment",
         "_methods": ["GET", "POST"]
     },
     {
         "name": "deleteComment",
-        "path": "/blog",
-        "_controller":"Application\\Controllers\\BlogPostController",
+        "path": "/blog/deleteComment/{blogId}/{id}",
+        "_controller":"Application\\Controllers\\CommentController",
         "_method": "deleteComment",
-        "_methods": ["GET","DELETE"]
+        "_methods": ["GET"]
     },
     {
         "name": "deleteCommentMember",
-        "path": "/blog/admin/{id}",
+        "path": "/blog/admin/deleteComment/{id}",
         "_controller":"Application\\Controllers\\AdminController",
         "_method": "deleteCommentMember",
         "_methods": ["GET", "DELETE"]

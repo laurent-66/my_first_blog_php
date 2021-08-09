@@ -1,0 +1,42 @@
+/* list des blogs*/
+
+.row-item
+{
+    width:150px;
+    height:48px;
+    border: 1px solid black;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    border-radius: .3rem;
+    background-color: grey;
+}
+
+.row-align-start-left
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.row-align-start-right
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+
+/*.sticky-footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center; 
+}*/
+
+#objectif
+{
+    color: black;
+}
