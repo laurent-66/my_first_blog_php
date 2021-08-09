@@ -33,5 +33,4 @@ class UserRepository extends AbstractRepository
 
         return $statement;
     }
-
 }

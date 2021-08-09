@@ -82,6 +82,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 15), "html", null, true);
             echo "</p></div>
             </div>
+
             <div class=\"col 2 row-align-start-right\">
                 <div class=\"col4\"><a href=";
             // line 18
@@ -111,6 +112,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         // line 26
         echo "    <div class=\"col1\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
     </div>
+    
 </section>
 ";
     }
@@ -148,6 +150,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
                 <div class=\"col4 row-item\"><p>{{blog.chapo}}</p></div>
                 <div class=\"col4 row-item\"><p>{{blog.last_update}}</p></div>
             </div>
+
             <div class=\"col 2 row-align-start-right\">
                 <div class=\"col4\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
                 {% if ( user != null) %}
@@ -155,10 +158,12 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
                     <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mb-3\">Supprimer</button></a></div>
                 {% endif %}
             </div>
+
     </div>
     {% endfor %}
     <div class=\"col1\"><a href=\"/blogs/admin/new\"><button class=\"btn btn-lg btn-success btn-block mb-3\">Créer un nouveau blog</button></a></div>
     </div>
+    
 </section>
 {% endblock %}", "blogs-list.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\blogs-list.html.twig");
     }

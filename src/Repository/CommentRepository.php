@@ -4,7 +4,9 @@ namespace Application\Repository;
 
 use Application\Repository\AbstractRepository;
 
+
 class CommentRepository extends AbstractRepository
+
 {
     protected function getTableName(): string
     {
@@ -80,5 +82,6 @@ class CommentRepository extends AbstractRepository
         $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
         $this->database->request($query, [':id' => $id]);
     }
+
 
 }
