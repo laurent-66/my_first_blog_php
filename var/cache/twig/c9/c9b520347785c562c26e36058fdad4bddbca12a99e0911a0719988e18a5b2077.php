@@ -87,11 +87,11 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                 </nav>
             </header>
 
-        ";
-        // line 48
-        $this->displayBlock('body', $context, $blocks);
-        // line 51
 
+        ";
+        // line 50
+        $this->displayBlock('body', $context, $blocks);
+        // line 53
         echo "
 
         <footer class=\"sticky-footer\">
@@ -134,13 +134,11 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         $macros = $this->macros;
     }
 
-
-    // line 48
+    // line 50
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 49
-
+        // line 51
         echo "
         ";
     }
@@ -152,9 +150,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 
     public function getDebugInfo()
     {
-
-        return array (  140 => 49,  136 => 48,  130 => 6,  93 => 51,  91 => 48,  46 => 6,  39 => 1,);
-
+        return array (  142 => 51,  138 => 50,  132 => 6,  95 => 53,  93 => 50,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
