@@ -13,34 +13,34 @@ use Application\Repository\CommentRepository;
 class BlogPostController extends AbstractController
 {
 
-    protected $blogRepository= '';
+    // protected $blogRepository= '';
 
-    public function __construct()
-    {
-        $this->blogRepository = new BlogRepository;
-    }
+    // public function __construct()
+    // {
+    //     $this->blogRepository = new BlogRepository;
+    // }
 
-    public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
+    // public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
         
-        $blogs = $this->blogRepository->getAllBlog();
+    //     $blogs = $this->blogRepository->getAllBlog();
 
-        return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
-    }
+    //     return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
+    // }
 
-    public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+    // public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
 
-        if ($request->getMethod() === 'GET'){
+    //     if ($request->getMethod() === 'GET'){
 
-            $getBlogs = $this->BlogRepository->findByBlogId();
-            return $getBlogs;
-        }
+    //         $getBlogs = $this->BlogRepository->findByBlogId();
+    //         return $getBlogs;
+    //     }
 
-        return $this->renderHtml('blog.html.twig');
-    }
+    //     return $this->renderHtml('blog.html.twig');
+    // }
 
-    public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
-        return $this->renderHtml('newBlog.html.twig');
-    }
+    // public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
+    //     return $this->renderHtml('newBlog.html.twig');
+    // }
 
     protected $blogRepository;
     private $commentRepository;
@@ -52,6 +52,8 @@ class BlogPostController extends AbstractController
     }
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
+
+        dump($_SESSION);
 
         $user = $_SESSION['user']['admin'];
 

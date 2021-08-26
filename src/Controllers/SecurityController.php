@@ -85,7 +85,7 @@ class SecurityController extends AbstractController
         if ($request->getMethod() === 'GET'){
             $dataSubmitted = $request->getParsedBody();
 
-            if (  (strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
+            if ((strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
 
                 $this->userRepository->disconnect(
                     session_destroy()
@@ -96,9 +96,10 @@ class SecurityController extends AbstractController
 
                 $error = "erreur de déconnexion";
 
-        $result = new RedirectResponseHttp('/se-connecter');
-        return $result->send();
-        
-    }
+            }
+            $result = new RedirectResponseHttp('/se-connecter');
+            return $result->send();
+        }
+    }    
 
 }
