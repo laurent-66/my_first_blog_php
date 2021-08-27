@@ -29,8 +29,7 @@ class BlogRepository extends AbstractRepository
 
     public function createBlog(array $data)
     {
-        dump($data);
-        exit;
+
         $query = "INSERT INTO {$this->getTableName()}(title, url_image, chapo, content, last_update,user_id_User) VALUES (
          :title,
          :url_image,

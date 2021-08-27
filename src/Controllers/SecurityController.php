@@ -79,26 +79,51 @@ class SecurityController extends AbstractController
     }
 
 
+    // public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
+    // {   
+    //     $validate = ''; 
+    //     if ($request->getMethod() === 'GET'){
+    //         $dataSubmitted = $request->getParsedBody();
+
+    //         if ((strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
+
+    //                 session_destroy();
+                
+    //             $validate = "Vous êtes maintenant déconnecté.";
+
+    //         } else {
+
+    //             $error = "erreur de déconnexion";
+
+    //         }
+    //         $result = new RedirectResponseHttp('/se-connecter');
+    //         return $result->send();
+    //     }
+    // }  
+    
+    
     public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
     {   
         $validate = ''; 
-        if ($request->getMethod() === 'GET'){
-            $dataSubmitted = $request->getParsedBody();
+        $error = '';
+        $user = $_SESSION['user'];
 
-            if (  (strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
+        if ($user !== []){
 
-                $this->userRepository->disconnect(
-                    session_destroy()
-                );
+            session_destroy();
+                
+            $validate = "Vous êtes maintenant déconnecté.";
 
-                $validate = "Vous êtes maintenant déconnecté.";
-            } else {
+            $result = new RedirectResponseHttp('/se-connecter');
+            return $result->send();    
 
-                $error = "erreur de déconnexion";
+        } else {
 
-        $result = new RedirectResponseHttp('/se-connecter');
-        return $result->send();
-        
-    }
+
+            $error = "erreur de déconnexion";
+            dump($error);
+
+        }
+    }  
 
 }

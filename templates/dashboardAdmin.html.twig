@@ -1,0 +1,57 @@
+{% extends "template.html.twig" %}
+{% block body %} 
+<h4><bold>Administration des blogs et commentaires</bold></h4><br/>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#blogs" role="tab" data-toggle="tab">Blogs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#commentaires" role="tab" data-toggle="tab">Commentaires</a>
+    </li>
+</ul>
+<div class="tab-content">
+
+    <div id="blogs" role="tabpanel" class="tab-pane active">
+        {% for comment in comments %}
+        <div class="comment-line row">
+            <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
+            <div class="col4 mr-3">
+                <div class="row px-0 mx-0">
+                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/approveComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto">Approuver</button></a></div>
+                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/deleteComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto">Supprimer</button></a></div>
+                </div>
+            </div>
+        </div>    
+        {% endfor %}
+    </div>
+
+    <div id="commentaires" role="tabpanel" class="tab-pane">
+        {% for comment in comments %}
+        <div class="comment-line row">
+            <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
+            <div class="col4 mr-3">
+                <div class="row px-0 mx-0">
+                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/approveComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto">Test</button></a></div>
+                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/deleteComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto">Supprimer</button></a></div>
+                </div>
+            </div>
+        </div>    
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

@@ -87,10 +87,12 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                 </nav>
             </header>
 
+
+
         ";
-        // line 48
+        // line 50
         $this->displayBlock('body', $context, $blocks);
-        // line 51
+        // line 53
 
         echo "
 
@@ -112,7 +114,9 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                         </div>
                     </div>
                     <div class=\"row m-0 px-0 py-3\" id=\"connexionAdmin\">
-                        <a href=\"#\">Administration blogs</a>
+
+                        <a href=\"/blogs/admin/dashboard\">Administration blogs</a>
+
                     </div>
                 </div>
             </footer>
@@ -135,11 +139,11 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
     }
 
 
-    // line 48
+    // line 50
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 49
+        // line 51
 
         echo "
         ";
@@ -153,7 +157,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
     public function getDebugInfo()
     {
 
-        return array (  140 => 49,  136 => 48,  130 => 6,  93 => 51,  91 => 48,  46 => 6,  39 => 1,);
+        return array (  142 => 51,  138 => 50,  132 => 6,  95 => 53,  93 => 50,  46 => 6,  39 => 1,);
 
     }
 
@@ -231,7 +235,9 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                         </div>
                     </div>
                     <div class=\"row m-0 px-0 py-3\" id=\"connexionAdmin\">
-                        <a href=\"#\">Administration blogs</a>
+
+                        <a href=\"/blogs/admin/dashboard\">Administration blogs</a>
+
                     </div>
                 </div>
             </footer>

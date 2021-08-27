@@ -18,29 +18,18 @@ class CommentController extends AbstractController
     }
 
 
-    // public function getAllComments (ServerRequestInterface $request, ParametersBag $bag){
+    public function approveComment (ServerRequestInterface $request, ParametersBag $bag ){
 
-    //     $id = (int) $bag->getParameter('id')->getValue();
+        //Récupération de la valeur de l'id comment $id du $bag
+        $id = (int) $bag->getParameter('id')->getValue();
+        $this->CommentRepository->approveComment($id);
 
-    //     $comments = $this->commentRepository->findCommentsByBlogId($id);
-    //     return $this->renderHtml('blog.html.twig',['comments'=>$comments]);
+        $idblog = (int) $bag->getParameter('blogId')->getValue();
 
-    // }
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs/'.$idblog);
+        return $redirect->send();
 
-    // public function getComment (ServerRequestInterface $request){
-    //     $response = new RedirectResponseHttp("/blog/comments/{id}");
-    //     $response->send();
-    // }
-
-    // public function createComment (ServerRequestInterface $request){
-
-    //     $response = new RedirectResponseHttp("/blog/newComment");
-    //     $response->send();
-    // }
-
-    public function updateComment (ServerRequestInterface $request){
-        $response = new RedirectResponseHttp("/blog/updateComment/{id}");
-        $response->send();
     }
 
 

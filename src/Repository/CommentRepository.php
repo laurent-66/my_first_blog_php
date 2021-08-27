@@ -14,21 +14,19 @@ class CommentRepository extends AbstractRepository
     }
 
 
-    //public function getAllComment()
-    //{
-        //$query = "SELECT * FROM {$this->getTableName()}";
-        //$statement = $this->database->query($query);
-        //return $statement;
-    //}
-
-
     public function findCommentsByBlogId(int $id)
     {
-        $query = "SELECT * FROM {$this->getTableName()} WHERE blog_post_id_blog_post = :id";
+        $query = "SELECT * FROM {$this->getTableName()} WHERE blog_post_id_blog_post = :id AND commentValidate = null" ;
         $statement = $this->database->request($query, [':id' => $id]);
         return $statement->fetchAll();
     }
 
+
+    public function findAllcommentsNotValidate(){
+        $query = "SELECT * FROM {$this->getTableName()} WHERE commentValidate IS NULL" ;
+        $statement = $this->database->request($query);
+        return $statement->fetchAll();
+    }
     
 
     public function createComment(array $data, $id){
@@ -57,20 +55,29 @@ class CommentRepository extends AbstractRepository
     }
 
 
-    public function updateComment(int $id)
+    public function approveComment(int $id)
     {
-        $comment = '';
 
-        $query = "UPDATE {$this->getTableName()}SET
+        $query = "UPDATE {$this->getTableName()} SET
 
-         `comment`= :comment WHERE id= :id";
+         `commentValidate`= :commentValidate WHERE id= :id";
 
-        $statement = $this->database->request($query,
+        $this->database->request($query,
         [
             ':id' => $id,
-            ':comment' => $comment
+            ':commentValidate' => true
         ]);
+
     }
+
+
+    public function commentPublished(int $id)
+    {
+        // $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
+        // $this->database->request($query, [':id' => $id]);
+    }
+
+
 
     public function deleteComment(int $id)
     {
