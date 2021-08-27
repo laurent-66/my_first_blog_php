@@ -56,7 +56,6 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
         $macros = $this->macros;
         echo " 
 <div class=\"container-fluid\" id=\"home\">
-
     ";
         // line 7
         if (($context["validation"] ?? null)) {
@@ -72,7 +71,6 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
         // line 12
         echo "
     <div class=\"row\">
-
         <div class=\"heading col-sm-12 col-md-6 col-lg-6\">
             <h1>Laurent LESAGE</h1></br>
             <h3>Développeur web junior fullstack<br /><br /> JavaScript et PHP/Symfony</h3>
@@ -93,7 +91,7 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
                     </p>
                 </div>
             </div>
-            <a href='../../public/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
+            <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
         </div>
         <div class=\"col-sm-12 col-md-6 col-lg-6\">
             <form id=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
@@ -151,9 +149,7 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
 
     public function getDebugInfo()
     {
-
         return array (  72 => 12,  66 => 9,  63 => 8,  61 => 7,  54 => 5,  47 => 3,  36 => 1,);
-
     }
 
     public function getSourceContext()
@@ -164,13 +160,11 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
 
 {% block body %} 
 <div class=\"container-fluid\" id=\"home\">
-
     {% if validation %}
     <div class=\"alert alert-success\" role=\"success\">
         {{ validation }}
     </div>
     {% endif %}
-
 
     <div class=\"row\">
         <div class=\"heading col-sm-12 col-md-6 col-lg-6\">
@@ -193,7 +187,7 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
                     </p>
                 </div>
             </div>
-            <a href='../../public/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
+            <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
         </div>
         <div class=\"col-sm-12 col-md-6 col-lg-6\">
             <form id=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
