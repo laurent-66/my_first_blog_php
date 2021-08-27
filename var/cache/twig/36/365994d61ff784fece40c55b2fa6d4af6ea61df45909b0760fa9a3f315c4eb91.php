@@ -89,28 +89,28 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
             echo "                <div class=\"comment-line row\">
 
                     <div class=\"col8\"><p class=\"mx-3 my-3\">";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 22), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 23), "html", null, true);
             echo "</p></div>
                     ";
-            // line 23
+            // line 24
             if ((0 !== twig_compare(($context["user"] ?? null), null))) {
-                // line 24
+                // line 25
                 echo "                    <div class=\"col4 mr-3\">
                         <div class=\"row px-0 mx-0\">
                             <div class=\"col button-comment-line px-0 mx-2\"><a href=";
-                // line 26
-                echo twig_escape_filter($this->env, ((("/blog/approveComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 26)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 26)), "html", null, true);
+                // line 27
+                echo twig_escape_filter($this->env, ((("/blog/approveComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 27)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 27)), "html", null, true);
                 echo "><button type=\"button\" class=\"btn btn-success btn-block my auto\">Approuver</button></a></div>
                             <div class=\"col button-comment-line px-0 mx-2\"><a href=";
-                // line 27
-                echo twig_escape_filter($this->env, ((("/blog/deleteComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 27)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 27)), "html", null, true);
+                // line 28
+                echo twig_escape_filter($this->env, ((("/blog/deleteComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 28)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 28)), "html", null, true);
                 echo "><button type=\"button\" class=\"btn  btn-danger btn-block my auto\">Supprimer</button></a></div>
                         </div>
                     </div>
                     ";
             }
-            // line 31
+            // line 32
             echo "                </div>    
 
             ";
@@ -118,9 +118,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-
-        // line 33
-
+        // line 35
         echo "
             <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
@@ -149,9 +147,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
 
     public function getDebugInfo()
     {
-
-        return array (  120 => 33,  113 => 31,  106 => 27,  102 => 26,  98 => 24,  96 => 23,  92 => 22,  89 => 21,  85 => 20,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
-
+        return array (  122 => 35,  114 => 32,  107 => 28,  103 => 27,  99 => 25,  97 => 24,  93 => 23,  89 => 21,  85 => 20,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()

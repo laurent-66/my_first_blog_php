@@ -61,36 +61,35 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
     </div>
     <div class=\"blue-divider\"></div>
     <div class=\"container\">
+
         ";
-        // line 10
+        // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["blogs"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
-            // line 11
+            // line 12
             echo "        <div class=\"row\" style=\"border: 1px solid grey;\">
                 <div class=\"col 10 row-align-start-left\">
                     <div class=\"col4 row-item\"><p>";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title", [], "any", false, false, false, 13), "html", null, true);
-            echo "</p></div>
-                    <div class=\"col4 row-item\"><p>";
             // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo", [], "any", false, false, false, 14), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title", [], "any", false, false, false, 14), "html", null, true);
             echo "</p></div>
                     <div class=\"col4 row-item\"><p>";
             // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 15), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo", [], "any", false, false, false, 15), "html", null, true);
+            echo "</p></div>
+                    <div class=\"col4 row-item\"><p>";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 16), "html", null, true);
             echo "</p></div>
                 </div>
 
-
                 <div class=\"col 2 row-align-start-right\">
                     <div class=\"col4\"><a href=";
-            // line 19
-            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 19)), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 20)), "html", null, true);
             echo "><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
                 </div>
-
 
         </div>
         ";
@@ -98,10 +97,9 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-
-        // line 24
-        echo "    </div>
-
+        // line 25
+        echo "
+    </div>
     
 </section>
 ";
@@ -119,9 +117,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
-
-        return array (  100 => 24,  89 => 19,  82 => 15,  78 => 14,  74 => 13,  70 => 11,  66 => 10,  54 => 3,  47 => 2,  36 => 1,);
-
+        return array (  101 => 25,  90 => 20,  83 => 16,  79 => 15,  75 => 14,  71 => 12,  67 => 11,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()

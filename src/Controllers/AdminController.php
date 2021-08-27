@@ -80,7 +80,7 @@ class AdminController extends AbstractController
         // return $this->renderHtml('blogs-list.html.twig');
 
         //redirection sur la page courante (get)
-        $redirect = new RedirectResponseHttp('/blogs');
+        $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
         return $redirect->send();
 
     }
@@ -93,15 +93,49 @@ class AdminController extends AbstractController
 
 
     public function dashboard (ServerRequestInterface $request, ParametersBag $bag){
-
+        //Check if administrator session is open
         if(!array_key_exists('user',$_SESSION) || $_SESSION['user']['admin'] != "1"){
 
             $redirect = new RedirectResponseHttp('/');
             return $redirect->send();
         }
-
+        //get all blogs list
         $comments = $this->commentRepository->findAllcommentsNotValidate();
-        dump($comments);
-        return $this->renderHtml('dashboardAdmin.html.twig', ['comments'=> $comments ]);
+        $user = $_SESSION['user']['admin'];
+        $blogs = $this->blogRepository->getAllBlog();
+
+        return $this->renderHtml('dashboardAdmin.html.twig',['blogs'=>$blogs,'comments'=> $comments,'user'=>$user]);
+
     }
+
+
+    public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+
+
+        $user = $_SESSION['user']['admin'];
+
+        $id = (int) $bag->getParameter('id')->getValue();
+
+        $blog = $this->blogRepository->findByBlogId($id);
+
+        if($request->getMethod() === 'POST') {
+            
+            //récupération de données du post dans un tableau
+            $dataArray = $request->getParsedBody();
+            //création d'un commentaire
+            $this->commentRepository->createComment($dataArray,$id);
+            //redirection sur la page courante (get)
+            $redirect = new RedirectResponseHttp('/blogs/'.$id);
+            return $redirect->send();
+        }
+
+        $findComments = $this->commentRepository->findCommentsByBlogId($id);
+        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments, 'user'=>$user]);
+
+    }
+
+
+
+
+
 }
