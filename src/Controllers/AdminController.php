@@ -10,6 +10,9 @@ use Application\Application\Http\ParametersBag;
 use Application\Repository\BlogRepository;
 use Application\Exceptions\NotFoundException;
 
+use Application\Repository\CommentRepository;
+
+
 class AdminController extends AbstractController
 {
 
@@ -18,15 +21,14 @@ class AdminController extends AbstractController
     public function __construct()
     {
         $this->blogRepository = new BlogRepository;
+
+        $this->commentRepository = new CommentRepository;
+
     }
 
     public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
         
         if($request->getMethod() === 'POST') {
-
-            dump($request);
-            dump($_FILES);
-            exit;
 
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
@@ -89,4 +91,17 @@ class AdminController extends AbstractController
         return $this->renderHtml('blogs-list.html.twig');
     }
 
+
+    public function dashboard (ServerRequestInterface $request, ParametersBag $bag){
+
+        if(!array_key_exists('user',$_SESSION) || $_SESSION['user']['admin'] != "1"){
+
+            $redirect = new RedirectResponseHttp('/');
+            return $redirect->send();
+        }
+
+        $comments = $this->commentRepository->findAllcommentsNotValidate();
+        dump($comments);
+        return $this->renderHtml('dashboardAdmin.html.twig', ['comments'=> $comments ]);
+    }
 }
