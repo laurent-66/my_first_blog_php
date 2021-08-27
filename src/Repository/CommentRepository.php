@@ -13,6 +13,7 @@ class CommentRepository extends AbstractRepository
         return 'comment';
     }
 
+
     public function findCommentsByBlogId(int $id)
     {
         $query = "SELECT * FROM {$this->getTableName()} WHERE blog_post_id_blog_post = :id AND commentValidate = null" ;
@@ -75,6 +76,7 @@ class CommentRepository extends AbstractRepository
         // $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
         // $this->database->request($query, [':id' => $id]);
     }
+
 
 
     public function deleteComment(int $id)

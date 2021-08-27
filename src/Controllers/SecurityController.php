@@ -40,7 +40,7 @@ class SecurityController extends AbstractController
                     $response = new RedirectResponseHttp('/');
                     return $response->send();
                     $validation = "vous êtes bien connecté";
- 
+
                 }
 
             }
@@ -119,9 +119,11 @@ class SecurityController extends AbstractController
 
         } else {
 
+
             $error = "erreur de déconnexion";
             dump($error);
 
         }
     }  
+
 }

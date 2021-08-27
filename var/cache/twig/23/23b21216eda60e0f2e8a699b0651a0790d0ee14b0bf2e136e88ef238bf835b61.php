@@ -83,6 +83,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             echo "</p></div>
                 </div>
 
+
                 <div class=\"col 2 row-align-start-right\">
                     <div class=\"col4\"><a href=";
             // line 19
@@ -90,14 +91,17 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             echo "><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
                 </div>
 
+
         </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+
         // line 24
         echo "    </div>
+
     
 </section>
 ";
@@ -115,7 +119,9 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
+
         return array (  100 => 24,  89 => 19,  82 => 15,  78 => 14,  74 => 13,  70 => 11,  66 => 10,  54 => 3,  47 => 2,  36 => 1,);
+
     }
 
     public function getSourceContext()
@@ -129,6 +135,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
     </div>
     <div class=\"blue-divider\"></div>
     <div class=\"container\">
+
         {% for blog in blogs %}
         <div class=\"row\" style=\"border: 1px solid grey;\">
                 <div class=\"col 10 row-align-start-left\">
@@ -143,6 +150,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
         </div>
         {% endfor %}
+
     </div>
     
 </section>

@@ -9,7 +9,9 @@ use Application\Controllers\AbstractController;
 use Application\Application\Http\ParametersBag;
 use Application\Repository\BlogRepository;
 use Application\Exceptions\NotFoundException;
+
 use Application\Repository\CommentRepository;
+
 
 class AdminController extends AbstractController
 {
@@ -19,7 +21,9 @@ class AdminController extends AbstractController
     public function __construct()
     {
         $this->blogRepository = new BlogRepository;
+
         $this->commentRepository = new CommentRepository;
+
     }
 
     public function createBlog (ServerRequestInterface $request, ParametersBag $bag){

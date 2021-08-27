@@ -67,8 +67,10 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                 <div class=\"form-group\">
                     <div class=\"input-group mb-3\">
                         <div class=\"custom-file\">
+
                             <input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"10240\" />
                             <input type=\"file\" class=\"custom-file-input\" id=\"file_input_id\" name=\"file_input_name\" accept=\"image/png, image/jpeg\">
+
                             <label class=\"custom-file-label\" for=\"url_image\">Veuillez choisir une image</label>
                         </div>
                     </div>
@@ -83,7 +85,9 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                     <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
 
+
                 <button type=\"submit\" value=\"Upload\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>
+
             </form>
         </div>
     </div>
@@ -123,8 +127,10 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                 <div class=\"form-group\">
                     <div class=\"input-group mb-3\">
                         <div class=\"custom-file\">
+
                             <input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"10240\" />
                             <input type=\"file\" class=\"custom-file-input\" id=\"file_input_id\" name=\"file_input_name\" accept=\"image/png, image/jpeg\">
+
                             <label class=\"custom-file-label\" for=\"url_image\">Veuillez choisir une image</label>
                         </div>
                     </div>
@@ -139,7 +145,9 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                     <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
 
+
                 <button type=\"submit\" value=\"Upload\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>
+
             </form>
         </div>
     </div>

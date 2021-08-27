@@ -17,6 +17,7 @@ class CommentController extends AbstractController
         $this->CommentRepository = new CommentRepository();
     }
 
+
     public function approveComment (ServerRequestInterface $request, ParametersBag $bag ){
 
         //Récupération de la valeur de l'id comment $id du $bag
@@ -30,6 +31,7 @@ class CommentController extends AbstractController
         return $redirect->send();
 
     }
+
 
     public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
  

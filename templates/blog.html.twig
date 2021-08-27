@@ -19,6 +19,7 @@
             <h4><bold>Commentaires du blog</bold></h4><br/>
             {% for comment in findComments %}
                 <div class="comment-line row">
+
                     <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
                     {% if ( user != null) %}
                     <div class="col4 mr-3">
@@ -29,6 +30,7 @@
                     </div>
                     {% endif %}
                 </div>    
+
             {% endfor %}
 
             <h4><bold>Ajouter un commentaire</bold></h4><br/>
