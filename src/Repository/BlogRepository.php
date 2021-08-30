@@ -41,7 +41,7 @@ class BlogRepository extends AbstractRepository
         $statement = $this->database->request($query,    
         [
             ':title' => $data['title-blog'],
-            ':url_image' => $data['url_image'],
+            ':url_image' => './public/images/'.$_FILES['name'],
             ':chapo' => $data['inputChapo'],
             ':content' => $data['content'],
             ':last_update' => new DateTime(),
@@ -54,7 +54,7 @@ class BlogRepository extends AbstractRepository
         $query = "UPDATE {$this->getTableName()} SET
 
          title = :title,
-         url_image :url_image,
+         url_image = :url_image,
          chapo = :chapo,
          content = :content,
          last_update = NOW() 
@@ -63,7 +63,7 @@ class BlogRepository extends AbstractRepository
         $statement = $this->database->request($query,
         [
             ':title' => $data['title-blog'],
-            ':url_image' => $data['url_image'],
+            ':url_image' => './public/images/'.$_FILES['name'],
             ':chapo' => $data['inputChapo'],
             ':content' => $data['content'],
             ':id' => $id

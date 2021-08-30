@@ -3,9 +3,8 @@
 /* @import "accueil.css"; */
 
 @import "./dashboard.css";
-
-
-@import "comment-line.css";
+@import "./comment-line.css";
+@import "./blogs-list.css";
 
 
 /*GENERAL */

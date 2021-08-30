@@ -60,46 +60,53 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         <h2>Liste des blogs</h2>
     </div>
     <div class=\"blue-divider\"></div>
+
     <div class=\"container\">
 
         ";
-        // line 11
+        // line 12
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["blogs"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
-            // line 12
-            echo "        <div class=\"row\" style=\"border: 1px solid grey;\">
-                <div class=\"col 10 row-align-start-left\">
-                    <div class=\"col4 row-item\"><p>";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title", [], "any", false, false, false, 14), "html", null, true);
-            echo "</p></div>
-                    <div class=\"col4 row-item\"><p>";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo", [], "any", false, false, false, 15), "html", null, true);
-            echo "</p></div>
-                    <div class=\"col4 row-item\"><p>";
+            // line 13
+            echo "                <div class=\"card row\">
+                    <div class=\"col-4 imageCard border border-primary\">
+                        <img class=\"card-img-top\" src=\"...\" alt=\"Card image cap\">
+                        <a href=";
             // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 16), "html", null, true);
-            echo "</p></div>
-                </div>
-
-                <div class=\"col 2 row-align-start-right\">
-                    <div class=\"col4\"><a href=";
+            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 16)), "html", null, true);
+            echo " class=\"btn btn-primary btnSeeBlog\">voir</a>
+                    </div>
+                    
+                    <div class=\"col-8 card-body border border-primary\">
+                      <h5 class=\"card-title\">";
             // line 20
-            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 20)), "html", null, true);
-            echo "><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-                </div>
-
-        </div>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title", [], "any", false, false, false, 20), "html", null, true);
+            echo "</h5>
+                      <p class=\"card-text\">";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo", [], "any", false, false, false, 21), "html", null, true);
+            echo "</p>
+                      <div class=\"col4 row-item\"><p>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 22), "html", null, true);
+            echo "</p></div>
+                    </div>
+                  </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 26
         echo "
     </div>
+
+
+
+
+
+
     
 </section>
 ";
@@ -117,7 +124,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
-        return array (  101 => 25,  90 => 20,  83 => 16,  79 => 15,  75 => 14,  71 => 12,  67 => 11,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  102 => 26,  92 => 22,  88 => 21,  84 => 20,  77 => 16,  72 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -130,24 +137,31 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         <h2>Liste des blogs</h2>
     </div>
     <div class=\"blue-divider\"></div>
+
     <div class=\"container\">
 
         {% for blog in blogs %}
-        <div class=\"row\" style=\"border: 1px solid grey;\">
-                <div class=\"col 10 row-align-start-left\">
-                    <div class=\"col4 row-item\"><p>{{blog.title}}</p></div>
-                    <div class=\"col4 row-item\"><p>{{blog.chapo}}</p></div>
-                    <div class=\"col4 row-item\"><p>{{blog.last_update}}</p></div>
-                </div>
-
-                <div class=\"col 2 row-align-start-right\">
-                    <div class=\"col4\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-                </div>
-
-        </div>
+                <div class=\"card row\">
+                    <div class=\"col-4 imageCard border border-primary\">
+                        <img class=\"card-img-top\" src=\"...\" alt=\"Card image cap\">
+                        <a href={{'/blogs/'~blog.id}} class=\"btn btn-primary btnSeeBlog\">voir</a>
+                    </div>
+                    
+                    <div class=\"col-8 card-body border border-primary\">
+                      <h5 class=\"card-title\">{{blog.title}}</h5>
+                      <p class=\"card-text\">{{blog.chapo}}</p>
+                      <div class=\"col4 row-item\"><p>{{blog.last_update}}</p></div>
+                    </div>
+                  </div>
         {% endfor %}
 
     </div>
+
+
+
+
+
+
     
 </section>
 {% endblock %}", "blogs-list.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\blogs-list.html.twig");

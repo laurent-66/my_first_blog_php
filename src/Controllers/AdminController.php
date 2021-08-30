@@ -9,14 +9,14 @@ use Application\Controllers\AbstractController;
 use Application\Application\Http\ParametersBag;
 use Application\Repository\BlogRepository;
 use Application\Exceptions\NotFoundException;
-
 use Application\Repository\CommentRepository;
-
+use Application\Classes\UploadFile;
 
 class AdminController extends AbstractController
 {
 
     protected $blogRepository= '';
+    protected $uploadFile;
 
     public function __construct()
     {
@@ -50,6 +50,8 @@ class AdminController extends AbstractController
         //récupération du blog présent pour préremplir les champs
         $blog = $this->blogRepository->findByBlogId($id);
 
+        $filename = $_FILES['name'];
+
         //vérification du type de requête si http null, POST ou GET(par defaut)
 
         if(is_null($blog)){
@@ -59,11 +61,16 @@ class AdminController extends AbstractController
 
         if($request->getMethod() === 'POST') {
             //récupération de données du post dans un tableau
+            dump($_FILES);
             $dataArray = $request->getParsedBody();
+            dump($dataArray);
+
             //maj du blog
             $this->blogRepository->updateBlog($dataArray,$id);
             //redirection sur la page courante (get)
-            $redirect = new RedirectResponseHttp($request->getUri()->getPath());
+
+            //$redirect = new RedirectResponseHttp($request->getUri()->getPath());
+            $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
             return $redirect->send();
     
         }
@@ -110,7 +117,6 @@ class AdminController extends AbstractController
 
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
-
 
         $user = $_SESSION['user']['admin'];
 

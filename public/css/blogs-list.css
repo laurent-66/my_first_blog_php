@@ -1,0 +1,18 @@
+/*blogs-list.css*/
+
+.imageCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-img-top, .btnSeeBlog{
+    display:block;
+}
+
+.card-img-top{
+    background-color:lightskyblue;
+    width: 200px;
+    height: 200px;
+}
