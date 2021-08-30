@@ -44,19 +44,20 @@ class BlogPostController extends AbstractController
         $blog = $this->blogRepository->findByBlogId($id);
 
         if($request->getMethod() === 'POST') {
-            
+      
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
+
             //création d'un commentaire
-            $this->commentRepository->createComment($dataArray,$id);
+            $this->commentRepository->submitComment($dataArray,$id);
             //redirection sur la page courante (get)
             $redirect = new RedirectResponseHttp('/blogs/'.$id);
             return $redirect->send();
         }
 
-        $findComments = $this->commentRepository->findCommentsByBlogId($id);
-        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments, 'user'=>$user]);
-
+            $findComments = $this->commentRepository->findCommentsByBlogId($id);
+            return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments, 'user'=>$user]);
+    
     }
 
 }

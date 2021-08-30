@@ -92,13 +92,6 @@ class AdminController extends AbstractController
 
     }
 
-    public function deleteCommentMember (ServerRequestInterface $request, ParametersBag $bag){
-        $id = (int) $bag->getParameter('id')->getValue();
-        $this->blogRepository->deleteBlog($id);
-        return $this->renderHtml('blogs-list.html.twig');
-    }
-
-
     public function dashboard (ServerRequestInterface $request, ParametersBag $bag){
         //Check if administrator session is open
         if(!array_key_exists('user',$_SESSION) || $_SESSION['user']['admin'] != "1"){
@@ -129,7 +122,7 @@ class AdminController extends AbstractController
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
             //création d'un commentaire
-            $this->commentRepository->createComment($dataArray,$id);
+            $this->commentRepository->submitComment($dataArray,$id);
             //redirection sur la page courante (get)
             $redirect = new RedirectResponseHttp('/blogs/'.$id);
             return $redirect->send();
@@ -137,11 +130,42 @@ class AdminController extends AbstractController
 
         $findComments = $this->commentRepository->findCommentsByBlogId($id);
         return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments, 'user'=>$user]);
+    }
+
+    public function approveComment (ServerRequestInterface $request, ParametersBag $bag ){
+
+        dump($bag);
+
+        //Récupération de la valeur de l'id comment $id du $bag
+        $id = (int) $bag->getParameter('id')->getValue();
+
+        $findComments = $this->commentRepository->findCommentsByBlogId($id);
+        dump($findComments);
+        exit;
+
+
+        
+        $this->CommentRepository->approveComment($id);
+        $this->CommentRepository->commentPublished($id);
+        $idblog = (int) $bag->getParameter('blogId')->getValue();
+
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
+        return $redirect->send();
 
     }
 
+    public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
+ 
+        //Récupération de la valeur de l'id comment $id du $bag
+        $id = (int) $bag->getParameter('id')->getValue();
+        $this->commentRepository->deleteComment($id);
 
+        // $idblog = (int) $bag->getParameter('blogId')->getValue();
 
-
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
+        return $redirect->send();
+    }
 
 }

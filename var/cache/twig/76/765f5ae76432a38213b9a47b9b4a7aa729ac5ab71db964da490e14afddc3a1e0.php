@@ -117,44 +117,50 @@ class __TwigTemplate_1cc491a23b27455c26c99c5ac4957cd052ae85c68fc87a669f619140b2f
         ";
         // line 38
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["comments"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+        $context['_seq'] = twig_ensure_traversable(($context["blogs"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
             // line 39
-            echo "        <div class=\"comment-line row\">
-            <div class=\"col8\"><p class=\"mx-3 my-3\">";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 40), "html", null, true);
-            echo "</p></div>
-            <div class=\"col4 mr-3\">
-                <div class=\"row px-0 mx-0\">
-                    <div class=\"col button-comment-line px-0 mx-2\"><a href=";
-            // line 43
-            echo twig_escape_filter($this->env, ((("/blog/approveComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 43)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 43)), "html", null, true);
-            echo "><button type=\"button\" class=\"btn btn-success btn-block my auto\">approuver</button></a></div>
-                    <div class=\"col button-comment-line px-0 mx-2\"><a href=";
-            // line 44
-            echo twig_escape_filter($this->env, ((("/blog/deleteComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 44)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 44)), "html", null, true);
-            echo "><button type=\"button\" class=\"btn  btn-danger btn-block my auto\">Supprimer</button></a></div>
+            echo "        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(($context["comments"] ?? null));
+            foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+                // line 40
+                echo "            <div class=\"comment-line row\">
+                <div class=\"col8\"><p class=\"mx-3 my-3\">";
+                // line 41
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 41), "html", null, true);
+                echo "</p></div>
+                <div class=\"col4 mr-3\">
+                    <div class=\"row px-0 mx-0\">
+  
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href=";
+                // line 45
+                echo twig_escape_filter($this->env, ((("/blog/admin/approveComment/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 45)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 45)), "html", null, true);
+                echo "><button type=\"button\" class=\"btn btn-success btn-block my auto\">approuver</button></a></div>
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href=";
+                // line 46
+                echo twig_escape_filter($this->env, ((("/blog/admin/deleteComment/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 46)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 46)), "html", null, true);
+                echo "><button type=\"button\" class=\"btn  btn-danger btn-block my auto\">Supprimer</button></a></div>
+
+                    </div>
                 </div>
-            </div>
-        </div>    
+
+            </div>    
+
         ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 54
+            echo "        ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 55
         echo "    </div>
 </div>
-
-
-
-
-
-
-
-
-
 ";
     }
 
@@ -170,7 +176,7 @@ class __TwigTemplate_1cc491a23b27455c26c99c5ac4957cd052ae85c68fc87a669f619140b2f
 
     public function getDebugInfo()
     {
-        return array (  147 => 49,  136 => 44,  132 => 43,  126 => 40,  123 => 39,  119 => 38,  113 => 34,  104 => 30,  99 => 28,  94 => 27,  92 => 26,  88 => 25,  80 => 20,  76 => 19,  72 => 18,  68 => 16,  64 => 15,  46 => 2,  35 => 1,);
+        return array (  162 => 55,  156 => 54,  142 => 46,  138 => 45,  131 => 41,  128 => 40,  123 => 39,  119 => 38,  113 => 34,  104 => 30,  99 => 28,  94 => 27,  92 => 26,  88 => 25,  80 => 20,  76 => 19,  72 => 18,  68 => 16,  64 => 15,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -212,34 +218,25 @@ class __TwigTemplate_1cc491a23b27455c26c99c5ac4957cd052ae85c68fc87a669f619140b2f
     </div>
 
     <div id=\"commentaires\" role=\"tabpanel\" class=\"tab-pane\">
+        {% for blog in blogs %}
         {% for comment in comments %}
-        <div class=\"comment-line row\">
-            <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
-            <div class=\"col4 mr-3\">
-                <div class=\"row px-0 mx-0\">
-                    <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/approveComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn btn-success btn-block my auto\">approuver</button></a></div>
-                    <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/deleteComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn  btn-danger btn-block my auto\">Supprimer</button></a></div>
+            <div class=\"comment-line row\">
+                <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
+                <div class=\"col4 mr-3\">
+                    <div class=\"row px-0 mx-0\">
+  
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/approveComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn btn-success btn-block my auto\">approuver</button></a></div>
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/deleteComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn  btn-danger btn-block my auto\">Supprimer</button></a></div>
+
+                    </div>
                 </div>
-            </div>
-        </div>    
+
+            </div>    
+
+        {% endfor %}
         {% endfor %}
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-{% endblock %}
-
-
-
-
-
-", "dashboardAdmin.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\dashboardAdmin.html.twig");
+{% endblock %}", "dashboardAdmin.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\dashboardAdmin.html.twig");
     }
 }

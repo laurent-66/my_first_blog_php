@@ -35,31 +35,23 @@
     </div>
 
     <div id="commentaires" role="tabpanel" class="tab-pane">
+        {% for blog in blogs %}
         {% for comment in comments %}
-        <div class="comment-line row">
-            <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
-            <div class="col4 mr-3">
-                <div class="row px-0 mx-0">
-                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/approveComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto">approuver</button></a></div>
-                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/deleteComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto">Supprimer</button></a></div>
+            <div class="comment-line row">
+                <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
+                <div class="col4 mr-3">
+                    <div class="row px-0 mx-0">
+  
+                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/approveComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto">approuver</button></a></div>
+                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/deleteComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto">Supprimer</button></a></div>
+
+                    </div>
                 </div>
-            </div>
-        </div>    
+
+            </div>    
+
+        {% endfor %}
         {% endfor %}
     </div>
 </div>
-
-
-
-
-
-
-
-
-
 {% endblock %}
-
-
-
-
-
