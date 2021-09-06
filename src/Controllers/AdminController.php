@@ -59,26 +59,26 @@ class AdminController extends AbstractController
         }
 
         $errors = [];
+        
 
         if($request->getMethod() === 'POST') {
+  
             //récupération de données du post dans un tableau
             $dataSubmitted = $request->getParsedBody();
             //récupération image
             $file = $request->getUploadedFiles()['file_input_name'];
-            
-            if(strlen(
-                trim(
-                    $dataSubmitted['title-blog'] === 0 || 
-                    $file === 0 || 
-                    $dataSubmitted['inputChapo'] === 0 || 
-                    $dataSubmitted['content'] === 0 ))|| 
-                    $file->getSize() === 0
+
+            if(
+                
+                strlen(trim($dataSubmitted['title-blog'] === 0)) || 
+                $file->getSize() === 0 ||
+                strlen(trim($dataSubmitted['inputChapo'] === 0)) || 
+                strlen(trim($dataSubmitted['content'] === 0 ))
                 ){
                 $errors[] = 'Tous les champs requis sont obligatoires';
             }else{
-                $datasAfterUpload = FileUploader::uploadFile($file);
-                dump( $datasAfterUpload['filename']);
-                exit;
+                $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
+
                 if($datasAfterUpload['isSuccess']){
                     //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
                     $dataSubmitted['file_input_name'] = $datasAfterUpload['filename'];
@@ -152,7 +152,7 @@ class AdminController extends AbstractController
     }
 
     public function approveComment (ServerRequestInterface $request, ParametersBag $bag ){
-
+        dump('approuve comment');
         dump($bag);
 
         //Récupération de la valeur de l'id comment $id du $bag
@@ -160,10 +160,7 @@ class AdminController extends AbstractController
 
         $findComments = $this->commentRepository->findCommentsByBlogId($id);
         dump($findComments);
-        exit;
 
-
-        
         $this->CommentRepository->approveComment($id);
         $this->CommentRepository->commentPublished($id);
         $idblog = (int) $bag->getParameter('blogId')->getValue();
@@ -179,8 +176,6 @@ class AdminController extends AbstractController
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
         $this->commentRepository->deleteComment($id);
-
-        // $idblog = (int) $bag->getParameter('blogId')->getValue();
 
         //redirection sur la page courante (get)
         $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');

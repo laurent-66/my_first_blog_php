@@ -28,6 +28,12 @@ class CommentRepository extends AbstractRepository
         $statement = $this->database->request($query);
         return $statement->fetchAll();
     }
+
+    public function findAllcommentsValidate(){
+        $query = "SELECT * FROM {$this->getTableName()} WHERE commentValidate = 1" ;
+        $statement = $this->database->request($query);
+        return $statement->fetchAll();
+    } 
     
 
     public function submitComment(array $data, $id){

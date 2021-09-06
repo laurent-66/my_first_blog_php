@@ -17,7 +17,7 @@
             </div>
 
             <h4><bold>Commentaires du blog</bold></h4><br/>
-            {% for comment in findComments %}
+            {% for comment in $findCommentsPublished %}
                 <div class="comment-line row">
 
                     <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
