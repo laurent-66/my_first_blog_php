@@ -10,7 +10,8 @@ use Application\Application\Http\ParametersBag;
 use Application\Repository\BlogRepository;
 use Application\Exceptions\NotFoundException;
 use Application\Repository\CommentRepository;
-use Application\Classes\UploadFile;
+use Application\Helpers\FileUploader;
+
 
 class AdminController extends AbstractController
 {
@@ -50,8 +51,6 @@ class AdminController extends AbstractController
         //récupération du blog présent pour préremplir les champs
         $blog = $this->blogRepository->findByBlogId($id);
 
-        $filename = $_FILES['name'];
-
         //vérification du type de requête si http null, POST ou GET(par defaut)
 
         if(is_null($blog)){
@@ -59,20 +58,40 @@ class AdminController extends AbstractController
             throw new NotFoundException('le blog n\'existe pas');
         }
 
+        $errors = [];
+
         if($request->getMethod() === 'POST') {
             //récupération de données du post dans un tableau
-            dump($_FILES);
-            $dataArray = $request->getParsedBody();
-            dump($dataArray);
+            $dataSubmitted = $request->getParsedBody();
+            //récupération image
+            $file = $request->getUploadedFiles()['file_input_name'];
+            
+            if(strlen(
+                trim(
+                    $dataSubmitted['title-blog'] === 0 || 
+                    $file === 0 || 
+                    $dataSubmitted['inputChapo'] === 0 || 
+                    $dataSubmitted['content'] === 0 ))|| 
+                    $file->getSize() === 0
+                ){
+                $errors[] = 'Tous les champs requis sont obligatoires';
+            }else{
+                $datasAfterUpload = FileUploader::uploadFile($file);
+                dump( $datasAfterUpload['filename']);
+                exit;
+                if($datasAfterUpload['isSuccess']){
+                    //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
+                    $dataSubmitted['file_input_name'] = $datasAfterUpload['filename'];
 
-            //maj du blog
-            $this->blogRepository->updateBlog($dataArray,$id);
-            //redirection sur la page courante (get)
+                    // execution de la requête de mise à jour
+                    $this->blogRepository->updateBlog($dataSubmitted,$id);
 
-            //$redirect = new RedirectResponseHttp($request->getUri()->getPath());
-            $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
-            return $redirect->send();
-    
+                    //redirection sur la page courante (get)
+                    $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
+                    return $redirect->send();
+                }
+
+            }
         }
         //page formulaire préremplie (get)
         return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);

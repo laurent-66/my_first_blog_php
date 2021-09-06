@@ -49,7 +49,7 @@ class BlogRepository extends AbstractRepository
         ]);   
     }
 
-    public function updateBlog(array $data, int $id)
+    public function updateBlog(array $datasSubmitted, int $id)
     {
         $query = "UPDATE {$this->getTableName()} SET
 
@@ -62,10 +62,10 @@ class BlogRepository extends AbstractRepository
 
         $statement = $this->database->request($query,
         [
-            ':title' => $data['title-blog'],
-            ':url_image' => './public/images/'.$_FILES['name'],
-            ':chapo' => $data['inputChapo'],
-            ':content' => $data['content'],
+            ':title' => $datasSubmitted['title-blog'],
+            ':url_image' => $datasSubmitted['file_input_name'],
+            ':chapo' => $datasSubmitted['inputChapo'],
+            ':content' => $datasSubmitted['content'],
             ':id' => $id
         ]);
     }
