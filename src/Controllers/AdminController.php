@@ -59,8 +59,7 @@ class AdminController extends AbstractController
         }
 
         $errors = [];
-        
-
+    
         if($request->getMethod() === 'POST') {
   
             //récupération de données du post dans un tableau
@@ -69,7 +68,6 @@ class AdminController extends AbstractController
             $file = $request->getUploadedFiles()['file_input_name'];
 
             if(
-                
                 strlen(trim($dataSubmitted['title-blog'] === 0)) || 
                 $file->getSize() === 0 ||
                 strlen(trim($dataSubmitted['inputChapo'] === 0)) || 
@@ -119,11 +117,11 @@ class AdminController extends AbstractController
             return $redirect->send();
         }
         //get all blogs list
-        $comments = $this->commentRepository->findAllcommentsNotValidate();
+        $commentsNotValidate = $this->commentRepository->findAllcommentsNotValidate();
         $user = $_SESSION['user']['admin'];
         $blogs = $this->blogRepository->getAllBlog();
 
-        return $this->renderHtml('dashboardAdmin.html.twig',['blogs'=>$blogs,'comments'=> $comments,'user'=>$user]);
+        return $this->renderHtml('dashboardAdmin.html.twig',['blogs'=>$blogs,'commentsNotValidate'=>$commentsNotValidate,'user'=>$user]);
 
     }
 

@@ -117,7 +117,7 @@ class __TwigTemplate_1cc491a23b27455c26c99c5ac4957cd052ae85c68fc87a669f619140b2f
         ";
         // line 38
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["comments"] ?? null));
+        $context['_seq'] = twig_ensure_traversable(($context["commentsNotValidate"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
             // line 39
             echo "            <div class=\"comment-line row\">
@@ -207,7 +207,7 @@ class __TwigTemplate_1cc491a23b27455c26c99c5ac4957cd052ae85c68fc87a669f619140b2f
     </div>
 
     <div id=\"commentaires\" role=\"tabpanel\" class=\"tab-pane\">
-        {% for comment in comments %}
+        {% for comment in commentsNotValidate %}
             <div class=\"comment-line row\">
                 <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
                 <div class=\"col4 mr-3\">

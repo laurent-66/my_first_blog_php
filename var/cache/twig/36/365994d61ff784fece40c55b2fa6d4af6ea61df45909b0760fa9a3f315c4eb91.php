@@ -76,18 +76,21 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
         // line 15
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "last_update", [], "any", false, false, false, 15), "html", null, true);
         echo "</i></span></p>
+                    <p><bold>Auteur: </bold><span><i>";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "author", [], "any", false, false, false, 16), "html", null, true);
+        echo "</i></span></p>
                 </div>
             </div>
 
             <h4><bold>Commentaires du blog</bold></h4><br/>
             ";
-        // line 20
+        // line 21
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["findComments"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-            // line 21
+            // line 22
             echo "                <div class=\"comment-line row\">
-
                     <div class=\"col8\"><p class=\"mx-3 my-3\">";
             // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 23), "html", null, true);
@@ -112,13 +115,12 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
             }
             // line 32
             echo "                </div>    
-
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 34
         echo "
             <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
@@ -147,7 +149,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
 
     public function getDebugInfo()
     {
-        return array (  122 => 35,  114 => 32,  107 => 28,  103 => 27,  99 => 25,  97 => 24,  93 => 23,  89 => 21,  85 => 20,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  124 => 34,  117 => 32,  110 => 28,  106 => 27,  102 => 25,  100 => 24,  96 => 23,  93 => 22,  89 => 21,  81 => 16,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -167,13 +169,13 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
                 <div class=\"col-12 mx-auto my-0\">
                     <p>{{blog.content}}</p>
                     <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update}}</i></span></p>
+                    <p><bold>Auteur: </bold><span><i>{{blog.author}}</i></span></p>
                 </div>
             </div>
 
             <h4><bold>Commentaires du blog</bold></h4><br/>
             {% for comment in findComments %}
                 <div class=\"comment-line row\">
-
                     <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
                     {% if ( user != null) %}
                     <div class=\"col4 mr-3\">
@@ -184,7 +186,6 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
                     </div>
                     {% endif %}
                 </div>    
-
             {% endfor %}
 
             <h4><bold>Ajouter un commentaire</bold></h4><br/>

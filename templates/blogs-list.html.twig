@@ -7,30 +7,30 @@
     </div>
     <div class="blue-divider"></div>
 
-    <div class="container">
+    <div class="container-blog-list">
 
         {% for blog in blogs %}
-                <div class="card row">
-                    <div class="col-4 imageCard border border-primary">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <a href={{'/blogs/'~blog.id}} class="btn btn-primary btnSeeBlog">voir</a>
-                    </div>
-                    
-                    <div class="col-8 card-body border border-primary">
-                      <h5 class="card-title">{{blog.title}}</h5>
-                      <p class="card-text">{{blog.chapo}}</p>
-                      <div class="col4 row-item"><p>{{blog.last_update}}</p></div>
+                <div class="card mb-4">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src='{{blog.url_image}}' class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{blog.title}}</h5>
+                          <p class="card-text">{{blog.chapo}}</p>
+
+                          <div class="row">
+                            <div class="col4"><p>Date: {{blog.last_update}}</p></div>
+                            <div class="col4"><p>Auteur: {{blog.author}}</p></div>
+                            <div class="col4"><a href={{'/blogs/'~blog.id}} class="btn btn-primary btnSeeBlog">voir</a></div>
+                          </div>
+
+                        </div>
+                      </div>
                     </div>
                   </div>
         {% endfor %}
-
     </div>
-
-
-
-
-
-
-    
 </section>
 {% endblock %}

@@ -1,18 +1,28 @@
-/*blogs-list.css*/
+/* list des blogs*/
 
-.imageCard{
-    display: flex;
+.container-blog-list{
+    display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.card-img-top, .btnSeeBlog{
-    display:block;
+
+.card{
+    width:80%;
 }
 
-.card-img-top{
-    background-color:lightskyblue;
-    width: 200px;
-    height: 200px;
+.row-align-start-left
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.row-align-start-right
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
 }

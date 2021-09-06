@@ -16,7 +16,7 @@ class blog
 
     protected $last_update ='';
 
-
+    protected $author ='';
  
     //method id
 
@@ -95,6 +95,19 @@ class blog
     public function setLastUpdate(?string $last_update): void
     {
         $this->last_update = $last_update;
+    }
+
+    // method author
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+        
+        
+    public function setAuthor(?string $author): void
+    {
+        $this->last_update = $author;
     }
     
 }

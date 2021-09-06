@@ -54,12 +54,12 @@ class BlogPostController extends AbstractController
             $redirect = new RedirectResponseHttp('/blogs/'.$id);
             return $redirect->send();
         }
-
+        dump('test');
             $findCommentsPublished = $this->commentRepository->findAllcommentsValidate();
             // $findComments = $this->commentRepository->findCommentsByBlogId($id);
-
+            dump('test2');
             return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findCommentsPublished, 'user'=>$user]);
-    
+            dump('test3');
     }
 
 }
