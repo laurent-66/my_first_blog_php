@@ -1,7 +1,9 @@
-@import "template.css";
-@import "accueil.css"; 
-@import "./dashboard.css";
-@import "./comment-line.css";
-@import "./blogs-list.css";
+@import "./template.css";
 @import "./menu.css";
+@import "./footer.css";
+@import "./accueil.css"; 
+@import "./dashboard.css";
+@import "./blogs-list.css";
+@import "./blogs.css";
+@import "./comment-line.css";
 @import "./connexion.css";

@@ -37,6 +37,7 @@ class SecurityController extends AbstractController
                     $error = "Identifiants invalides";
                 } else { 
                     $_SESSION['user'] = $user;
+                    dump($user);
                     $response = new RedirectResponseHttp('/');
                     return $response->send();
                     $validation = "vous êtes bien connecté";
@@ -70,7 +71,7 @@ class SecurityController extends AbstractController
             } else {
 
                 $passwordHash = password_hash($dataSubmitted['inputPassword'],PASSWORD_DEFAULT);
-                $this->userRepository->registerUser($dataSubmitted['email'], $passwordHash);
+                $this->userRepository->registerUser($dataSubmitted['pseudo'], $dataSubmitted['email'], $passwordHash);
             }
         }
 

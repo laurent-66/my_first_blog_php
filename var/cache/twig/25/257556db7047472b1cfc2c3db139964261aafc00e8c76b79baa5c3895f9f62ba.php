@@ -88,9 +88,14 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content", [], "any", false, false, false, 26), "html", null, true);
         echo "\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
+
+                <div class=\"form-group\">
+                    <label for=\"author\">Nom de l'auteur :</label>
+                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
+                </div>
                 
-                <!-- <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button> -->
-                <input type=\"submit\" value=\"Envoyez\"class=\"btn btn-primary\" />
+                <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
+
             </form>
         </div>
     </div>
@@ -142,9 +147,14 @@ class __TwigTemplate_f6154bc90984441c71bab56ff6ae52e4ea3f3903f5d615eb91092b09dc2
                 <label for=\"content\">Contenue du blog :</label>
                 <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  value=\"{{blog.content}}\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
+
+                <div class=\"form-group\">
+                    <label for=\"author\">Nom de l'auteur :</label>
+                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
+                </div>
                 
-                <!-- <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button> -->
-                <input type=\"submit\" value=\"Envoyez\"class=\"btn btn-primary\" />
+                <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
+
             </form>
         </div>
     </div>

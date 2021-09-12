@@ -72,10 +72,10 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             echo "                <div class=\"card mb-4\">
                     <div class=\"row no-gutters\">
                       <div class=\"col-md-4\">
-                        <img src='";
+                        <img src=\".\\uploads\\";
             // line 16
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "url_image", [], "any", false, false, false, 16), "html", null, true);
-            echo "' class=\"card-img\" alt=\"...\">
+            echo "\" class=\"card-img\" alt=\"img\">
                       </div>
                       <div class=\"col-md-8\">
                         <div class=\"card-body\">
@@ -103,9 +103,6 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
             echo " class=\"btn btn-primary btnSeeBlog\">voir</a></div>
                           </div>
 
-                  
-                          
-
                         </div>
                       </div>
                     </div>
@@ -115,7 +112,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 34
         echo "    </div>
 </section>
 ";
@@ -133,7 +130,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
-        return array (  119 => 37,  102 => 26,  98 => 25,  94 => 24,  88 => 21,  84 => 20,  77 => 16,  72 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  116 => 34,  102 => 26,  98 => 25,  94 => 24,  88 => 21,  84 => 20,  77 => 16,  72 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -153,7 +150,7 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
                 <div class=\"card mb-4\">
                     <div class=\"row no-gutters\">
                       <div class=\"col-md-4\">
-                        <img src='{{blog.url_image}}' class=\"card-img\" alt=\"...\">
+                        <img src=\".\\uploads\\{{blog.url_image}}\" class=\"card-img\" alt=\"img\">
                       </div>
                       <div class=\"col-md-8\">
                         <div class=\"card-body\">
@@ -165,9 +162,6 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
                             <div class=\"col4\"><p>Auteur: {{blog.author}}</p></div>
                             <div class=\"col4\"><a href={{'/blogs/'~blog.id}} class=\"btn btn-primary btnSeeBlog\">voir</a></div>
                           </div>
-
-                  
-                          
 
                         </div>
                       </div>
