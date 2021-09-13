@@ -60,47 +60,63 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         <h2>Liste des blogs</h2>
     </div>
     <div class=\"blue-divider\"></div>
-    <div class=\"container\">
+
+    <div class=\"container-blog-list\">
 
         ";
-        // line 11
+        // line 12
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["blogs"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
-            // line 12
-            echo "        <div class=\"row\" style=\"border: 1px solid grey;\">
-                <div class=\"col 10 row-align-start-left\">
-                    <div class=\"col4 row-item\"><p>";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title", [], "any", false, false, false, 14), "html", null, true);
-            echo "</p></div>
-                    <div class=\"col4 row-item\"><p>";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo", [], "any", false, false, false, 15), "html", null, true);
-            echo "</p></div>
-                    <div class=\"col4 row-item\"><p>";
+            // line 13
+            echo "                <div class=\"card mb-4\">
+                    <div class=\"row no-gutters\">
+                      <div class=\"col-md-4\">
+                        <img src=\"\\uploads\\";
             // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 16), "html", null, true);
-            echo "</p></div>
-                </div>
-
-                <div class=\"col 2 row-align-start-right\">
-                    <div class=\"col4\"><a href=";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "url_image", [], "any", false, false, false, 16), "html", null, true);
+            echo "\" class=\"card-img\" alt=\"img\">
+                      </div>
+                      <div class=\"col-md-8\">
+                        <div class=\"card-body\">
+                          <h5 class=\"card-title\">";
             // line 20
-            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 20)), "html", null, true);
-            echo "><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-                </div>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title", [], "any", false, false, false, 20), "html", null, true);
+            echo "</h5>
+                          <p class=\"card-text\">";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo", [], "any", false, false, false, 21), "html", null, true);
+            echo "</p>
 
-        </div>
+                          <div class=\"row\">
+                            <div class=\"col4\"><p>Date: ";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 24), "html", null, true);
+            echo "</p></div>
+                            <div class=\"col4\"><p>Auteur: ";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "author", [], "any", false, false, false, 25), "html", null, true);
+            echo "</p></div>
+                            <div class=\"col4\"><a href=";
+            // line 26
+            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 26)), "html", null, true);
+            echo " class=\"btn btn-primary btnSeeBlog\">voir</a></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
-        echo "
-    </div>
-    
+
+        // line 34
+        echo "    </div>
+
 </section>
 ";
     }
@@ -117,7 +133,9 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
-        return array (  101 => 25,  90 => 20,  83 => 16,  79 => 15,  75 => 14,  71 => 12,  67 => 11,  54 => 3,  47 => 2,  36 => 1,);
+
+        return array (  116 => 34,  102 => 26,  98 => 25,  94 => 24,  88 => 21,  84 => 20,  77 => 16,  72 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
+
     }
 
     public function getSourceContext()
@@ -130,25 +148,32 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
         <h2>Liste des blogs</h2>
     </div>
     <div class=\"blue-divider\"></div>
-    <div class=\"container\">
+
+    <div class=\"container-blog-list\">
 
         {% for blog in blogs %}
-        <div class=\"row\" style=\"border: 1px solid grey;\">
-                <div class=\"col 10 row-align-start-left\">
-                    <div class=\"col4 row-item\"><p>{{blog.title}}</p></div>
-                    <div class=\"col4 row-item\"><p>{{blog.chapo}}</p></div>
-                    <div class=\"col4 row-item\"><p>{{blog.last_update}}</p></div>
-                </div>
+                <div class=\"card mb-4\">
+                    <div class=\"row no-gutters\">
+                      <div class=\"col-md-4\">
+                        <img src=\"\\uploads\\{{blog.url_image}}\" class=\"card-img\" alt=\"img\">
+                      </div>
+                      <div class=\"col-md-8\">
+                        <div class=\"card-body\">
+                          <h5 class=\"card-title\">{{blog.title}}</h5>
+                          <p class=\"card-text\">{{blog.chapo}}</p>
 
-                <div class=\"col 2 row-align-start-right\">
-                    <div class=\"col4\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mb-3\">Voir</button></a></div>
-                </div>
+                          <div class=\"row\">
+                            <div class=\"col4\"><p>Date: {{blog.last_update}}</p></div>
+                            <div class=\"col4\"><p>Auteur: {{blog.author}}</p></div>
+                            <div class=\"col4\"><a href={{'/blogs/'~blog.id}} class=\"btn btn-primary btnSeeBlog\">voir</a></div>
+                          </div>
 
-        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
         {% endfor %}
-
     </div>
-    
 </section>
 {% endblock %}", "blogs-list.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\blogs-list.html.twig");
     }

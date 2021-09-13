@@ -9,13 +9,10 @@
                     <label for="title-blog" class="sr-only">Titre du blog</label>
                     <input type="text" name="title-blog" class="form-control" placeholder="Entrer le titre" required autofocus>
                 </div>
-                <div class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="custom-file">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="10240" />
-                            <input type="file" class="custom-file-input" id="file_input_id" name="file_input_name" accept="image/png, image/jpeg">
-                            <label class="custom-file-label" for="url_image">Veuillez choisir une image</label>
-                        </div>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                      <label for="file_input_name">Selectionner une image au format jpeg ou png inférieur à 2Mo</label>
+                      <input type="file" class="file_input_id" id="file_input_name" name="file_input_name" accept="image/png, image/jpeg, image/jpg">
                     </div>
                 </div>
                 <div class="form-group">
@@ -28,9 +25,14 @@
                     <textarea class="form-control rounded-0" id="content" name="content" rows="3" placeholder="Veuillez écrire votre texte ici."></textarea>
                 </div>
 
+                <div class="form-group">
+                    <label for="author">Nom de l'auteur :</label>
+                    <input type="text" id="author" name="author" class="form-control my-3" placeholder="Nom de l'auteur" required autofocus>
+                </div>
+
                 <button type="submit" value="Upload" class="btn btn-primary mx-auto mb-3">Envoyez</button>
             </form>
         </div>
     </div>
 </div>  
-{% endblock %}
+{% endblock %} 

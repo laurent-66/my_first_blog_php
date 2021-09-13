@@ -24,10 +24,6 @@ class BlogPostController extends AbstractController
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
 
-
-        //$user = $_SESSION['user']['admin'];
-
-
         $blogs = $this->blogRepository->getAllBlog();
         //return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs,'user'=>$user]);
         return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
@@ -44,18 +40,21 @@ class BlogPostController extends AbstractController
         $blog = $this->blogRepository->findByBlogId($id);
 
         if($request->getMethod() === 'POST') {
-            
+      
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
+
             //création d'un commentaire
-            $this->commentRepository->createComment($dataArray,$id);
+            $this->commentRepository->submitComment($dataArray,$id);
             //redirection sur la page courante (get)
             $redirect = new RedirectResponseHttp('/blogs/'.$id);
             return $redirect->send();
         }
 
-        $findComments = $this->commentRepository->findCommentsByBlogId($id);
-        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments, 'user'=>$user]);
+            $findCommentsPublished = $this->commentRepository->findAllcommentsValidate();
+            // $findComments = $this->commentRepository->findCommentsByBlogId($id);
+
+            return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findCommentsPublished, 'user'=>$user]);
 
     }
 

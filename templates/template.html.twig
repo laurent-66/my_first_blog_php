@@ -20,6 +20,7 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                         </div>
+                        <p>{{session.id}}</p>
                         <div class="collapse navbar-collapse" id="navbarText">
                             <ul class="menu">
                                 <li class="menu-item">
@@ -32,14 +33,19 @@
                                 <li class="menu-item">
                                     <a class="item nav-link" href="/inscription">Inscription</a>
                                 </li>
+
+                            {% if session == false %}
                                 <li class="menu-item">
                                     <a class="item nav-link" href="/se-connecter">Connexion</a>
                                 </li>
+                            {% elseif session == true %}
+
                                 <li class="menu-item">
-
                                     <a class="item nav-link" href="/deconnecter">déconnexion</a>
-
                                 </li>
+
+                            {% endif %}
+
                             </ul>
                         </div>
                     </div>
@@ -85,4 +91,4 @@
     </div>
 </body>
 
-</html>
+</html> 

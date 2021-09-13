@@ -10,8 +10,6 @@ class Comment
 
     protected $commentValidate = false;
 
-    protected $commentPublished = false;
-
     protected $commentSignaled = false;
 
  
@@ -56,20 +54,6 @@ class Comment
     public function setValidate(?bool $validate): void
     {
         $this->validate = $validate;
-    }
-
-    // method published
-
-    public function getPublished(): ?bool
-    {
-
-        return $this->commentPublished;
-    }
-
-    public function setPublished(?bool $commentPublished): void
-    {
-        $this->commentPublished = $commentPublished;
-
     }
 
 

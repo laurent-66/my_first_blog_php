@@ -23,11 +23,13 @@ class SecurityController extends AbstractController
 
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
+  
 
         $error = ''; 
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
+          
             if (  (strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
                 $error = "L'identifiant et le mot de passe sont requis.";
             } else {
@@ -38,7 +40,9 @@ class SecurityController extends AbstractController
                 } else { 
                     $_SESSION['user'] = $user;
                     $response = new RedirectResponseHttp('/');
+  
                     return $response->send();
+
                     $validation = "vous êtes bien connecté";
 
                 }
@@ -70,7 +74,7 @@ class SecurityController extends AbstractController
             } else {
 
                 $passwordHash = password_hash($dataSubmitted['inputPassword'],PASSWORD_DEFAULT);
-                $this->userRepository->registerUser($dataSubmitted['email'], $passwordHash);
+                $this->userRepository->registerUser($dataSubmitted['pseudo'], $dataSubmitted['email'], $passwordHash);
             }
         }
 
@@ -78,37 +82,12 @@ class SecurityController extends AbstractController
 
     }
 
-
-    // public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
-    // {   
-    //     $validate = ''; 
-    //     if ($request->getMethod() === 'GET'){
-    //         $dataSubmitted = $request->getParsedBody();
-
-    //         if ((strlen( trim($dataSubmitted['disconnect']))) === 'disconnect' ){
-
-    //                 session_destroy();
-                
-    //             $validate = "Vous êtes maintenant déconnecté.";
-
-    //         } else {
-
-    //             $error = "erreur de déconnexion";
-
-    //         }
-    //         $result = new RedirectResponseHttp('/se-connecter');
-    //         return $result->send();
-    //     }
-    // }  
-    
     
     public function disconnect (ServerRequestInterface $request, ParametersBag $bag)
     {   
         $validate = ''; 
         $error = '';
         $user = $_SESSION['user'];
-
-        if ($user !== []){
 
             session_destroy();
                 
@@ -117,13 +96,6 @@ class SecurityController extends AbstractController
             $result = new RedirectResponseHttp('/se-connecter');
             return $result->send();    
 
-        } else {
-
-
-            $error = "erreur de déconnexion";
-            dump($error);
-
-        }
     }  
 
 }

@@ -6,24 +6,31 @@
         <h2>Liste des blogs</h2>
     </div>
     <div class="blue-divider"></div>
-    <div class="container">
+
+    <div class="container-blog-list">
 
         {% for blog in blogs %}
-        <div class="row" style="border: 1px solid grey;">
-                <div class="col 10 row-align-start-left">
-                    <div class="col4 row-item"><p>{{blog.title}}</p></div>
-                    <div class="col4 row-item"><p>{{blog.chapo}}</p></div>
-                    <div class="col4 row-item"><p>{{blog.last_update}}</p></div>
-                </div>
+                <div class="card mb-4">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="\uploads\{{blog.url_image}}" class="card-img" alt="img">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{blog.title}}</h5>
+                          <p class="card-text">{{blog.chapo}}</p>
 
-                <div class="col 2 row-align-start-right">
-                    <div class="col4"><a href={{'/blogs/'~blog.id}}><button class="btn btn-lg btn-primary btn-block mb-3">Voir</button></a></div>
-                </div>
+                          <div class="row">
+                            <div class="col4"><p>Date: {{blog.last_update}}</p></div>
+                            <div class="col4"><p>Auteur: {{blog.author}}</p></div>
+                            <div class="col4"><a href={{'/blogs/'~blog.id}} class="btn btn-primary btnSeeBlog">voir</a></div>
+                          </div>
 
-        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
         {% endfor %}
-
     </div>
-    
 </section>
 {% endblock %}

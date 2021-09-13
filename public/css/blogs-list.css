@@ -1,0 +1,33 @@
+/* list des blogs*/
+
+.container-blog-list{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.card{
+    width:80%;
+    box-shadow: 5px 5px 10px rgb(207, 207, 207);
+}
+.card-img{
+    width: 300px;
+    height: 300px;
+}
+
+.row-align-start-left
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.row-align-start-right
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+}
