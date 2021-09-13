@@ -33,16 +33,39 @@ class AdminController extends AbstractController
 
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
-            //création du blog
 
-            $this->blogRepository->createBlog($dataArray);
-            //die('test1');
-            //redirection sur la page courante (get)
-            $redirect = new RedirectResponseHttp('/blogs');
-            return $redirect->send();
+            //récupération image
+            $file = $request->getUploadedFiles()['file_input_name'];
+
+            if(
+                strlen(trim($dataArray['title-blog'] === 0)) || 
+                $file->getSize() === 0 ||
+                strlen(trim($dataArray['inputChapo'] === 0)) || 
+                strlen(trim($dataArray['content'] === 0 )) ||
+                strlen(trim($dataArray['author'] === 0 ))
+                ){
+                $errors[] = 'Tous les champs requis sont obligatoires';
+            }else{
+                $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
+
+                if($datasAfterUpload['isSuccess']){
+                    //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
+                    $dataArray['file_input_name'] = $datasAfterUpload['filename'];
+       
+                    //création du blog
+                    $this->blogRepository->createBlog($dataArray);
+   
+                    //redirection sur la page courante (get)
+                    $redirect = new RedirectResponseHttp('/blogs');
+                    return $redirect->send();
+
+                }
+            }
+
         }
         return $this->renderHtml('newBlog.html.twig');
     }
+
 
     public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
 
@@ -64,6 +87,7 @@ class AdminController extends AbstractController
   
             //récupération de données du post dans un tableau
             $dataSubmitted = $request->getParsedBody();
+
             //récupération image
             $file = $request->getUploadedFiles()['file_input_name'];
 
@@ -71,7 +95,8 @@ class AdminController extends AbstractController
                 strlen(trim($dataSubmitted['title-blog'] === 0)) || 
                 $file->getSize() === 0 ||
                 strlen(trim($dataSubmitted['inputChapo'] === 0)) || 
-                strlen(trim($dataSubmitted['content'] === 0 ))
+                strlen(trim($dataSubmitted['content'] === 0 )) ||
+                strlen(trim($dataSubmitted['author'] === 0 ))
                 ){
                 $errors[] = 'Tous les champs requis sont obligatoires';
             }else{
@@ -88,20 +113,30 @@ class AdminController extends AbstractController
                     $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
                     return $redirect->send();
                 }
-
             }
         }
+
         //page formulaire préremplie (get)
         return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);
     }
 
+
+
+
+
+
     public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
 
         //Récupération de la valeur de l'id blog $id du $bag
-        // $id = '';
         $id = (int) $bag->getParameter('id')->getValue();
+
+        //supprime tout les commentaires du blog avant la suppression de celui-ci
+
+        $this->commentRepository->deleteAllCommentBlog($id);
+
+        //supprime le blog
+
         $this->blogRepository->deleteBlog($id);
-        // return $this->renderHtml('blogs-list.html.twig');
 
         //redirection sur la page courante (get)
         $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
@@ -150,14 +185,11 @@ class AdminController extends AbstractController
     }
 
     public function approveComment (ServerRequestInterface $request, ParametersBag $bag ){
-        dump('approuve comment');
-        dump($bag);
 
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
 
         $findComments = $this->commentRepository->findCommentsByBlogId($id);
-        dump($findComments);
 
         $this->CommentRepository->approveComment($id);
         $this->CommentRepository->commentPublished($id);
