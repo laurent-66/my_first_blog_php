@@ -18,18 +18,25 @@ class UserRepository extends AbstractRepository
         return $statement->fetch();
     }
 
-    public function registerUser(string $email, string $password)
+    public function registerUser(string $pseudo, string $email, string $password)
     {
         $query = "INSERT INTO {$this->getTableName()} (
+            pseudo,
             email,
             password
             )
             VALUES(
+            :pseudo,    
             :email,
             :password
             )";
 
-            $statement = $this->database->request($query,[':email'=> $email, ':password' => $password]);
+            $statement = $this->database->request($query,[
+            ':pseudo'=> $pseudo,     
+            ':email'=> $email, 
+            ':password' => $password
+        
+            ]);
 
         return $statement;
     }

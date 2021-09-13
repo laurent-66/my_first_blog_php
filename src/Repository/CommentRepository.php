@@ -78,29 +78,22 @@ class CommentRepository extends AbstractRepository
 
     }
 
-
-    public function commentPublished(int $id)
-    {
-        $query = "UPDATE {$this->getTableName()} SET
-
-         `commentPublished`= :commentPublished
-         
-          WHERE id= :id";
-
-        $this->database->request($query,
-        [
-            ':id' => $id,
-            ':commentPublished'=> 1
-        ]);
-    }
-
-
-
     public function deleteComment(int $id)
     {
         $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
         $this->database->request($query, [':id' => $id]);
     }
+
+    public function deleteAllCommentBlog(int $idBlog)
+    {
+        $query = "DELETE FROM {$this->getTableName()} WHERE blog_post_id_blog_post= :idBlog";
+        $this->database->request($query, [':idBlog' => $idBlog]);
+    }
+
+
+
+
+
 
 
 }
