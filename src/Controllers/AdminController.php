@@ -54,11 +54,10 @@ class AdminController extends AbstractController
        
                     //création du blog
                     $this->blogRepository->createBlog($dataArray);
-   
+
                     //redirection sur la page courante (get)
                     $redirect = new RedirectResponseHttp('/blogs');
                     return $redirect->send();
-
                 }
             }
 
@@ -120,7 +119,6 @@ class AdminController extends AbstractController
                     dump($e);
                     exit;
                 }
-
             }
         }
 
@@ -193,10 +191,17 @@ class AdminController extends AbstractController
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
 
+<<<<<<< HEAD
         // $findComments = $this->commentRepository->findCommentsByBlogId($id);
 
         $this->commentRepository->approveComment($id); 
 
+=======
+        $findComments = $this->commentRepository->findCommentsByBlogId($id);
+        
+        $this->CommentRepository->approveComment($id);
+        $this->CommentRepository->commentPublished($id);
+>>>>>>> 24d88dcbe4e049c93042511002a3b35d8329eca0
         $idblog = (int) $bag->getParameter('blogId')->getValue();
 
         //redirection sur la page courante (get)

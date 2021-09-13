@@ -39,7 +39,6 @@ class SecurityController extends AbstractController
                     $error = "Identifiants invalides";
                 } else { 
                     $_SESSION['user'] = $user;
-
                     $response = new RedirectResponseHttp('/');
   
                     return $response->send();
