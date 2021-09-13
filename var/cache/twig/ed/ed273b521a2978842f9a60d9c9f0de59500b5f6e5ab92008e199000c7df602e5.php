@@ -230,6 +230,6 @@ class __TwigTemplate_9e91a178d37ba171ae02ec422362ce7b69ce269691adb394135b8983ee2
         </div>
     </div>
 </div>
-{% endblock %}", "home.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\home.html.twig");
+{% endblock %} ", "home.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\home.html.twig");
     }
 }

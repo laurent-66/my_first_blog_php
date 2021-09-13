@@ -62,8 +62,11 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title", [], "any", false, false, false, 6), "html", null, true);
         echo "</h3><br />
             <div class=\"row\">
-                <div class=\"col-12 ml-50px my-0\">
-                    <div><img  src=\"./images/me2.jpg\" alt=\"\"></div>
+                <div class=\"col-12 ml-50 px my-0\">
+                    <img src=\"\\uploads\\";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "url_image", [], "any", false, false, false, 9), "html", null, true);
+        echo "\" class=\"card-img\" alt=\"img\">
                 </div>
             </div>
             <div class=\"row my-5\" id=\"objectif\">
@@ -149,7 +152,7 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
 
     public function getDebugInfo()
     {
-        return array (  124 => 34,  117 => 32,  110 => 28,  106 => 27,  102 => 25,  100 => 24,  96 => 23,  93 => 22,  89 => 21,  81 => 16,  77 => 15,  73 => 14,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  127 => 34,  120 => 32,  113 => 28,  109 => 27,  105 => 25,  103 => 24,  99 => 23,  96 => 22,  92 => 21,  84 => 16,  80 => 15,  76 => 14,  68 => 9,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -161,8 +164,8 @@ class __TwigTemplate_591273e4aa68a2bae5443c26e74f70ad58b94dbb69409cb13856d7019e7
     <section>
         <h3>{{blog.title}}</h3><br />
             <div class=\"row\">
-                <div class=\"col-12 ml-50px my-0\">
-                    <div><img  src=\"./images/me2.jpg\" alt=\"\"></div>
+                <div class=\"col-12 ml-50 px my-0\">
+                    <img src=\"\\uploads\\{{blog.url_image}}\" class=\"card-img\" alt=\"img\">
                 </div>
             </div>
             <div class=\"row my-5\" id=\"objectif\">
