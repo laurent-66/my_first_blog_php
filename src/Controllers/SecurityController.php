@@ -23,11 +23,12 @@ class SecurityController extends AbstractController
 
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
-
+  
         $error = ''; 
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
+          
             if (  (strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 ){
                 $error = "L'identifiant et le mot de passe sont requis.";
             } else {
@@ -37,8 +38,11 @@ class SecurityController extends AbstractController
                     $error = "Identifiants invalides";
                 } else { 
                     $_SESSION['user'] = $user;
+            
                     $response = new RedirectResponseHttp('/');
+  
                     return $response->send();
+
                     $validation = "vous êtes bien connecté";
 
                 }
@@ -70,7 +74,7 @@ class SecurityController extends AbstractController
             } else {
 
                 $passwordHash = password_hash($dataSubmitted['inputPassword'],PASSWORD_DEFAULT);
-                $this->userRepository->registerUser($dataSubmitted['email'], $passwordHash);
+                $this->userRepository->registerUser($dataSubmitted['pseudo'], $dataSubmitted['email'], $passwordHash);
             }
         }
 
