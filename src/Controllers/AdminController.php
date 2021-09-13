@@ -162,10 +162,10 @@ class AdminController extends AbstractController
 
     }
 
-
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
 
         $user = $_SESSION['user']['admin'];
+
 
         $id = (int) $bag->getParameter('id')->getValue();
 
@@ -213,5 +213,6 @@ class AdminController extends AbstractController
         $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
         return $redirect->send();
     }
+
 
 }

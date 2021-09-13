@@ -107,13 +107,16 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
                       </div>
                     </div>
                   </div>
+
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+
         // line 34
         echo "    </div>
+
 </section>
 ";
     }
@@ -130,7 +133,9 @@ class __TwigTemplate_eefe012987964194d44f6ba58a90824b78b3dc68badd49803124da75a0f
 
     public function getDebugInfo()
     {
+
         return array (  116 => 34,  102 => 26,  98 => 25,  94 => 24,  88 => 21,  84 => 20,  77 => 16,  72 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
+
     }
 
     public function getSourceContext()

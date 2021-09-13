@@ -17,6 +17,7 @@ h4{
 #tab-blogs:hover{
 
     box-shadow: 0px 0px 10px lightgrey, 0px 0px 10px lightgrey;
+
 }
 
 .line-info-list
@@ -45,4 +46,5 @@ h4{
 a
 {
     text-decoration: none;
+
 }
