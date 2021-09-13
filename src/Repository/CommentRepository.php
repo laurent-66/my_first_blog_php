@@ -24,7 +24,7 @@ class CommentRepository extends AbstractRepository
 
 
     public function findAllcommentsNotValidate(){
-        $query = "SELECT * FROM {$this->getTableName()} WHERE commentValidate IS NULL" ;
+        $query = "SELECT * FROM {$this->getTableName()} WHERE commentValidate = 0" ;
         $statement = $this->database->request($query);
         return $statement->fetchAll();
     }
@@ -38,10 +38,9 @@ class CommentRepository extends AbstractRepository
 
     public function submitComment(array $data, $id){
 
-        $query = "INSERT INTO {$this->getTableName()}(commentContent,commentValidate, commentPublished,commentSignaled,user_id_User,blog_post_id_blog_post) VALUES (
+        $query = "INSERT INTO {$this->getTableName()}(commentContent,commentValidate,commentSignaled,user_id_User,blog_post_id_blog_post) VALUES (
          :commentContent,
          :commentValidate,
-         :commentPublished,
          :commentSignaled,
          :user_id_User,
          :blog_post_id_blog_post
@@ -51,8 +50,7 @@ class CommentRepository extends AbstractRepository
         $statement = $this->database->request($query,    
         [
             ':commentContent' => $data['commentContent'],
-            ':commentValidate' => NULL,
-            ':commentPublished' => 0,
+            ':commentValidate' => 0,
             ':commentSignaled' => 0,
             ':user_id_User' => $_SESSION['user']['id'],
             ':blog_post_id_blog_post' => $id,
@@ -62,12 +60,11 @@ class CommentRepository extends AbstractRepository
 
     public function approveComment(int $id)
     {
-
         $query = "UPDATE {$this->getTableName()} SET
 
-         `commentValidate`= :commentValidate,
+         commentValidate = :commentValidate
 
-          WHERE id= :id";
+          WHERE id = :id";
 
         $this->database->request($query,
         [
@@ -80,20 +77,13 @@ class CommentRepository extends AbstractRepository
 
     public function deleteComment(int $id)
     {
-        $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
+        $query = "DELETE FROM {$this->getTableName()} WHERE id = :id";
         $this->database->request($query, [':id' => $id]);
     }
 
     public function deleteAllCommentBlog(int $idBlog)
     {
-        $query = "DELETE FROM {$this->getTableName()} WHERE blog_post_id_blog_post= :idBlog";
+        $query = "DELETE FROM {$this->getTableName()} WHERE blog_post_id_blog_post = :idBlog";
         $this->database->request($query, [':idBlog' => $idBlog]);
     }
-
-
-
-
-
-
-
 }

@@ -4,7 +4,7 @@ namespace Application\Models;
 
 class User
 {
-    protected $id_User;
+    protected $id;
 
     protected $pseudo = '';
 

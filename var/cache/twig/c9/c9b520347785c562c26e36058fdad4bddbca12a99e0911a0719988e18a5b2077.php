@@ -61,6 +61,10 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                 <span class=\"navbar-toggler-icon\"></span>
                             </button>
                         </div>
+                        <p>";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "id", [], "any", false, false, false, 23), "html", null, true);
+        echo "</p>
                         <div class=\"collapse navbar-collapse\" id=\"navbarText\">
                             <ul class=\"menu\">
                                 <li class=\"menu-item\">
@@ -74,18 +78,26 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                     <a class=\"item nav-link\" href=\"/inscription\">Inscription</a>
                                 </li>
 
-                            
-                                <li class=\"menu-item\">
+                            ";
+        // line 37
+        if ((0 === twig_compare(($context["session"] ?? null), false))) {
+            // line 38
+            echo "                                <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/se-connecter\">Connexion</a>
                                 </li>
-                            
-
+                            ";
+        } elseif ((0 === twig_compare(        // line 41
+($context["session"] ?? null), true))) {
+            // line 42
+            echo "
                                 <li class=\"menu-item\">
-
                                     <a class=\"item nav-link\" href=\"/deconnecter\">déconnexion</a>
-
                                 </li>
-                                
+
+                            ";
+        }
+        // line 48
+        echo "
                             </ul>
                         </div>
                     </div>
@@ -94,9 +106,9 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
 
 
         ";
-        // line 55
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 58
+        // line 59
         echo "
 
         <footer class=\"sticky-footer\">
@@ -141,11 +153,11 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         $macros = $this->macros;
     }
 
-    // line 55
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 56
+        // line 57
         echo "
         ";
     }
@@ -155,9 +167,14 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
         return "template.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  149 => 56,  145 => 55,  139 => 6,  100 => 58,  98 => 55,  46 => 6,  39 => 1,);
+        return array (  161 => 57,  157 => 56,  151 => 6,  112 => 59,  110 => 56,  100 => 48,  92 => 42,  90 => 41,  85 => 38,  83 => 37,  66 => 23,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -184,6 +201,7 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                 <span class=\"navbar-toggler-icon\"></span>
                             </button>
                         </div>
+                        <p>{{session.id}}</p>
                         <div class=\"collapse navbar-collapse\" id=\"navbarText\">
                             <ul class=\"menu\">
                                 <li class=\"menu-item\">
@@ -197,18 +215,18 @@ class __TwigTemplate_0d701f946a879aa126ddaf9d26a3f595f9c9cf049f9854193a4f17ccf38
                                     <a class=\"item nav-link\" href=\"/inscription\">Inscription</a>
                                 </li>
 
-                            
+                            {% if session == false %}
                                 <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/se-connecter\">Connexion</a>
                                 </li>
-                            
+                            {% elseif session == true %}
 
                                 <li class=\"menu-item\">
-
                                     <a class=\"item nav-link\" href=\"/deconnecter\">déconnexion</a>
-
                                 </li>
-                                
+
+                            {% endif %}
+
                             </ul>
                         </div>
                     </div>

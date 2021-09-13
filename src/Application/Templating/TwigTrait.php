@@ -35,7 +35,7 @@ trait TwigTrait
         );
         //création d'une global twig 'upload_dir' contenant l'adresse de dépôt des images uploader
         $this->templating->addGlobal('upload_dir',FileUploader::DEFAULT_UPLOAD_DIR);
-
+        $this->templating->addGlobal('session',$_SESSION);
 
     }
 }

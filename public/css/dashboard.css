@@ -18,3 +18,31 @@ h4{
 
     box-shadow: 0px 0px 10px lightgrey, 0px 0px 10px lightgrey;
 }
+
+.line-info-list
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+}
+
+.item-list
+{
+    /* border: 1px solid gray; */
+    margin-right:15px;
+    flex-wrap: nowrap;
+}
+
+.new-blog-button
+{
+    display:block;
+    width:200px;
+    text-decoration: none;
+}
+
+a
+{
+    text-decoration: none;
+}

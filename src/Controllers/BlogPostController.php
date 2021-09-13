@@ -24,10 +24,6 @@ class BlogPostController extends AbstractController
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
 
-
-        //$user = $_SESSION['user']['admin'];
-
-
         $blogs = $this->blogRepository->getAllBlog();
         //return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs,'user'=>$user]);
         return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);

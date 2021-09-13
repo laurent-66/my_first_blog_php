@@ -24,6 +24,7 @@ class SecurityController extends AbstractController
     public function login (ServerRequestInterface $request, ParametersBag $bag)
     {   
   
+
         $error = ''; 
 
         if ($request->getMethod() === 'POST'){
@@ -38,7 +39,7 @@ class SecurityController extends AbstractController
                     $error = "Identifiants invalides";
                 } else { 
                     $_SESSION['user'] = $user;
-            
+
                     $response = new RedirectResponseHttp('/');
   
                     return $response->send();

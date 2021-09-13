@@ -61,7 +61,7 @@ class BlogRepository extends AbstractRepository
          content = :content,
          last_update = NOW(),
          author = :author, 
-         user_id_User = :user_id_User,
+         user_id_User = :user_id_User
          WHERE id = :id ;";
 
         $statement = $this->database->request($query,
@@ -70,8 +70,8 @@ class BlogRepository extends AbstractRepository
             ':url_image' => $_FILES['file_input_name']['name'],
             ':chapo' => $datasSubmitted['inputChapo'],
             ':content' => $datasSubmitted['content'],
-            ':content' => $datasSubmitted['author'],
-            ':user_id_User' => 1,
+            ':author' => $datasSubmitted['author'],
+            ':user_id_User' => (int) $_SESSION['user']['id'],
             ':id' => $id
         ]);
     }

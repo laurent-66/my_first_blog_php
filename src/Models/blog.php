@@ -4,7 +4,7 @@ namespace Application\Models;
 
 class blog
 {
-    protected $id_blog_post;
+    protected $id;
 
     protected $title = '';
 

@@ -56,7 +56,6 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
         $macros = $this->macros;
         echo " 
 <div class=\"container\">
-
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
             <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
@@ -64,15 +63,10 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                     <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                     <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
                 </div>
-                <div class=\"form-group\">
-                    <div class=\"input-group mb-3\">
-                        <div class=\"custom-file\">
-
-                            <input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"10240\" />
-                            <input type=\"file\" class=\"custom-file-input\" id=\"file_input_id\" name=\"file_input_name\" accept=\"image/png, image/jpeg\">
-
-                            <label class=\"custom-file-label\" for=\"url_image\">Veuillez choisir une image</label>
-                        </div>
+                <div class=\"input-group mb-3\">
+                    <div class=\"custom-file\">
+                      <label for=\"file_input_name\">Selectionner une image au format jpeg ou png inférieur à 2Mo</label>
+                      <input type=\"file\" class=\"file_input_id\" id=\"file_input_name\" name=\"file_input_name\" accept=\"image/png, image/jpeg, image/jpg\">
                     </div>
                 </div>
                 <div class=\"form-group\">
@@ -85,9 +79,12 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                     <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
 
+                <div class=\"form-group\">
+                    <label for=\"author\">Nom de l'auteur :</label>
+                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
+                </div>
 
                 <button type=\"submit\" value=\"Upload\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>
-
             </form>
         </div>
     </div>
@@ -116,7 +113,6 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
 {% block title %}Blog{% endblock %}
 {% block body %} 
 <div class=\"container\">
-
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
             <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
@@ -124,15 +120,10 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                     <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                     <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
                 </div>
-                <div class=\"form-group\">
-                    <div class=\"input-group mb-3\">
-                        <div class=\"custom-file\">
-
-                            <input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"10240\" />
-                            <input type=\"file\" class=\"custom-file-input\" id=\"file_input_id\" name=\"file_input_name\" accept=\"image/png, image/jpeg\">
-
-                            <label class=\"custom-file-label\" for=\"url_image\">Veuillez choisir une image</label>
-                        </div>
+                <div class=\"input-group mb-3\">
+                    <div class=\"custom-file\">
+                      <label for=\"file_input_name\">Selectionner une image au format jpeg ou png inférieur à 2Mo</label>
+                      <input type=\"file\" class=\"file_input_id\" id=\"file_input_name\" name=\"file_input_name\" accept=\"image/png, image/jpeg, image/jpg\">
                     </div>
                 </div>
                 <div class=\"form-group\">
@@ -145,13 +136,16 @@ class __TwigTemplate_8891c4862e4b060c8ac7dd1fcd60c32b145b2bae8b6740e865548bca266
                     <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
 
+                <div class=\"form-group\">
+                    <label for=\"author\">Nom de l'auteur :</label>
+                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
+                </div>
 
                 <button type=\"submit\" value=\"Upload\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>
-
             </form>
         </div>
     </div>
 </div>  
-{% endblock %}", "newBlog.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\newBlog.html.twig");
+{% endblock %} ", "newBlog.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\newBlog.html.twig");
     }
 }

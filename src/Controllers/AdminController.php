@@ -11,7 +11,7 @@ use Application\Repository\BlogRepository;
 use Application\Exceptions\NotFoundException;
 use Application\Repository\CommentRepository;
 use Application\Helpers\FileUploader;
-
+use Exception;
 
 class AdminController extends AbstractController
 {
@@ -100,29 +100,33 @@ class AdminController extends AbstractController
                 ){
                 $errors[] = 'Tous les champs requis sont obligatoires';
             }else{
-                $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
+                try{
+                    $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
 
-                if($datasAfterUpload['isSuccess']){
-                    //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
-                    $dataSubmitted['file_input_name'] = $datasAfterUpload['filename'];
+                    if($datasAfterUpload['isSuccess']){
+                        //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
+                        $dataSubmitted['file_input_name'] = $datasAfterUpload['filename'];
+  
+                        // execution de la requête de mise à jour
+                        $this->blogRepository->updateBlog($dataSubmitted,$id);
+    
+                        //redirection sur la page courante (get)
+                        $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
+                        return $redirect->send();
+                    }
 
-                    // execution de la requête de mise à jour
-                    $this->blogRepository->updateBlog($dataSubmitted,$id);
-
-                    //redirection sur la page courante (get)
-                    $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
-                    return $redirect->send();
+                    
+                }catch(\Exception $e){
+                    dump($e);
+                    exit;
                 }
+
             }
         }
 
         //page formulaire préremplie (get)
         return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);
     }
-
-
-
-
 
 
     public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
@@ -189,10 +193,10 @@ class AdminController extends AbstractController
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
 
-        $findComments = $this->commentRepository->findCommentsByBlogId($id);
+        // $findComments = $this->commentRepository->findCommentsByBlogId($id);
 
-        $this->CommentRepository->approveComment($id);
-        $this->CommentRepository->commentPublished($id);
+        $this->commentRepository->approveComment($id); 
+
         $idblog = (int) $bag->getParameter('blogId')->getValue();
 
         //redirection sur la page courante (get)
