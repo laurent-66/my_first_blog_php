@@ -42,7 +42,7 @@ class BlogRepository extends AbstractRepository
         $statement = $this->database->request($query,    
         [
             ':title' => $data['title-blog'],
-            ':url_image' => $_FILES['file_input_name']['name'],
+            ':url_image' => $data['file_input_name'],
             ':chapo' => $data['inputChapo'],
             ':content' => $data['content'],
             ':last_update' => new DateTime(),
@@ -67,7 +67,7 @@ class BlogRepository extends AbstractRepository
         $statement = $this->database->request($query,
         [
             ':title' => $datasSubmitted['title-blog'],
-            ':url_image' => $_FILES['file_input_name']['name'],
+            ':url_image' => $datasSubmitted['file_input_name'],
             ':chapo' => $datasSubmitted['inputChapo'],
             ':content' => $datasSubmitted['content'],
             ':author' => $datasSubmitted['author'],
