@@ -86,4 +86,42 @@ class CommentRepository extends AbstractRepository
         $query = "DELETE FROM {$this->getTableName()} WHERE blog_post_id_blog_post = :idBlog";
         $this->database->request($query, [':idBlog' => $idBlog]);
     }
+
+
+    public function reportComment(int $id)
+    {
+        $this->disapproveComment($id);
+
+        $query = "UPDATE {$this->getTableName()} SET
+
+         commentSignaled = :commentSignaled
+
+          WHERE id = :id";
+
+        $this->database->request($query,
+        [
+            ':id' => $id,
+            ':commentSignaled' => 1,
+
+        ]);
+
+    }
+
+
+    public function disapproveComment(int $id)
+    {
+        $query = "UPDATE {$this->getTableName()} SET
+
+         commentValidate = :commentValidate
+
+          WHERE id = :id";
+
+        $this->database->request($query,
+        [
+            ':id' => $id,
+            ':commentValidate' => 0,
+
+        ]);
+
+    }
 }

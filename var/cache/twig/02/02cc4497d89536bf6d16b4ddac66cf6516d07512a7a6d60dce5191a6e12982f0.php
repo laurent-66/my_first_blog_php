@@ -103,18 +103,17 @@ class __TwigTemplate_391d8dd88e40f238814c56627cdbcdc2dd6058377f40db66de22588e4f5
                         <div class=\"row px-0 mx-0\">
                             <div class=\"col button-comment-line px-0 mx-2\"><a href=";
             // line 27
-            echo twig_escape_filter($this->env, ((("/blog/approveComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 27)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 27)), "html", null, true);
+            echo twig_escape_filter($this->env, ((("/blog/reportComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 27)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 27)), "html", null, true);
             echo "><button type=\"button\" class=\"btn btn-warning btn-block my auto\">Signaler</button></a></div>
                         </div>
                     </div>
-
                 </div>    
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 32
         echo "
             <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
@@ -143,7 +142,7 @@ class __TwigTemplate_391d8dd88e40f238814c56627cdbcdc2dd6058377f40db66de22588e4f5
 
     public function getDebugInfo()
     {
-        return array (  118 => 33,  106 => 27,  99 => 23,  96 => 22,  92 => 21,  84 => 16,  80 => 15,  76 => 14,  68 => 9,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  117 => 32,  106 => 27,  99 => 23,  96 => 22,  92 => 21,  84 => 16,  80 => 15,  76 => 14,  68 => 9,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -174,10 +173,9 @@ class __TwigTemplate_391d8dd88e40f238814c56627cdbcdc2dd6058377f40db66de22588e4f5
 
                     <div class=\"col4 mr-3\">
                         <div class=\"row px-0 mx-0\">
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/approveComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn btn-warning btn-block my auto\">Signaler</button></a></div>
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/reportComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn btn-warning btn-block my auto\">Signaler</button></a></div>
                         </div>
                     </div>
-
                 </div>    
             {% endfor %}
 

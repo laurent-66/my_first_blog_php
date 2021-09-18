@@ -166,7 +166,6 @@ class AdminController extends AbstractController
 
         $user = $_SESSION['user']['admin'];
 
-
         $id = (int) $bag->getParameter('id')->getValue();
 
         $blog = $this->blogRepository->findByBlogId($id);
@@ -214,5 +213,14 @@ class AdminController extends AbstractController
         return $redirect->send();
     }
 
+    public function reportComment (ServerRequestInterface $request, ParametersBag $bag){
+ 
+        //Récupération de la valeur de l'id comment $id du $bag
+        $id = (int) $bag->getParameter('id')->getValue();
+        $this->commentRepository->reportComment($id);
 
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs/'.$id);
+        return $redirect->send();
+    }
 }
