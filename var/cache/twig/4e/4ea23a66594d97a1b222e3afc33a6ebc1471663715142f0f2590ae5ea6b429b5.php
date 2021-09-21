@@ -79,11 +79,6 @@ class __TwigTemplate_f496b1fdcd60aadd44bbba85d20f109303e0e5488eabf4c9d3a72fcf490
                     <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
                 </div>
 
-                <div class=\"form-group\">
-                    <label for=\"author\">Nom de l'auteur :</label>
-                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
-                </div>
-
                 <button type=\"submit\" value=\"Upload\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>
             </form>
         </div>
@@ -134,11 +129,6 @@ class __TwigTemplate_f496b1fdcd60aadd44bbba85d20f109303e0e5488eabf4c9d3a72fcf490
                 <div class=\"form-group\">
                     <label for=\"content\">Contenue du blog :</label>
                     <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
-                </div>
-
-                <div class=\"form-group\">
-                    <label for=\"author\">Nom de l'auteur :</label>
-                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
                 </div>
 
                 <button type=\"submit\" value=\"Upload\" class=\"btn btn-primary mx-auto mb-3\">Envoyez</button>

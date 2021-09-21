@@ -83,17 +83,12 @@ class __TwigTemplate_79bf8eee7c1f9d84da1cb74b9549a5ead95011314bcd1dc0367fd95121c
 
                 <div class=\"form-group\">
                 <label for=\"content\">Contenue du blog :</label>
-                <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  value=\"";
+                <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  placeholder=\"Veuillez écrire votre texte ici.\">";
         // line 26
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content", [], "any", false, false, false, 26), "html", null, true);
-        echo "\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+        echo "</textarea>
                 </div>
 
-                <div class=\"form-group\">
-                    <label for=\"author\">Nom de l'auteur :</label>
-                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
-                </div>
-                
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
 
             </form>
@@ -145,14 +140,9 @@ class __TwigTemplate_79bf8eee7c1f9d84da1cb74b9549a5ead95011314bcd1dc0367fd95121c
 
                 <div class=\"form-group\">
                 <label for=\"content\">Contenue du blog :</label>
-                <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  value=\"{{blog.content}}\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  placeholder=\"Veuillez écrire votre texte ici.\">{{blog.content}}</textarea>
                 </div>
 
-                <div class=\"form-group\">
-                    <label for=\"author\">Nom de l'auteur :</label>
-                    <input type=\"text\" id=\"author\" name=\"author\" class=\"form-control my-3\" placeholder=\"Nom de l'auteur\" required autofocus>
-                </div>
-                
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
 
             </form>

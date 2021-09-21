@@ -81,7 +81,7 @@ class __TwigTemplate_391d8dd88e40f238814c56627cdbcdc2dd6058377f40db66de22588e4f5
         echo "</i></span></p>
                     <p><bold>Auteur: </bold><span><i>";
         // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "author", [], "any", false, false, false, 16), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "pseudo", [], "any", false, false, false, 16), "html", null, true);
         echo "</i></span></p>
                 </div>
             </div>
@@ -162,7 +162,7 @@ class __TwigTemplate_391d8dd88e40f238814c56627cdbcdc2dd6058377f40db66de22588e4f5
                 <div class=\"col-12 mx-auto my-0\">
                     <p>{{blog.content}}</p>
                     <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update}}</i></span></p>
-                    <p><bold>Auteur: </bold><span><i>{{blog.author}}</i></span></p>
+                    <p><bold>Auteur: </bold><span><i>{{blog.pseudo}}</i></span></p>
                 </div>
             </div>
 

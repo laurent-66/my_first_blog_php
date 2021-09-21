@@ -95,13 +95,15 @@ class __TwigTemplate_be69c8158bbba82bec8e083074b7e2a2da164a124bf6ee7a29aaf65d3aa
             echo "</p></div>
                             <div class=\"col4\"><p>Auteur: ";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "author", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["blog"], "user", [], "any", false, false, false, 25), "pseudo", [], "any", false, false, false, 25), "html", null, true);
             echo "</p></div>
-                            <div class=\"col4\"><a href=";
-            // line 26
-            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 26)), "html", null, true);
-            echo " class=\"btn btn-primary btnSeeBlog\">voir</a></div>
                           </div>
+
+                            <div class=\"col4\"><a href=";
+            // line 28
+            echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 28)), "html", null, true);
+            echo " class=\"btn btn-primary btnSeeBlog\">voir</a></div>
+
 
                         </div>
                       </div>
@@ -112,7 +114,7 @@ class __TwigTemplate_be69c8158bbba82bec8e083074b7e2a2da164a124bf6ee7a29aaf65d3aa
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 36
         echo "    </div>
 </section>
 ";
@@ -130,7 +132,7 @@ class __TwigTemplate_be69c8158bbba82bec8e083074b7e2a2da164a124bf6ee7a29aaf65d3aa
 
     public function getDebugInfo()
     {
-        return array (  116 => 34,  102 => 26,  98 => 25,  94 => 24,  88 => 21,  84 => 20,  77 => 16,  72 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  118 => 36,  104 => 28,  98 => 25,  94 => 24,  88 => 21,  84 => 20,  77 => 16,  72 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -159,9 +161,11 @@ class __TwigTemplate_be69c8158bbba82bec8e083074b7e2a2da164a124bf6ee7a29aaf65d3aa
 
                           <div class=\"row\">
                             <div class=\"col4\"><p>Date: {{blog.last_update}}</p></div>
-                            <div class=\"col4\"><p>Auteur: {{blog.author}}</p></div>
-                            <div class=\"col4\"><a href={{'/blogs/'~blog.id}} class=\"btn btn-primary btnSeeBlog\">voir</a></div>
+                            <div class=\"col4\"><p>Auteur: {{blog.user.pseudo}}</p></div>
                           </div>
+
+                            <div class=\"col4\"><a href={{'/blogs/'~blog.id}} class=\"btn btn-primary btnSeeBlog\">voir</a></div>
+
 
                         </div>
                       </div>
