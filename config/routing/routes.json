@@ -75,6 +75,7 @@
         "path": "/blog/admin/approveComment/{blogId}/{id}",
         "_controller":"Application\\Controllers\\AdminController",
         "_method": "approveComment",
+
         "_methods": ["GET"]
     },
     {
@@ -90,6 +91,7 @@
         "_controller":"Application\\Controllers\\AdminController",
         "_method": "reportComment",
         "_methods": ["GET"]
+
     }
 
 ]

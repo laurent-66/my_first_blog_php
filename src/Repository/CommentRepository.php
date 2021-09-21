@@ -70,7 +70,6 @@ class CommentRepository extends AbstractRepository
         [
             ':id' => $id,
             ':commentValidate' => 1,
-
         ]);
 
     }
@@ -122,6 +121,5 @@ class CommentRepository extends AbstractRepository
             ':commentValidate' => 0,
 
         ]);
-
     }
 }

@@ -15,6 +15,7 @@ class DefaultController extends AbstractController
 
         $session = $_SESSION ? true : false;
 
+
         return $this->renderHtml('home.html.twig',['session'=>$session]);
 
     }

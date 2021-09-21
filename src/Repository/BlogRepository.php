@@ -36,6 +36,7 @@ class BlogRepository extends AbstractRepository
     {
 
         $query = "INSERT INTO {$this->getTableName()}(title, url_image, chapo, content, last_update, user_id_User) VALUES (
+
          :title,
          :url_image,
          :chapo,
@@ -46,10 +47,13 @@ class BlogRepository extends AbstractRepository
         $statement = $this->database->request($query,    
         [
             ':title' => $data['title-blog'],
+
             ':url_image' => $data['file_input_name'],
+
             ':chapo' => $data['inputChapo'],
             ':content' => $data['content'],
             ':last_update' => new DateTime(),
+            ':author' => $data['author'],
             ':user_id_User' => 1
         ]);   
     }
@@ -72,6 +76,7 @@ class BlogRepository extends AbstractRepository
             ':url_image' => $datasSubmitted['file_input_name'],
             ':chapo' => $datasSubmitted['inputChapo'],
             ':content' => $datasSubmitted['content'],
+
             ':user_id_User' => (int) $_SESSION['user']['id'],
             ':id' => $id
         ]);

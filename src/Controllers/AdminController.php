@@ -95,6 +95,7 @@ class AdminController extends AbstractController
                 $file->getSize() === 0 ||
                 strlen(trim($dataSubmitted['inputChapo'] === 0)) || 
                 strlen(trim($dataSubmitted['content'] === 0 )) 
+
                 ){
                 $errors[] = 'Tous les champs requis sont obligatoires';
             }else{
@@ -164,6 +165,7 @@ class AdminController extends AbstractController
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
 
         $user = $_SESSION['user']['admin'];
+
 
         $id = (int) $bag->getParameter('id')->getValue();
 
