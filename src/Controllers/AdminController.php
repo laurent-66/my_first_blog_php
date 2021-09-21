@@ -94,8 +94,8 @@ class AdminController extends AbstractController
                 strlen(trim($dataSubmitted['title-blog'] === 0)) || 
                 $file->getSize() === 0 ||
                 strlen(trim($dataSubmitted['inputChapo'] === 0)) || 
-                strlen(trim($dataSubmitted['content'] === 0 )) ||
-                strlen(trim($dataSubmitted['author'] === 0 ))
+                strlen(trim($dataSubmitted['content'] === 0 )) 
+
                 ){
                 $errors[] = 'Tous les champs requis sont obligatoires';
             }else{
@@ -214,5 +214,14 @@ class AdminController extends AbstractController
         return $redirect->send();
     }
 
+    public function reportComment (ServerRequestInterface $request, ParametersBag $bag){
+ 
+        //Récupération de la valeur de l'id comment $id du $bag
+        $id = (int) $bag->getParameter('id')->getValue();
+        $this->commentRepository->reportComment($id);
 
+        //redirection sur la page courante (get)
+        $redirect = new RedirectResponseHttp('/blogs/'.$id);
+        return $redirect->send();
+    }
 }

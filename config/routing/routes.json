@@ -84,6 +84,14 @@
         "_controller":"Application\\Controllers\\AdminController",
         "_method": "deleteComment",
         "_methods": ["GET"]
+    },
+    {
+        "name": "reportComment",
+        "path": "/blog/reportComment/{blogId}/{id}",
+        "_controller":"Application\\Controllers\\AdminController",
+        "_method": "reportComment",
+        "_methods": ["GET"]
+
     }
 
 ]

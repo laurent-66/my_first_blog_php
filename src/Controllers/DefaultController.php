@@ -13,7 +13,8 @@ class DefaultController extends AbstractController
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
 
-        $session = $_SESSION['user']['id'] ? true : false;
+        $session = $_SESSION ? true : false;
+
 
         return $this->renderHtml('home.html.twig',['session'=>$session]);
 
