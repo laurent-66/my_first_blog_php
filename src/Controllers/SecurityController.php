@@ -57,19 +57,27 @@ class SecurityController extends AbstractController
 
     public function register (ServerRequestInterface $request, ParametersBag $bag)
     {
-        $error = ''; 
+        $error['global'] = 'Tout les champs sont requis.';
+        $error['passComparaison'] = 'Le mot de passe et la confirmation sont différents.'; 
+
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
 
-            if ((strlen( trim($dataSubmitted['email']))) === 0 || strlen(trim($dataSubmitted['inputPassword'])) === 0 || strlen(trim($dataSubmitted['confirmPassword'])) === 0 ) {
+            if (
+                (strlen( trim($dataSubmitted['email']))) === 0 ||
+                (strlen( trim($dataSubmitted['pseudo']))) === 0 ||
+                (strlen(trim($dataSubmitted['inputPassword']))) === 0 ||
+                (strlen(trim($dataSubmitted['confirmPassword']))) === 0
+                ) 
+            {
 
-                $error = "L'identifiant, le mot de passe et la confirmation sont requis.";
+                $error = $error['global'];
 
 
             } else if (strlen(trim($dataSubmitted['inputPassword'])) !== strlen(trim($dataSubmitted['confirmPassword']))) {
                 
-                $error = "Le mot de passe et la confirmation sont différents.";
+                $error = $error['passComparaison'];
 
             } else {
 
@@ -78,7 +86,7 @@ class SecurityController extends AbstractController
             }
         }
 
-        return $this->renderHtml('register.html.twig');
+        return $this->renderHtml('register.html.twig', ['error' => $error]);
 
     }
 

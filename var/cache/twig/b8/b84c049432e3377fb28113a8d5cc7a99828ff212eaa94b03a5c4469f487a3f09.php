@@ -105,14 +105,14 @@ class __TwigTemplate_18aec2459edd3e57ba8837486497c1bb913a2bb022d6df6d58c35437abf
                     <div class=\"col-md-6\">
                         <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
                         <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
-                            ";
+                        ";
         // line 48
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["name"] ?? null), "length", [], "any", false, false, false, 48), "value", [], "any", false, false, false, 48), 0)) {
+        if (($context["error"] ?? null)) {
             // line 49
-            echo "                                <p class=\"comments\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["errors"] ?? null), "firstname", [], "any", false, false, false, 49), "html", null, true);
-            echo "</p>
-                            ";
+            echo "                        <small class=\"text-danger\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 49), "html", null, true);
+            echo "</small>
+                        ";
         }
         // line 51
         echo "                    </div>
@@ -216,9 +216,9 @@ class __TwigTemplate_18aec2459edd3e57ba8837486497c1bb913a2bb022d6df6d58c35437abf
                     <div class=\"col-md-6\">
                         <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
                         <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
-                            {% if name.length.value == 0 %}
-                                <p class=\"comments\">{{errors.firstname}}</p>
-                            {% endif %}
+                        {% if error %}
+                        <small class=\"text-danger\">{{error.firstname}}</small>
+                        {% endif %}
                     </div>
                     <div class=\"col-md-6\">
                         <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>

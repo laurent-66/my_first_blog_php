@@ -12,32 +12,52 @@ class DefaultController extends AbstractController
 {
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
+        $errorGlobal ='';
+        $error = [
+            "firstname" => "Le prénom est requis"
 
+        ] ;
 
-        if($request->getMethod() === 'POST') {
+        $validation = '';
+        $position_arobase = strpos($_POST['email'], '@');
 
+        if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
 
-                    $position_arobase = strpos($_POST['email'], '@');
-                    if ($position_arobase === false){
+            if (
+                (strlen( trim($dataSubmitted['firstname']))) === 0 ||
+                (strlen( trim($dataSubmitted['name']))) === 0 ||
+                (strlen(trim($dataSubmitted['email']))) === 0 ||
+                (strlen(trim($dataSubmitted['phone']))) === 0 ||
+                (strlen(trim($dataSubmitted['message']))) === 0
+                ) 
+            {
 
-                        echo '<p>Votre email doit comporter un arobase.</p>';
-                    }
+                $errorGlobal = 'Tout les champs sont requis';
 
-                    else {
-                        $retour = mail('laurent.lesage51@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
-                        if($retour){
-                            echo '<p>Votre message a été envoyé.</p>';
-                        }else{ echo '<p>Erreur.</p>';  }    
-                    }
-                //}
-                $errors = $this->errors;
-                return $this->renderHtml('home.html.twig', ['errors'=>$errors]);
+            } else if ( (strlen( trim($dataSubmitted['firstname']))) === 0) {
+   
+                $error = $error['firstname'];
+
+            }else if($position_arobase === false){
+
+                $errorarobase ='Votre email doit comporter un arobase.';
+
+            } else {
+
+                $retour = mail('laurent.lesage51@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
+                if($retour){
+
+                    $validation = 'Votre message a été envoyé';
+
+                } else { 
+                    $error = 'erreur d\'envoi du message';
+                }  
+
             }
- 
-            return $this->renderHtml('home.html.twig');
         }
 
+        return $this->renderHtml('home.html.twig', ['errors'=>$errorGlobal, 'error'=>$error, 'validation'=>$validation]);
 
-  
     }
+}

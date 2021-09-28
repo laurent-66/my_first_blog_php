@@ -45,9 +45,9 @@
                     <div class="col-md-6">
                         <label for="firstname"><strong>Prénom</strong><span class="blue"> *</span></label>
                         <input type="text" id="firstname" name="firstname" class="form-control" placeholder="votre prénom">
-                            {% if name.length.value == 0 %}
-                                <p class="comments">{{errors.firstname}}</p>
-                            {% endif %}
+                        {% if error %}
+                        <small class="text-danger">{{error.firstname}}</small>
+                        {% endif %}
                     </div>
                     <div class="col-md-6">
                         <label for="name"><strong>Nom</strong><span class="blue"> *</span></label>
