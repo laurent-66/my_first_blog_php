@@ -215,10 +215,11 @@ class AdminController extends AbstractController
     }
 
     public function reportComment (ServerRequestInterface $request, ParametersBag $bag){
- 
+
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
         $idBlog = (int) $bag->getParameter('blogId')->getValue();
+
         $this->commentRepository->reportComment($id);
 
         //redirection sur la page courante (get)

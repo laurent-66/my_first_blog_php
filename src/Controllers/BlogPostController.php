@@ -54,7 +54,7 @@ class BlogPostController extends AbstractController
             $findCommentsPublished = $this->commentRepository->findAllcommentsValidate();
             // $findComments = $this->commentRepository->findCommentsByBlogId($id);
 
-            return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findCommentsPublished]);
+            return $this->renderHtml('blog.html.twig',['blog'=>$blog, 'blogId'=>$id, 'findComments'=>$findCommentsPublished]);
 
     }
 

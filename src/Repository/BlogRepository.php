@@ -22,8 +22,6 @@ class BlogRepository extends AbstractRepository
 
     public function findByBlogId(int $id)
     {
-        // $query = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
-        // $statement = $this->database->request($query, [':id' => $id]);
 
         $query = "SELECT blog_post.title AS title_blog, blog_post.url_image AS image_blog, blog_post.chapo AS chapo_blog, blog_post.content AS content_blog, blog_post.last_update AS last_update_blog, user.pseudo AS pseudo_blog FROM {$this->getTableName()} LEFT JOIN user ON {$this->getTableName()}.user_id_user = user.id WHERE {$this->getTableName()}.id = :id";
 
@@ -51,7 +49,6 @@ class BlogRepository extends AbstractRepository
             ':chapo' => $data['inputChapo'],
             ':content' => $data['content'],
             ':last_update' => new DateTime(),
-            ':author' => $data['author'],
             ':user_id_User' => 1
         ]);   
     }
@@ -74,7 +71,6 @@ class BlogRepository extends AbstractRepository
             ':url_image' => $datasSubmitted['file_input_name'],
             ':chapo' => $datasSubmitted['inputChapo'],
             ':content' => $datasSubmitted['content'],
-
             ':user_id_User' => (int) $_SESSION['user']['id'],
             ':id' => $id
         ]);
