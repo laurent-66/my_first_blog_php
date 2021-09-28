@@ -4,6 +4,7 @@
 @import "./accueil.css"; 
 @import "./dashboard.css";
 @import "./blogs-list.css";
+@import "./blogs-list-admin.css";
 @import "./blogs.css";
 @import "./comment-line.css";
 @import "./connexion.css";

@@ -3,19 +3,25 @@
 body
 {
     font-family: 'Lato', sans-serif;
-    margin:0px;
-    padding:0px;
-
-}
-
-
-#page-template
-{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    height: 1000px;
+    min-height: 100vh; 
+    margin: 0px;
+    padding:0px;
+
+}
+
+.body-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    min-height: 100vh; 
+    border: 3px solid blueviolet;
+    margin: 0px;
+    padding:0px;
 }
 
 ul,li
@@ -55,20 +61,4 @@ section .heading h2
     text-transform: uppercase;
     margin-top:20px;
     color:#fff;
-}
-
-.blue-divider
-{
-    width:100px;
-    height:5px;
-    background:#2f7bde;
-    margin: 15px auto;
-}
-
-.white-divider
-{
-    width:100px;
-    height:5px;
-    background:#fff;
-    margin: 15px auto;
 }

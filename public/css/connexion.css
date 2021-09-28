@@ -1,7 +1,14 @@
 /*CONNEXION */
 
+#connexion{
+    background-color: #E3F4FE;
+    padding:0px;
+    margin:0px;
+}
+
+
 #connexion .heading h2,h3
 {
-    color: #318ce7;
+    color: #02ADF0;
     font-weight:bold;
 }

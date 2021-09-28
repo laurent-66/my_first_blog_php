@@ -1,5 +1,20 @@
 /* list des blogs*/
 
+#blogs-list
+{
+    background-color: #E3F4FE;
+    padding:0px;
+    margin:0px;
+}
+
+.heading{
+
+    background-color:#02ADF0;
+    margin:0px;
+    padding:0px;
+
+}
+
 .container-blog-list{
     display:flex;
     flex-direction: column;
@@ -9,13 +24,14 @@
 
 
 .card{
-    width:80%;
-    box-shadow: 5px 5px 10px rgb(207, 207, 207);
+    width:70%;
+    box-shadow: 5px 5px 10px rgb(128, 128, 128);
 }
 .card-img{
     width: auto;
-    height: 300px;
+    height: 150px;
     margin:15px;
+    border: 1px solid red;
 
 }
 

@@ -45,7 +45,7 @@ display:block;
 }
 .menu-item:hover
 {
-    background-color: #318ce7;
+    background-color: #02ADF0;
     transition: all 0.3s ease-in 0s;
 }
 
@@ -113,7 +113,7 @@ display:block;
 
     .menu-item:hover
     {
-        background-color: #318ce7;
+        background-color: #02ADF0;
         transition: all 0.3s ease-in 0s;
     }
 

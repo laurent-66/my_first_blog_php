@@ -218,10 +218,13 @@ class AdminController extends AbstractController
  
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
+        $idBlog = (int) $bag->getParameter('blogId')->getValue();
         $this->commentRepository->reportComment($id);
 
         //redirection sur la page courante (get)
-        $redirect = new RedirectResponseHttp('/blogs/'.$id);
+        $redirect = new RedirectResponseHttp('/blogs/'.$idBlog);
+
         return $redirect->send();
     }
+
 }
