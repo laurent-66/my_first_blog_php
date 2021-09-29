@@ -57,9 +57,6 @@ class SecurityController extends AbstractController
 
     public function register (ServerRequestInterface $request, ParametersBag $bag)
     {
-        $error['global'] = 'Tout les champs sont requis.';
-        $error['passComparaison'] = 'Le mot de passe et la confirmation sont différents.'; 
-
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
@@ -72,12 +69,12 @@ class SecurityController extends AbstractController
                 ) 
             {
 
-                $error = $error['global'];
+                $error = 'Tout les champs sont requis.';
 
 
             } else if (strlen(trim($dataSubmitted['inputPassword'])) !== strlen(trim($dataSubmitted['confirmPassword']))) {
                 
-                $error = $error['passComparaison'];
+                $error = 'Le mot de passe et la confirmation sont différents.';
 
             } else {
 
