@@ -98,7 +98,6 @@ class __TwigTemplate_18aec2459edd3e57ba8837486497c1bb913a2bb022d6df6d58c35437abf
             </div>
         </div>
 
-
         <div class=\"col-sm-12 col-md-8 col-lg-8 col-xl-8 mx-0 px-auto\">
             <form id=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
                 <div class=\"row\">
@@ -106,15 +105,15 @@ class __TwigTemplate_18aec2459edd3e57ba8837486497c1bb913a2bb022d6df6d58c35437abf
                         <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
                         <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
                         ";
-        // line 48
+        // line 47
         if (($context["error"] ?? null)) {
-            // line 49
+            // line 48
             echo "                        <small class=\"text-danger\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 49), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 48), "html", null, true);
             echo "</small>
                         ";
         }
-        // line 51
+        // line 50
         echo "                    </div>
                     <div class=\"col-md-6\">
                         <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>
@@ -164,7 +163,7 @@ class __TwigTemplate_18aec2459edd3e57ba8837486497c1bb913a2bb022d6df6d58c35437abf
 
     public function getDebugInfo()
     {
-        return array (  118 => 51,  112 => 49,  110 => 48,  72 => 12,  66 => 9,  63 => 8,  61 => 7,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  117 => 50,  111 => 48,  109 => 47,  72 => 12,  66 => 9,  63 => 8,  61 => 7,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -208,7 +207,6 @@ class __TwigTemplate_18aec2459edd3e57ba8837486497c1bb913a2bb022d6df6d58c35437abf
                 <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
             </div>
         </div>
-
 
         <div class=\"col-sm-12 col-md-8 col-lg-8 col-xl-8 mx-0 px-auto\">
             <form id=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">

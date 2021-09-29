@@ -19,7 +19,7 @@ class DefaultController extends AbstractController
         ] ;
 
         $validation = '';
-        $position_arobase = strpos($_POST['email'], '@');
+        $position_arobase = true ;
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
@@ -39,14 +39,16 @@ class DefaultController extends AbstractController
    
                 $error = $error['firstname'];
 
-            }else if($position_arobase === false){
-
+            }else if(strpos($dataSubmitted['email'], '@') === false){
+                
                 $errorarobase ='Votre email doit comporter un arobase.';
 
             } else {
+                // ini_set('SMTP','localhost');
+                ini_set('smtp_port','26');
 
-                $retour = mail('laurent.lesage51@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
-                if($retour){
+                $sendMail = mail('laurent.lesage51@gmail.com', 'Envoi depuis la page Contact', $dataSubmitted['message'], 'From: ' . $dataSubmitted['email']);
+                if($sendMail){
 
                     $validation = 'Votre message a été envoyé';
 
