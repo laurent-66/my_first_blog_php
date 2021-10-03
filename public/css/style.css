@@ -8,3 +8,7 @@
 @import "./blogs.css";
 @import "./comment-line.css";
 @import "./connexion.css";
+
+* {
+    box-sizing: border-box; 
+}   

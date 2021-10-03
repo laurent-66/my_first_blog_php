@@ -20,11 +20,7 @@ class DefaultController extends AbstractController
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
         $errorGlobal ='';
-        $error = [
-            "firstname" => "Le prénom est requis"
-
-        ] ;
-
+        $error = [] ;
         $validation = '';
         $position_arobase = true ;
 
@@ -40,36 +36,39 @@ class DefaultController extends AbstractController
                 ) 
             {
 
-                $errorGlobal = 'Tout les champs sont requis';
+                $this->$errorGlobal = 'Tout les champs sont requis';
 
-            } else if ( (strlen( trim($dataSubmitted['firstname']))) === 0) {
+            } else if ((strlen( trim($dataSubmitted['firstname']))) === 0) {
    
-                $error = 'le prénom est requis';
+                $this->$error = 'le prénom est requis';
 
             } else if (strpos($dataSubmitted['email'], '@') === false){
                 
-                $error ='Votre email doit comporter un arobase.';
+                $this->$error ='Votre email doit comporter un arobase.';
 
             } else {
 
-                $sendMail = $this->mailer->send('Un test', 'lesageduweb@gmail.com' , 'john@doe.com', $this->renderHtml('mails/hello.html.twig', ['name' => 'Yolo']));
+                $sendMail = $this->mailer->send($dataSubmitted['message'], 'lesageduweb@gmail.com' , $dataSubmitted['email'], $this->renderHtml('mails/hello.html.twig',  [
+
+                'firstname' =>$dataSubmitted['firstname'],
+                'name' => $dataSubmitted['name'],    
+                'email' => $dataSubmitted['email'],    
+                'phone' => $dataSubmitted['phone'],    
+                'message' => $dataSubmitted['message'] 
+                ]));
                 
-                // $sendMail = mail('laurent.lesage51@gmail.com', 'Envoi depuis la page Contact', $dataSubmitted['message'], 'From: ' . $dataSubmitted['email']);
-
-                // $sendMail = mail('laurent.lesage51@gmail.com', 'Envoi depuis la page Contact', $dataSubmitted['message']);
-
                 if($sendMail){
 
-                    $validation = 'Votre message a été envoyé';
+                    $this->$validation = 'Votre message a été envoyé';
 
                 } else { 
-                    $error = 'erreur d\'envoi du message';
+                    $this->$errorGlobal = 'erreur d\'envoi du message';
                 }  
 
             }
         }
 
-        return $this->renderHtml('home.html.twig', ['errors'=>$errorGlobal, 'error'=>$error, 'validation'=>$validation]);
+        return $this->renderHtml('home.html.twig');
     }
 
 }

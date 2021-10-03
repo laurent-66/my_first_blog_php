@@ -1,11 +1,7 @@
 <?php
 
 namespace Application\Helpers;
-
 use Exception;
-use swiftmailer\swiftmailer\Swift_SmtpTransport;
-use swiftmailer\swiftmailer\Swift_Mailer;
-use swiftmailer\swiftmailer\Swift_Message;
 
 class Mailer
 {
@@ -23,13 +19,13 @@ class Mailer
 
         //create the transport provider smtp, host and encrypt certificat in ssl
 
-        $transport = ( new Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
+        $transport = ( new \Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
 
         ->setUsername($config['email'])
         ->setPassword($config['password']);
 
         // Create the Mailer using the created Transport
-        $this->mailerSrv = new Swift_Mailer($transport);
+        $this->mailerSrv = new \Swift_Mailer($transport);
 
     }
 
@@ -38,7 +34,7 @@ class Mailer
     {
 
         try{
-            $message = (new Swift_Message())
+            $message = (new \Swift_Message())
             ->setTo($to)
             ->SetFrom($from)
             ->setSubject($subject)

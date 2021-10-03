@@ -57,6 +57,7 @@ class SecurityController extends AbstractController
 
     public function register (ServerRequestInterface $request, ParametersBag $bag)
     {
+        $error = '';
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
@@ -83,7 +84,7 @@ class SecurityController extends AbstractController
             }
         }
 
-        return $this->renderHtml('register.html.twig', ['error' => $error]);
+        return $this->renderHtml('register.html.twig', ['error'=>$error]);
 
     }
 

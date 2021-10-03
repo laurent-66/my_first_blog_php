@@ -19,9 +19,9 @@ body
     justify-content: start;
     align-items: stretch;
     min-height: 100vh; 
-    border: 3px solid blueviolet;
+
     margin: 0px;
-    padding:0px;
+    padding:15px;
 }
 
 ul,li

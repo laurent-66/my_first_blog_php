@@ -56,19 +56,20 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
         $macros = $this->macros;
         echo " 
 <div class=\"container-fluid\" id=\"home\">
+
     ";
-        // line 7
-        if (($context["validation"] ?? null)) {
-            // line 8
-            echo "    <div class=\"alert alert-success\" role=\"success\">
-        ";
+        // line 8
+        if (($context["errorGlobal"] ?? null)) {
             // line 9
-            echo twig_escape_filter($this->env, ($context["validation"] ?? null), "html", null, true);
+            echo "    <div class=\"alert alert-danger\" role=\"danger\">
+        ";
+            // line 10
+            echo twig_escape_filter($this->env, ($context["errorGlobal"] ?? null), "html", null, true);
             echo "
     </div>
     ";
         }
-        // line 12
+        // line 13
         echo "
     <div class=\"row section1-accueil\">
         <div class=\"col-sm-12 col-md-6 col-lg-6 profile-picture\">
@@ -82,69 +83,73 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
         </div>
     </div>  
 
-
-
     <div class=\"row section2-accueil\">
-        <div class=\"col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-0 px-0\">
-                <div class=\"border border-white rounded\">
-                    <p><strong>Mes activités complémentaires en entreprise :</strong></br></p>        
-                    <p id=\"activite-entreprise\"> 
-                        Wordpress pour site vitrine et e-commerce,</br> Angular 11 pour le front-end application.
-                    </p>
-                </div>
-
-            <div class=\"row\">
+        <div class=\"container-activite col-sm-12 col-md-4 col-lg-4 col-xl-4 px-0 py-0 mx-0 my-5\" style=\"border: 3px solid orange\">
+            <div class=\"activites\">
+                <h3>Mes activités complémentaires en entreprise :</h3>        
+                <ul class=\"activite-entreprise\"> 
+                    <li>Site web vitrine et e-commerce: CMS wordpress thème AVADA</li>
+                    <li>Application front-end: Angular 11.</li> 
+                    <li>Application Back-end: PHP et nestjs</li> 
+                </ul>
+            </div>
+            <div class=\"row-button\">
                 <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
             </div>
         </div>
 
-        <div class=\"col-sm-12 col-md-8 col-lg-8 col-xl-8 mx-0 px-auto\">
-            <form id=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
-                        <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
-                        ";
-        // line 47
-        if (($context["error"] ?? null)) {
-            // line 48
-            echo "                        <small class=\"text-danger\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 48), "html", null, true);
-            echo "</small>
-                        ";
-        }
-        // line 50
-        echo "                    </div>
-                    <div class=\"col-md-6\">
-                        <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>
-                        <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"votre nom\">
-                        <p class=\"comments\">Message d'erreur</p>
-                    </div>
-                    </div>
+        <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-3 py-0 mx-0 my-5\">
+            <div class=\"px-0 mx-0\">
+                <form class=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
                     <div class=\"row\">
                         <div class=\"col-md-6\">
-                        <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
-                        <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
-                        <p class=\"comments\">Message d'erreur</p>
-                    </div>
+                            <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
+                            <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
+                            <small class=\"text-danger\">";
+        // line 48
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 48), "html", null, true);
+        echo "</small>
+                        </div>
                         <div class=\"col-md-6\">
-                        <label for=\"phone\"><strong>Téléphone</strong></label>
-                        <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" placeholder=\"votre téléphone\">
-                        <p class=\"comments\">Message d'erreur</p>
+                            <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>
+                            <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"votre nom\">
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
                     </div>
-                    <div class=\"col-md-12\">
-                        <label for=\"message\"><strong>Message</strong><span class=\"blue\"> *</span></label>
-                        <textarea id=\"message\" name=\"message\" class=\"form-control\" placeholder=\"Votre message\" row=\"4\"></textarea>
-                        <p class=\"comments\">Message d'erreur</p>
+
+                    <div class=\"row\">
+                        <div class=\"col-md-6\">
+                            <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
+                            <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
+                        <div class=\"col-md-6\">
+                            <label for=\"phone\"><strong>Téléphone</strong></label>
+                            <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" placeholder=\"votre téléphone\">
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
+                    </div>    
+                    <div class=\"row\">
+                        <div class=\"col-md-12\">
+                            <label for=\"message\"><strong>Message</strong><span class=\"blue\"> *</span></label>
+                            <textarea id=\"message\" name=\"message\" class=\"form-control\" placeholder=\"Votre message\" row=\"4\"></textarea>
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
                     </div>
-                    <div class=\"col-md-12\">
-                        <p class=\"blue\"><strong>* Ces informations sont requises</strong></p>
+
+                    <div class=\"row\">
+                        <div class=\"col-md-12\">
+                            <p class=\"blue\"><strong>* Ces informations sont requises</strong></p>
+                        </div>
                     </div>
-                    <div class=\"col-md-12\">
-                        <input type=\"submit\" class=\"button-send\" value=\"Envoyer\">
+
+                    <div class=\"row\">
+                        <div class=\"col-md-12\">
+                            <input type=\"submit\" class=\"button-send\" value=\"Envoyer\">
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -163,7 +168,7 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
 
     public function getDebugInfo()
     {
-        return array (  117 => 50,  111 => 48,  109 => 47,  72 => 12,  66 => 9,  63 => 8,  61 => 7,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  110 => 48,  73 => 13,  67 => 10,  64 => 9,  62 => 8,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -174,9 +179,10 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
 
 {% block body %} 
 <div class=\"container-fluid\" id=\"home\">
-    {% if validation %}
-    <div class=\"alert alert-success\" role=\"success\">
-        {{ validation }}
+
+    {% if errorGlobal %}
+    <div class=\"alert alert-danger\" role=\"danger\">
+        {{ errorGlobal }}
     </div>
     {% endif %}
 
@@ -192,62 +198,70 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
         </div>
     </div>  
 
-
-
     <div class=\"row section2-accueil\">
-        <div class=\"col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-0 px-0\">
-                <div class=\"border border-white rounded\">
-                    <p><strong>Mes activités complémentaires en entreprise :</strong></br></p>        
-                    <p id=\"activite-entreprise\"> 
-                        Wordpress pour site vitrine et e-commerce,</br> Angular 11 pour le front-end application.
-                    </p>
-                </div>
-
-            <div class=\"row\">
+        <div class=\"container-activite col-sm-12 col-md-4 col-lg-4 col-xl-4 px-0 py-0 mx-0 my-5\" style=\"border: 3px solid orange\">
+            <div class=\"activites\">
+                <h3>Mes activités complémentaires en entreprise :</h3>        
+                <ul class=\"activite-entreprise\"> 
+                    <li>Site web vitrine et e-commerce: CMS wordpress thème AVADA</li>
+                    <li>Application front-end: Angular 11.</li> 
+                    <li>Application Back-end: PHP et nestjs</li> 
+                </ul>
+            </div>
+            <div class=\"row-button\">
                 <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
             </div>
         </div>
 
-        <div class=\"col-sm-12 col-md-8 col-lg-8 col-xl-8 mx-0 px-auto\">
-            <form id=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
-                        <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
-                        {% if error %}
-                        <small class=\"text-danger\">{{error.firstname}}</small>
-                        {% endif %}
-                    </div>
-                    <div class=\"col-md-6\">
-                        <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>
-                        <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"votre nom\">
-                        <p class=\"comments\">Message d'erreur</p>
-                    </div>
-                    </div>
+        <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-3 py-0 mx-0 my-5\">
+            <div class=\"px-0 mx-0\">
+                <form class=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
                     <div class=\"row\">
                         <div class=\"col-md-6\">
-                        <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
-                        <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
-                        <p class=\"comments\">Message d'erreur</p>
-                    </div>
+                            <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
+                            <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
+                            <small class=\"text-danger\">{{error.firstname}}</small>
+                        </div>
                         <div class=\"col-md-6\">
-                        <label for=\"phone\"><strong>Téléphone</strong></label>
-                        <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" placeholder=\"votre téléphone\">
-                        <p class=\"comments\">Message d'erreur</p>
+                            <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>
+                            <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"votre nom\">
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
                     </div>
-                    <div class=\"col-md-12\">
-                        <label for=\"message\"><strong>Message</strong><span class=\"blue\"> *</span></label>
-                        <textarea id=\"message\" name=\"message\" class=\"form-control\" placeholder=\"Votre message\" row=\"4\"></textarea>
-                        <p class=\"comments\">Message d'erreur</p>
+
+                    <div class=\"row\">
+                        <div class=\"col-md-6\">
+                            <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
+                            <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
+                        <div class=\"col-md-6\">
+                            <label for=\"phone\"><strong>Téléphone</strong></label>
+                            <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" placeholder=\"votre téléphone\">
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
+                    </div>    
+                    <div class=\"row\">
+                        <div class=\"col-md-12\">
+                            <label for=\"message\"><strong>Message</strong><span class=\"blue\"> *</span></label>
+                            <textarea id=\"message\" name=\"message\" class=\"form-control\" placeholder=\"Votre message\" row=\"4\"></textarea>
+                            <p class=\"comments\">Message d'erreur</p>
+                        </div>
                     </div>
-                    <div class=\"col-md-12\">
-                        <p class=\"blue\"><strong>* Ces informations sont requises</strong></p>
+
+                    <div class=\"row\">
+                        <div class=\"col-md-12\">
+                            <p class=\"blue\"><strong>* Ces informations sont requises</strong></p>
+                        </div>
                     </div>
-                    <div class=\"col-md-12\">
-                        <input type=\"submit\" class=\"button-send\" value=\"Envoyer\">
+
+                    <div class=\"row\">
+                        <div class=\"col-md-12\">
+                            <input type=\"submit\" class=\"button-send\" value=\"Envoyer\">
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>

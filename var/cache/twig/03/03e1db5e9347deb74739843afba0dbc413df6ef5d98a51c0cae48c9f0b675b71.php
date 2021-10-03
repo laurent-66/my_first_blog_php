@@ -104,12 +104,12 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
                 </nav>
             </header>
 
-        <div class=\"body-container\">
+
             ";
         // line 56
         $this->displayBlock('body', $context, $blocks);
         // line 59
-        echo "        </div>
+        echo "
 
         <footer class=\"sticky-footer\">
                 <div class=\"container-fluid bg-dark m-0 p-0\">
@@ -233,11 +233,11 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
                 </nav>
             </header>
 
-        <div class=\"body-container\">
+
             {% block body %}
 
             {% endblock %}
-        </div>
+
 
         <footer class=\"sticky-footer\">
                 <div class=\"container-fluid bg-dark m-0 p-0\">
