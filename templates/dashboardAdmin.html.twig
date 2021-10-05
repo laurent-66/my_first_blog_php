@@ -14,8 +14,8 @@
         </li>
     </ul>
     <div class="tab-content">
-        <a href="/blogs/admin/new"><button class="btn btn-success btn-block mb-3 new-blog-button">Créer un nouveau blog</button></a>
         <div id="blogs" role="tabpanel" class="tab-pane active">
+        <a href="/blogs/admin/new"><button class="btn btn-success btn-block mb-3 mx-auto new-blog-button">Créer un nouveau blog</button></a>
             {% for blog in blogs %}
             <div class="row border-top border-dark">
                 <div class="line-info-list my-3">
@@ -44,8 +44,8 @@
                     <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
                     <div class="col4 mr-3">
                         <div class="row px-0 mx-0">
-                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto">approuver</button></a></div>
-                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto">Supprimer</button></a></div>
+                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto"><i class="far fa-thumbs-up"></i></button></a></div>
+                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto"><i class="fas fa-trash-alt"></i></button></a></div>
                         </div>
                     </div>
                 </div>    

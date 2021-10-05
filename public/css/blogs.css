@@ -35,6 +35,22 @@
     align-items: center;
 }
 
+.content-blog p {
+    font-family:'lato','open-sans',sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+}
+
+.content-blog span {
+    font-family:'lato','open-sans',sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-style: italic;
+}
+
+
+
+
 .comment-line {
 
     background-color: white;
@@ -43,4 +59,23 @@
     box-shadow: 5px 5px 10px grey;
 
     margin: 0px 0px 15px 0px;
+}
+
+.comment
+{
+    font-family:'lato','open-sans',sans-serif;
+    font-style: italic;
+}
+
+.row-blog-img {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-img 
+{
+    display:block;
+ max-height: 300px;
 }

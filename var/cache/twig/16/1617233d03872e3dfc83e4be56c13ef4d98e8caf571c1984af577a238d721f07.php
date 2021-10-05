@@ -71,21 +71,21 @@ class __TwigTemplate_7c403218afca87a05cfd235ebd958d4f6505c81ebdee9be2874115ed3f1
                     <div class=\"card-img\">
                       <img src=\"\\uploads\\";
             // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "url_image", [], "any", false, false, false, 13), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "image_blog", [], "any", false, false, false, 13), "html", null, true);
             echo "\" class=\"img\" alt=\"img\">
                     </div>
                     <div class=\"card-body\">
                       <h5 class=\"card-title\">";
             // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title", [], "any", false, false, false, 16), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title_blog", [], "any", false, false, false, 16), "html", null, true);
             echo "</h5>
                       <p class=\"card-text\">";
             // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo", [], "any", false, false, false, 17), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo_blog", [], "any", false, false, false, 17), "html", null, true);
             echo "</p>
                       <p>Date: ";
             // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update", [], "any", false, false, false, 18), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update_blog", [], "any", false, false, false, 18), "html", null, true);
             echo "</p>
                       <p>Auteur: ";
             // line 19
@@ -104,7 +104,7 @@ class __TwigTemplate_7c403218afca87a05cfd235ebd958d4f6505c81ebdee9be2874115ed3f1
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 24
         echo "      </div>
-</div>  
+</div>   
 ";
     }
 
@@ -137,19 +137,19 @@ class __TwigTemplate_7c403218afca87a05cfd235ebd958d4f6505c81ebdee9be2874115ed3f1
           {% for blog in blogs %}
                   <div class=\"card-blog\">
                     <div class=\"card-img\">
-                      <img src=\"\\uploads\\{{blog.url_image}}\" class=\"img\" alt=\"img\">
+                      <img src=\"\\uploads\\{{blog.image_blog}}\" class=\"img\" alt=\"img\">
                     </div>
                     <div class=\"card-body\">
-                      <h5 class=\"card-title\">{{blog.title}}</h5>
-                      <p class=\"card-text\">{{blog.chapo}}</p>
-                      <p>Date: {{blog.last_update}}</p>
+                      <h5 class=\"card-title\">{{blog.title_blog}}</h5>
+                      <p class=\"card-text\">{{blog.chapo_blog}}</p>
+                      <p>Date: {{blog.last_update_blog}}</p>
                       <p>Auteur: {{blog.pseudo_blog}}</p>
                       <p><a href={{'/blogs/'~blog.id}} class=\"btn btn-primary\">consulter</a></p>
                     </div>
                   </div>
           {% endfor %}
       </div>
-</div>  
+</div>   
 {% endblock %}", "blogs-list.html.twig", "C:\\wamp64\\www\\myblogphp\\my_first_blog_php\\templates\\blogs-list.html.twig");
     }
 }

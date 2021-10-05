@@ -15,7 +15,7 @@ class BlogRepository extends AbstractRepository
 
     public function getAllBlog()
     {
-        $query = "SELECT * FROM {$this->getTableName()}";
+        $query = "SELECT blog_post.title AS title_blog, blog_post.url_image AS image_blog, blog_post.chapo AS chapo_blog, blog_post.last_update AS last_update_blog, user.pseudo AS pseudo_blog FROM {$this->getTableName()} LEFT JOIN user ON {$this->getTableName()}.user_id_user = user.id ORDER BY last_update_blog DESC ";
         $statement = $this->database->request($query);
         return $statement->fetchAll();
     }

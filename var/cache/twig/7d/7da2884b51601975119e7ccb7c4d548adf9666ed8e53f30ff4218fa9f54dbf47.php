@@ -61,8 +61,8 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
         </li>
     </ul>
     <div class=\"tab-content\">
-        <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 new-blog-button\">Créer un nouveau blog</button></a>
         <div id=\"blogs\" role=\"tabpanel\" class=\"tab-pane active\">
+        <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 mx-auto new-blog-button\">Créer un nouveau blog</button></a>
             ";
         // line 19
         $context['_parent'] = $context;
@@ -134,11 +134,11 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
                             <div class=\"col button-comment-line px-0 mx-2\"><a href=";
             // line 47
             echo twig_escape_filter($this->env, ((("/blog/admin/approveComment/" . twig_get_attribute($this->env, $this->source, $context["comment"], "blog_post_id_blog_post", [], "any", false, false, false, 47)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 47)), "html", null, true);
-            echo "><button type=\"button\" class=\"btn btn-success btn-block my auto\">approuver</button></a></div>
+            echo "><button type=\"button\" class=\"btn btn-success btn-block my auto\"><i class=\"far fa-thumbs-up\"></i></button></a></div>
                             <div class=\"col button-comment-line px-0 mx-2\"><a href=";
             // line 48
             echo twig_escape_filter($this->env, ((("/blog/admin/deleteComment/" . twig_get_attribute($this->env, $this->source, $context["comment"], "blog_post_id_blog_post", [], "any", false, false, false, 48)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 48)), "html", null, true);
-            echo "><button type=\"button\" class=\"btn  btn-danger btn-block my auto\">Supprimer</button></a></div>
+            echo "><button type=\"button\" class=\"btn  btn-danger btn-block my auto\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
                         </div>
                     </div>
                 </div>    
@@ -187,8 +187,8 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
         </li>
     </ul>
     <div class=\"tab-content\">
-        <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 new-blog-button\">Créer un nouveau blog</button></a>
         <div id=\"blogs\" role=\"tabpanel\" class=\"tab-pane active\">
+        <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 mx-auto new-blog-button\">Créer un nouveau blog</button></a>
             {% for blog in blogs %}
             <div class=\"row border-top border-dark\">
                 <div class=\"line-info-list my-3\">
@@ -217,8 +217,8 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
                     <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
                     <div class=\"col4 mr-3\">
                         <div class=\"row px-0 mx-0\">
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn btn-success btn-block my auto\">approuver</button></a></div>
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn  btn-danger btn-block my auto\">Supprimer</button></a></div>
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn btn-success btn-block my auto\"><i class=\"far fa-thumbs-up\"></i></button></a></div>
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn  btn-danger btn-block my auto\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
                         </div>
                     </div>
                 </div>    
