@@ -226,6 +226,7 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
         </div>
     </div>
 </div>    
-{% endblock %} ", "dashboardAdmin.html.twig", "C:\\wamp64\\www\\myblogphp\\my_first_blog_php\\templates\\dashboardAdmin.html.twig");
+{% endblock %} 
+", "dashboardAdmin.html.twig", "C:\\wamp64\\www\\myblogphp\\my_first_blog_php\\templates\\dashboardAdmin.html.twig");
     }
 }

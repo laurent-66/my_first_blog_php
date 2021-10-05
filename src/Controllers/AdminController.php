@@ -13,8 +13,6 @@ use Application\Repository\CommentRepository;
 use Application\Helpers\FileUploader;
 use Exception;
 
-use Application\Repository\CommentRepository;
-
 
 class AdminController extends AbstractController
 {
@@ -231,17 +229,4 @@ class AdminController extends AbstractController
         return $redirect->send();
     }
 
-
-    public function dashboard (ServerRequestInterface $request, ParametersBag $bag){
-
-        if(!array_key_exists('user',$_SESSION) || $_SESSION['user']['admin'] != "1"){
-
-            $redirect = new RedirectResponseHttp('/');
-            return $redirect->send();
-        }
-
-        $comments = $this->commentRepository->findAllcommentsNotValidate();
-        dump($comments);
-        return $this->renderHtml('dashboardAdmin.html.twig', ['comments'=> $comments ]);
-    }
 }
