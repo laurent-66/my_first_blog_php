@@ -3,19 +3,25 @@
 body
 {
     font-family: 'Lato', sans-serif;
-    margin:0px;
-    padding:0px;
-
-}
-
-
-#page-template
-{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    height: 1000px;
+    min-height: 100vh; 
+    margin: 0px;
+    padding:0px;
+
+}
+
+.body-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    min-height: 100vh; 
+
+    margin: 0px;
+    padding:15px;
 }
 
 ul,li
@@ -55,89 +61,4 @@ section .heading h2
     text-transform: uppercase;
     margin-top:20px;
     color:#fff;
-}
-
-.blue-divider
-{
-    width:100px;
-    height:5px;
-    background:#2f7bde;
-    margin: 15px auto;
-}
-
-.white-divider
-{
-    width:100px;
-    height:5px;
-    background:#fff;
-    margin: 15px auto;
-}
-
-
-
-
-
-/* FOOTER */
-
-footer
-{
-    background: #333;
-}
-
-footer .button-top-about
-{
-    margin: 20px auto;
-    text-align:center;
-    height: 30px;
-}
-
-footer .button-top-about:hover
-{
-    font-size: 27px;
-}
-
-footer h5
-{
-    color:#fff;
-    font-weight:normal;
-}
-
-#logo_linkedin
-{
-    height:70px;
-    width: 70px;
-    margin: 0px auto;
-}
-
-#block_mail,#block_linkedin
-{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#mail_footer,#logo_linkedin
-{
-    display:block;
-}
-
-#connexionAdmin
-{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#connexionAdmin a
-{
-    display:block;
-    color: grey;
-}
-#connexionAdmin a:hover
-{
-    display:block;
-    color: white;
-    text-decoration: none;
 }

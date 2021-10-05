@@ -1,0 +1,147 @@
+
+/*MENU */
+
+
+
+.navbar
+{
+    padding:0px;
+    margin:0px;
+}
+
+ul
+{
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+.menu
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.menu ul
+{
+    flex-wrap: nowrap;
+}
+.menu-item
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+a.nav-link.active,a.nav-link
+{
+
+display:block;
+   color:#fff; 
+   font-size:25px;
+   margin:7.5px;
+   padding:7.5px 20px;
+   text-align: center;
+}
+.menu-item:hover
+{
+    background-color: #02ADF0;
+    transition: all 0.3s ease-in 0s;
+}
+
+.navbar-toggler-icon
+{
+    border: white;
+}
+
+.item-apropos
+{
+    width:120px;
+}
+.menu-item #admin
+{
+    color:grey;
+}
+.menu-item #admin:hover
+{
+    color:white;
+}
+
+
+
+/*menu écran inférieur à 576px */
+
+@media screen and (max-width: 767px)
+{
+
+    .menunavigation{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+
+    #buttonMenu
+    {
+        visibility: visible;
+        border-color:white;
+        float: right;
+    }
+    .menu
+    {
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width:100%;
+    }
+    .menu-item
+    {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        margin:0px;
+        padding:0px;
+    }
+    
+    a.nav-link.active,a.nav-link
+    {
+       display: block;
+       color:#fff; 
+       font-size:25px;
+       margin:0px;
+       padding: 7.5px 0px;
+       text-align: center;
+       width:100%;
+    }
+
+    .menu-item:hover
+    {
+        background-color: #02ADF0;
+        transition: all 0.3s ease-in 0s;
+    }
+
+}
+
+/*menu écran minimum à 768px */
+
+@media screen and (min-width: 768px)
+{
+
+    .navbar-brand
+    {
+        display: none;
+    }
+
+    #buttonMenu
+    {
+        display: none;
+    }
+}

@@ -134,6 +134,6 @@ class __TwigTemplate_218c82a680538d3dfa087b6eb04925cc00d0c21ca0d97a5206f540a2fe7
         </div>
     </div>
 </section>
-{% endblock %}", "login.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\login.html.twig");
+{% endblock %} ", "login.html.twig", "C:\\wamp64\\www\\oc_my_first_blog_php\\templates\\login.html.twig");
     }
 }

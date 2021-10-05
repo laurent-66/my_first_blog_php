@@ -39,7 +39,14 @@
         "path": "/blogs/{id}",
         "_controller":"Application\\Controllers\\BlogPostController",
         "_method": "getBlog",
-        "_methods": ["GET"]
+        "_methods": ["GET", "POST"]
+    },
+    {
+        "name": "dashboard",
+        "path": "/blogs/admin/dashboard",
+        "_controller":"Application\\Controllers\\AdminController",
+        "_method": "dashboard",
+        "_methods": ["GET", "POST"]
     },
     {
         "name": "dashboard",
@@ -72,24 +79,25 @@
     },
     {
         "name": "approveComment",
-        "path": "/blog/approveComment/{blogId}/{id}",
-        "_controller":"Application\\Controllers\\CommentController",
+        "path": "/blog/admin/approveComment/{blogId}/{id}",
+        "_controller":"Application\\Controllers\\AdminController",
         "_method": "approveComment",
 
-        "_methods": ["GET", "POST"]
+        "_methods": ["GET"]
     },
     {
         "name": "deleteComment",
-        "path": "/blog/deleteComment/{blogId}/{id}",
-        "_controller":"Application\\Controllers\\CommentController",
+        "path": "/blog/admin/deleteComment/{blogId}/{id}",
+        "_controller":"Application\\Controllers\\AdminController",
         "_method": "deleteComment",
         "_methods": ["GET"]
     },
     {
-        "name": "deleteCommentMember",
-        "path": "/blog/admin/deleteComment/{id}",
+        "name": "reportComment",
+        "path": "/blog/reportComment/{blogId}/{id}",
         "_controller":"Application\\Controllers\\AdminController",
-        "_method": "deleteCommentMember",
-        "_methods": ["GET", "DELETE"]
+        "_method": "reportComment",
+        "_methods": ["GET"]
+
     }
 ]

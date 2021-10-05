@@ -1,0 +1,66 @@
+/* FOOTER */
+
+footer
+{
+    background: #383e42;
+    position:sticky;
+}
+
+footer .button-top-about
+{
+    margin: 20px auto;
+    text-align:center;
+    height: 30px;
+}
+
+footer .button-top-about:hover
+{
+    font-size: 27px;
+}
+
+footer h5
+{
+    color:#fff;
+    font-weight:normal;
+}
+
+#logo_linkedin
+{
+    height:70px;
+    width: 70px;
+    margin: 0px auto;
+}
+
+#block_mail,#block_linkedin
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#mail_footer,#logo_linkedin
+{
+    display:block;
+}
+
+#connexionAdmin
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#connexionAdmin a
+{
+    display:block;
+    color: grey;
+}
+#connexionAdmin a:hover
+{
+    display:block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}

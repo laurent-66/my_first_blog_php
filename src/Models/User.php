@@ -4,15 +4,11 @@ namespace Application\Models;
 
 class User
 {
-    protected $id_User;
+    protected $id;
 
-    protected $name = '';
-
-    protected $firstname = '';
+    protected $pseudo = '';
 
     protected $email = '';
-
-    protected $login ='';
 
     protected $password = '';
 
@@ -33,31 +29,19 @@ class User
     }
 
 
-    // method name
+    // method pseudo
 
-    public function getname(): ?string
+    public function getpseudo(): ?string
     {
         return $this->name;
     }
 
 
-    public function setname(?string $name): void
+    public function setpseudo(?string $name): void
     {
         $this->name = $name;
     }
 
-
-    // method firstname
-
-    public function getFirstname(): ?string
-    {
-        return $this->firstname;
-    }
-
-    public function setFirstname(?string $firstname): void
-    {
-        $this->firstname = $firstname;
-    }
 
     // method email
 
@@ -71,20 +55,6 @@ class User
     {
         $this->name = $email;
     }
-
-    // method login
-
-    public function getlogin(): ?string
-    {
-        return $this->login;
-    }
-
-
-    public function setlogin(?string $login): void
-    {
-        $this->name = $login;
-    }
-
 
     // method password
 

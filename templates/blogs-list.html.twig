@@ -1,29 +1,26 @@
 {% extends "template.html.twig" %}
 {% block title %}Blog{% endblock %}
 {% block body %} 
-<section id="connexion">
-    <div class="heading">
-        <h2>Liste des blogs</h2>
-    </div>
-    <div class="blue-divider"></div>
-    <div class="container">
+<div class="container-fluid mx-0 my-0 px-0 mx-0" id="blogs-list">
+      <div class="heading">
+          <h2>Liste des blogs</h2>
+      </div>
 
-        {% for blog in blogs %}
-        <div class="row" style="border: 1px solid grey;">
-                <div class="col 10 row-align-start-left">
-                    <div class="col4 row-item"><p>{{blog.title}}</p></div>
-                    <div class="col4 row-item"><p>{{blog.chapo}}</p></div>
-                    <div class="col4 row-item"><p>{{blog.last_update}}</p></div>
-                </div>
-
-                <div class="col 2 row-align-start-right">
-                    <div class="col4"><a href={{'/blogs/'~blog.id}}><button class="btn btn-lg btn-primary btn-block mb-3">Voir</button></a></div>
-                </div>
-
-        </div>
-        {% endfor %}
-
-    </div>
-    
-</section>
+      <div class="container-blog-list">
+          {% for blog in blogs %}
+                  <div class="card-blog">
+                    <div class="card-img">
+                      <img src="\uploads\{{blog.url_image}}" class="img" alt="img">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{blog.title}}</h5>
+                      <p class="card-text">{{blog.chapo}}</p>
+                      <p>Date: {{blog.last_update}}</p>
+                      <p>Auteur: {{blog.pseudo_blog}}</p>
+                      <p><a href={{'/blogs/'~blog.id}} class="btn btn-primary">consulter</a></p>
+                    </div>
+                  </div>
+          {% endfor %}
+      </div>
+</div>  
 {% endblock %}
