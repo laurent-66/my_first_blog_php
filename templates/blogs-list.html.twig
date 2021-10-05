@@ -1,35 +1,26 @@
 {% extends "template.html.twig" %}
 {% block title %}Blog{% endblock %}
 {% block body %} 
-<section id="connexion">
-    <div class="heading">
-        <h2>Liste des blogs</h2>
-    </div>
-    <div class="blue-divider"></div>
+<div class="container-fluid mx-0 my-0 px-0 mx-0" id="blogs-list">
+      <div class="heading">
+          <h2>Liste des blogs</h2>
+      </div>
 
-    <div class="container-blog-list">
-
-        {% for blog in blogs %}
-                <div class="card mb-4">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="\uploads\{{blog.url_image}}" class="card-img" alt="img">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">{{blog.title}}</h5>
-                          <p class="card-text">{{blog.chapo}}</p>
-
-                          <div class="row">
-                            <div class="col4"><p>Date: {{blog.last_update}}</p></div>
-                            <div class="col4"><p>Auteur: {{blog.user.pseudo}}</p></div>
-                          </div>
-                            <div class="col4"><a href={{'/blogs/'~blog.id}} class="btn btn-primary btnSeeBlog">voir</a></div>
-                        </div>
-                      </div>
+      <div class="container-blog-list">
+          {% for blog in blogs %}
+                  <div class="card-blog">
+                    <div class="card-img">
+                      <img src="\uploads\{{blog.url_image}}" class="img" alt="img">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{blog.title}}</h5>
+                      <p class="card-text">{{blog.chapo}}</p>
+                      <p>Date: {{blog.last_update}}</p>
+                      <p>Auteur: {{blog.pseudo_blog}}</p>
+                      <p><a href={{'/blogs/'~blog.id}} class="btn btn-primary">consulter</a></p>
                     </div>
                   </div>
-        {% endfor %}
-    </div>
-</section>
+          {% endfor %}
+      </div>
+</div>  
 {% endblock %}

@@ -1,0 +1,37 @@
+/* register*/
+
+#register
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:stretch;
+    background-color: #E3F4FE;
+    padding:0px;
+    margin:0px;
+    min-height:100vh;
+}
+
+#register .heading 
+{
+    text-align: center;
+    background-color:#02ADF0;
+    margin:0px;
+    padding:0px;
+}
+
+#register h2{
+    color:#fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin:30px 0px;
+}
+
+.box_register{
+    background-color: white;
+    border-radius: 10px;
+    width:60%;
+    margin:50px auto;
+    padding:15px;
+    box-shadow: 5px 5px 10px grey;
+}
