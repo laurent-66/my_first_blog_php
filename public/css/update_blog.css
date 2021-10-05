@@ -1,5 +1,55 @@
-.heading h2,h3
+/* update_blog */
+
+#updateBlog
 {
-    color: #318ce7;
-    font-weight:bold;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:stretch;
+    background-color: #E3F4FE;
+    padding:0px;
+    margin:0px;
+    min-height: 100vh;
 }
+
+#updateBlog .heading 
+{
+    text-align: center;
+    background-color:#02ADF0;
+    margin:0px;
+    padding:0px;
+}
+
+#updateBlog h2
+{
+    color:#fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin:30px 0px;
+}
+
+.box_updateBlog{
+    background-color: white;
+    border-radius: 10px;
+    width:60%;
+    margin:50px auto;
+    padding:15px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+/*écran inférieur à 768px */
+
+/* @media screen and (max-width: 767px)
+{
+    #connexion
+    {
+        
+    }
+
+    .box_connexion
+    {
+        width:100%;
+    }
+
+    
+} */

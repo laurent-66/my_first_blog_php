@@ -2,8 +2,14 @@
 {% block title %}Blog{% endblock %}
 {% block body %} 
 <div class="container">
+
     <div class="row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5">
         <div id="box_connexion" class="col-12 col-sm-12 col-md-12 text-center rounded mt-4">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
             <form class="form-signin" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title-blog" class="sr-only">Titre du blog</label>

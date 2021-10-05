@@ -29,7 +29,7 @@ class AdminController extends AbstractController
     }
 
     public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
-        
+        $error = '';
         if($request->getMethod() === 'POST') {
 
             //récupération de données du post dans un tableau
@@ -42,10 +42,16 @@ class AdminController extends AbstractController
                 strlen(trim($dataArray['title-blog'] === 0)) || 
                 $file->getSize() === 0 ||
                 strlen(trim($dataArray['inputChapo'] === 0)) || 
-                strlen(trim($dataArray['content'] === 0 )) ||
-                strlen(trim($dataArray['author'] === 0 ))
+                strlen(trim($dataArray['content'] === 0 ))
+
                 ){
-                $errors[] = 'Tous les champs requis sont obligatoires';
+                $error = 'Tous les champs requis sont obligatoires';
+
+
+            } else if ($file->getSize() === 0) {
+                
+                $error = "L'insertion d'une image est requise";
+
             }else{
                 $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
 
@@ -63,7 +69,7 @@ class AdminController extends AbstractController
             }
 
         }
-        return $this->renderHtml('newBlog.html.twig');
+        return $this->renderHtml('newBlog.html.twig', ['error'=>$error]);
     }
 
 
@@ -81,7 +87,7 @@ class AdminController extends AbstractController
             throw new NotFoundException('le blog n\'existe pas');
         }
 
-        $errors = [];
+        $error = '';
     
         if($request->getMethod() === 'POST') {
   
@@ -98,7 +104,7 @@ class AdminController extends AbstractController
                 strlen(trim($dataSubmitted['content'] === 0 )) 
 
                 ){
-                $errors[] = 'Tous les champs requis sont obligatoires';
+                $error = 'Tous les champs requis sont obligatoires';
             }else{
                 try{
                     $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
@@ -106,7 +112,7 @@ class AdminController extends AbstractController
                     if($datasAfterUpload['isSuccess']){
                         //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
                         $dataSubmitted['file_input_name'] = $datasAfterUpload['filename'];
-  
+
                         // execution de la requête de mise à jour
                         $this->blogRepository->updateBlog($dataSubmitted,$id);
     
@@ -124,7 +130,7 @@ class AdminController extends AbstractController
         }
 
         //page formulaire préremplie (get)
-        return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog]);
+        return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog,'error'=>$error]);
     }
 
 

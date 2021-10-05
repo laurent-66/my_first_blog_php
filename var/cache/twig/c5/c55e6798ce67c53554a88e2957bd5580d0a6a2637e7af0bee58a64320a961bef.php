@@ -56,9 +56,23 @@ class __TwigTemplate_f42d1d6ce2aabdc6ef4cd3cf03851cd23653555c1319d98fd2653dcbff2
         $macros = $this->macros;
         echo " 
 <div class=\"container\">
+
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
-            <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
+            ";
+        // line 8
+        if (($context["error"] ?? null)) {
+            // line 9
+            echo "                <div class=\"alert alert-danger\" role=\"alert\">
+                    ";
+            // line 10
+            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+            echo "
+                </div>
+            ";
+        }
+        // line 13
+        echo "            <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
                 <div class=\"form-group\">
                     <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                     <input type=\"text\" name=\"title-blog\" class=\"form-control\" placeholder=\"Entrer le titre\" required autofocus>
@@ -99,7 +113,7 @@ class __TwigTemplate_f42d1d6ce2aabdc6ef4cd3cf03851cd23653555c1319d98fd2653dcbff2
 
     public function getDebugInfo()
     {
-        return array (  54 => 3,  47 => 2,  36 => 1,);
+        return array (  75 => 13,  69 => 10,  66 => 9,  64 => 8,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -108,8 +122,14 @@ class __TwigTemplate_f42d1d6ce2aabdc6ef4cd3cf03851cd23653555c1319d98fd2653dcbff2
 {% block title %}Blog{% endblock %}
 {% block body %} 
 <div class=\"container\">
+
     <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
         <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
+            {% if error %}
+                <div class=\"alert alert-danger\" role=\"alert\">
+                    {{ error }}
+                </div>
+            {% endif %}
             <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
                 <div class=\"form-group\">
                     <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
