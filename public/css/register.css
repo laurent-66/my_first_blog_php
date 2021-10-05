@@ -1,6 +1,6 @@
-/* connexion */
+/* register*/
 
-#connexion
+#register
 {
     display:flex;
     flex-direction: column;
@@ -9,10 +9,10 @@
     background-color: #E3F4FE;
     padding:0px;
     margin:0px;
-    min-height: 100vh;
+    min-height:100vh;
 }
 
-#connexion .heading 
+#register .heading 
 {
     text-align: center;
     background-color:#02ADF0;
@@ -20,36 +20,18 @@
     padding:0px;
 }
 
-#connexion h2
-{
+#register h2{
     color:#fff;
     text-transform: uppercase;
     text-align: center;
     margin:30px 0px;
 }
 
-.box_connexion{
+.box_register{
     background-color: white;
     border-radius: 10px;
     width:60%;
     margin:50px auto;
     padding:15px;
     box-shadow: 5px 5px 10px grey;
-}
-
-/*écran inférieur à 768px */
-
-@media screen and (max-width: 767px)
-{
-    #connexion
-    {
-        
-    }
-
-    .box_connexion
-    {
-        width:100%;
-    }
-
-    
 }

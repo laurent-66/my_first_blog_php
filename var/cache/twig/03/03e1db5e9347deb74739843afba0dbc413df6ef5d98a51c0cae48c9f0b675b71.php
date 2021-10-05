@@ -45,6 +45,7 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
         // line 6
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+        <script src=\"https://kit.fontawesome.com/e48fcf7626.js\" crossorigin=\"anonymous\"></script>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"/css/style.css\">
         <link rel=\"stylesheet\" href=\"../src/fonts\">
@@ -54,7 +55,7 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
    
         <header class=\"sticky-top\">
                 <nav class=\"navbar navbar-dark navbar-expand-md bg-dark m-0 p-0\">
-                    <div class=\" menunavigation container-fluid m-0 p-0\">
+                    <div class=\"container-fluid m-0 p-0 menunavigation \">
                         <div class=\"navbar-brand m-0 p-3\">Menu</div>
                         <div id=\"buttonMenu\">
                             <button class=\"d-block navbar-toggler m-3 p-1\" data-toggle=\"collapse\" data-target=\"#navbarText\">
@@ -62,8 +63,8 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
                             </button>
                         </div>
                         <p>";
-        // line 23
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "id", [], "any", false, false, false, 23), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["session"] ?? null), "id", [], "any", false, false, false, 24), "html", null, true);
         echo "</p>
                         <div class=\"collapse navbar-collapse\" id=\"navbarText\">
                             <ul class=\"menu\">
@@ -79,16 +80,16 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
                                 </li>
 
                             ";
-        // line 37
+        // line 38
         if ((0 === twig_compare(($context["session"] ?? null), false))) {
-            // line 38
+            // line 39
             echo "                                <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/se-connecter\">Connexion</a>
                                 </li>
                             ";
-        } elseif ((0 === twig_compare(        // line 41
+        } elseif ((0 === twig_compare(        // line 42
 ($context["session"] ?? null), true))) {
-            // line 42
+            // line 43
             echo "
                                 <li class=\"menu-item\">
                                     <a class=\"item nav-link\" href=\"/deconnecter\">déconnexion</a>
@@ -96,7 +97,7 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
 
                             ";
         }
-        // line 48
+        // line 49
         echo "
                             </ul>
                         </div>
@@ -106,9 +107,9 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
 
 
             ";
-        // line 56
+        // line 57
         $this->displayBlock('body', $context, $blocks);
-        // line 59
+        // line 60
         echo "
 
         <footer class=\"sticky-footer\">
@@ -153,11 +154,11 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
         $macros = $this->macros;
     }
 
-    // line 56
+    // line 57
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 57
+        // line 58
         echo "
             ";
     }
@@ -174,7 +175,7 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
 
     public function getDebugInfo()
     {
-        return array (  161 => 57,  157 => 56,  151 => 6,  112 => 59,  110 => 56,  100 => 48,  92 => 42,  90 => 41,  85 => 38,  83 => 37,  66 => 23,  46 => 6,  39 => 1,);
+        return array (  162 => 58,  158 => 57,  152 => 6,  113 => 60,  111 => 57,  101 => 49,  93 => 43,  91 => 42,  86 => 39,  84 => 38,  67 => 24,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -185,6 +186,7 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <title>{% block title %}{% endblock %}</title>
+        <script src=\"https://kit.fontawesome.com/e48fcf7626.js\" crossorigin=\"anonymous\"></script>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"/css/style.css\">
         <link rel=\"stylesheet\" href=\"../src/fonts\">
@@ -194,7 +196,7 @@ class __TwigTemplate_8d385c9c56b72d01290867ceb6a944930bac45e48ef5c484744fca86dcd
    
         <header class=\"sticky-top\">
                 <nav class=\"navbar navbar-dark navbar-expand-md bg-dark m-0 p-0\">
-                    <div class=\" menunavigation container-fluid m-0 p-0\">
+                    <div class=\"container-fluid m-0 p-0 menunavigation \">
                         <div class=\"navbar-brand m-0 p-3\">Menu</div>
                         <div id=\"buttonMenu\">
                             <button class=\"d-block navbar-toggler m-3 p-1\" data-toggle=\"collapse\" data-target=\"#navbarText\">

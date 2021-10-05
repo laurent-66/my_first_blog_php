@@ -1,5 +1,5 @@
 @import "./template.css";
-@import "./menu.css";
+@import "./header.css";
 @import "./footer.css";
 @import "./accueil.css"; 
 @import "./dashboard.css";
@@ -8,6 +8,7 @@
 @import "./blogs.css";
 @import "./comment-line.css";
 @import "./connexion.css";
+@import "./register.css";
 
 * {
     box-sizing: border-box; 

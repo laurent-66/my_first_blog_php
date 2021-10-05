@@ -55,27 +55,26 @@ class __TwigTemplate_8678427f99d7a8790902d4ce6370a15ebae427db08c27740d14b9b1176b
     {
         $macros = $this->macros;
         echo " 
-<section id=\"connexion\">
+<div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"register\">
     <div class=\"heading\">
         <h2>Inscription</h2>
     </div>
-    <div class=\"blue-divider\"></div>
     <div class=\"container\">
-        <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-            <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
+
+            <div class=\"box_register\">
                 ";
-        // line 12
+        // line 11
         if (($context["error"] ?? null)) {
-            // line 13
+            // line 12
             echo "                    <div class=\"alert alert-danger\" role=\"alert\">
                         ";
-            // line 14
+            // line 13
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "
                     </div>
                 ";
         }
-        // line 17
+        // line 16
         echo "
                 <form class=\"form-signin\" action=\"\"  method=\"post\">
                     <label for=\"email\" class=\"sr-only\">Identifiant</label>
@@ -91,7 +90,7 @@ class __TwigTemplate_8678427f99d7a8790902d4ce6370a15ebae427db08c27740d14b9b1176b
             </div>
         </div>
     </div>
-</section>
+</div>
 ";
     }
 
@@ -107,7 +106,7 @@ class __TwigTemplate_8678427f99d7a8790902d4ce6370a15ebae427db08c27740d14b9b1176b
 
     public function getDebugInfo()
     {
-        return array (  79 => 17,  73 => 14,  70 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  78 => 16,  72 => 13,  69 => 12,  67 => 11,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -115,14 +114,13 @@ class __TwigTemplate_8678427f99d7a8790902d4ce6370a15ebae427db08c27740d14b9b1176b
         return new Source("{% extends \"template.html.twig\" %}
 {% block title %}Inscription{% endblock %}
 {% block body %} 
-<section id=\"connexion\">
+<div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"register\">
     <div class=\"heading\">
         <h2>Inscription</h2>
     </div>
-    <div class=\"blue-divider\"></div>
     <div class=\"container\">
-        <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-            <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
+
+            <div class=\"box_register\">
                 {% if error %}
                     <div class=\"alert alert-danger\" role=\"alert\">
                         {{ error }}
@@ -143,7 +141,7 @@ class __TwigTemplate_8678427f99d7a8790902d4ce6370a15ebae427db08c27740d14b9b1176b
             </div>
         </div>
     </div>
-</section>
+</div>
 {% endblock %} ", "register.html.twig", "C:\\wamp64\\www\\myblogphp\\my_first_blog_php\\templates\\register.html.twig");
     }
 }

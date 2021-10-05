@@ -55,11 +55,11 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
     {
         $macros = $this->macros;
         echo " 
-<section id=\"connexion\">
-    <div class=\"heading\">
-        <h2>Connexion</h2>
-    </div>
-    <div class=\"blue-divider\"></div>
+
+<div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"connexion\">
+      <div class=\"heading\">
+          <h2>Connexion</h2>
+      </div>
     ";
         // line 9
         if (($context["error"] ?? null)) {
@@ -74,8 +74,8 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
         }
         // line 14
         echo "    <div class=\"container\">
-        <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-            <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
+
+            <div class=\"box_connexion\">
                 <form class=\"form-signin\" method=\"POST\">
                     <label for=\"email\" class=\"sr-only\">Identifiant</label>
                     <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"email\">
@@ -84,9 +84,9 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Se connecter</button>
                 </form>
             </div>
-        </div>
+
     </div>
-</section>
+</div>
 ";
     }
 
@@ -110,19 +110,19 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
         return new Source("{% extends \"template.html.twig\" %}
 {% block title %}Connexion{% endblock %}
 {% block body %} 
-<section id=\"connexion\">
-    <div class=\"heading\">
-        <h2>Connexion</h2>
-    </div>
-    <div class=\"blue-divider\"></div>
+
+<div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"connexion\">
+      <div class=\"heading\">
+          <h2>Connexion</h2>
+      </div>
     {% if error %}
         <div class=\"alert alert-danger\" role=\"alert\">
             {{ error }}
         </div>
     {% endif %}
     <div class=\"container\">
-        <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto\">
-            <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded\">
+
+            <div class=\"box_connexion\">
                 <form class=\"form-signin\" method=\"POST\">
                     <label for=\"email\" class=\"sr-only\">Identifiant</label>
                     <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"email\">
@@ -131,9 +131,9 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
                     <button class=\"btn btn-lg btn-primary btn-block mb-3\" type=\"submit\">Se connecter</button>
                 </form>
             </div>
-        </div>
+
     </div>
-</section>
+</div>
 {% endblock %} ", "login.html.twig", "C:\\wamp64\\www\\myblogphp\\my_first_blog_php\\templates\\login.html.twig");
     }
 }

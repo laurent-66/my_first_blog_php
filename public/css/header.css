@@ -1,6 +1,8 @@
 
 /*MENU */
 
+
+
 .navbar
 {
     padding:0px;
@@ -73,6 +75,15 @@ display:block;
 
 @media screen and (max-width: 767px)
 {
+
+    .menunavigation{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
 
 
     #buttonMenu

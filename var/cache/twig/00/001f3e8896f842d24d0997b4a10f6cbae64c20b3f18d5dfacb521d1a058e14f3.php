@@ -84,9 +84,10 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
     </div>  
 
     <div class=\"row section2-accueil\">
-        <div class=\"container-activite col-sm-12 col-md-4 col-lg-4 col-xl-4 px-0 py-0 mx-0 my-5\" style=\"border: 3px solid orange\">
+        <div class=\"container-activite col-sm-12 col-md-4 col-lg-4 col-xl-4 px-0 py-0 mx-0 my-0\">
+            <h3>Mes activités complémentaires en entreprise :</h3>  
             <div class=\"activites\">
-                <h3>Mes activités complémentaires en entreprise :</h3>        
+      
                 <ul class=\"activite-entreprise\"> 
                     <li>Site web vitrine et e-commerce: CMS wordpress thème AVADA</li>
                     <li>Application front-end: Angular 11.</li> 
@@ -98,16 +99,16 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
             </div>
         </div>
 
-        <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-3 py-0 mx-0 my-5\">
+        <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-0 py-0 mx-0 my-0\">
             <div class=\"px-0 mx-0\">
-                <form class=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
+                <form class=\"contact-form\" method=\"post\" action=\"\" role=\"form\">
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
                             <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
                             <small class=\"text-danger\">";
-        // line 48
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 48), "html", null, true);
+        // line 49
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 49), "html", null, true);
         echo "</small>
                         </div>
                         <div class=\"col-md-6\">
@@ -168,7 +169,7 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
 
     public function getDebugInfo()
     {
-        return array (  110 => 48,  73 => 13,  67 => 10,  64 => 9,  62 => 8,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  111 => 49,  73 => 13,  67 => 10,  64 => 9,  62 => 8,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -199,9 +200,10 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
     </div>  
 
     <div class=\"row section2-accueil\">
-        <div class=\"container-activite col-sm-12 col-md-4 col-lg-4 col-xl-4 px-0 py-0 mx-0 my-5\" style=\"border: 3px solid orange\">
+        <div class=\"container-activite col-sm-12 col-md-4 col-lg-4 col-xl-4 px-0 py-0 mx-0 my-0\">
+            <h3>Mes activités complémentaires en entreprise :</h3>  
             <div class=\"activites\">
-                <h3>Mes activités complémentaires en entreprise :</h3>        
+      
                 <ul class=\"activite-entreprise\"> 
                     <li>Site web vitrine et e-commerce: CMS wordpress thème AVADA</li>
                     <li>Application front-end: Angular 11.</li> 
@@ -213,9 +215,9 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
             </div>
         </div>
 
-        <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-3 py-0 mx-0 my-5\">
+        <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-0 py-0 mx-0 my-0\">
             <div class=\"px-0 mx-0\">
-                <form class=\"contact-form border border-white rounded\" method=\"post\" action=\"\" role=\"form\">
+                <form class=\"contact-form\" method=\"post\" action=\"\" role=\"form\">
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
