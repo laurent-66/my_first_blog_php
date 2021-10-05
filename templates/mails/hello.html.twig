@@ -1,0 +1,24 @@
+{% extends 'mails/base_mail.html.twig' %}
+
+{% block  style %}
+
+<style>
+h1 {
+    color: blue;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<h3><strong>Message venant de {{email}}</strong></h3>
+
+<p>
+{{message}}
+</p>
+<p> Prénom: {{firstname}} <br>
+Nom: {{name}}</p>
+<p>Téléphone: {{phone}}</p>
+
+{% endblock %}

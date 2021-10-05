@@ -18,7 +18,5 @@ class FileUploader
             'isSuccess' => move_uploaded_file($file['tmp_name'], $fullPath),
             'filename' => $newFilename
         ];
-
     }
-
 }

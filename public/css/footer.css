@@ -2,7 +2,8 @@
 
 footer
 {
-    background: #333;
+    background: #383e42;
+    position:sticky;
 }
 
 footer .button-top-about
@@ -63,12 +64,3 @@ footer h5
     text-decoration: none;
     text-align: center;
 }
-
-/*.sticky-footer
-{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center; 
-}*/

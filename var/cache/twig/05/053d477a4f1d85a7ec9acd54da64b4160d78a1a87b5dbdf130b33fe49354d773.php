@@ -65,7 +65,7 @@ class __TwigTemplate_96501ed0f376121ad16088af5d15fa7dfe6c9cd578b274204af8f6865c8
                 <div class=\"col-12 ml-50 px my-0\">
                     <img src=\"\\uploads\\";
         // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "url_image", [], "any", false, false, false, 9), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "image_blog", [], "any", false, false, false, 9), "html", null, true);
         echo "\" class=\"card-img\" alt=\"img\">
                 </div>
             </div>
@@ -73,15 +73,19 @@ class __TwigTemplate_96501ed0f376121ad16088af5d15fa7dfe6c9cd578b274204af8f6865c8
                 <div class=\"col-12 mx-auto my-0\">
                     <p>";
         // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content", [], "any", false, false, false, 14), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content_blog", [], "any", false, false, false, 14), "html", null, true);
+        echo "</p>
+                    <p>";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id_blog", [], "any", false, false, false, 15), "html", null, true);
         echo "</p>
                     <p><bold>Dernière mise à jour: </bold><span><i>";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "last_update", [], "any", false, false, false, 15), "html", null, true);
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "last_update_blog", [], "any", false, false, false, 16), "html", null, true);
         echo "</i></span></p>
                     <p><bold>Auteur: </bold><span><i>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "pseudo", [], "any", false, false, false, 16), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "pseudo_blog", [], "any", false, false, false, 17), "html", null, true);
         echo "</i></span></p>
 
                 </div>
@@ -89,23 +93,24 @@ class __TwigTemplate_96501ed0f376121ad16088af5d15fa7dfe6c9cd578b274204af8f6865c8
 
             <h4><bold>Commentaires du blog</bold></h4><br/>
             ";
-        // line 22
+        // line 23
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["findComments"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-            // line 23
+            // line 24
             echo "                <div class=\"comment-line row\">
                     <div class=\"col8\"><p class=\"mx-3 my-3\">";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 24), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 25), "html", null, true);
             echo "</p></div>
 
                     <div class=\"col4 mr-3\">
                         <div class=\"row px-0 mx-0\">
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href=";
-            // line 28
-            echo twig_escape_filter($this->env, ((("/blog/reportComment/" . twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "id", [], "any", false, false, false, 28)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 28)), "html", null, true);
-            echo "><button type=\"button\" class=\"btn btn-warning btn-block my auto\">Signaler</button></a></div>
+                            ";
+            // line 30
+            echo "                            <div class=\"col button-comment-line px-0 mx-2\"><a href=";
+            echo twig_escape_filter($this->env, ((("/blog/reportComment/" . ($context["blogId"] ?? null)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 30)), "html", null, true);
+            echo "><button type=\"button\" class=\"btn btn-secondary btn-block my auto\">Signaler</button></a></div>
                         </div>
                     </div>
                 </div>    
@@ -114,7 +119,7 @@ class __TwigTemplate_96501ed0f376121ad16088af5d15fa7dfe6c9cd578b274204af8f6865c8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 35
         echo "
             <h4><bold>Ajouter un commentaire</bold></h4><br/>
             <div class=\"nouveau commentaire\">
@@ -143,7 +148,7 @@ class __TwigTemplate_96501ed0f376121ad16088af5d15fa7dfe6c9cd578b274204af8f6865c8
 
     public function getDebugInfo()
     {
-        return array (  118 => 33,  107 => 28,  100 => 24,  97 => 23,  93 => 22,  84 => 16,  80 => 15,  76 => 14,  68 => 9,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  123 => 35,  111 => 30,  104 => 25,  101 => 24,  97 => 23,  88 => 17,  84 => 16,  80 => 15,  76 => 14,  68 => 9,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -156,14 +161,15 @@ class __TwigTemplate_96501ed0f376121ad16088af5d15fa7dfe6c9cd578b274204af8f6865c8
         <h3>{{blog.title}}</h3><br />
             <div class=\"row\">
                 <div class=\"col-12 ml-50 px my-0\">
-                    <img src=\"\\uploads\\{{blog.url_image}}\" class=\"card-img\" alt=\"img\">
+                    <img src=\"\\uploads\\{{blog.image_blog}}\" class=\"card-img\" alt=\"img\">
                 </div>
             </div>
             <div class=\"row my-5\" id=\"objectif\">
                 <div class=\"col-12 mx-auto my-0\">
-                    <p>{{blog.content}}</p>
-                    <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update}}</i></span></p>
-                    <p><bold>Auteur: </bold><span><i>{{blog.pseudo}}</i></span></p>
+                    <p>{{blog.content_blog}}</p>
+                    <p>{{blog.id_blog}}</p>
+                    <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update_blog}}</i></span></p>
+                    <p><bold>Auteur: </bold><span><i>{{blog.pseudo_blog}}</i></span></p>
 
                 </div>
             </div>
@@ -175,7 +181,8 @@ class __TwigTemplate_96501ed0f376121ad16088af5d15fa7dfe6c9cd578b274204af8f6865c8
 
                     <div class=\"col4 mr-3\">
                         <div class=\"row px-0 mx-0\">
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/reportComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn btn-warning btn-block my auto\">Signaler</button></a></div>
+                            {# <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/reportComment/'~blog.id~'/'~comment.id }}><button type=\"button\" class=\"btn btn-secondary btn-block my auto\">Signaler</button></a></div> #}
+                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/reportComment/'~blogId~'/'~comment.id }}><button type=\"button\" class=\"btn btn-secondary btn-block my auto\">Signaler</button></a></div>
                         </div>
                     </div>
                 </div>    

@@ -1,88 +1,196 @@
 /* ACCUEIL */
 
-#home
+    #home
+    {
+    background-color: #E3F4FE;
+        padding:0px;
+        margin:0px;
+
+    }
+
+    .section1-accueil
+    {
+        background-color:#02ADF0;
+        margin:0px;
+        padding:0px;
+
+    }
+
+    .rounded-circle
+    {
+        border: 5px solid #fff;
+        max-width: 280px;
+    }
+
+    .profile-picture
+    {
+        text-align: center;
+        margin: auto;
+        float:none;
+    }
+
+    #home .heading 
+    {
+        text-align: center;
+
+    }
+
+
+    #home .heading h1
+    {
+        color:#fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top:30px;
+    }
+
+    #home .heading h3
+    {
+        color:#FFF;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    #home .heading p
+    {
+        color:#FFF;
+        margin-bottom: 30px;
+        text-align: center;
+        font-family: lato;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .section2-accueil
+    {
+        background-color:#E3F4FE;
+        margin:0px;
+        padding:0px;
+    }
+
+    .container-activite {
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin:15px;
+        padding:15px;
+    }
+
+    .container-activite h3 {
+        margin:15px;
+    }
+
+    .activites{
+        display:block;
+        margin:15px;
+        padding:15px;
+    }
+
+    .activite-entreprise li {
+        font-weight: bold;
+        font-style: italic;
+        color: #02ADF0;
+        list-style-type: disc;
+    }
+
+    .row-button {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-form {
+        padding:15px;
+        margin:15px;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    .button-download
+    {
+        font-weight:bold;
+        text-transform: uppercase;
+        color:white;
+        border: 1px solid #02ADF0;
+        display:block;
+        margin-bottom: 15px;
+        padding: 18px 50px;
+        border-radius:5px;
+        transition: all 0.3s ease-in 0s;
+        background-color:#02ADF0;
+    }
+
+    .button-send
+    {
+        font-weight:bold;
+        text-transform: uppercase;
+        color:white;
+        border: 1px solid #02ADF0;
+        display:block;
+        margin-top:20px;
+        padding: 18px 50px;
+        border-radius:5px;
+        transition: all 0.3s ease-in 0s;
+        background-color:#02ADF0;
+    }
+
+    a.button-download:hover,.button-send:hover
+    {
+        background-color: #383e42;
+        color:#fff;
+        border: 1px solid #383e42;
+        text-decoration-style: none;
+        list-style: none;
+        text-decoration: none;
+    }
+    .button1:hover
+    {
+        background:white;
+        color:#2f7bde;
+        text-decoration: none;
+    }
+
+    #objectif p{
+
+        color:#246cb5;
+        font-family:lato;
+        font-size:2rem;
+        font-weight:bold;
+        font-style: italic;
+    }
+
+    #objectif #activite-entreprise{
+
+        font-size:1.5rem;
+    }
+
+
+
+/*menu écran inférieur à 768px */
+
+@media screen and (max-width: 767px)
 {
-   background-color: #318ce7;
-   padding-top: 50px;
-   padding-bottom: 50px;
 
-}
-.rounded-circle
-{
-    border: 5px solid #fff;
-    max-width: 280px;
-    margin-bottom:50px;
+    #home .heading 
+    {
 
-}
-.profile-picture
-{
-    text-align: center;
-    margin: auto;
-    float:none;
-}
-#home .heading h1
-{
-    color:#fff;
-    text-transform: uppercase;
-    text-align: center;
-}
-#home .heading h3
-{
-    color:#FFF;
-    margin-bottom: 50px;
-    text-align: center;
-}
+        margin: 15px;
+    }
 
-#home .heading p
-{
-    color:#FFF;
-    margin-bottom: 50px;
-    text-align: center;
-    font-family: lato;
-    font-weight: bold;
-    font-style: italic;
-}
+    .rounded-circle
+    {
+        border: 5px solid #fff;
+        max-width: 280px;
+    }
 
-.button-download,.button-send
-{
-    font-weight:bold;
-    text-transform: uppercase;
-    color:white;
-    border: 1px solid white;
-    display:inline-block;
-    margin-top:20px;
-    padding: 18px 50px;
-    border-radius:5px;
-    transition: all 0.3s ease-in 0s;
-    background-color:#318ce7;
-}
+    .profile-picture
+    {
+        text-align: center;
+        margin: auto;
+        float:none;
+        padding-top: 30px;
+    }
 
-a.button-download:hover,.button-send
-{
-    background-color: #fff;
-    color:#318ce7;
-    text-decoration-style: none;
-    list-style: none;
-    text-decoration: none;
-}
-.button1:hover
-{
-    background:white;
-    color:#2f7bde;
-    text-decoration: none;
-}
-
-#objectif p{
-
-    color:rgb(146, 132, 132);
-    font-family:lato;
-    font-size:2rem;
-    font-weight:bold;
-    font-style: italic;
-}
-
-#objectif #activite-entreprise{
-
-    font-size:1.5rem;
-
-}
+} 

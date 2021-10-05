@@ -1,5 +1,13 @@
 /* list des blogs*/
 
+.page-blog-detail
+{
+   background-color: #E3F4FE;
+    padding:0px;
+    margin:0px;
+}
+
+
 .row-item
 {
     width:150px;
@@ -18,6 +26,7 @@
     justify-content: flex-start;
     align-items: center;
 }
+
 .row-align-start-right
 {
     display: flex;
@@ -26,17 +35,12 @@
     align-items: center;
 }
 
+.comment-line {
 
-/*.sticky-footer
-{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center; 
-}*/
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px grey;
 
-#objectif
-{
-    color: black;
+    margin: 0px 0px 15px 0px;
 }
