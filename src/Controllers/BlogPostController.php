@@ -15,11 +15,13 @@ class BlogPostController extends AbstractController
     
     protected $blogRepository;
     private $commentRepository;
+    private $user;
 
     public function __construct()
     {
         $this->blogRepository = new BlogRepository;
         $this->commentRepository = new CommentRepository();
+        $this->user = '';
     }
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
@@ -47,15 +49,17 @@ class BlogPostController extends AbstractController
 
             //création d'un commentaire
             $this->commentRepository->submitComment($dataArray,$id);
+
             //redirection sur la page courante (get)
             $redirect = new RedirectResponseHttp('/blogs/'.$id);
             return $redirect->send();
         }
 
-            $findCommentsPublished = $this->commentRepository->findAllcommentsValidate();
-            // $findComments = $this->commentRepository->findCommentsByBlogId($id);
+            $session = $_SESSION;
 
-            return $this->renderHtml('blog.html.twig',['blog'=>$blog, 'blogId'=>$id, 'findComments'=>$findCommentsPublished]);
+            $findCommentsPublished = $this->commentRepository->findAllcommentsValidate();
+
+            return $this->renderHtml('blog.html.twig',['blog'=>$blog, 'blogId'=>$id, 'findComments'=>$findCommentsPublished, 'session'=>$session]);
 
     }
 

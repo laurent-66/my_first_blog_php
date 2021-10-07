@@ -1,12 +1,16 @@
-/* list des blogs*/
+/* blog*/
 
-.page-blog-detail
+#blog
 {
-   background-color: #E3F4FE;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:center;
+    background-color: #E3F4FE;
     padding:0px;
     margin:0px;
+    min-height: 100vh;
 }
-
 
 .row-item
 {
@@ -47,9 +51,6 @@
     font-style: normal;
     font-style: italic;
 }
-
-
-
 
 .comment-line {
 

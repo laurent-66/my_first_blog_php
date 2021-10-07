@@ -40,6 +40,7 @@
     justify-content: center;
     align-items:center;
     margin-top: 15px;
+    margin-bottom:15px;
 }
 
 
@@ -61,7 +62,7 @@
     display:flex;
     flex-direction: row;
     justify-content: center;
-    align-items:center;
+    align-self:start;
     max-width: 200px;
     max-height: 200px;
     margin: 15px;
@@ -70,8 +71,14 @@
 .img {
     display: block;
     max-height: 200px;
+    margin:0px;
 }
 
+
+.card-body{
+    padding:0px;
+    margin:15px;
+}
 .row-align-start-left
 {
     display: flex;
@@ -91,15 +98,8 @@
 
 @media screen and (max-width: 767px)
 {
-
-    .card-img{
-        display:flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items:center;
-        max-width: 200px;
-        max-height: 200px;
-        margin: 15px auto;
+    .card-blog{
+        width:90%;
     }
-    
+
 }

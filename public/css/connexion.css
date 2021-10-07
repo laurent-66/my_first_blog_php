@@ -41,15 +41,9 @@
 
 @media screen and (max-width: 767px)
 {
-    #connexion
-    {
-        
-    }
-
     .box_connexion
     {
-        width:100%;
+        width:90%;
     }
-
-    
+ 
 }

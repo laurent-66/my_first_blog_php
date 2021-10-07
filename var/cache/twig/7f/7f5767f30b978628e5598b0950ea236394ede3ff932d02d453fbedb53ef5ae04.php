@@ -55,7 +55,7 @@ class __TwigTemplate_64ebd7b5a5d14c1205dbfebb5f0d8ee12ecf82734dd768f4b77c3402312
     {
         $macros = $this->macros;
         echo " 
-<div class=\"container\">
+<div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"blog\">
     <section>
         <h3>";
         // line 6
@@ -118,16 +118,28 @@ class __TwigTemplate_64ebd7b5a5d14c1205dbfebb5f0d8ee12ecf82734dd768f4b77c3402312
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 32
         echo "
-            <h4><bold>Ajouter un commentaire</bold></h4><br/>
-            <div class=\"nouveau commentaire\">
-                <form method=\"POST\">
-                    <div class=\"form-group\">
-                        <label for=\"commentContent\">Nouveau commentaire :</label>
-                        <textarea class=\"form-control rounded-0\" id=\"commentContent\" name=\"commentContent\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
-                    </div>
-                    <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
-                </form>
-            </div>
+            ";
+        // line 33
+        if (($context["session"] ?? null)) {
+            // line 34
+            echo "                <h4><bold>Ajouter un commentaire</bold></h4><br/>
+                <div class=\"nouveau commentaire\">
+                    <form method=\"POST\">
+                        <div class=\"form-group\">
+                            <label for=\"commentContent\">Nouveau commentaire :</label>
+                            <textarea class=\"form-control rounded-0\" id=\"commentContent\" name=\"commentContent\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                        </div>
+                        <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
+                    </form>
+                </div>
+            ";
+        } else {
+            // line 45
+            echo "                <p> Vous souhaitez laisser un commentaires ? Veuillez vous inscrire ou vous connecter. :-)</p>
+            ";
+        }
+        // line 47
+        echo "
     </section>
 </div>   
 ";
@@ -145,7 +157,7 @@ class __TwigTemplate_64ebd7b5a5d14c1205dbfebb5f0d8ee12ecf82734dd768f4b77c3402312
 
     public function getDebugInfo()
     {
-        return array (  120 => 32,  109 => 27,  102 => 23,  99 => 22,  95 => 21,  86 => 15,  82 => 14,  78 => 13,  74 => 12,  67 => 8,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  142 => 47,  138 => 45,  125 => 34,  123 => 33,  120 => 32,  109 => 27,  102 => 23,  99 => 22,  95 => 21,  86 => 15,  82 => 14,  78 => 13,  74 => 12,  67 => 8,  62 => 6,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -153,7 +165,7 @@ class __TwigTemplate_64ebd7b5a5d14c1205dbfebb5f0d8ee12ecf82734dd768f4b77c3402312
         return new Source("{% extends \"template.html.twig\" %}
 {% block title %}Blog{% endblock %}
 {% block body %} 
-<div class=\"container\">
+<div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"blog\">
     <section>
         <h3>{{blog.title}}</h3><br />
             <div class=\"row-blog-img\">
@@ -182,16 +194,21 @@ class __TwigTemplate_64ebd7b5a5d14c1205dbfebb5f0d8ee12ecf82734dd768f4b77c3402312
                 </div>    
             {% endfor %}
 
-            <h4><bold>Ajouter un commentaire</bold></h4><br/>
-            <div class=\"nouveau commentaire\">
-                <form method=\"POST\">
-                    <div class=\"form-group\">
-                        <label for=\"commentContent\">Nouveau commentaire :</label>
-                        <textarea class=\"form-control rounded-0\" id=\"commentContent\" name=\"commentContent\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
-                    </div>
-                    <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
-                </form>
-            </div>
+            {% if session %}
+                <h4><bold>Ajouter un commentaire</bold></h4><br/>
+                <div class=\"nouveau commentaire\">
+                    <form method=\"POST\">
+                        <div class=\"form-group\">
+                            <label for=\"commentContent\">Nouveau commentaire :</label>
+                            <textarea class=\"form-control rounded-0\" id=\"commentContent\" name=\"commentContent\" rows=\"3\" placeholder=\"Veuillez écrire votre texte ici.\"></textarea>
+                        </div>
+                        <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
+                    </form>
+                </div>
+            {% else %}
+                <p> Vous souhaitez laisser un commentaires ? Veuillez vous inscrire ou vous connecter. :-)</p>
+            {% endif %}
+
     </section>
 </div>   
 {% endblock %}", "blog.html.twig", "C:\\wamp64\\www\\myblogphp\\my_first_blog_php\\templates\\blog.html.twig");
