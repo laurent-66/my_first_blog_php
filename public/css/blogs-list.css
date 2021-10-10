@@ -74,24 +74,9 @@
     margin:0px;
 }
 
-
 .card-body{
     padding:0px;
     margin:15px;
-}
-.row-align-start-left
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-.row-align-start-right
-{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    align-items: center;
 }
 
 /*menu écran inférieur à 768px */
