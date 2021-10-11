@@ -69,36 +69,36 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
         $context['_seq'] = twig_ensure_traversable(($context["blogs"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
             // line 20
-            echo "            <div class=\"row border-top border-dark\">
-                <div class=\"line-info-list my-3\">
-                    <div class=\"col-10 container-content-row border border-primary\">
-                        <div class=\"col-3 item-list \"><p>";
+            echo "            <div class=\"border-top border-dark\">
+                <div class=\"line-info-list\">
+                    <div class=\"container-content-row border border-primary\">
+                        <div class=\"item-list \"><p>";
             // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update_blog", [], "any", false, false, false, 23), "html", null, true);
             echo "</p></div>
-                        <div class=\"col-2 item-list\"><p>";
+                        <div class=\"item-list\"><p>";
             // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title_blog", [], "any", false, false, false, 24), "html", null, true);
             echo "</p></div>
-                        <div class=\"col-7 item-list\"><p>";
+                        <div class=\"item-list\"><p>";
             // line 25
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo_blog", [], "any", false, false, false, 25), "html", null, true);
             echo "</p></div>
                     </div>
         
-                    <div class=\"col-2 option-button border border-primary\">
-                        <div class=\"col4\"><a href=";
+                    <div class=\"option-button border border-primary\">
+                        <div class=\"item-button\"><a href=";
             // line 29
             echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 29)), "html", null, true);
-            echo "><button class=\"btn btn-lg btn-primary btn-block mb-3 my-auto\"><i class=\"far fa-eye\"></i></button></a></div>
-                        <div class=\"col4\"><a href=";
+            echo "><button class=\"btn btn-lg btn-primary btn-block mx-auto my-2\"><i class=\"far fa-eye\"></i></button></a></div>
+                        <div class=\"item-button\"><a href=";
             // line 30
             echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 30)) . "/edit"), "html", null, true);
-            echo "><button class=\"btn btn-lg btn-warning btn-block mb-3 my-auto\"><i class=\"fas fa-edit\"></i></button></a></div>
-                        <div class=\"col4\"><a href=";
+            echo "><button class=\"btn btn-lg btn-warning btn-block mx-auto my-2\"><i class=\"fas fa-edit\"></i></button></a></div>
+                        <div class=\"item-button\"><a href=";
             // line 31
             echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 31)) . "/delete"), "html", null, true);
-            echo "><button class=\"btn btn-lg btn-danger btn-block mb-3 my-auto\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
+            echo "><button class=\"btn btn-lg btn-danger btn-block mx-auto my-2\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
                     </div>
                 </div>
             </div>
@@ -183,18 +183,18 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
         <div id=\"blogs\" role=\"tabpanel\" class=\"tab-pane active\">
         <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 mx-auto new-blog-button\">Créer un nouveau blog</button></a>
             {% for blog in blogs %}
-            <div class=\"row border-top border-dark\">
-                <div class=\"line-info-list my-3\">
-                    <div class=\"col-10 container-content-row border border-primary\">
-                        <div class=\"col-3 item-list \"><p>{{blog.last_update_blog}}</p></div>
-                        <div class=\"col-2 item-list\"><p>{{blog.title_blog}}</p></div>
-                        <div class=\"col-7 item-list\"><p>{{blog.chapo_blog}}</p></div>
+            <div class=\"border-top border-dark\">
+                <div class=\"line-info-list\">
+                    <div class=\"container-content-row border border-primary\">
+                        <div class=\"item-list \"><p>{{blog.last_update_blog}}</p></div>
+                        <div class=\"item-list\"><p>{{blog.title_blog}}</p></div>
+                        <div class=\"item-list\"><p>{{blog.chapo_blog}}</p></div>
                     </div>
         
-                    <div class=\"col-2 option-button border border-primary\">
-                        <div class=\"col4\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mb-3 my-auto\"><i class=\"far fa-eye\"></i></button></a></div>
-                        <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mb-3 my-auto\"><i class=\"fas fa-edit\"></i></button></a></div>
-                        <div class=\"col4\"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mb-3 my-auto\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
+                    <div class=\"option-button border border-primary\">
+                        <div class=\"item-button\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mx-auto my-2\"><i class=\"far fa-eye\"></i></button></a></div>
+                        <div class=\"item-button\"><a href={{'/blogs/admin/'~blog.id~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mx-auto my-2\"><i class=\"fas fa-edit\"></i></button></a></div>
+                        <div class=\"item-button\"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mx-auto my-2\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
                     </div>
                 </div>
             </div>
