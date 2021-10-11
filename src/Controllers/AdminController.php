@@ -48,7 +48,7 @@ class AdminController extends AbstractController
                 $error = 'Tous les champs requis sont obligatoires';
 
 
-            } else if ($file->getSize() === 0) {
+            } if ($file->getSize() === 0) {
                 
                 $error = "L'insertion d'une image est requise";
 

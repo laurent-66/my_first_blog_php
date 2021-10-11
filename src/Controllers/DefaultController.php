@@ -20,9 +20,8 @@ class DefaultController extends AbstractController
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
 
-        $validation = '';
-        $position_arobase = true ;
-        $errorFirstname = '';
+        $error = '';
+        $errorMail = '';
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
@@ -31,12 +30,11 @@ class DefaultController extends AbstractController
                 (strlen( trim($dataSubmitted['firstname']))) === 0 ||
                 (strlen( trim($dataSubmitted['name']))) === 0 ||
                 (strlen(trim($dataSubmitted['email']))) === 0 ||
-                (strlen(trim($dataSubmitted['phone']))) === 0 ||
                 (strlen(trim($dataSubmitted['message']))) === 0
                 ) 
             {
 
-                $errorGlobal = 'Tout les champs sont requis';
+                $error = 'Tout les champs sont requis';
 
             } if (strpos($dataSubmitted['email'], '@') === false){
                 
@@ -65,7 +63,7 @@ class DefaultController extends AbstractController
         }
 
         $errorGlobal ='';
-        return $this->renderHtml('home.html.twig',['validation'=>$validation, 'errorGlobal'=>$errorGlobal]);
+        return $this->renderHtml('home.html.twig',['error'=>$error,'errorMail'=>$errorMail]);
     }
 
 }

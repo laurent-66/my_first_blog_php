@@ -2,13 +2,12 @@
 {% block title %}Blog{% endblock %}
 {% block body %} 
 
-
 <div class="container-fluid mx-0 my-0 px-0 mx-0" id="updateBlog">
     <div class="heading">
         <h2>Edition blog</h2>
     </div>
-    <div class="row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5">
-        <div id="box_connexion" class="col-12 col-sm-12 col-md-12 text-center rounded mt-4">
+    <div class="row">
+        <div id="box_update_blog" class="col-12 col-sm-12 col-md-12 text-center rounded mt-4">
             {% if error %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}

@@ -56,9 +56,6 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
         $macros = $this->macros;
         echo " 
 <div class=\"container-fluid\" id=\"home\">
-
-
-
     <div class=\"row section1-accueil\">
         <div class=\"col-sm-12 col-md-6 col-lg-6 profile-picture\">
             <img src=\"/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
@@ -86,14 +83,23 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
                 <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
             </div>
         </div>
-
         <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-0 py-0 mx-0 my-0\">
             <div class=\"px-0 mx-0\">
                 <form class=\"contact-form\" method=\"post\" action=\"\" role=\"form\">
-
-
-
-                    <div class=\"row\">
+                    ";
+        // line 37
+        if (($context["error"] ?? null)) {
+            // line 38
+            echo "                        <div class=\"alert alert-danger\" role=\"alert\">
+                            ";
+            // line 39
+            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+            echo "
+                        </div>
+                    ";
+        }
+        // line 42
+        echo "                    <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
                             <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
@@ -106,8 +112,16 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
-                            <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
-                        </div>
+                            <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
+                            ";
+        // line 56
+        if (($context["errorMail"] ?? null)) {
+            // line 57
+            echo "                                <small class=\"text-danger\">Votre mail doit comporter un arobase.</small>
+                            ";
+        }
+        // line 59
+        echo "                        </div>
                         <div class=\"col-md-6\">
                             <label for=\"phone\"><strong>Téléphone</strong></label>
                             <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" placeholder=\"votre téléphone\">
@@ -120,18 +134,18 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
                         </div>
                     </div>
                     ";
-        // line 70
+        // line 71
         if (($context["errorGlobal"] ?? null)) {
-            // line 71
+            // line 72
             echo "                    <div class=\"alert alert-danger my-3\" role=\"danger\">
                         ";
-            // line 72
+            // line 73
             echo twig_escape_filter($this->env, ($context["errorGlobal"] ?? null), "html", null, true);
             echo "
                     </div>
                     ";
         }
-        // line 75
+        // line 76
         echo "
                     <div class=\"row\">
                         <div class=\"col-md-12\">
@@ -164,7 +178,7 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
 
     public function getDebugInfo()
     {
-        return array (  135 => 75,  129 => 72,  126 => 71,  124 => 70,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  149 => 76,  143 => 73,  140 => 72,  138 => 71,  124 => 59,  120 => 57,  118 => 56,  102 => 42,  96 => 39,  93 => 38,  91 => 37,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -175,9 +189,6 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
 
 {% block body %} 
 <div class=\"container-fluid\" id=\"home\">
-
-
-
     <div class=\"row section1-accueil\">
         <div class=\"col-sm-12 col-md-6 col-lg-6 profile-picture\">
             <img src=\"/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
@@ -205,13 +216,14 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
                 <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
             </div>
         </div>
-
         <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-0 py-0 mx-0 my-0\">
             <div class=\"px-0 mx-0\">
                 <form class=\"contact-form\" method=\"post\" action=\"\" role=\"form\">
-
-
-
+                    {% if error %}
+                        <div class=\"alert alert-danger\" role=\"alert\">
+                            {{ error }}
+                        </div>
+                    {% endif %}
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
@@ -225,7 +237,10 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
-                            <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
+                            <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
+                            {% if errorMail %}
+                                <small class=\"text-danger\">Votre mail doit comporter un arobase.</small>
+                            {% endif %}
                         </div>
                         <div class=\"col-md-6\">
                             <label for=\"phone\"><strong>Téléphone</strong></label>

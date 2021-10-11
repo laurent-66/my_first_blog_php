@@ -1,53 +1,54 @@
 {% extends "template.html.twig" %}
 {% block body %} 
 <div class="container-fluid mx-0 my-0 px-0 mx-0" id="dashboard">
-      <div class="heading">
-          <h2>Administration des blogs et commentaires</h2>
-      </div>
-<div class="container-dashboard">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-        <a class="nav-link active tab-text" id="tab-blogs" href="#blogs" role="tab" data-toggle="tab">Blogs</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link tab-text" id="tab-comment" href="#commentaires" role="tab" data-toggle="tab">Commentaires</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div id="blogs" role="tabpanel" class="tab-pane active">
-        <a href="/blogs/admin/new"><button class="btn btn-success btn-block mb-3 mx-auto new-blog-button">Créer un nouveau blog</button></a>
-            {% for blog in blogs %}
-            <div class="border-top border-dark">
-                <div class="line-info-list">
-                    <div class="container-content-row border border-primary">
-                        <div class="item-list "><p>{{blog.last_update_blog}}</p></div>
-                        <div class="item-list"><p>{{blog.title_blog}}</p></div>
-                        <div class="item-list"><p>{{blog.chapo_blog}}</p></div>
-                    </div>
-        
-                    <div class="option-button border border-primary">
-                        <div class="item-button"><a href={{'/blogs/'~blog.id}}><button class="btn btn-lg btn-primary btn-block mx-auto my-2"><i class="far fa-eye"></i></button></a></div>
-                        <div class="item-button"><a href={{'/blogs/admin/'~blog.id~'/edit'}}><button class="btn btn-lg btn-warning btn-block mx-auto my-2"><i class="fas fa-edit"></i></button></a></div>
-                        <div class="item-button"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class="btn btn-lg btn-danger btn-block mx-auto my-2"><i class="fas fa-trash-alt"></i></button></a></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div id="commentaires" role="tabpanel" class="tab-pane">
-            {% for comment in commentsNotValidate %}
-                <div class="comment-line row">
-                    <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
-                    <div class="col4 mr-3">
-                        <div class="row px-0 mx-0">
-                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn btn-success btn-block my auto"><i class="far fa-thumbs-up"></i></button></a></div>
-                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block my auto"><i class="fas fa-trash-alt"></i></button></a></div>
+    <div class="heading">
+        <h2>Administration des blogs et commentaires</h2>
+    </div>
+    <div class="container-dashboard">
+        <div class="comment-list-block">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                <a class="nav-link active tab-text" id="tab-blogs" href="#blogs" role="tab" data-toggle="tab">Blogs</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link tab-text" id="tab-comment" href="#commentaires" role="tab" data-toggle="tab">Commentaires</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="blogs" role="tabpanel" class="tab-pane active">
+                <a href="/blogs/admin/new"><button class="btn btn-success btn-block mb-3 mx-auto new-blog-button">Créer un nouveau blog</button></a>
+                    {% for blog in blogs %}
+                    <div class="border-top border-dark">
+                        <div class="line-info-list">
+                            <div class="container-content-row">
+                                <div class="item-list "><p>{{blog.last_update_blog}}</p></div>
+                                <div class="item-list"><p>{{blog.title_blog}}</p></div>
+                                <div class="item-list"><p>{{blog.chapo_blog}}</p></div>
+                            </div>
+                            <div class="option-button">
+                                <div class="item-button"><a href={{'/blogs/'~blog.id}}><button class="btn btn-lg btn-primary btn-block mx-auto my-2"><i class="far fa-eye"></i></button></a></div>
+                                <div class="item-button"><a href={{'/blogs/admin/'~blog.id~'/edit'}}><button class="btn btn-lg btn-warning btn-block mx-auto my-2"><i class="fas fa-edit"></i></button></a></div>
+                                <div class="item-button"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class="btn btn-lg btn-danger btn-block mx-auto my-2"><i class="fas fa-trash-alt"></i></button></a></div>
+                            </div>
                         </div>
                     </div>
-                </div>    
-            {% endfor %}
-        </div>
+                    {% endfor %}
+                </div>
+                <div id="commentaires" role="tabpanel" class="tab-pane">
+                    {% for comment in commentsNotValidate %}
+                        <div class="comment-line row">
+                            <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
+                            <div class="col4 mr-3">
+                                <div class="row px-0 mx-0">
+                                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn btn-success btn-block like-btn"><i class="far fa-thumbs-up"></i></button></a></div>
+                                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type="button" class="btn  btn-danger btn-block trash-btn"><i class="fas fa-trash-alt"></i></button></a></div>
+                                </div>
+                            </div>
+                        </div>    
+                    {% endfor %}
+                </div>
+            </div>
+        </div>    
     </div>
 </div>    
 {% endblock %} 

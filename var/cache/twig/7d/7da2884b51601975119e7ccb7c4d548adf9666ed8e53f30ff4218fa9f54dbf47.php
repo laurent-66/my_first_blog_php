@@ -48,100 +48,101 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
         $macros = $this->macros;
         echo " 
 <div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"dashboard\">
-      <div class=\"heading\">
-          <h2>Administration des blogs et commentaires</h2>
-      </div>
-<div class=\"container-dashboard\">
-    <ul class=\"nav nav-tabs\">
-        <li class=\"nav-item\">
-        <a class=\"nav-link active tab-text\" id=\"tab-blogs\" href=\"#blogs\" role=\"tab\" data-toggle=\"tab\">Blogs</a>
-        </li>
-        <li class=\"nav-item\">
-        <a class=\"nav-link tab-text\" id=\"tab-comment\" href=\"#commentaires\" role=\"tab\" data-toggle=\"tab\">Commentaires</a>
-        </li>
-    </ul>
-    <div class=\"tab-content\">
-        <div id=\"blogs\" role=\"tabpanel\" class=\"tab-pane active\">
-        <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 mx-auto new-blog-button\">Créer un nouveau blog</button></a>
-            ";
-        // line 19
+    <div class=\"heading\">
+        <h2>Administration des blogs et commentaires</h2>
+    </div>
+    <div class=\"container-dashboard\">
+        <div class=\"comment-list-block\">
+            <ul class=\"nav nav-tabs\">
+                <li class=\"nav-item\">
+                <a class=\"nav-link active tab-text\" id=\"tab-blogs\" href=\"#blogs\" role=\"tab\" data-toggle=\"tab\">Blogs</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link tab-text\" id=\"tab-comment\" href=\"#commentaires\" role=\"tab\" data-toggle=\"tab\">Commentaires</a>
+                </li>
+            </ul>
+            <div class=\"tab-content\">
+                <div id=\"blogs\" role=\"tabpanel\" class=\"tab-pane active\">
+                <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 mx-auto new-blog-button\">Créer un nouveau blog</button></a>
+                    ";
+        // line 20
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["blogs"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
-            // line 20
-            echo "            <div class=\"border-top border-dark\">
-                <div class=\"line-info-list\">
-                    <div class=\"container-content-row border border-primary\">
-                        <div class=\"item-list \"><p>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update_blog", [], "any", false, false, false, 23), "html", null, true);
-            echo "</p></div>
-                        <div class=\"item-list\"><p>";
+            // line 21
+            echo "                    <div class=\"border-top border-dark\">
+                        <div class=\"line-info-list\">
+                            <div class=\"container-content-row\">
+                                <div class=\"item-list \"><p>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title_blog", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "last_update_blog", [], "any", false, false, false, 24), "html", null, true);
             echo "</p></div>
-                        <div class=\"item-list\"><p>";
+                                <div class=\"item-list\"><p>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo_blog", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "title_blog", [], "any", false, false, false, 25), "html", null, true);
             echo "</p></div>
-                    </div>
-        
-                    <div class=\"option-button border border-primary\">
-                        <div class=\"item-button\"><a href=";
+                                <div class=\"item-list\"><p>";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["blog"], "chapo_blog", [], "any", false, false, false, 26), "html", null, true);
+            echo "</p></div>
+                            </div>
+                            <div class=\"option-button\">
+                                <div class=\"item-button\"><a href=";
             // line 29
             echo twig_escape_filter($this->env, ("/blogs/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 29)), "html", null, true);
             echo "><button class=\"btn btn-lg btn-primary btn-block mx-auto my-2\"><i class=\"far fa-eye\"></i></button></a></div>
-                        <div class=\"item-button\"><a href=";
+                                <div class=\"item-button\"><a href=";
             // line 30
             echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 30)) . "/edit"), "html", null, true);
             echo "><button class=\"btn btn-lg btn-warning btn-block mx-auto my-2\"><i class=\"fas fa-edit\"></i></button></a></div>
-                        <div class=\"item-button\"><a href=";
+                                <div class=\"item-button\"><a href=";
             // line 31
             echo twig_escape_filter($this->env, (("/blogs/admin/" . twig_get_attribute($this->env, $this->source, $context["blog"], "id", [], "any", false, false, false, 31)) . "/delete"), "html", null, true);
             echo "><button class=\"btn btn-lg btn-danger btn-block mx-auto my-2\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            ";
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 36
-        echo "        </div>
-
-        <div id=\"commentaires\" role=\"tabpanel\" class=\"tab-pane\">
-            ";
-        // line 39
+        echo "                </div>
+                <div id=\"commentaires\" role=\"tabpanel\" class=\"tab-pane\">
+                    ";
+        // line 38
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["commentsNotValidate"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+            // line 39
+            echo "                        <div class=\"comment-line row\">
+                            <div class=\"col8\"><p class=\"mx-3 my-3\">";
             // line 40
-            echo "                <div class=\"comment-line row\">
-                    <div class=\"col8\"><p class=\"mx-3 my-3\">";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "commentContent", [], "any", false, false, false, 40), "html", null, true);
             echo "</p></div>
-                    <div class=\"col4 mr-3\">
-                        <div class=\"row px-0 mx-0\">
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href=";
+                            <div class=\"col4 mr-3\">
+                                <div class=\"row px-0 mx-0\">
+                                    <div class=\"col button-comment-line px-0 mx-2\"><a href=";
+            // line 43
+            echo twig_escape_filter($this->env, ((("/blog/admin/approveComment/" . twig_get_attribute($this->env, $this->source, $context["comment"], "blog_post_id_blog_post", [], "any", false, false, false, 43)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 43)), "html", null, true);
+            echo "><button type=\"button\" class=\"btn btn-success btn-block like-btn\"><i class=\"far fa-thumbs-up\"></i></button></a></div>
+                                    <div class=\"col button-comment-line px-0 mx-2\"><a href=";
             // line 44
-            echo twig_escape_filter($this->env, ((("/blog/admin/approveComment/" . twig_get_attribute($this->env, $this->source, $context["comment"], "blog_post_id_blog_post", [], "any", false, false, false, 44)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 44)), "html", null, true);
-            echo "><button type=\"button\" class=\"btn btn-success btn-block my auto\"><i class=\"far fa-thumbs-up\"></i></button></a></div>
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href=";
-            // line 45
-            echo twig_escape_filter($this->env, ((("/blog/admin/deleteComment/" . twig_get_attribute($this->env, $this->source, $context["comment"], "blog_post_id_blog_post", [], "any", false, false, false, 45)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 45)), "html", null, true);
-            echo "><button type=\"button\" class=\"btn  btn-danger btn-block my auto\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
-                        </div>
-                    </div>
-                </div>    
-            ";
+            echo twig_escape_filter($this->env, ((("/blog/admin/deleteComment/" . twig_get_attribute($this->env, $this->source, $context["comment"], "blog_post_id_blog_post", [], "any", false, false, false, 44)) . "/") . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 44)), "html", null, true);
+            echo "><button type=\"button\" class=\"btn  btn-danger btn-block trash-btn\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
+                                </div>
+                            </div>
+                        </div>    
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 50
-        echo "        </div>
+        // line 49
+        echo "                </div>
+            </div>
+        </div>    
     </div>
 </div>    
 ";
@@ -159,7 +160,7 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
 
     public function getDebugInfo()
     {
-        return array (  144 => 50,  133 => 45,  129 => 44,  123 => 41,  120 => 40,  116 => 39,  111 => 36,  100 => 31,  96 => 30,  92 => 29,  85 => 25,  81 => 24,  77 => 23,  72 => 20,  68 => 19,  46 => 2,  35 => 1,);
+        return array (  143 => 49,  132 => 44,  128 => 43,  122 => 40,  119 => 39,  115 => 38,  111 => 36,  100 => 31,  96 => 30,  92 => 29,  86 => 26,  82 => 25,  78 => 24,  73 => 21,  69 => 20,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -167,53 +168,54 @@ class __TwigTemplate_77799ab11a693dab906715ea2ed784c609ee973d495fa0a45850cd7c8b9
         return new Source("{% extends \"template.html.twig\" %}
 {% block body %} 
 <div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"dashboard\">
-      <div class=\"heading\">
-          <h2>Administration des blogs et commentaires</h2>
-      </div>
-<div class=\"container-dashboard\">
-    <ul class=\"nav nav-tabs\">
-        <li class=\"nav-item\">
-        <a class=\"nav-link active tab-text\" id=\"tab-blogs\" href=\"#blogs\" role=\"tab\" data-toggle=\"tab\">Blogs</a>
-        </li>
-        <li class=\"nav-item\">
-        <a class=\"nav-link tab-text\" id=\"tab-comment\" href=\"#commentaires\" role=\"tab\" data-toggle=\"tab\">Commentaires</a>
-        </li>
-    </ul>
-    <div class=\"tab-content\">
-        <div id=\"blogs\" role=\"tabpanel\" class=\"tab-pane active\">
-        <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 mx-auto new-blog-button\">Créer un nouveau blog</button></a>
-            {% for blog in blogs %}
-            <div class=\"border-top border-dark\">
-                <div class=\"line-info-list\">
-                    <div class=\"container-content-row border border-primary\">
-                        <div class=\"item-list \"><p>{{blog.last_update_blog}}</p></div>
-                        <div class=\"item-list\"><p>{{blog.title_blog}}</p></div>
-                        <div class=\"item-list\"><p>{{blog.chapo_blog}}</p></div>
-                    </div>
-        
-                    <div class=\"option-button border border-primary\">
-                        <div class=\"item-button\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mx-auto my-2\"><i class=\"far fa-eye\"></i></button></a></div>
-                        <div class=\"item-button\"><a href={{'/blogs/admin/'~blog.id~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mx-auto my-2\"><i class=\"fas fa-edit\"></i></button></a></div>
-                        <div class=\"item-button\"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mx-auto my-2\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div id=\"commentaires\" role=\"tabpanel\" class=\"tab-pane\">
-            {% for comment in commentsNotValidate %}
-                <div class=\"comment-line row\">
-                    <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
-                    <div class=\"col4 mr-3\">
-                        <div class=\"row px-0 mx-0\">
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn btn-success btn-block my auto\"><i class=\"far fa-thumbs-up\"></i></button></a></div>
-                            <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn  btn-danger btn-block my auto\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
+    <div class=\"heading\">
+        <h2>Administration des blogs et commentaires</h2>
+    </div>
+    <div class=\"container-dashboard\">
+        <div class=\"comment-list-block\">
+            <ul class=\"nav nav-tabs\">
+                <li class=\"nav-item\">
+                <a class=\"nav-link active tab-text\" id=\"tab-blogs\" href=\"#blogs\" role=\"tab\" data-toggle=\"tab\">Blogs</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link tab-text\" id=\"tab-comment\" href=\"#commentaires\" role=\"tab\" data-toggle=\"tab\">Commentaires</a>
+                </li>
+            </ul>
+            <div class=\"tab-content\">
+                <div id=\"blogs\" role=\"tabpanel\" class=\"tab-pane active\">
+                <a href=\"/blogs/admin/new\"><button class=\"btn btn-success btn-block mb-3 mx-auto new-blog-button\">Créer un nouveau blog</button></a>
+                    {% for blog in blogs %}
+                    <div class=\"border-top border-dark\">
+                        <div class=\"line-info-list\">
+                            <div class=\"container-content-row\">
+                                <div class=\"item-list \"><p>{{blog.last_update_blog}}</p></div>
+                                <div class=\"item-list\"><p>{{blog.title_blog}}</p></div>
+                                <div class=\"item-list\"><p>{{blog.chapo_blog}}</p></div>
+                            </div>
+                            <div class=\"option-button\">
+                                <div class=\"item-button\"><a href={{'/blogs/'~blog.id}}><button class=\"btn btn-lg btn-primary btn-block mx-auto my-2\"><i class=\"far fa-eye\"></i></button></a></div>
+                                <div class=\"item-button\"><a href={{'/blogs/admin/'~blog.id~'/edit'}}><button class=\"btn btn-lg btn-warning btn-block mx-auto my-2\"><i class=\"fas fa-edit\"></i></button></a></div>
+                                <div class=\"item-button\"><a href={{'/blogs/admin/'~blog.id~'/delete'}}><button class=\"btn btn-lg btn-danger btn-block mx-auto my-2\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
+                            </div>
                         </div>
                     </div>
-                </div>    
-            {% endfor %}
-        </div>
+                    {% endfor %}
+                </div>
+                <div id=\"commentaires\" role=\"tabpanel\" class=\"tab-pane\">
+                    {% for comment in commentsNotValidate %}
+                        <div class=\"comment-line row\">
+                            <div class=\"col8\"><p class=\"mx-3 my-3\">{{comment.commentContent}}</p></div>
+                            <div class=\"col4 mr-3\">
+                                <div class=\"row px-0 mx-0\">
+                                    <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/approveComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn btn-success btn-block like-btn\"><i class=\"far fa-thumbs-up\"></i></button></a></div>
+                                    <div class=\"col button-comment-line px-0 mx-2\"><a href={{'/blog/admin/deleteComment/'~comment.blog_post_id_blog_post~'/'~comment.id }}><button type=\"button\" class=\"btn  btn-danger btn-block trash-btn\"><i class=\"fas fa-trash-alt\"></i></button></a></div>
+                                </div>
+                            </div>
+                        </div>    
+                    {% endfor %}
+                </div>
+            </div>
+        </div>    
     </div>
 </div>    
 {% endblock %} 

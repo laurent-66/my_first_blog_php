@@ -56,32 +56,31 @@ class __TwigTemplate_0610db439c136da80585514d9be513041d85997f8925eef881f52e8e3cc
         $macros = $this->macros;
         echo " 
 
-
 <div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"updateBlog\">
     <div class=\"heading\">
         <h2>Edition blog</h2>
     </div>
-    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
-        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
+    <div class=\"row\">
+        <div id=\"box_update_blog\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
             ";
-        // line 12
+        // line 11
         if (($context["error"] ?? null)) {
-            // line 13
+            // line 12
             echo "                <div class=\"alert alert-danger\" role=\"alert\">
                     ";
-            // line 14
+            // line 13
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "
                 </div>
             ";
         }
-        // line 17
+        // line 16
         echo "            <form class=\"form-signin\" method=\"POST\" enctype=\"multipart/form-data\">
                 <div class=\"form-group\">
                   <label for=\"title-blog\" class=\"sr-only\">Titre du blog</label>
                   <input type=\"text\" name=\"title-blog\" class=\"form-control\" value=\"";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title_blog", [], "any", false, false, false, 20), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title_blog", [], "any", false, false, false, 19), "html", null, true);
         echo "\" placeholder=\"Entrer le titre\" required autofocus>
                 </div>
                 <div class=\"form-group\">
@@ -95,16 +94,16 @@ class __TwigTemplate_0610db439c136da80585514d9be513041d85997f8925eef881f52e8e3cc
                 <div class=\"form-group\">
                 <label for=\"inputChapo\" class=\"sr-only\">Chapo</label>
                 <input type=\"text\" name=\"inputChapo\" class=\"form-control my-3\" value=\"";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "chapo_blog", [], "any", false, false, false, 32), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "chapo_blog", [], "any", false, false, false, 31), "html", null, true);
         echo "\" placeholder=\"Entrer le chapo 255 caratère max\" required autofocus>
                 </div>
 
                 <div class=\"form-group\">
                 <label for=\"content\">Contenue du blog :</label>
                 <textarea class=\"form-control rounded-0\" id=\"content\" name=\"content\" rows=\"3\"  placeholder=\"Veuillez écrire votre texte ici.\">";
-        // line 37
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content_blog", [], "any", false, false, false, 37), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content_blog", [], "any", false, false, false, 36), "html", null, true);
         echo "</textarea>
                 </div>
                 <button type=\"submit\" class=\"btn btn-primary\">Envoyez</button>
@@ -128,7 +127,7 @@ class __TwigTemplate_0610db439c136da80585514d9be513041d85997f8925eef881f52e8e3cc
 
     public function getDebugInfo()
     {
-        return array (  107 => 37,  99 => 32,  84 => 20,  79 => 17,  73 => 14,  70 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  106 => 36,  98 => 31,  83 => 19,  78 => 16,  72 => 13,  69 => 12,  67 => 11,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -137,13 +136,12 @@ class __TwigTemplate_0610db439c136da80585514d9be513041d85997f8925eef881f52e8e3cc
 {% block title %}Blog{% endblock %}
 {% block body %} 
 
-
 <div class=\"container-fluid mx-0 my-0 px-0 mx-0\" id=\"updateBlog\">
     <div class=\"heading\">
         <h2>Edition blog</h2>
     </div>
-    <div class=\"row border shadow rounded col-12 col-sm-12 offset-md-2 col-md-8 p-0 mx-auto mt-5\">
-        <div id=\"box_connexion\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
+    <div class=\"row\">
+        <div id=\"box_update_blog\" class=\"col-12 col-sm-12 col-md-12 text-center rounded mt-4\">
             {% if error %}
                 <div class=\"alert alert-danger\" role=\"alert\">
                     {{ error }}

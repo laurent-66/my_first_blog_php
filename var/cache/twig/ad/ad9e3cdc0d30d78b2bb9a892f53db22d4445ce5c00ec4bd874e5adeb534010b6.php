@@ -60,23 +60,23 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
       <div class=\"heading\">
           <h2>Connexion</h2>
       </div>
-    ";
-        // line 9
-        if (($context["error"] ?? null)) {
-            // line 10
-            echo "        <div class=\"alert alert-danger\" role=\"alert\">
-            ";
-            // line 11
-            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
-            echo "
-        </div>
-    ";
-        }
-        // line 14
-        echo "    <div class=\"container\">
+    <div class=\"container\">
 
             <div class=\"box_connexion\">
-                <form class=\"form-signin\" method=\"POST\">
+            ";
+        // line 12
+        if (($context["error"] ?? null)) {
+            // line 13
+            echo "                <div class=\"alert alert-danger\" role=\"alert\">
+                    ";
+            // line 14
+            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+            echo "
+                </div>
+            ";
+        }
+        // line 17
+        echo "                <form class=\"form-signin\" method=\"POST\">
                     <label for=\"email\" class=\"sr-only\">Identifiant</label>
                     <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"email\">
                     <label for=\"inputPassword\" class=\"sr-only\">Mot de passe</label>
@@ -102,7 +102,7 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
 
     public function getDebugInfo()
     {
-        return array (  76 => 14,  70 => 11,  67 => 10,  65 => 9,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  79 => 17,  73 => 14,  70 => 13,  68 => 12,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -115,14 +115,14 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
       <div class=\"heading\">
           <h2>Connexion</h2>
       </div>
-    {% if error %}
-        <div class=\"alert alert-danger\" role=\"alert\">
-            {{ error }}
-        </div>
-    {% endif %}
     <div class=\"container\">
 
             <div class=\"box_connexion\">
+            {% if error %}
+                <div class=\"alert alert-danger\" role=\"alert\">
+                    {{ error }}
+                </div>
+            {% endif %}
                 <form class=\"form-signin\" method=\"POST\">
                     <label for=\"email\" class=\"sr-only\">Identifiant</label>
                     <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control mt-3\" placeholder=\"email\">

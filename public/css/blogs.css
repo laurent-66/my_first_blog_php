@@ -58,7 +58,6 @@
     border: none;
     border-radius: 5px;
     box-shadow: 5px 5px 10px grey;
-
     margin: 0px 0px 15px 0px;
 }
 
@@ -73,10 +72,22 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 30px auto;
 }
 
 .blog-img 
 {
     display:block;
- max-height: 300px;
+    max-height: 300px;
+}
+
+.container-blog{
+    padding:15px;
+}
+.container-blog p{
+    font-size: 20px;
+}
+.container-blog span{
+    font-size: 20px;
+    font-weight: bold;
 }

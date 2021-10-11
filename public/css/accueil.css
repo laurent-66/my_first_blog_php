@@ -169,8 +169,16 @@
 
         font-size:1.5rem;
     }
-
-
+.form-control
+{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+label
+{
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
 
 /*menu écran inférieur à 768px */
 
