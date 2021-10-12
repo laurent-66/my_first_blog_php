@@ -47,19 +47,36 @@
     box-shadow: 5px 5px 10px grey;
 }
 
+.custom-file
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    height: 100px;
+}
+
+#file_input_name
+{
+    display: block;
+
+}
+
 /*écran inférieur à 768px */
 
-/* @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
 {
-    #connexion
-    {
-        
+    #box_update_blog{
+        width:80%;
     }
-
-    .box_connexion
+    .custom-file
     {
-        width:100%;
+        height: 100px;
     }
-
+    #file_input_name
+    {
+        margin-left: 10px;
     
-} */
+    } 
+
+}

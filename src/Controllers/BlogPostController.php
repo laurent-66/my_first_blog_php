@@ -26,17 +26,12 @@ class BlogPostController extends AbstractController
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
 
-        
         $blogs = $this->blogRepository->getAllBlog();
-        //return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs,'user'=>$user]);
         return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
 
     }
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
-
-
-        // $user = $_SESSION['user']['admin'];
 
         $id = (int) $bag->getParameter('id')->getValue();
 
@@ -57,7 +52,7 @@ class BlogPostController extends AbstractController
 
             $session = $_SESSION;
 
-            $findCommentsPublished = $this->commentRepository->findAllcommentsValidate();
+            $findCommentsPublished = $this->commentRepository->findCommentsByBlogId($id);
 
             return $this->renderHtml('blog.html.twig',['blog'=>$blog, 'blogId'=>$id, 'findComments'=>$findCommentsPublished, 'session'=>$session]);
 

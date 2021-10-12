@@ -60,7 +60,7 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
       <div class=\"heading\">
           <h2>Connexion</h2>
       </div>
-    <div class=\"container\">
+    <div class=\"container_updateBlog\">
 
             <div class=\"box_connexion\">
             ";
@@ -115,7 +115,7 @@ class __TwigTemplate_76eca1e1a3db964e13a4e33f057b0a465efbf1ebd5115435b67f0ecb690
       <div class=\"heading\">
           <h2>Connexion</h2>
       </div>
-    <div class=\"container\">
+    <div class=\"container_updateBlog\">
 
             <div class=\"box_connexion\">
             {% if error %}

@@ -45,12 +45,7 @@ class AdminController extends AbstractController
                 strlen(trim($dataArray['content'] === 0 ))
 
                 ){
-                $error = 'Tous les champs requis sont obligatoires';
-
-
-            } if ($file->getSize() === 0) {
-                
-                $error = "L'insertion d'une image est requise";
+                $error = 'Tous les champs requis sont obligatoires y compris l\' insertion d\'image';
 
             }else{
                 $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
@@ -104,7 +99,8 @@ class AdminController extends AbstractController
                 strlen(trim($dataSubmitted['content'] === 0 )) 
 
                 ){
-                $error = 'Tous les champs requis sont obligatoires';
+                $error = 'Tous les champs requis sont obligatoires y compris l\' insertion d\'image';
+
             }else{
                 try{
                     $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
