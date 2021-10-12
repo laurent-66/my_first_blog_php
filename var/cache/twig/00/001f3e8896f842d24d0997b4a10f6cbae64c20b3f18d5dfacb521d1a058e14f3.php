@@ -56,21 +56,6 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
         $macros = $this->macros;
         echo " 
 <div class=\"container-fluid\" id=\"home\">
-
-    ";
-        // line 8
-        if (($context["errorGlobal"] ?? null)) {
-            // line 9
-            echo "    <div class=\"alert alert-danger\" role=\"danger\">
-        ";
-            // line 10
-            echo twig_escape_filter($this->env, ($context["errorGlobal"] ?? null), "html", null, true);
-            echo "
-    </div>
-    ";
-        }
-        // line 13
-        echo "
     <div class=\"row section1-accueil\">
         <div class=\"col-sm-12 col-md-6 col-lg-6 profile-picture\">
             <img src=\"/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
@@ -98,46 +83,70 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
                 <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
             </div>
         </div>
-
         <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-0 py-0 mx-0 my-0\">
             <div class=\"px-0 mx-0\">
                 <form class=\"contact-form\" method=\"post\" action=\"\" role=\"form\">
-                    <div class=\"row\">
+                    ";
+        // line 37
+        if (($context["error"] ?? null)) {
+            // line 38
+            echo "                        <div class=\"alert alert-danger\" role=\"alert\">
+                            ";
+            // line 39
+            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+            echo "
+                        </div>
+                    ";
+        }
+        // line 42
+        echo "                    <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
                             <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
-                            <small class=\"text-danger\">";
-        // line 49
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["error"] ?? null), "firstname", [], "any", false, false, false, 49), "html", null, true);
-        echo "</small>
                         </div>
                         <div class=\"col-md-6\">
                             <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>
                             <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"votre nom\">
-                            <p class=\"comments\">Message d'erreur</p>
                         </div>
                     </div>
-
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
-                            <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
-                            <p class=\"comments\">Message d'erreur</p>
-                        </div>
+                            <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
+                            ";
+        // line 56
+        if (($context["errorMail"] ?? null)) {
+            // line 57
+            echo "                                <small class=\"text-danger\">Votre mail doit comporter un arobase.</small>
+                            ";
+        }
+        // line 59
+        echo "                        </div>
                         <div class=\"col-md-6\">
                             <label for=\"phone\"><strong>Téléphone</strong></label>
                             <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" placeholder=\"votre téléphone\">
-                            <p class=\"comments\">Message d'erreur</p>
                         </div>
                     </div>    
                     <div class=\"row\">
                         <div class=\"col-md-12\">
                             <label for=\"message\"><strong>Message</strong><span class=\"blue\"> *</span></label>
                             <textarea id=\"message\" name=\"message\" class=\"form-control\" placeholder=\"Votre message\" row=\"4\"></textarea>
-                            <p class=\"comments\">Message d'erreur</p>
                         </div>
                     </div>
-
+                    ";
+        // line 71
+        if (($context["errorGlobal"] ?? null)) {
+            // line 72
+            echo "                    <div class=\"alert alert-danger my-3\" role=\"danger\">
+                        ";
+            // line 73
+            echo twig_escape_filter($this->env, ($context["errorGlobal"] ?? null), "html", null, true);
+            echo "
+                    </div>
+                    ";
+        }
+        // line 76
+        echo "
                     <div class=\"row\">
                         <div class=\"col-md-12\">
                             <p class=\"blue\"><strong>* Ces informations sont requises</strong></p>
@@ -169,7 +178,7 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
 
     public function getDebugInfo()
     {
-        return array (  111 => 49,  73 => 13,  67 => 10,  64 => 9,  62 => 8,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  149 => 76,  143 => 73,  140 => 72,  138 => 71,  124 => 59,  120 => 57,  118 => 56,  102 => 42,  96 => 39,  93 => 38,  91 => 37,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -180,13 +189,6 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
 
 {% block body %} 
 <div class=\"container-fluid\" id=\"home\">
-
-    {% if errorGlobal %}
-    <div class=\"alert alert-danger\" role=\"danger\">
-        {{ errorGlobal }}
-    </div>
-    {% endif %}
-
     <div class=\"row section1-accueil\">
         <div class=\"col-sm-12 col-md-6 col-lg-6 profile-picture\">
             <img src=\"/images/laurent.jpg\" alt=\"photo laurent\" class=\"rounded-circle w-50\">
@@ -214,42 +216,48 @@ class __TwigTemplate_988dddfeff3be0e61300a4907ce3b182ccc733b686be064a658c6845731
                 <a href='../src/docs/2020_CV-laurentLESAGE.pdf' class='button-download' target='blank'>Télécharger CV</a>
             </div>
         </div>
-
         <div class=\"form-contact col-sm-12 col-md-8 col-lg-8 col-xl-8 px-0 py-0 mx-0 my-0\">
             <div class=\"px-0 mx-0\">
                 <form class=\"contact-form\" method=\"post\" action=\"\" role=\"form\">
+                    {% if error %}
+                        <div class=\"alert alert-danger\" role=\"alert\">
+                            {{ error }}
+                        </div>
+                    {% endif %}
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"firstname\"><strong>Prénom</strong><span class=\"blue\"> *</span></label>
                             <input type=\"text\" id=\"firstname\" name=\"firstname\" class=\"form-control\" placeholder=\"votre prénom\">
-                            <small class=\"text-danger\">{{error.firstname}}</small>
                         </div>
                         <div class=\"col-md-6\">
                             <label for=\"name\"><strong>Nom</strong><span class=\"blue\"> *</span></label>
                             <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"votre nom\">
-                            <p class=\"comments\">Message d'erreur</p>
                         </div>
                     </div>
-
                     <div class=\"row\">
                         <div class=\"col-md-6\">
                             <label for=\"Email\"><strong>Email</strong><span class=\"blue\"> *</span></label>
-                            <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
-                            <p class=\"comments\">Message d'erreur</p>
+                            <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"votre email\">
+                            {% if errorMail %}
+                                <small class=\"text-danger\">Votre mail doit comporter un arobase.</small>
+                            {% endif %}
                         </div>
                         <div class=\"col-md-6\">
                             <label for=\"phone\"><strong>Téléphone</strong></label>
                             <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" placeholder=\"votre téléphone\">
-                            <p class=\"comments\">Message d'erreur</p>
                         </div>
                     </div>    
                     <div class=\"row\">
                         <div class=\"col-md-12\">
                             <label for=\"message\"><strong>Message</strong><span class=\"blue\"> *</span></label>
                             <textarea id=\"message\" name=\"message\" class=\"form-control\" placeholder=\"Votre message\" row=\"4\"></textarea>
-                            <p class=\"comments\">Message d'erreur</p>
                         </div>
                     </div>
+                    {% if errorGlobal %}
+                    <div class=\"alert alert-danger my-3\" role=\"danger\">
+                        {{ errorGlobal }}
+                    </div>
+                    {% endif %}
 
                     <div class=\"row\">
                         <div class=\"col-md-12\">

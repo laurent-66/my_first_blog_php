@@ -19,10 +19,9 @@ class DefaultController extends AbstractController
     }
 
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag){
-        $errorGlobal ='';
-        $error = [] ;
-        $validation = '';
-        $position_arobase = true ;
+
+        $error = '';
+        $errorMail = '';
 
         if ($request->getMethod() === 'POST'){
             $dataSubmitted = $request->getParsedBody();
@@ -31,20 +30,15 @@ class DefaultController extends AbstractController
                 (strlen( trim($dataSubmitted['firstname']))) === 0 ||
                 (strlen( trim($dataSubmitted['name']))) === 0 ||
                 (strlen(trim($dataSubmitted['email']))) === 0 ||
-                (strlen(trim($dataSubmitted['phone']))) === 0 ||
                 (strlen(trim($dataSubmitted['message']))) === 0
                 ) 
             {
 
-                $this->$errorGlobal = 'Tout les champs sont requis';
+                $error = 'Tout les champs sont requis';
 
-            } else if ((strlen( trim($dataSubmitted['firstname']))) === 0) {
-   
-                $this->$error = 'le prénom est requis';
-
-            } else if (strpos($dataSubmitted['email'], '@') === false){
+            } if (strpos($dataSubmitted['email'], '@') === false){
                 
-                $this->$error ='Votre email doit comporter un arobase.';
+                $errorMail ='Votre email doit comporter un arobase.';
 
             } else {
 
@@ -59,16 +53,17 @@ class DefaultController extends AbstractController
                 
                 if($sendMail){
 
-                    $this->$validation = 'Votre message a été envoyé';
+                    $validation = 'Votre message a été envoyé';
 
                 } else { 
-                    $this->$errorGlobal = 'erreur d\'envoi du message';
+                    $errorGlobal = 'erreur d\'envoi du message';
                 }  
 
             }
         }
 
-        return $this->renderHtml('home.html.twig');
+        $errorGlobal ='';
+        return $this->renderHtml('home.html.twig',['error'=>$error,'errorMail'=>$errorMail]);
     }
 
 }

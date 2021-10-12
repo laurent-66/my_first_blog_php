@@ -1,48 +1,55 @@
 {% extends "template.html.twig" %}
 {% block title %}Blog{% endblock %}
 {% block body %} 
-<div class="container">
-    <section>
-        <h3>{{blog.title}}</h3><br />
-            <div class="row">
-                <div class="col-12 ml-50 px my-0">
-                    <img src="\uploads\{{blog.image_blog}}" class="card-img" alt="img">
-                </div>
+<div class="container-fluid mx-0 my-0 px-0 mx-0" id="blog">
+    <div class="container-blog">
+            <div class="col-10 mx-auto my-3">
+                <h3>{{blog.title_blog}}</h3>
             </div>
-            <div class="row my-5" id="objectif">
-                <div class="col-12 mx-auto my-0">
+            <div class="row-blog-img">
+                <img src="\uploads\{{blog.image_blog}}" class="blog-img px-auto" alt="img">
+            </div>
+            <div class="content-blog row my-5">
+                <div class="col-10 mx-auto my-0">
+                    <p>{{blog.chapo_blog}}</p>
                     <p>{{blog.content_blog}}</p>
-                    <p>{{blog.id_blog}}</p>
-                    <p><bold>Dernière mise à jour: </bold><span><i>{{blog.last_update_blog}}</i></span></p>
-                    <p><bold>Auteur: </bold><span><i>{{blog.pseudo_blog}}</i></span></p>
-
+                    <p><bold>Dernière mise à jour: </bold><span>{{blog.last_update_blog}}</span></p>
+                    <p><bold>Auteur: </bold><span>{{blog.pseudo_blog}}</span></p>
                 </div>
             </div>
-
-            <h4><bold>Commentaires du blog</bold></h4><br/>
-            {% for comment in findComments %}
-                <div class="comment-line row">
-                    <div class="col8"><p class="mx-3 my-3">{{comment.commentContent}}</p></div>
-
-                    <div class="col4 mr-3">
-                        <div class="row px-0 mx-0">
-                            {# <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/reportComment/'~blog.id~'/'~comment.id }}><button type="button" class="btn btn-secondary btn-block my auto">Signaler</button></a></div> #}
-                            <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/reportComment/'~blogId~'/'~comment.id }}><button type="button" class="btn btn-secondary btn-block my-3">Signaler</button></a></div>
-                        </div>
+                <div class="col-10 mx-auto my-0">
+                    <h4><bold>Commentaires du blog</bold></h4><br/>
+                    <div class="separator"></div>
+                    {% for comment in findComments %}
+                        <div class="comment-line row">
+                            <div class="col8"><p class="comment mx-3 my-3">{{comment.commentContent}}</p></div>
+                            <div class="col4 mr-3">
+                                <div class="row px-0 mx-0">
+                                    <div class="col button-comment-line px-0 mx-2"><a href={{'/blog/reportComment/'~blogId~'/'~comment.id }}><button type="button" class="btn btn-secondary btn-block my-3"><i class="fas fa-exclamation"></i></button></a></div>
+                                </div>
+                            </div>
+                        </div>    
+                    {% endfor %}
+                </div>
+            {% if session %}
+                <div class="col-10 mx-auto mt-5 mb-5">
+                    <div class="separator"></div>
+                    <h4><bold>Ajouter un commentaire</bold></h4><br/>
+                    <div class="nouveau commentaire">
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="commentContent">Nouveau commentaire :</label>
+                                <textarea class="form-control rounded-0" id="commentContent" name="commentContent" rows="3" placeholder="Veuillez écrire votre texte ici."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyez</button>
+                        </form>
                     </div>
-                </div>    
-            {% endfor %}
-
-            <h4><bold>Ajouter un commentaire</bold></h4><br/>
-            <div class="nouveau commentaire">
-                <form method="POST">
-                    <div class="form-group">
-                        <label for="commentContent">Nouveau commentaire :</label>
-                        <textarea class="form-control rounded-0" id="commentContent" name="commentContent" rows="3" placeholder="Veuillez écrire votre texte ici."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyez</button>
-                </form>
-            </div>
-    </section>
+                </div>
+            {% else %}
+            <div class="col-10 mx-auto my-0 px-0 annotation">
+                <p> Vous souhaitez laisser un commentaires ? Veuillez vous inscrire ou vous connecter. :-)</p>
+            </div>    
+            {% endif %}
+    </div>
 </div>   
 {% endblock %}

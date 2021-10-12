@@ -10,17 +10,17 @@
           {% for blog in blogs %}
                   <div class="card-blog">
                     <div class="card-img">
-                      <img src="\uploads\{{blog.url_image}}" class="img" alt="img">
+                      <img src="\uploads\{{blog.image_blog}}" class="img" alt="img">
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">{{blog.title}}</h5>
-                      <p class="card-text">{{blog.chapo}}</p>
-                      <p>Date: {{blog.last_update}}</p>
+                      <h5 class="card-title">{{blog.title_blog}}</h5>
+                      <p class="card-text">{{blog.chapo_blog}}</p>
+                      <p>Date: {{blog.last_update_blog}}</p>
                       <p>Auteur: {{blog.pseudo_blog}}</p>
                       <p><a href={{'/blogs/'~blog.id}} class="btn btn-primary">consulter</a></p>
                     </div>
                   </div>
           {% endfor %}
       </div>
-</div>  
+</div>   
 {% endblock %}

@@ -49,6 +49,13 @@
         "_methods": ["GET", "POST"]
     },
     {
+        "name": "dashboard",
+        "path": "/blogs/admin/dashboard",
+        "_controller":"Application\\Controllers\\AdminController",
+        "_method": "dashboard",
+        "_methods": ["GET", "POST"]
+    },
+    {
         "name": "newBlog",
         "path": "/blogs/admin/new",
         "_controller":"Application\\Controllers\\AdminController",

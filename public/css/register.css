@@ -35,3 +35,13 @@
     padding:15px;
     box-shadow: 5px 5px 10px grey;
 }
+
+/*menu écran inférieur à 768px */
+
+@media screen and (max-width: 767px)
+{
+    .box_register{
+        width:90%;
+    }
+
+}

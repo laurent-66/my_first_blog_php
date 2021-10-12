@@ -15,25 +15,23 @@ class BlogPostController extends AbstractController
     
     protected $blogRepository;
     private $commentRepository;
+    private $user;
 
     public function __construct()
     {
         $this->blogRepository = new BlogRepository;
         $this->commentRepository = new CommentRepository();
+        $this->user = '';
     }
 
     public function getAllBlogs (ServerRequestInterface $request, ParametersBag $bag){
 
         $blogs = $this->blogRepository->getAllBlog();
-        //return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs,'user'=>$user]);
         return $this->renderHtml('blogs-list.html.twig',['blogs'=>$blogs]);
 
     }
 
     public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
-
-
-        // $user = $_SESSION['user']['admin'];
 
         $id = (int) $bag->getParameter('id')->getValue();
 
@@ -46,15 +44,17 @@ class BlogPostController extends AbstractController
 
             //création d'un commentaire
             $this->commentRepository->submitComment($dataArray,$id);
+
             //redirection sur la page courante (get)
             $redirect = new RedirectResponseHttp('/blogs/'.$id);
             return $redirect->send();
         }
 
-            $findCommentsPublished = $this->commentRepository->findAllcommentsValidate();
-            // $findComments = $this->commentRepository->findCommentsByBlogId($id);
+            $session = $_SESSION;
 
-            return $this->renderHtml('blog.html.twig',['blog'=>$blog, 'blogId'=>$id, 'findComments'=>$findCommentsPublished]);
+            $findCommentsPublished = $this->commentRepository->findCommentsByBlogId($id);
+
+            return $this->renderHtml('blog.html.twig',['blog'=>$blog, 'blogId'=>$id, 'findComments'=>$findCommentsPublished, 'session'=>$session]);
 
     }
 

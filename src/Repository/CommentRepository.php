@@ -74,6 +74,15 @@ class CommentRepository extends AbstractRepository
 
     }
 
+
+    public function commentPublished(int $id)
+    {
+        // $query = "DELETE FROM {$this->getTableName()} WHERE id= :id";
+        // $this->database->request($query, [':id' => $id]);
+    }
+
+
+
     public function deleteComment(int $id)
     {
         $query = "DELETE FROM {$this->getTableName()} WHERE id = :id";

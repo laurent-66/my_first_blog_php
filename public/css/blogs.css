@@ -1,10 +1,42 @@
-/* list des blogs*/
+/* blog*/
 
-.page-blog-detail
+#blog
 {
-   background-color: #E3F4FE;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:center;
+    background-color: #E3F4FE;
     padding:0px;
     margin:0px;
+    min-height: 100vh;
+}
+
+.row-blog-img {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.blog-img 
+{
+    display:block;
+    max-height: 300px;
+}
+
+.container-blog{
+
+    width:100%;
+
+}
+.container-blog p{
+    font-size: 20px;
+}
+.container-blog span{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 
@@ -35,12 +67,67 @@
     align-items: center;
 }
 
+.content-blog p {
+    font-family:'lato','open-sans',sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    text-align: justify;
+}
+
+.content-blog span {
+    font-family:'lato','open-sans',sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-style: italic;
+}
+
 .comment-line {
 
     background-color: white;
     border: none;
     border-radius: 5px;
     box-shadow: 5px 5px 10px grey;
-
     margin: 0px 0px 15px 0px;
 }
+
+.comment
+{
+    font-family:'lato','open-sans',sans-serif;
+    font-style: italic;
+}
+
+.separator
+{
+    border-bottom: 3px solid grey;
+    width: 300px;
+    margin: 5px auto 25px auto;
+
+}
+
+/*menu écran inférieur à 768px */
+
+@media screen and (max-width: 767px)
+{
+    .content-blog p {
+        font-family:'lato','open-sans',sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        text-align: start;
+    }
+
+    .annotation p
+    {
+        text-align: start;
+        padding: 0px;
+    }
+
+    .separator
+    {
+        width: 150px;
+    }
+
+}
+
+
+
+
