@@ -11,10 +11,10 @@ abstract class AbstractRepository
     public function __construct()
     {
         try {
-
+            //fill in the port the name of the database the login and the password to connect to the database
             $this->database = new PDODatabase(
-                'mysql:host=localhost:3306;dbname=myblogphp;charset=utf8',
-                'root',
+                'mysql:host=localhost:0000 ;dbname=xxxx ;charset=utf8',
+                '',
                 ''
             );
 
