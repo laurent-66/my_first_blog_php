@@ -14,7 +14,7 @@ class User
 
     protected $admin = '';
 
- 
+
     //method id
 
     public function getId(): int
@@ -62,25 +62,23 @@ class User
     {
         return $this->password;
     }
-    
-    
+
+
     public function setpassword(?string $password): void
     {
         $this->name = $password;
     }
-    
+
     // method admin
 
-    public function getadmin(): ? bool
+    public function getadmin(): ?bool
     {
         return $this->admin;
     }
-    
-    
+
+
     public function setadmin(?bool $admin): void
     {
         $this->admin = $admin;
     }
-
-
 }

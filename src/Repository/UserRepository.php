@@ -31,11 +31,11 @@ class UserRepository extends AbstractRepository
             :password
             )";
 
-            $statement = $this->database->request($query,[
-            ':pseudo'=> $pseudo,     
-            ':email'=> $email, 
+            $statement = $this->database->request($query, [
+            ':pseudo' => $pseudo,
+            ':email' => $email,
             ':password' => $password
-        
+
             ]);
 
         return $statement;

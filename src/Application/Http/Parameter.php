@@ -11,7 +11,6 @@ class Parameter
     {
         $this->key = $key;
         $this->value = $value;
-
     }
 
     public function getKey(): string
@@ -23,6 +22,4 @@ class Parameter
     {
         return $this->value;
     }
-
-
 }

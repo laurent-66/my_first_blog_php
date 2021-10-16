@@ -20,7 +20,8 @@ class ResponseHttp implements ResponseHttpInterface
         $this->additionnalHeaders = $additionnalHeaders;
     }
 
-    public function send() {
+    public function send()
+    {
         $response = new Response(
             $this->statusCode,
             array_merge(
@@ -31,5 +32,4 @@ class ResponseHttp implements ResponseHttpInterface
         );
         return $response->getBody();
     }
-
 }

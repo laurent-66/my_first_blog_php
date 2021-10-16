@@ -2,7 +2,7 @@
 
 namespace Application\Models;
 
-class blog
+class Blog
 {
     protected $id;
 
@@ -14,10 +14,10 @@ class blog
 
     protected $content = '';
 
-    protected $last_update ='';
+    protected $last_update = '';
 
-    protected $author ='';
- 
+    protected $author = '';
+
     //method id
 
     public function getId(): int
@@ -90,8 +90,8 @@ class blog
     {
         return $this->last_update;
     }
-    
-    
+
+
     public function setLastUpdate(?string $last_update): void
     {
         $this->last_update = $last_update;
@@ -103,11 +103,10 @@ class blog
     {
         return $this->author;
     }
-        
-        
+
+
     public function setAuthor(?string $author): void
     {
         $this->last_update = $author;
     }
-    
 }
