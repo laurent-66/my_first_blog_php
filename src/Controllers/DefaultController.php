@@ -19,8 +19,10 @@ class DefaultController extends AbstractController
         $this-> mailer = new Mailer();
     }
 
+
     public function getHomePage(ServerRequestInterface $request, ParametersBag $bag)
     {
+
 
         $error = '';
         $errorMail = '';
@@ -33,6 +35,7 @@ class DefaultController extends AbstractController
                 (strlen(trim($dataSubmitted['name']))) === 0 ||
                 (strlen(trim($dataSubmitted['email']))) === 0 ||
                 (strlen(trim($dataSubmitted['message']))) === 0
+
             ) {
                 $error = 'Tout les champs sont requis';
             } if (strpos($dataSubmitted['email'], '@') === false) {
@@ -62,5 +65,6 @@ class DefaultController extends AbstractController
 
         $errorGlobal = '';
         return $this->renderHtml('home.html.twig', ['error' => $error,'errorMail' => $errorMail]);
+
     }
 }

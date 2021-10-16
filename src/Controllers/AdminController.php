@@ -14,6 +14,7 @@ use Application\Repository\CommentRepository;
 use Application\Helpers\FileUploader;
 use Exception;
 
+
 class AdminController extends AbstractController
 {
 
@@ -27,10 +28,12 @@ class AdminController extends AbstractController
         $this->commentRepository = new CommentRepository();
     }
 
+
     public function createBlog(ServerRequestInterface $request, ParametersBag $bag)
     {
         $error = '';
         if ($request->getMethod() === 'POST') {
+
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
 
@@ -40,11 +43,13 @@ class AdminController extends AbstractController
             if (
                 strlen(trim($dataArray['title-blog'] === 0)) ||
                 $file->getSize() === 0 ||
+
                 strlen(trim($dataArray['inputChapo'] === 0)) ||
                 strlen(trim($dataArray['content'] === 0))
             ) {
                 $error = 'Tous les champs requis sont obligatoires y compris l\' insertion d\'image';
             } else {
+
                 $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
 
                 if ($datasAfterUpload['isSuccess']) {
@@ -60,7 +65,9 @@ class AdminController extends AbstractController
                 }
             }
         }
+
         return $this->renderHtml('newBlog.html.twig', ['error' => $error]);
+
     }
 
 
@@ -81,7 +88,9 @@ class AdminController extends AbstractController
 
         $error = '';
 
+
         if ($request->getMethod() === 'POST') {
+
             //récupération de données du post dans un tableau
             $dataSubmitted = $request->getParsedBody();
 
@@ -91,12 +100,14 @@ class AdminController extends AbstractController
             if (
                 strlen(trim($dataSubmitted['title-blog'] === 0)) ||
                 $file->getSize() === 0 ||
+
                 strlen(trim($dataSubmitted['inputChapo'] === 0)) ||
                 strlen(trim($dataSubmitted['content'] === 0))
             ) {
                 $error = 'Tous les champs requis sont obligatoires y compris l\' insertion d\'image';
             } else {
                 try {
+
                     $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
 
                     if ($datasAfterUpload['isSuccess']) {
@@ -118,7 +129,9 @@ class AdminController extends AbstractController
         }
 
         //page formulaire préremplie (get)
+
         return $this->renderHtml('updateBlog.html.twig', ['blog' => $blog,'error' => $error]);
+
     }
 
 

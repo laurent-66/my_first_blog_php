@@ -18,6 +18,8 @@ class BlogPostController extends AbstractController
     protected $blogRepository;
     private $commentRepository;
     private $user;
+
+
     public function __construct()
     {
         $this->blogRepository = new BlogRepository();
@@ -29,11 +31,13 @@ class BlogPostController extends AbstractController
     {
 
         $blogs = $this->blogRepository->getAllBlog();
+
         return $this->renderHtml('blogs-list.html.twig', ['blogs' => $blogs]);
     }
 
     public function getBlog(ServerRequestInterface $request, ParametersBag $bag)
     {
+
 
         $id = (int) $bag->getParameter('id')->getValue();
 
@@ -44,7 +48,9 @@ class BlogPostController extends AbstractController
             $dataArray = $request->getParsedBody();
 
             //création d'un commentaire
+
             $this->commentRepository->submitComment($dataArray, $id);
+
 
             //redirection sur la page courante (get)
             $redirect = new RedirectResponseHttp('/blogs/' . $id);
@@ -53,7 +59,9 @@ class BlogPostController extends AbstractController
 
             $session = $_SESSION;
 
+
             $findCommentsPublished = $this->commentRepository->findCommentsByBlogId($id);
+
 
             return $this->renderHtml(
                 'blog.html.twig',
