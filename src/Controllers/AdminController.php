@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace Application\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface;
@@ -17,20 +18,21 @@ use Exception;
 class AdminController extends AbstractController
 {
 
-    protected $blogRepository= '';
+    protected $blogRepository = '';
     protected $uploadFile;
 
     public function __construct()
     {
-        $this->blogRepository = new BlogRepository;
+        $this->blogRepository = new BlogRepository();
 
-        $this->commentRepository = new CommentRepository;
-
+        $this->commentRepository = new CommentRepository();
     }
 
-    public function createBlog (ServerRequestInterface $request, ParametersBag $bag){
+
+    public function createBlog(ServerRequestInterface $request, ParametersBag $bag)
+    {
         $error = '';
-        if($request->getMethod() === 'POST') {
+        if ($request->getMethod() === 'POST') {
 
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
@@ -38,22 +40,22 @@ class AdminController extends AbstractController
             //récupération image
             $file = $request->getUploadedFiles()['file_input_name'];
 
-            if(
-                strlen(trim($dataArray['title-blog'] === 0)) || 
+            if (
+                strlen(trim($dataArray['title-blog'] === 0)) ||
                 $file->getSize() === 0 ||
-                strlen(trim($dataArray['inputChapo'] === 0)) || 
-                strlen(trim($dataArray['content'] === 0 ))
 
-                ){
+                strlen(trim($dataArray['inputChapo'] === 0)) ||
+                strlen(trim($dataArray['content'] === 0))
+            ) {
                 $error = 'Tous les champs requis sont obligatoires y compris l\' insertion d\'image';
+            } else {
 
-            }else{
                 $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
 
-                if($datasAfterUpload['isSuccess']){
+                if ($datasAfterUpload['isSuccess']) {
                     //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
                     $dataArray['file_input_name'] = $datasAfterUpload['filename'];
-       
+
                     //création du blog
                     $this->blogRepository->createBlog($dataArray);
 
@@ -62,13 +64,15 @@ class AdminController extends AbstractController
                     return $redirect->send();
                 }
             }
-
         }
-        return $this->renderHtml('newBlog.html.twig', ['error'=>$error]);
+
+        return $this->renderHtml('newBlog.html.twig', ['error' => $error]);
+
     }
 
 
-    public function updateBlog (ServerRequestInterface $request, ParametersBag $bag){
+    public function updateBlog(ServerRequestInterface $request, ParametersBag $bag)
+    {
 
         //Récupération de la valeur de l'id blog $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
@@ -77,48 +81,47 @@ class AdminController extends AbstractController
 
         //vérification du type de requête si http null, POST ou GET(par defaut)
 
-        if(is_null($blog)){
+        if (is_null($blog)) {
             //TODO Except exeception Not found
             throw new NotFoundException('le blog n\'existe pas');
         }
 
         $error = '';
-    
-        if($request->getMethod() === 'POST') {
-  
+
+
+        if ($request->getMethod() === 'POST') {
+
             //récupération de données du post dans un tableau
             $dataSubmitted = $request->getParsedBody();
 
             //récupération image
             $file = $request->getUploadedFiles()['file_input_name'];
 
-            if(
-                strlen(trim($dataSubmitted['title-blog'] === 0)) || 
+            if (
+                strlen(trim($dataSubmitted['title-blog'] === 0)) ||
                 $file->getSize() === 0 ||
-                strlen(trim($dataSubmitted['inputChapo'] === 0)) || 
-                strlen(trim($dataSubmitted['content'] === 0 )) 
 
-                ){
+                strlen(trim($dataSubmitted['inputChapo'] === 0)) ||
+                strlen(trim($dataSubmitted['content'] === 0))
+            ) {
                 $error = 'Tous les champs requis sont obligatoires y compris l\' insertion d\'image';
+            } else {
+                try {
 
-            }else{
-                try{
                     $datasAfterUpload = FileUploader::uploadFile($_FILES['file_input_name']);
 
-                    if($datasAfterUpload['isSuccess']){
+                    if ($datasAfterUpload['isSuccess']) {
                         //Ajout de la valeur du nom du fichier au tableau $dataSubmitted
                         $dataSubmitted['file_input_name'] = $datasAfterUpload['filename'];
 
                         // execution de la requête de mise à jour
-                        $this->blogRepository->updateBlog($dataSubmitted,$id);
-    
+                        $this->blogRepository->updateBlog($dataSubmitted, $id);
+
                         //redirection sur la page courante (get)
                         $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
                         return $redirect->send();
                     }
-
-                    
-                }catch(\Exception $e){
+                } catch (\Exception $e) {
                     dump($e);
                     exit;
                 }
@@ -126,11 +129,14 @@ class AdminController extends AbstractController
         }
 
         //page formulaire préremplie (get)
-        return $this->renderHtml('updateBlog.html.twig',['blog'=>$blog,'error'=>$error]);
+
+        return $this->renderHtml('updateBlog.html.twig', ['blog' => $blog,'error' => $error]);
+
     }
 
 
-    public function deleteBlog (ServerRequestInterface $request, ParametersBag $bag){
+    public function deleteBlog(ServerRequestInterface $request, ParametersBag $bag)
+    {
 
         //Récupération de la valeur de l'id blog $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
@@ -146,13 +152,12 @@ class AdminController extends AbstractController
         //redirection sur la page courante (get)
         $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
         return $redirect->send();
-
     }
 
-    public function dashboard (ServerRequestInterface $request, ParametersBag $bag){
+    public function dashboard(ServerRequestInterface $request, ParametersBag $bag)
+    {
         //Check if administrator session is open
-        if(!array_key_exists('user',$_SESSION) || $_SESSION['user']['admin'] != "1"){
-
+        if (!array_key_exists('user', $_SESSION) || $_SESSION['user']['admin'] != "1") {
             $redirect = new RedirectResponseHttp('/');
             return $redirect->send();
         }
@@ -161,11 +166,14 @@ class AdminController extends AbstractController
         $user = $_SESSION['user']['admin'];
         $blogs = $this->blogRepository->getAllBlog();
 
-        return $this->renderHtml('dashboardAdmin.html.twig',['blogs'=>$blogs,'commentsNotValidate'=>$commentsNotValidate,'user'=>$user]);
-
+        return $this->renderHtml(
+            'dashboardAdmin.html.twig',
+            ['blogs' => $blogs,'commentsNotValidate' => $commentsNotValidate,'user' => $user]
+        );
     }
 
-    public function getBlog (ServerRequestInterface $request, ParametersBag $bag){
+    public function getBlog(ServerRequestInterface $request, ParametersBag $bag)
+    {
 
         $user = $_SESSION['user']['admin'];
 
@@ -174,40 +182,40 @@ class AdminController extends AbstractController
 
         $blog = $this->blogRepository->findByBlogId($id);
 
-        if($request->getMethod() === 'POST') {
-            
+        if ($request->getMethod() === 'POST') {
             //récupération de données du post dans un tableau
             $dataArray = $request->getParsedBody();
             //création d'un commentaire
-            $this->commentRepository->submitComment($dataArray,$id);
+            $this->commentRepository->submitComment($dataArray, $id);
             //redirection sur la page courante (get)
-            $redirect = new RedirectResponseHttp('/blogs/'.$id);
+            $redirect = new RedirectResponseHttp('/blogs/' . $id);
             return $redirect->send();
         }
 
         $findComments = $this->commentRepository->findCommentsByBlogId($id);
-        return $this->renderHtml('blog.html.twig',['blog'=>$blog,'findComments'=>$findComments, 'user'=>$user]);
+        return $this->renderHtml('blog.html.twig', ['blog' => $blog,'findComments' => $findComments, 'user' => $user]);
     }
 
-    public function approveComment (ServerRequestInterface $request, ParametersBag $bag ){
+    public function approveComment(ServerRequestInterface $request, ParametersBag $bag)
+    {
 
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
 
         // $findComments = $this->commentRepository->findCommentsByBlogId($id);
 
-        $this->commentRepository->approveComment($id); 
+        $this->commentRepository->approveComment($id);
 
         $idblog = (int) $bag->getParameter('blogId')->getValue();
 
         //redirection sur la page courante (get)
         $redirect = new RedirectResponseHttp('/blogs/admin/dashboard');
         return $redirect->send();
-
     }
 
-    public function deleteComment (ServerRequestInterface $request, ParametersBag $bag){
- 
+    public function deleteComment(ServerRequestInterface $request, ParametersBag $bag)
+    {
+
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
         $this->commentRepository->deleteComment($id);
@@ -217,7 +225,8 @@ class AdminController extends AbstractController
         return $redirect->send();
     }
 
-    public function reportComment (ServerRequestInterface $request, ParametersBag $bag){
+    public function reportComment(ServerRequestInterface $request, ParametersBag $bag)
+    {
 
         //Récupération de la valeur de l'id comment $id du $bag
         $id = (int) $bag->getParameter('id')->getValue();
@@ -226,9 +235,8 @@ class AdminController extends AbstractController
         $this->commentRepository->reportComment($id);
 
         //redirection sur la page courante (get)
-        $redirect = new RedirectResponseHttp('/blogs/'.$idBlog);
+        $redirect = new RedirectResponseHttp('/blogs/' . $idBlog);
 
         return $redirect->send();
     }
-
 }

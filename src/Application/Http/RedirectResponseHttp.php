@@ -9,7 +9,7 @@ use Psr\Http\Message\StreamInterface;
 
 class RedirectResponseHttp implements ResponseHttpInterface
 {
-    protected  $uriToRedirect;
+    protected $uriToRedirect;
 
     public function __construct(string $uriToRedirect)
     {
@@ -18,6 +18,6 @@ class RedirectResponseHttp implements ResponseHttpInterface
 
     public function send()
     {
-        header( 'Location: '.$this->uriToRedirect);
+        header('Location: ' . $this->uriToRedirect);
     }
 }

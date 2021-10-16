@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace Application;
 
 use Exception;
@@ -16,7 +17,7 @@ use Application\Exceptions\NotFoundException;
 class Application
 {
     protected $routeCollection;
-    
+
     public function __construct()
     {
         $this->init();
@@ -24,7 +25,7 @@ class Application
 
     public function run(ServerRequestInterface $request)
     {
-        try{
+        try {
             $context = new RequestContext();
             $context->setPathInfo($request->getUri()->getPath());
             $matcher = new UrlMatcher($this->routeCollection, $context);
@@ -38,43 +39,34 @@ class Application
             $callable = [new $controller(), $method];
             $bagParams = new ParametersBag();
 
-            foreach ($parameters as $key => $value){
-                $param = new Parameter($key,$value);
+            foreach ($parameters as $key => $value) {
+                $param = new Parameter($key, $value);
                 $bagParams->addParameter($param);
             }
-
             $response = call_user_func_array($callable, [$request, $bagParams]);
-
             return $response;
-        
-
-            } catch (ResourceNotFoundException $e) {
+        } catch (ResourceNotFoundException $e) {
                 //TODO Create exception controller to return not found page
                 echo "ResourceNotFoundException";
-            } catch (MethodNotAllowedException $e){
+        } catch (MethodNotAllowedException $e) {
                 //TODO Create exception controller to return not allowed method http
                 echo "MethodNotAllowedException";
-
-            } catch (NotFoundException $e){
+        } catch (NotFoundException $e) {
                 //erreur personnalisé
                 // $controller = new ErrorController();
                 // return $controller->notFound();
                 echo "Personnalized error to do";
-
-            } catch (Exception $e){
-                //TODO Create exception controller to return internal servor error
-
-                echo $e->getMessage();
-
-            }
-
+        } catch (Exception $e) {
+            //TODO Create exception controller to return internal servor error
+            echo $e->getMessage();
+        }
     }
 
     private function init()
     {
-        $this->routeCollection = new RouteCollection;
+        $this->routeCollection = new RouteCollection();
         $routes = json_decode(file_get_contents('../config/routing/routes.json'), true);
-        foreach($routes as $route){
+        foreach ($routes as $route) {
             $this->routeCollection->add(
                 $route['name'],
                 new Route(
@@ -86,9 +78,7 @@ class Application
                     [],
                     $route['_methods']
                 )
-
             );
-        }  
+        }
     }
-
-}    
+}

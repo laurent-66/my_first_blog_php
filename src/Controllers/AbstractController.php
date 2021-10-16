@@ -10,6 +10,5 @@ abstract class AbstractController
 
     protected function isAuthenticated()
     {
-
     }
 }

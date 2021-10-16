@@ -16,7 +16,7 @@ class ParametersBag
     public function addParameter(Parameter $parameter)
     {
         $param = $this-> getParameter($parameter->getKey());
-        if(!$param instanceof Parameter){
+        if (!$param instanceof Parameter) {
             $this-> parameters[] = $parameter;
         }
     }
@@ -29,7 +29,4 @@ class ParametersBag
         });
         return count($paramFiltered) > 0 ? current($paramFiltered) : null;
     }
-
-
 }
-

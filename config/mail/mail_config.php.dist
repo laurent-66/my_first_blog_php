@@ -1,6 +1,6 @@
 <?php
-
+//Fill in the email and the password
 return [
     'email' => '',
     'password' => ''
-]
+];

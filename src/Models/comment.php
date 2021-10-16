@@ -12,7 +12,7 @@ class Comment
 
     protected $commentSignaled = false;
 
- 
+
     //method id
 
     public function getId(): int
@@ -39,7 +39,6 @@ class Comment
     public function setContent(?string $commentContent): void
     {
         $this->title = $commentContent;
-
     }
 
 
@@ -64,12 +63,10 @@ class Comment
 
         return $this->commentSignaled;
     }
-    
-    
+
+
     public function setSignaled(?bool $commentSignaled): void
     {
         $this->commentSignaled = $commentSignaled;
-
     }
-    
 }

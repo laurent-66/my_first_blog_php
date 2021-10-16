@@ -1,6 +1,7 @@
 <?php
 
 namespace Application\Helpers;
+
 use Exception;
 
 class Mailer
@@ -15,7 +16,7 @@ class Mailer
     public function init()
     {
         //define configuration mail with login and password for smtp
-        $config = require_once(__DIR__.'../../../config/mail/mail_config.php');
+        $config = require_once(__DIR__ . '../../../config/mail/mail_config.php');
 
         //create the transport provider smtp, host and encrypt certificat in ssl
 
@@ -26,14 +27,13 @@ class Mailer
 
         // Create the Mailer using the created Transport
         $this->mailerSrv = new \Swift_Mailer($transport);
-
     }
 
 
     public function send(string $subject, string $to, string $from, string $body)
     {
 
-        try{
+        try {
             $message = (new \Swift_Message())
             ->setTo($to)
             ->SetFrom($from)
@@ -41,13 +41,10 @@ class Mailer
             ->setBody($body)
             ->setContentType('text/html');
 
-            $result =$this->mailerSrv->send($message);
+            $result = $this->mailerSrv->send($message);
             dump($result);
-
-        } catch( Exception $e) {
+        } catch (Exception $e) {
             dump($e);
         }
-
     }
-    
 }

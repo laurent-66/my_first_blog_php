@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace Application\Controllers;
 
 use Application\Controllers\AbstractController;
@@ -12,15 +13,9 @@ use Application\Repository\BlogRepository;
 class CommentController extends AbstractController
 {
     private $CommentRepository;
-
     public function __construct()
     {
-        $this->blogRepository = new BlogRepository;
-
+        $this->blogRepository = new BlogRepository();
         $this->CommentRepository = new CommentRepository();
-        
     }
-
-
-
 }
